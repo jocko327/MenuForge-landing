@@ -10,20 +10,22 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-BVJ0H65CZ8');
-    if (window.MF_ADS_CONVERSION_ID) { gtag('config', window.MF_ADS_CONVERSION_ID); }
+    // Wait for /auth/config (or static fallbacks) before firing lead conversion.
+    (window.MF_ADS_CONFIG_READY || Promise.resolve()).then(function() {
+      var ga4 = window.MF_GA4_ID || 'G-BVJ0H65CZ8';
+      gtag('js', new Date());
+      gtag('config', ga4);
+      if (window.MF_ADS_CONVERSION_ID) { gtag('config', window.MF_ADS_CONVERSION_ID); }
 
-    // GA4 lead event (always fires)
-    gtag('event', 'generate_lead', { event_category: 'ads', event_label: 'recipe-costing-lp' });
+      gtag('event', 'generate_lead', { event_category: 'ads', event_label: 'recipe-costing-lp' });
 
-    // Google Ads conversion (fires only once configured in assets/js/ads-config.js)
-    var leadLabel = window.MF_ADS_LEAD_CONVERSION_LABEL || window.MF_ADS_CONVERSION_LABEL;
-    if (window.MF_ADS_CONVERSION_ID && leadLabel) {
-      gtag('event', 'conversion', {
-        send_to: window.MF_ADS_CONVERSION_ID + '/' + leadLabel
-      });
-    }
+      var leadLabel = window.MF_ADS_LEAD_CONVERSION_LABEL || window.MF_ADS_CONVERSION_LABEL;
+      if (window.MF_ADS_CONVERSION_ID && leadLabel) {
+        gtag('event', 'conversion', {
+          send_to: window.MF_ADS_CONVERSION_ID + '/' + leadLabel
+        });
+      }
+    });
   </script>
 
   <!-- Meta Pixel -->
