@@ -20,10 +20,10 @@ window.MF_ADS_LEAD_CONVERSION_LABEL = 'kzHQCI2Og7kcEIHAqLZD';
 
 // v2 primary: account created (social or email register from ads LP with source=Google-Free).
 // Create in Google Ads → paste label here and in frontend/public/ads-config.js before enabling v2.
-window.MF_ADS_ACCOUNT_CONVERSION_LABEL = '';
+window.MF_ADS_ACCOUNT_CONVERSION_LABEL = 'ipseCL70zdUcEIHAqLZD';
 
 // v2 secondary: first real recipe saved (attributed Google-Free / gclid users).
-window.MF_ADS_FIRST_RECIPE_CONVERSION_LABEL = '';
+window.MF_ADS_FIRST_RECIPE_CONVERSION_LABEL = 'MsInCOK1-9UcEIHAqLZD';
 
 // Back-compat alias for lp-thank-you.html (email lead only).
 window.MF_ADS_CONVERSION_LABEL = window.MF_ADS_LEAD_CONVERSION_LABEL;
