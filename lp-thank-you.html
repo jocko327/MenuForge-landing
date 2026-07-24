@@ -18,9 +18,10 @@
     gtag('event', 'generate_lead', { event_category: 'ads', event_label: 'recipe-costing-lp' });
 
     // Google Ads conversion (fires only once configured in assets/js/ads-config.js)
-    if (window.MF_ADS_CONVERSION_ID && window.MF_ADS_CONVERSION_LABEL) {
+    var leadLabel = window.MF_ADS_LEAD_CONVERSION_LABEL || window.MF_ADS_CONVERSION_LABEL;
+    if (window.MF_ADS_CONVERSION_ID && leadLabel) {
       gtag('event', 'conversion', {
-        send_to: window.MF_ADS_CONVERSION_ID + '/' + window.MF_ADS_CONVERSION_LABEL
+        send_to: window.MF_ADS_CONVERSION_ID + '/' + leadLabel
       });
     }
   </script>

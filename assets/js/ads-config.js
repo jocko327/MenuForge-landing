@@ -14,7 +14,19 @@
  * conversion is skipped (no errors, no phantom conversions).
  */
 window.MF_ADS_CONVERSION_ID = 'AW-18099085313';        // Google Ads conversion ID
-window.MF_ADS_CONVERSION_LABEL = 'kzHQCI2Og7kcEIHAqLZD'; // 'Ad Lead - Free Signup' conversion label
+
+// v1 email-form lead (lp-thank-you.html) — observe-only in v2 campaign; keep counting.
+window.MF_ADS_LEAD_CONVERSION_LABEL = 'kzHQCI2Og7kcEIHAqLZD';
+
+// v2 primary: account created (social or email register from ads LP with source=Google-Free).
+// Create in Google Ads → paste label here and in frontend/public/ads-config.js before enabling v2.
+window.MF_ADS_ACCOUNT_CONVERSION_LABEL = '';
+
+// v2 secondary: first real recipe saved (attributed Google-Free / gclid users).
+window.MF_ADS_FIRST_RECIPE_CONVERSION_LABEL = '';
+
+// Back-compat alias for lp-thank-you.html (email lead only).
+window.MF_ADS_CONVERSION_LABEL = window.MF_ADS_LEAD_CONVERSION_LABEL;
 window.MF_GA4_ID = 'G-BVJ0H65CZ8';
 // Cross-domain linker: ad clicks land on menuforge.ai; social signup finishes on app.menuforge.ai
 window.MF_ADS_LINKER_DOMAINS = ['menuforge.ai', 'www.menuforge.ai', 'app.menuforge.ai'];
