@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Complete Guide to Recipe Costing | MenuForge</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+    @page {
+      size: Letter;
+      margin: 0.55in 0.58in 0.62in;
+      @bottom-center {
+        content: "MenuForge.ai";
+        color: #6d7288;
+        font-family: "Open Sans", sans-serif;
+        font-size: 9px;
+      }
+      @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        color: #6d7288;
+        font-family: "Open Sans", sans-serif;
+        font-size: 9px;
+      }
+    }
+
+    :root {
+      --bg-dark-primary: #0f0f23;
+      --bg-dark-secondary: #1a1a2e;
+      --bg-dark-tertiary: #16213e;
+      --primary-accent: #F1C671;
+      --secondary-accent: #198754;
+      --text-white: #ffffff;
+      --ink: #202336;
+      --muted: #5d6478;
+      --paper: #fbf8ef;
+      --line: #e6d8b9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Open Sans", sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.12;
+      margin: 0 0 0.16in;
+    }
+
+    h1 {
+      color: var(--text-white);
+      font-size: 43pt;
+      max-width: 6.1in;
+    }
+
+    h2 {
+      color: var(--bg-dark-primary);
+      font-size: 23pt;
+      padding-bottom: 0.06in;
+      border-bottom: 3px solid var(--primary-accent);
+    }
+
+    h3 {
+      color: var(--bg-dark-tertiary);
+      font-size: 16pt;
+      margin-top: 0.2in;
+    }
+
+    p {
+      margin: 0 0 0.12in;
+    }
+
+    ul,
+    ol {
+      margin: 0.03in 0 0.16in 0.25in;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.04in;
+    }
+
+    .cover {
+      min-height: 10.9in;
+      margin: -0.55in -0.58in -0.62in;
+      padding: 0.7in 0.62in;
+      color: var(--text-white);
+      background:
+        radial-gradient(circle at 78% 14%, rgba(241, 198, 113, 0.34), transparent 28%),
+        radial-gradient(circle at 20% 80%, rgba(25, 135, 84, 0.28), transparent 30%),
+        linear-gradient(135deg, var(--bg-dark-primary), var(--bg-dark-tertiary) 55%, var(--bg-dark-secondary));
+      page-break-after: always;
+      position: relative;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.13in;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75in;
+    }
+
+    .brand-row img {
+      width: 0.42in;
+      height: 0.42in;
+    }
+
+    .brand-ai {
+      color: var(--primary-accent);
+    }
+
+    .cover-kicker {
+      color: var(--primary-accent);
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.2in;
+    }
+
+    .cover-subtitle {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 15pt;
+      max-width: 5.7in;
+      margin-top: 0.15in;
+    }
+
+    .cover-card {
+      margin-top: 0.58in;
+      width: 4.95in;
+      padding: 0.24in;
+      border: 1px solid rgba(241, 198, 113, 0.38);
+      border-radius: 16px;
+      background: rgba(15, 15, 35, 0.6);
+      box-shadow: 0 20px 54px rgba(0, 0, 0, 0.22);
+    }
+
+    .cover-card strong {
+      color: var(--primary-accent);
+    }
+
+    .cover-footer {
+      position: absolute;
+      left: 0.62in;
+      right: 0.62in;
+      bottom: 0.52in;
+      color: rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(241, 198, 113, 0.35);
+      padding-top: 0.18in;
+      font-size: 9.5pt;
+    }
+
+    /* Content flows continuously so every page fills completely; only the
+       cover keeps its own dedicated page. Page breaks are governed by the
+       keep-together rules below instead of a forced break after each section,
+       which previously left short sections half-empty and split tall ones
+       awkwardly across pages. */
+    h2,
+    h3,
+    .section-label {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p {
+      orphans: 3;
+      widows: 3;
+    }
+
+    .callout,
+    .formula,
+    .spice-grid,
+    .cta,
+    figure,
+    .two-col,
+    .keep-together {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-label {
+      color: var(--secondary-accent);
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      margin-top: 0.34in;
+      margin-bottom: 0.08in;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 12pt;
+      line-height: 1.45;
+      margin-bottom: 0.2in;
+    }
+
+    .formula {
+      margin: 0.16in 0;
+      padding: 0.14in 0.18in;
+      color: var(--text-white);
+      background: linear-gradient(135deg, var(--bg-dark-primary), var(--bg-dark-tertiary));
+      border-left: 5px solid var(--primary-accent);
+      border-radius: 10px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .callout {
+      margin: 0.17in 0;
+      padding: 0.16in 0.18in;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--primary-accent);
+      border-radius: 12px;
+      background: #fff8e7;
+    }
+
+    .callout.green {
+      background: #eef9f2;
+      border-left-color: var(--secondary-accent);
+    }
+
+    .callout-title {
+      color: var(--bg-dark-primary);
+      font-weight: 800;
+      margin-bottom: 0.05in;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 8.8pt;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.14in 0 0.2in;
+      font-size: 8.9pt;
+      break-inside: avoid;
+    }
+
+    th {
+      color: var(--text-white);
+      background: var(--bg-dark-tertiary);
+      font-weight: 700;
+      padding: 0.075in 0.08in;
+      text-align: left;
+    }
+
+    td {
+      border-bottom: 1px solid #eadfca;
+      padding: 0.065in 0.08in;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #fffdf7;
+    }
+
+    .num {
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .total td {
+      color: var(--bg-dark-primary);
+      background: #f5e0ae !important;
+      font-weight: 800;
+    }
+
+    .two-col {
+      column-count: 2;
+      column-gap: 0.32in;
+    }
+
+    .spice-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.45in 1fr 0.45in;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 8.8pt;
+      margin-top: 0.14in;
+    }
+
+    .spice-grid div {
+      padding: 0.055in 0.07in;
+      border-bottom: 1px solid #eadfca;
+      background: #fffdf7;
+    }
+
+    .spice-grid .head {
+      color: var(--text-white);
+      background: var(--bg-dark-tertiary);
+      font-weight: 800;
+      border-bottom: none;
+    }
+
+    .spice-grid .value {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      border-right: 1px solid #eadfca;
+    }
+
+    .workflow li {
+      padding-left: 0.05in;
+      margin-bottom: 0.09in;
+    }
+
+    .cta {
+      margin-top: 0.28in;
+      padding: 0.32in;
+      color: var(--text-white);
+      background:
+        radial-gradient(circle at 90% 0%, rgba(241, 198, 113, 0.34), transparent 25%),
+        linear-gradient(135deg, var(--bg-dark-primary), var(--bg-dark-tertiary));
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: var(--text-white);
+      border: none;
+      padding: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 0.12in;
+      padding: 0.11in 0.28in;
+      color: var(--bg-dark-primary);
+      background: var(--primary-accent);
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div class="brand-row">
+      <img src="../assets/images/menuforge-icon-192.png" alt="MenuForge">
+      <div>MenuForge<span class="brand-ai">.ai</span></div>
+    </div>
+    <div class="cover-kicker">Free operator guide</div>
+    <h1>The Complete Guide to Recipe Costing</h1>
+    <p class="cover-subtitle">Batch recipes, unit conversions, and the hidden math behind true cost per plate.</p>
+    <div class="cover-card">
+      <p><strong>Built for restaurant owners, chefs, breweries, caterers, and food-service operators</strong> who want to know their true cost per plate down to the penny.</p>
+      <p>Use this guide to cost raw ingredients, nested batch recipes, unit mismatches, yield loss, and spice conversions with confidence.</p>
+    </div>
+    <div class="cover-footer">MenuForge.ai | Recipe management, costing, and AI-powered menu operations</div>
+  </section>
+
+  <section class="page">
+    <div class="section-label">Section 1</div>
+    <h2>Why Recipe Costing Matters</h2>
+    <p class="lead">Every dish you serve has a cost. Not just the obvious protein or produce, but every pinch of salt, every splash of oil, every batch of sauce that took an hour to prepare.</p>
+    <p>Most kitchens estimate these costs loosely and hope margins work out. Hope is not a financial strategy.</p>
+    <div class="callout green">
+      <div class="callout-title">Accurate recipe costing lets you</div>
+      <ul>
+        <li>Set menu prices that protect your margins.</li>
+        <li>Spot which dishes are profit drivers and which are quietly losing money.</li>
+        <li>Negotiate with suppliers using real usage data.</li>
+        <li>Adjust portions or substitutions with confidence.</li>
+      </ul>
+    </div>
+    <p>The challenge is that real-world recipes are not flat ingredient lists. They contain sub-recipes, unit mismatches, and yield losses that make a simple spreadsheet unreliable. This guide walks you through a repeatable method for handling all of them.</p>
+
+    <div class="section-label">Section 2</div>
+    <h2>The Basics: Flat Recipe Costing</h2>
+    <p>Start with the simplest case: a recipe where every ingredient is a raw purchased item.</p>
+    <div class="formula">Cost per Serving = Sum of (Ingredient Qty x Unit Cost) / Number of Servings</div>
+    <h3>Example: House Vinaigrette</h3>
+    <p>House Vinaigrette makes 32 oz, or 16 servings of 2 oz each.</p>
+    <table>
+      <thead>
+        <tr><th>Ingredient</th><th class="num">Qty Used</th><th class="num">Purchase Price</th><th>Purchase Size</th><th class="num">Line Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Olive Oil</td><td class="num">24 oz</td><td class="num">$12.00</td><td>128 oz (1 gal)</td><td class="num">$2.25</td></tr>
+        <tr><td>Red Wine Vinegar</td><td class="num">6 oz</td><td class="num">$4.50</td><td>32 oz</td><td class="num">$0.84</td></tr>
+        <tr><td>Dijon Mustard</td><td class="num">1 oz</td><td class="num">$5.00</td><td>16 oz</td><td class="num">$0.31</td></tr>
+        <tr><td>Honey</td><td class="num">0.5 oz</td><td class="num">$8.00</td><td>24 oz</td><td class="num">$0.17</td></tr>
+        <tr><td>Salt</td><td class="num">0.25 oz</td><td class="num">$2.50</td><td>26 oz</td><td class="num">$0.02</td></tr>
+        <tr><td>Black Pepper</td><td class="num">0.1 oz</td><td class="num">$6.00</td><td>16 oz</td><td class="num">$0.04</td></tr>
+        <tr class="total"><td colspan="4">Total Batch Cost</td><td class="num">$3.63</td></tr>
+        <tr class="total"><td colspan="4">Cost per 2-oz Serving</td><td class="num">$0.23</td></tr>
+      </tbody>
+    </table>
+    <p>The formula for each line is straightforward: (Qty Used / Purchase Size) x Purchase Price. The real complexity begins when one of those "ingredients" is itself a recipe.</p>
+  </section>
+
+  <section class="page">
+    <div class="section-label">Section 3</div>
+    <h2>Recipe Inception: Batch Recipes as Ingredients</h2>
+    <p class="lead">In a professional kitchen, many ingredients are prepared in-house: stocks, sauces, spice blends, doughs, brines. These batch recipes are then used as ingredients in other recipes, and those recipes may themselves be used in yet another recipe.</p>
+    <p>We call this recipe inception: recipes nested inside recipes, sometimes several levels deep.</p>
+    <h3>How Costs Propagate</h3>
+    <ol>
+      <li><strong>Level 0 - Raw ingredients:</strong> These have a known purchase price and purchase unit. No calculation needed beyond the line-cost formula above.</li>
+      <li><strong>Level 1 - Batch recipes that use only raw ingredients:</strong> Cost the entire batch, then divide by yield to get a cost per unit of output.</li>
+      <li><strong>Level 2 - Recipes that use Level 1 batches:</strong> When a Level 1 batch appears as an ingredient, use its computed cost per unit as if it were a purchase price.</li>
+      <li><strong>Level N - Repeat as needed.</strong></li>
+    </ol>
+    <div class="callout">
+      <div class="callout-title">Key rule</div>
+      You must fully resolve a batch recipe's cost before you can cost any recipe that uses it. Work from the leaves of the dependency tree toward the root.
+    </div>
+    <h3>Worked Example: Marinara Sauce</h3>
+    <table>
+      <thead>
+        <tr><th>Ingredient</th><th class="num">Qty</th><th class="num">Purchase Price</th><th>Purchase Size</th><th class="num">Line Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Crushed Tomatoes</td><td class="num">96 oz</td><td class="num">$4.50</td><td>96 oz (#10 can)</td><td class="num">$4.50</td></tr>
+        <tr><td>Olive Oil</td><td class="num">4 oz</td><td class="num">$12.00</td><td>128 oz</td><td class="num">$0.38</td></tr>
+        <tr><td>Garlic, minced</td><td class="num">2 oz</td><td class="num">$6.00</td><td>32 oz</td><td class="num">$0.38</td></tr>
+        <tr><td>Dried Oregano</td><td class="num">0.5 oz</td><td class="num">$8.00</td><td>8 oz</td><td class="num">$0.50</td></tr>
+        <tr><td>Salt</td><td class="num">0.5 oz</td><td class="num">$2.50</td><td>26 oz</td><td class="num">$0.05</td></tr>
+        <tr><td>Sugar</td><td class="num">1 oz</td><td class="num">$3.50</td><td>80 oz</td><td class="num">$0.04</td></tr>
+        <tr class="total"><td colspan="4">Total Batch Cost</td><td class="num">$5.85</td></tr>
+      </tbody>
+    </table>
+    <p>Marinara cost per oz = $5.85 / 128 oz = $0.0457/oz.</p>
+    <h3>Use the Batch in a Parent Recipe: Chicken Parmesan</h3>
+    <table>
+      <thead>
+        <tr><th>Ingredient</th><th class="num">Qty</th><th class="num">Unit Cost</th><th>Source</th><th class="num">Line Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Chicken Breast</td><td class="num">8 oz</td><td class="num">$0.0394/oz</td><td>Raw</td><td class="num">$0.32</td></tr>
+        <tr><td>Marinara Sauce</td><td class="num">4 oz</td><td class="num">$0.0457/oz</td><td>Batch recipe</td><td class="num">$0.18</td></tr>
+        <tr><td>Mozzarella</td><td class="num">2 oz</td><td class="num">$0.0313/oz</td><td>Raw</td><td class="num">$0.06</td></tr>
+        <tr><td>Breadcrumbs</td><td class="num">1.5 oz</td><td class="num">$0.0188/oz</td><td>Raw</td><td class="num">$0.03</td></tr>
+        <tr><td>Egg</td><td class="num">1 ea</td><td class="num">$0.25/ea</td><td>Raw</td><td class="num">$0.25</td></tr>
+        <tr class="total"><td colspan="4">Total per Serving</td><td class="num">$0.84</td></tr>
+      </tbody>
+    </table>
+    <p>Notice how the Marinara row uses the computed cost per ounce from Step 1, not a purchase price. The costing engine treats it exactly like a raw ingredient, but the unit cost is derived, not purchased.</p>
+  </section>
+
+  <section class="page">
+    <div class="section-label">Section 4</div>
+    <h2>The Unit Conversion Problem</h2>
+    <p class="lead">Perhaps the trickiest day-to-day costing challenge is unit mismatch: you buy an ingredient in one unit but use it in a completely different one.</p>
+    <p>The most common case is spices purchased by weight, measured in recipes by volume.</p>
+    <h3>Why You Can't Just Equate Teaspoons to Grams</h3>
+    <p>A teaspoon of ground cinnamon weighs about 2.6 grams. A teaspoon of garlic powder weighs about 3.1 grams. A teaspoon of paprika weighs about 2.3 grams. The density of each spice is different, so there is no single conversion factor from volume to weight.</p>
+    <h3>The Density-Bridge Method</h3>
+    <p>To convert, you need a density bridge: the weight-per-volume measurement for that specific ingredient.</p>
+    <div class="formula">Line Cost = (Volume Used x Density) / Purchase Weight x Purchase Price</div>
+    <p>Or equivalently: convert the recipe quantity to weight using density, then compute the cost as if it were a weight-based ingredient.</p>
+    <div class="callout">
+      <div class="callout-title">Example: ground cumin</div>
+      <ol>
+        <li>You buy ground cumin at $14.00 per pound (453.6 g).</li>
+        <li>Your recipe uses 2 tsp.</li>
+        <li>Look up density: ground cumin is approximately 2.7 g/tsp.</li>
+        <li>Convert recipe quantity: 2 tsp x 2.7 g/tsp = 5.4 g.</li>
+        <li>Compute cost: (5.4 g / 453.6 g) x $14.00 = $0.17.</li>
+      </ol>
+    </div>
+    <div class="keep-together">
+    <h3>Common Spice Density Reference</h3>
+    <p>These are averages. Actual density varies by grind, brand, and settling. For high-accuracy costing, weigh a measured teaspoon on a gram scale in your own kitchen.</p>
+    <div class="spice-grid">
+      <div class="head">Spice / Seasoning</div><div class="head value">g/tsp</div><div class="head">Spice / Seasoning</div><div class="head value">g/tsp</div>
+      <div>Allspice, ground</div><div class="value">2.1</div><div>Mustard, ground</div><div class="value">2.3</div>
+      <div>Basil, dried</div><div class="value">0.7</div><div>Nutmeg, ground</div><div class="value">2.2</div>
+      <div>Black Pepper, ground</div><div class="value">2.3</div><div>Onion Powder</div><div class="value">2.8</div>
+      <div>Cayenne Pepper</div><div class="value">1.8</div><div>Oregano, dried</div><div class="value">1.0</div>
+      <div>Chili Powder</div><div class="value">2.6</div><div>Paprika</div><div class="value">2.3</div>
+      <div>Cinnamon, ground</div><div class="value">2.6</div><div>Red Pepper Flakes</div><div class="value">1.5</div>
+      <div>Coriander, ground</div><div class="value">1.8</div><div>Rosemary, dried</div><div class="value">1.2</div>
+      <div>Cumin, ground</div><div class="value">2.7</div><div>Sage, ground</div><div class="value">0.7</div>
+      <div>Curry Powder</div><div class="value">2.0</div><div>Salt, fine</div><div class="value">6.0</div>
+      <div>Dill Weed, dried</div><div class="value">1.0</div><div>Salt, kosher (Morton)</div><div class="value">4.8</div>
+      <div>Garlic Powder</div><div class="value">3.1</div><div>Smoked Paprika</div><div class="value">2.3</div>
+      <div>Ginger, ground</div><div class="value">1.8</div><div>Thyme, dried</div><div class="value">1.4</div>
+      <div>Italian Seasoning</div><div class="value">1.0</div><div>Turmeric, ground</div><div class="value">3.0</div>
+    </div>
+    </div>
+    <div class="callout green">
+      <div class="callout-title">Pro tip</div>
+      Establish a density reference sheet for every spice in your pantry. Weigh a level teaspoon once, record it, and use that number in all future costings.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Section 5</div>
+    <h2>Other Common Unit Mismatches</h2>
+    <div class="two-col">
+      <p><strong>Liquids bought by volume, used by weight:</strong> Use the liquid's specific gravity. Olive oil is about 0.92 g/mL; honey is about 1.42 g/mL.</p>
+      <p><strong>"Each" items with weight-based pricing:</strong> Eggs bought by the dozen but priced per pound require an average egg weight so you can derive cost per each.</p>
+      <p><strong>Prep yield loss:</strong> If you buy whole carrots at $1.20/lb but only 85% is usable after peeling, your effective cost per pound of usable carrot is $1.20 / 0.85 = $1.41/lb.</p>
+    </div>
+    <h2 style="margin-top:0.34in;">Putting It All Together</h2>
+    <ol class="workflow">
+      <li><strong>Map the dependency tree.</strong> List every sub-recipe used by your target recipe, and any sub-recipes they use. Draw it out if it helps.</li>
+      <li><strong>Resolve from the bottom up.</strong> Start with batch recipes that contain only raw ingredients. Cost them fully. Record a cost-per-unit-of-output for each.</li>
+      <li><strong>Reconcile units at every line.</strong> For each ingredient row, make sure the recipe quantity and purchase or batch-output unit are compatible. If not, apply a density bridge or yield factor.</li>
+      <li><strong>Compute line costs, then sum.</strong> Each line = Qty Used x Cost Per Unit after conversion. Sum all lines for the total batch cost, then divide by servings or yield.</li>
+      <li><strong>Review and maintain.</strong> Costs change with supplier pricing, seasonal availability, and portion drift. Re-cost at least quarterly or whenever a key price changes significantly.</li>
+    </ol>
+    <div class="callout">
+      <div class="callout-title">Common pitfall</div>
+      Forgetting to update a batch recipe's cost when one of its ingredients changes price. In a nested system, a price change at the leaf level must cascade up through every recipe that depends on it. Manual spreadsheets almost always miss some of these cascades.
+    </div>
+    <div class="cta">
+      <img src="../assets/images/menuforge-icon-192.png" alt="MenuForge" style="width:0.58in;height:0.58in;margin-bottom:0.12in;">
+      <h2>Let MenuForge Do the Math</h2>
+      <p>MenuForge automates everything in this guide: batch recipe inception, automatic unit conversion, cost cascading when prices change, and real-time cost-per-serving for every dish on your menu.</p>
+      <a class="button" href="https://menuforge.ai/get-started.html">Get Started Free</a>
+      <p style="margin-top:0.16in;color:rgba(255,255,255,0.72);font-size:9pt;">No credit card required. © 2026 MenuForge. All rights reserved.</p>
+    </div>
+  </section>
+</body>
+</html>

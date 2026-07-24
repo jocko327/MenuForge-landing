@@ -1,0 +1,240 @@
+/* AI Showcase – integrated feature block */
+
+.ai-showcase {
+  margin-top: 3rem;
+  padding: 3rem 2.5rem;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  text-align: center;
+  background: rgba(15, 15, 35, 0.6);
+  border: 2px solid rgba(241, 198, 113, 0.4);
+  box-shadow:
+    0 0 20px rgba(241, 198, 113, 0.15),
+    0 0 60px rgba(241, 198, 113, 0.10),
+    0 0 100px rgba(241, 198, 113, 0.05),
+    0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ai-showcase-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(241, 198, 113, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ai-showcase-headline {
+  position: relative;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 0.75rem;
+  z-index: 2;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.ai-showcase-sub {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-white-80);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  z-index: 2;
+}
+
+/* 3-column: card | sliders | features */
+.ai-showcase-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto 1.4fr 0.75fr;
+  gap: 2rem;
+  align-items: stretch;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* AI recipe card column */
+.ai-showcase-card-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  position: relative;
+}
+
+.ai-showcase-card-column::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(241, 198, 113, 0.15) 0%, transparent 65%);
+  filter: blur(30px);
+  z-index: -1;
+}
+
+/* Showcase card inherits all standard AI card styling (gold bg, shimmer, stars)
+   from app-mockups.css. Only override size here. */
+.ai-showcase-card.recipe-card {
+  width: 195px;
+  height: 195px;
+  max-width: 195px;
+}
+
+.ai-showcase-sliders {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-showcase-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: stretch;
+}
+
+/* AI Control Panel (Sliders) */
+.ai-control-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  flex: 1;
+}
+
+.ai-slider-group {
+  margin-bottom: 1.25rem;
+}
+
+.ai-slider-group:last-child {
+  margin-bottom: 0;
+}
+
+.ai-slider-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-slider-label.cost { color: #198754; }
+.ai-slider-label.pantry { color: #0d6efd; }
+.ai-slider-label.insanity { color: #ff0066; text-shadow: 0 0 8px rgba(255, 0, 102, 0.4); }
+
+.ai-slider-value {
+  color: var(--text-white);
+  opacity: 0.9;
+}
+
+.mf-slider-track {
+  height: 6px;
+  border-radius: 99px;
+  position: relative;
+  width: 100%;
+}
+
+.mf-slider-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.mf-slider-cost {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, #198754 40%, rgba(255,255,255,0.1) 40%);
+}
+.mf-slider-cost .mf-slider-thumb { background: #198754; }
+
+.mf-slider-existing {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, #0d6efd 75%, rgba(255,255,255,0.1) 75%);
+}
+.mf-slider-existing .mf-slider-thumb { background: #0d6efd; }
+
+.mf-slider-insanity {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, #ff0066 80%, rgba(255,255,255,0.1) 80%);
+}
+.mf-slider-insanity .mf-slider-thumb {
+  background: linear-gradient(135deg, #ff0066, #ffcc00);
+  box-shadow: 0 0 10px rgba(255, 0, 102, 0.6);
+}
+
+.ai-slider-desc {
+  font-size: 0.78rem;
+  color: var(--text-white-60);
+  margin: 0.35rem 0 0;
+  line-height: 1.35;
+}
+
+/* Feature Highlights */
+.ai-feature-item {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.15rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+  flex: 1;
+}
+
+.ai-feature-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(241, 198, 113, 0.3);
+}
+
+.ai-feature-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.ai-feature-content h4 {
+  color: var(--text-white);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.ai-feature-content p {
+  color: var(--text-white-60);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .ai-showcase-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .ai-showcase-card-column {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-showcase-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .ai-showcase-features {
+    text-align: left;
+  }
+}

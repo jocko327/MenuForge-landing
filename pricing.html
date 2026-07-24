@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>MenuForge Pricing - Recipe Management Software Plans</title>
+  <meta name="description" content="Choose the perfect MenuForge plan for your restaurant or brewery. Free recipe management, Essentials at $79.95/mo, AI+ with AI recipe generation at $139.95/mo, or Unlimited at $189.95/mo. Save 10% with annual billing.">
+  <meta name="keywords" content="recipe management pricing, recipe software cost, AI recipe generation pricing, restaurant software pricing">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://menuforge.ai/pricing.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="MenuForge Pricing - Recipe Management Software Plans">
+  <meta property="og:description" content="Affordable recipe management plans starting free. AI+ features from $139.95/mo">
+  <meta property="og:url" content="https://menuforge.ai/pricing.html">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/menuforge-icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/menuforge-icon-512.png">
+  <link rel="apple-touch-icon" href="assets/images/menuforge-icon-192.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
+  
+  <style>
+    /* Container override for pricing page to match main.css update */
+    .container {
+      max-width: 1400px;
+    }
+    
+    .pricing-container {
+      padding: 8rem 0 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .billing-toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    
+    .toggle-label {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-white-80);
+      transition: var(--transition-smooth);
+    }
+    
+    .toggle-label.active {
+      color: var(--primary-accent);
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 80px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .toggle-switch:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .toggle-switch::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--primary-accent), #d9a95a);
+      border-radius: 50%;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .toggle-switch.annual::before {
+      transform: translateX(40px);
+    }
+    
+    .savings-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--secondary-accent), #146d45);
+      color: white;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 2.5rem 1.5rem;
+      transition: var(--transition-smooth);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(241, 198, 113, 0.4);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+    }
+    
+    .pricing-card.featured {
+      border-color: var(--primary-accent);
+      box-shadow: 0 20px 60px rgba(241, 198, 113, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .pricing-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--primary-accent), #d9a95a);
+      color: var(--bg-dark-primary);
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+
+    /* Gold AI+ card */
+    .pricing-card.gold-ai {
+      background: linear-gradient(135deg, #F1C671 0%, #e8b84a 50%, #F1C671 100%);
+      border: 2px solid rgba(255, 215, 0, 0.7);
+      box-shadow: 0 20px 60px rgba(241, 198, 113, 0.35), 0 0 30px rgba(241, 198, 113, 0.15);
+    }
+
+    .pricing-card.gold-ai::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+      pointer-events: none;
+      border-radius: 22px;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .pricing-card.gold-ai > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-card.gold-ai .plan-name {
+      color: #1a1a2e;
+    }
+
+    .pricing-card.gold-ai .plan-price {
+      color: #1a1a2e;
+    }
+
+    .pricing-card.gold-ai .plan-price span {
+      color: #3a3a5e;
+    }
+
+    .pricing-card.gold-ai .price-period {
+      color: #3a3a5e;
+    }
+
+    .pricing-card.gold-ai .plan-features li {
+      color: #2c3e50;
+    }
+
+    .pricing-card.gold-ai .plan-features li::before {
+      color: #1a6b3a;
+    }
+
+    .pricing-card.gold-ai .plan-features li strong {
+      color: #1a1a2e;
+    }
+
+    .pricing-card.gold-ai:hover {
+      transform: scale(1.05) translateY(-6px);
+      border-color: rgba(255, 215, 0, 0.9);
+    }
+
+    /* Dark contrasting badge on gold card */
+    .pricing-card.gold-ai.featured::before {
+      background: #1a1a2e;
+      color: #F1C671;
+      padding: 0.6rem 1.75rem;
+      font-size: 0.8rem;
+      border: 2px solid #F1C671;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .pricing-card.gold-ai .btn.plan-cta {
+      background: #1a1a2e;
+      border-color: #1a1a2e;
+      color: #F1C671;
+    }
+
+    .pricing-card.gold-ai .btn.plan-cta:hover {
+      background: #0f0f23;
+      border-color: #0f0f23;
+      color: #F1C671;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    
+    .plan-name {
+      font-size: 1.75rem;
+      color: var(--primary-accent);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .plan-price {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-heading);
+    }
+    
+    .plan-price span {
+      font-size: 1.25rem;
+      color: var(--text-white-60);
+      font-weight: 400;
+    }
+    
+    .price-period {
+      color: var(--text-white-60);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+    
+    .plan-features {
+      list-style: none;
+      margin: 2rem 0;
+      flex-grow: 1;
+    }
+    
+    .plan-features li {
+      padding: 0.75rem 0;
+      color: var(--text-white-80);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 1rem;
+    }
+    
+    .plan-features li::before {
+      content: '✓';
+      color: var(--secondary-accent);
+      font-weight: 700;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    
+    .plan-cta {
+      width: 100%;
+      margin-top: auto;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    
+    .faq-section {
+      margin-top: 6rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .faq-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition-smooth);
+    }
+    
+    .faq-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(241, 198, 113, 0.3);
+    }
+    
+    .faq-question {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 1rem;
+      font-family: var(--font-heading);
+    }
+    
+    .faq-answer {
+      color: var(--text-white-80);
+      line-height: 1.7;
+    }
+    
+    .addons-section {
+      max-width: 1300px;
+      margin: 4rem auto 0;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 2.5rem;
+    }
+
+    .addons-section h3 {
+      font-size: 1.5rem;
+      color: var(--primary-accent);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .addon-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .addon-card h4 {
+      color: var(--text-white);
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .addon-card p {
+      color: var(--text-white-80);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .addon-price {
+      color: var(--primary-accent);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+      
+      .plan-price {
+        font-size: 2.25rem;
+      }
+
+      .addons-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Background Orbs -->
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  <div class="gradient-orb gradient-orb-3"></div>
+
+  <!-- Header/Navigation -->
+  <header class="header" id="header">
+    <nav class="nav-container">
+      <div class="logo">
+        <a href="index.html" style="display: flex; align-items: center; gap: 1rem; color: var(--text-white);">
+          <img src="assets/images/menuforge-icon-192.png" alt="MenuForge Logo">
+          <span>MenuForge<span class="brand-ai">.ai</span></span>
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#ai-features">AI Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="desktop-only-link"><a href="https://app.menuforge.ai/login" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Launch App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Pricing Section -->
+  <section class="pricing-container">
+    <div class="container">
+      <div class="section-title">
+        <h1>Choose Your Plan</h1>
+        <p>Start free, upgrade as you grow. All plans include recipe management and cost tracking.</p>
+      </div>
+      
+      <!-- Billing Toggle -->
+      <div class="billing-toggle">
+        <span class="toggle-label" id="monthlyLabel">Monthly</span>
+        <div class="toggle-switch" id="billingToggle" role="switch" aria-checked="false" tabindex="0"></div>
+        <span class="toggle-label" id="annualLabel">Annual <span class="savings-badge">Save 10%</span></span>
+      </div>
+      
+      <!-- Pricing Cards -->
+      <div class="pricing-grid">
+        <!-- Free Plan -->
+        <div class="pricing-card">
+          <h3 class="plan-name">Free</h3>
+          <div class="plan-price">
+            $0
+            <span>/month</span>
+          </div>
+          <p class="price-period">Perfect for trying MenuForge</p>
+          
+          <ul class="plan-features">
+            <li data-plan-limit="free-users">1 user account</li>
+            <li data-plan-limit="free-recipes">Up to 5 recipes</li>
+            <li>Recipe creation &amp; management</li>
+            <li>Basic recipe pricing</li>
+            <li>Ingredient cost tracking</li>
+            <li>Vendor management</li>
+            <li>Email support</li>
+          </ul>
+          
+          <a href="get-started.html" class="btn btn-secondary plan-cta">Get Started Free</a>
+        </div>
+        
+        <!-- Essentials Plan -->
+        <div class="pricing-card">
+          <h3 class="plan-name">Essentials</h3>
+          <div class="plan-price">
+            <span class="price-monthly">$79.95</span>
+            <span class="price-annual" style="display: none;">$71.96</span>
+            <span>/month</span>
+          </div>
+          <p class="price-period price-period-text">Billed monthly</p>
+          
+          <ul class="plan-features">
+            <li data-plan-limit="basic-users">Up to 3 users</li>
+            <li data-plan-limit="basic-recipes">Up to 300 recipes</li>
+            <li>All Free features</li>
+            <li>Advanced recipe pricing</li>
+            <li>Detailed cost analytics</li>
+            <li>Recipe categories &amp; organization</li>
+            <li>Sub-recipes support</li>
+            <li>Team collaboration</li>
+            <li>Build sheets &amp; reports</li>
+            <li>Recipe add-ons available</li>
+          </ul>
+          
+          <button class="btn btn-primary plan-cta" onclick="subscribeToPlan('essentials', document.getElementById('billingToggle').classList.contains('annual'))">
+            Subscribe to Essentials
+          </button>
+        </div>
+        
+        <!-- AI+ Plan (Featured) -->
+        <div class="pricing-card featured gold-ai">
+          <h3 class="plan-name">AI+</h3>
+          <div class="plan-price">
+            <span class="price-monthly">$139.95</span>
+            <span class="price-annual" style="display: none;">$125.96</span>
+            <span>/month</span>
+          </div>
+          <p class="price-period price-period-text">Billed monthly</p>
+          
+          <ul class="plan-features">
+            <li data-plan-limit="ai_plus-users">Up to 6 users</li>
+            <li data-plan-limit="ai_plus-recipes">Up to 300 recipes</li>
+            <li>All Essentials features</li>
+            <li data-plan-limit="ai_plus-ai"><strong>25 AI Recipes per month</strong></li>
+            <li><strong>Unlimited AI descriptions</strong></li>
+            <li><strong>Unlimited unit conversions</strong></li>
+            <li>Custom branding</li>
+            <li>Priority support (24-48hr)</li>
+            <li>AI &amp; recipe add-ons available</li>
+          </ul>
+          
+          <button class="btn btn-primary plan-cta" onclick="subscribeToPlan('ai_plus', document.getElementById('billingToggle').classList.contains('annual'))">
+            Subscribe to AI+
+          </button>
+        </div>
+
+        <!-- Unlimited Plan -->
+        <div class="pricing-card">
+          <h3 class="plan-name">Unlimited</h3>
+          <div class="plan-price">
+            <span class="price-monthly">$189.95</span>
+            <span class="price-annual" style="display: none;">$170.96</span>
+            <span>/month</span>
+          </div>
+          <p class="price-period price-period-text">Billed monthly</p>
+          
+          <ul class="plan-features">
+            <li><strong>Unlimited users</strong></li>
+            <li><strong>Unlimited recipes</strong></li>
+            <li><strong>Unlimited AI recipes</strong></li>
+            <li>All AI+ features</li>
+            <li>Unlimited AI descriptions</li>
+            <li>Unlimited unit conversions</li>
+            <li>Priority support (24-48hr)</li>
+            <li>Early access to new features</li>
+          </ul>
+          
+          <button class="btn btn-primary plan-cta" onclick="subscribeToPlan('unlimited', document.getElementById('billingToggle').classList.contains('annual'))">
+            Subscribe to Unlimited
+          </button>
+        </div>
+      </div>
+
+      <!-- Add-ons Section -->
+      <div class="addons-section">
+        <h3>Available Add-ons</h3>
+        <div class="addons-grid">
+          <div class="addon-card">
+            <h4>Recipe Storage Packs</h4>
+            <p>Need more recipes? Add additional recipe storage to your Essentials, AI+, or Unlimited plan.</p>
+            <p class="addon-price" data-addon-price="recipes"><span data-addon="pack500-extra">500</span> recipes: +$<span data-addon="pack500-price">20</span>/month &bull; <span data-addon="pack1000-extra">1,000</span> recipes: +$<span data-addon="pack1000-price">50</span>/month</p>
+          </div>
+          <div class="addon-card">
+            <h4>AI Recipe Credits</h4>
+            <p>Need more AI-generated recipes? Purchase additional credits on your AI+ subscription. One-time charges.</p>
+            <p class="addon-price" data-addon-price="ai"><span data-addon="ai-small-credits">5</span> credits: $<span data-addon="ai-small-price">20</span> &bull; <span data-addon="ai-large-credits">10</span> credits: $<span data-addon="ai-large-price">35</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Can I change plans later?</h3>
+          <p class="faq-answer">Yes! You can upgrade or downgrade your plan at any time. Upgrades take effect immediately, and downgrades will apply at the end of your current billing period.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">What payment methods do you accept?</h3>
+          <p class="faq-answer">We accept all major credit cards (Visa, Mastercard, American Express, Discover) through our secure payment processor, Stripe.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">How does the annual billing discount work?</h3>
+          <p class="faq-answer">When you choose annual billing, you save 10% compared to paying monthly. You'll be billed once per year at the discounted rate.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">What is the recipe limit?</h3>
+          <p class="faq-answer">Essentials and AI+ plans include up to <span data-faq-limit="basic-recipes">300</span> recipes (including archived). You can expand your storage with a recipe add-on pack: +<span data-addon="pack500-extra">500</span> recipes for +$<span data-addon="pack500-price">20</span>/mo or +<span data-addon="pack1000-extra">1,000</span> recipes for +$<span data-addon="pack1000-price">50</span>/mo. The Unlimited plan has no recipe limits.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">How do AI recipe credits work?</h3>
+          <p class="faq-answer">The AI+ plan includes <span data-faq-limit="ai_plus-ai">25</span> AI recipe generation calls per month. Each request to generate a recipe counts as one call, regardless of how many recipes AI returns. Follow-up conversation after a recipe is returned does not count against your limit. If you need more, you can purchase additional credits: <span data-addon="ai-small-credits">5</span> for $<span data-addon="ai-small-price">20</span> or <span data-addon="ai-large-credits">10</span> for $<span data-addon="ai-large-price">35</span> as a one-time charge.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">What AI features are included?</h3>
+          <p class="faq-answer">The AI+ and Unlimited plans include AI recipe generation, unlimited AI-powered recipe description generation, and unlimited AI unit conversion assistance. The AI+ plan includes <span data-faq-limit="ai_plus-ai">25</span> AI recipe calls per month, while the Unlimited plan has no limits.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Can I cancel my subscription anytime?</h3>
+          <p class="faq-answer">Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period, then automatically downgrade to the Free plan.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">What's the difference between Essentials and AI+?</h3>
+          <p class="faq-answer">Both plans include <span data-faq-limit="basic-recipes">300</span> recipes and core recipe management features. AI+ adds AI-powered recipe generation (<span data-faq-limit="ai_plus-ai">25</span>/month), unlimited AI descriptions, unlimited unit conversions, and custom branding. AI+ also supports up to <span data-faq-limit="ai_plus-users">6</span> users vs. <span data-faq-limit="basic-users">3</span> on Essentials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="hero" style="min-height: 50vh; padding: 4rem 2rem;">
+    <div class="hero-content">
+      <h2 style="color: var(--text-white); margin-bottom: 1.5rem;">Ready to Get Started?</h2>
+      <p class="hero-tagline">Start with our free plan, no credit card required</p>
+      <div class="hero-cta">
+        <a href="get-started.html" class="btn btn-primary btn-large">Create Free Account</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#ai-features">AI Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li class="desktop-only-link"><a href="https://app.menuforge.ai/login">Login</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Recipe Management & Costing</a></li>
+            <li><a href="index.html#ai-features">AI Recipe Generation</a></li>
+            <li><a href="index.html#features">Ingredients Management</a></li>
+            <li><a href="index.html#features">Dietary Flags</a></li>
+            <li><a href="index.html#features">Team Collaboration</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="mailto:support@menuforge.ai">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 MenuForge. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script defer src="assets/js/exit-intent-popup.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pricing.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# robots.txt for MenuForge Marketing Site
+User-agent: *
+Allow: /
+Sitemap: https://menuforge.ai/sitemap.xml

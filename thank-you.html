@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVJ0H65CZ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BVJ0H65CZ8');
+  </script>
+  <title>Check Your Email - MenuForge</title>
+  <meta name="description" content="You're one step away from MenuForge. Check your email to create your account.">
+  <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    body.thank-you-body { min-height: 100vh; display: flex; flex-direction: column; }
+    .thank-you-page { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 2rem 3rem; padding-top: 6rem; text-align: center; position: relative; z-index: 2; }
+    .thank-you-page .thank-you-inner { max-width: 720px; width: 100%; margin: 0 auto; }
+    .thank-you-page h1 { margin-bottom: 0.75rem; -webkit-text-fill-color: var(--text-white); background: none; font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-family: var(--font-heading); }
+    .thank-you-page .hero-logo { width: 72px; height: 72px; margin-bottom: 1rem; filter: drop-shadow(0 0 16px rgba(241, 198, 113, 0.5)); }
+    .thank-you-page p { color: var(--text-white-80); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; }
+    .thank-you-page .expect { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0; text-align: left; }
+    .thank-you-page .expect strong { color: var(--primary-accent); }
+    body.thank-you-body .footer { flex-shrink: 0; margin-top: 0; }
+  </style>
+</head>
+<body class="thank-you-body">
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  <div class="gradient-orb gradient-orb-3"></div>
+
+  <header class="header" id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/menuforge-icon-192.png" alt="MenuForge Logo">
+        <span>MenuForge<span class="brand-ai">.ai</span></span>
+      </a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#ai-features">AI Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="desktop-only-link"><a href="https://app.menuforge.ai/login" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Launch App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="thank-you-page">
+    <div class="thank-you-inner">
+      <img src="assets/images/menuforge-icon-512.png" alt="MenuForge" class="hero-logo">
+      <h1>You're on your way!</h1>
+      <p>We're excited to have you. Check the inbox for the email you just entered — we've sent you a link to create your MenuForge account.</p>
+      <div class="expect">
+        <p><strong>When to expect it:</strong> Usually within the next few minutes. If you don't see it, check your spam or promotions folder.</p>
+      </div>
+      <p>The email will include a button to create your account. From there you'll set your company name, password, and you're in — unlimited ingredients, <span data-plan-limit="free-recipes">5</span> recipes, and real recipe costing with no expiration.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 MenuForge. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('active');
+      this.textContent = document.getElementById('navLinks').classList.contains('active') ? '✕' : '☰';
+    });
+  </script>
+  <script>
+    fetch('https://app.menuforge.ai/auth/plan-info')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.plans && data.plans.free) {
+          document.querySelectorAll('[data-plan-limit="free-recipes"]').forEach(function(el) {
+            el.textContent = String(data.plans.free.max_recipes);
+          });
+        }
+      })
+      .catch(function() {});
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

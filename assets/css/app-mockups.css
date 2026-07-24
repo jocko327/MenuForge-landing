@@ -1,0 +1,984 @@
+/* App mockups – app-matching styles scoped under .landing-app-preview (source: frontend/src/styles) */
+
+/* ========== Variables (from app theme/variables.css) ========== */
+.landing-app-preview {
+  --app-bg-light: #f4f6f9;
+  --app-card-bg: #ffffff;
+  --app-text-dark: #212529;
+  --app-text-muted: #6c757d;
+  --app-border-color: #e9ecef;
+  --primary-accent: #F1C671;
+  --secondary-accent: #198754;
+  --red: #dc3545;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Open Sans', sans-serif;
+  --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-glow: 0 0 15px rgba(241, 198, 113, 0.3);
+  --bg-dark-primary: #0f0f23;
+  --bg-dark-tertiary: #16213e;
+  --text-white: #ffffff;
+  --primary-text: #212529;
+}
+
+/* ========== Cards (from app components/cards.css) – used in hero and grid mockup ========== */
+.landing-app-preview .recipe-card,
+.landing-app-preview .ingredient-card,
+.landing-app-preview .add-recipe-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.10), 0 0 24px rgba(15, 23, 42, 0.18), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+
+.landing-app-preview .recipe-card-body,
+.landing-app-preview .card-body-centered {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.landing-app-preview .recipe-card-title,
+.landing-app-preview .compact-recipe-card-title,
+.landing-app-preview .ingredient-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-text);
+  line-height: 1.3;
+}
+
+.landing-app-preview .compact-recipe-card-title {
+  font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.landing-app-preview .recipe-content-center {
+  width: 100%;
+}
+
+/* Recipe cards do not show category in the app */
+.landing-app-preview .recipe-card-style {
+  display: none !important;
+}
+
+.landing-app-preview .ingredient-unit {
+  font-family: var(--font-body);
+  color: var(--app-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.landing-app-preview .dietary-flags-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+/* Fixed 3-slot grid: V (left) | Vg (center) | GF (right) — empty slots hold space */
+.landing-app-preview .dietary-flags-fixed-slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+}
+.landing-app-preview .dietary-flag-slot {
+  min-height: 18px;
+  display: flex;
+}
+.landing-app-preview .dietary-flag-slot.slot-left {
+  justify-content: flex-start;
+}
+.landing-app-preview .dietary-flag-slot.slot-center {
+  justify-content: center;
+}
+.landing-app-preview .dietary-flag-slot.slot-right {
+  justify-content: flex-end;
+}
+
+/* Dietary flags – match app (cards.css): solid colors, no border */
+.landing-app-preview .dietary-flag-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.08rem 0.28rem;
+  border-radius: 6px;
+  line-height: 1;
+  border: none !important;
+  background: transparent !important;
+}
+
+.landing-app-preview .dietary-flag-badge i.fa-solid {
+  font-size: 0.65rem;
+}
+.landing-app-preview .dietary-flag-badge.flag-vegetarian-solid { color: #fd7e14 !important; }
+.landing-app-preview .dietary-flag-badge.flag-vegan-solid { color: #2e7d32 !important; }
+.landing-app-preview .dietary-flag-badge.flag-glutenfree-solid { color: #e3b04b !important; }
+/* Substitute (outline) flags – match app */
+.landing-app-preview .dietary-flag-badge.flag-vegetarian-outline {
+  color: #fd7e14 !important;
+  background: #ffffff !important;
+  border: 1.5px solid #fd7e14 !important;
+}
+.landing-app-preview .dietary-flag-badge.flag-vegan-outline {
+  color: #2e7d32 !important;
+  background: #ffffff !important;
+  border: 1.5px solid #2e7d32 !important;
+}
+.landing-app-preview .dietary-flag-badge.flag-glutenfree-outline {
+  color: #e3b04b !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e3b04b !important;
+}
+
+/* AI-generated cards — gold background, glow, shimmer, stars (matches app) */
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe),
+.landing-app-preview .ingredient-card.ai-generated {
+  background: #F1C671 !important;
+  border: 1px solid rgba(255, 215, 0, 0.7) !important;
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.5),
+    0 0 40px rgba(255, 200, 0, 0.3),
+    0 8px 30px rgba(255, 215, 0, 0.4),
+    inset 0 0 30px rgba(255, 255, 255, 0.1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe)::after,
+.landing-app-preview .ingredient-card.ai-generated::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe)::before,
+.landing-app-preview .ingredient-card.ai-generated::before {
+  content: '🌟';
+  position: absolute;
+  bottom: 1px;
+  left: 0px;
+  color: #ffc107;
+  font-size: 1rem;
+  line-height: 1;
+  z-index: 3;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  animation: aiStarRotation1 3s linear infinite;
+  pointer-events: none;
+}
+
+.landing-app-preview .recipe-card.ai-generated .recipe-card-body,
+.landing-app-preview .ingredient-card.ai-generated .recipe-card-body {
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe) .recipe-card-body::before,
+.landing-app-preview .ingredient-card.ai-generated .recipe-card-body::before {
+  content: '✦';
+  position: absolute;
+  bottom: 9px;
+  left: 1px;
+  color: #ffc107;
+  font-size: 1.1rem;
+  z-index: 3;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  animation: aiStarRotation2 2.8s linear infinite;
+  pointer-events: none;
+}
+
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe) .recipe-card-body::after,
+.landing-app-preview .ingredient-card.ai-generated .recipe-card-body::after {
+  content: '✦';
+  position: absolute;
+  bottom: -7px;
+  left: 18px;
+  color: #ffc107;
+  font-size: 1.1rem;
+  z-index: 3;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  animation: aiStarRotation3 3.2s linear infinite;
+  pointer-events: none;
+}
+
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe) .recipe-card-title,
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe) .compact-recipe-card-title,
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe) h4 {
+  color: #2c3e50 !important;
+}
+
+.landing-app-preview .recipe-card.ai-generated:not(.archived-recipe) .recipe-card-style {
+  color: #34495e !important;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes aiStarRotation1 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes aiStarRotation2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes aiStarRotation3 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error / archived / add (matches app) */
+.landing-app-preview .recipe-card.recipe-costing-error:not(.archived-recipe) {
+  background: linear-gradient(135deg, rgba(255, 235, 235, 0.98), rgba(255, 245, 245, 0.95)) !important;
+  border: 2px solid transparent !important;
+  color: #212529 !important;
+}
+
+.landing-app-preview .recipe-card.recipe-costing-error:not(.archived-recipe) .recipe-card-title,
+.landing-app-preview .recipe-card.recipe-costing-error:not(.archived-recipe) .compact-recipe-card-title {
+  color: #dc3545 !important;
+  font-weight: 800 !important;
+}
+
+.landing-app-preview .recipe-card.no-prep-instructions:not(.archived-recipe) {
+  background: var(--app-card-bg) !important;
+  border: 2px solid var(--red) !important;
+}
+
+.landing-app-preview .recipe-card.archived-recipe {
+  background: linear-gradient(135deg, #e9ecef 0%, #ced4da 100%) !important;
+  border-color: #adb5bd !important;
+  box-shadow: none !important;
+  opacity: 0.85;
+}
+
+.landing-app-preview .recipe-card.archived-recipe .recipe-card-title,
+.landing-app-preview .recipe-card.archived-recipe .compact-recipe-card-title,
+.landing-app-preview .recipe-card.archived-recipe .recipe-card-style {
+  color: #6c757d !important;
+}
+
+.landing-app-preview .add-recipe-card {
+  background: #f0fff4 !important;
+  border: 1px solid rgba(25, 135, 84, 0.3) !important;
+  color: var(--secondary-accent) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.landing-app-preview .add-recipe-card .compact-recipe-card-title {
+  color: var(--secondary-accent) !important;
+  font-weight: 700;
+}
+
+.landing-app-preview .add-ingredient-card {
+  background: #f0fff4 !important;
+  border: 1px solid rgba(25, 135, 84, 0.3) !important;
+  color: var(--secondary-accent) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+.landing-app-preview .add-ingredient-card .compact-recipe-card-title {
+  color: var(--secondary-accent) !important;
+  font-weight: 700;
+}
+
+.landing-app-preview .ingredient-card .ingredient-price-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: rgba(15, 23, 42, 0.78);
+}
+
+.landing-app-preview .ingredient-card.archived-ingredient {
+  background: linear-gradient(135deg, #e9ecef 0%, #ced4da 100%) !important;
+  border-color: #adb5bd !important;
+  box-shadow: none !important;
+  opacity: 0.85;
+}
+
+
+/* ========== Grid (from app layouts/grid.css) ========== */
+.landing-app-preview .responsive-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(157px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* ========== Modal mockup ========== */
+.mockup-modal-shell {
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mockup-modal-header {
+  background: #0f0f23;
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mockup-modal-header-icon {
+  font-size: 1.1rem;
+}
+
+.mockup-modal-header-text {
+  flex: 1;
+}
+
+.mockup-modal-header h5 {
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 0;
+  color: #fff;
+}
+
+.mockup-modal-header-meta {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.mockup-modal-dietary .dietary-flag-badge {
+  font-size: 0.65rem;
+}
+
+.mockup-modal-header::after {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(241, 198, 113, 0), rgba(241, 198, 113, 0.9), rgba(241, 198, 113, 0));
+}
+
+/* Tab row with pricing pills */
+.mockup-modal-tabs-row {
+  display: flex;
+  align-items: center;
+  background: #f4f6f9;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+.mockup-modal-tabs {
+  display: flex;
+  padding: 0 0 0 0.4rem;
+  flex: 1;
+}
+
+.mockup-tab {
+  display: block;
+  text-decoration: none;
+  color: #374151;
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.mockup-tab:hover {
+  color: #111827;
+  background: rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+}
+
+.mockup-tab.active {
+  color: #0f172a;
+  background: #ffffff;
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.06);
+}
+
+.mockup-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 999px;
+  background: #F1C671;
+}
+
+/* Pricing pills */
+.mockup-pricing-pills {
+  display: flex;
+  gap: 0.35rem;
+  padding-right: 0.75rem;
+}
+
+.mockup-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.mockup-pill-cost {
+  background: #e8f5e9;
+  color: #198754;
+}
+
+.mockup-pill-msp {
+  background: #fff3e0;
+  color: #b8860b;
+}
+
+.mockup-pill-actual {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.mockup-modal-body {
+  background: #f4f6f9;
+  padding: 0.85rem 1.25rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockup-modal-body .modal-mockup-panel {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  flex: 1;
+}
+
+/* Overview tab content */
+.mockup-overview-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.85rem;
+  color: #212529;
+}
+
+.mockup-overview-label {
+  font-weight: 700;
+  color: #374151;
+  font-size: 0.82rem;
+  min-width: 70px;
+}
+
+.mockup-overview-value {
+  color: #212529;
+}
+
+.mockup-overview-desc {
+  margin-top: 0.6rem;
+}
+
+.mockup-overview-desc p {
+  font-size: 0.82rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0.25rem 0 0;
+}
+
+/* Ingredients table */
+.mockup-ingredients-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  color: #212529;
+}
+
+.mockup-ingredients-table th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+  padding: 0.3rem 0.4rem;
+  border-bottom: 2px solid rgba(0,0,0,0.08);
+}
+
+.mockup-ingredients-table td {
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.mockup-ingredients-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Prep steps */
+.mockup-prep-steps {
+  font-size: 0.82rem;
+  color: #212529;
+  line-height: 1.5;
+}
+
+.mockup-prep-step {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.mockup-prep-step:last-child {
+  border-bottom: none;
+}
+
+.mockup-prep-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F1C671;
+  color: #0f0f23;
+  font-weight: 800;
+  font-size: 0.68rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ========== Sidebar category items (from app layouts/main.css) ========== */
+.landing-app-preview .category-item {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background-color: var(--bg-dark-primary) !important;
+  color: var(--text-white) !important;
+  font-family: var(--font-body);
+  transition: var(--transition-smooth);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  box-shadow: var(--shadow-sm);
+}
+
+.landing-app-preview .category-item.selected,
+.landing-app-preview .category-item.active {
+  background-color: var(--bg-dark-primary) !important;
+  color: var(--primary-accent) !important;
+  box-shadow: var(--shadow-glow);
+  border: 1px solid var(--primary-accent) !important;
+}
+
+/* See MenuForge in Action – app preview section */
+.app-preview-section {
+  --ml-radius-md: 12px;
+  --ml-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.app-preview-section .preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.app-preview-section .preview-item-fullwidth {
+  grid-column: 1 / -1;
+}
+
+.app-preview-section .preview-item-fullwidth .preview-mockup {
+  border-top-left-radius: var(--ml-radius-md);
+  border-top-right-radius: var(--ml-radius-md);
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .app-preview-section .preview-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-preview-section .preview-item-fullwidth {
+    grid-column: 1;
+  }
+}
+
+.app-preview-section .preview-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--ml-radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.app-preview-section .preview-item-fullwidth {
+  overflow: visible;
+}
+
+.app-preview-section .preview-item-modal,
+.app-preview-section .preview-item-ingredients {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-preview-section .preview-item-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--ml-radius-md);
+  overflow: hidden;
+}
+
+.app-preview-section .preview-item-card .preview-mockup {
+  min-height: 0;
+}
+
+.app-preview-section .preview-item-card .preview-content {
+  padding-top: 1.25rem;
+}
+
+.app-preview-section .preview-mockup {
+  padding: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-preview-section .preview-mockup-card {
+  border-top-left-radius: var(--ml-radius-md);
+  border-top-right-radius: var(--ml-radius-md);
+  overflow: hidden;
+}
+
+/* Fixed height for recipe editor */
+.app-preview-section .preview-item-modal .preview-mockup {
+  height: 420px;
+}
+
+.app-preview-section .preview-item-modal .mockup-modal-shell {
+  height: 100%;
+}
+
+/* Match ingredients height to editor */
+.app-preview-section .preview-item-ingredients .preview-mockup {
+  height: 420px;
+}
+
+.app-preview-section .preview-content {
+  padding: 2rem;
+}
+
+.app-preview-section .preview-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-accent);
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+}
+
+.app-preview-section .preview-content p {
+  color: var(--text-white-80);
+  margin-bottom: 0;
+}
+
+/* Ingredients card preview */
+.app-preview-section .preview-ingredients-card {
+  background: #f8f9fa;
+  padding: 0.75rem;
+}
+
+.app-preview-section .preview-ingredients-card .responsive-card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.app-preview-section .mockup-ingredients-search {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.78rem;
+  color: #6c757d;
+  margin-bottom: 0.6rem;
+}
+
+/* Pill-shaped search bar (matches app) */
+.mockup-search-pill {
+  border-radius: 50px !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #6c757d !important;
+}
+
+/* Grid layout mockup (sidebar + recipe grid) – matches app background */
+.app-preview-section .preview-grid-layout {
+  display: flex;
+  min-height: 380px;
+  background: #f8f9fa;
+  color: #212529;
+  overflow: visible;
+}
+
+.app-preview-section .preview-grid-layout .mockup-main {
+  overflow: visible;
+}
+
+.app-preview-section .preview-grid-layout .responsive-card-grid {
+  overflow: visible;
+}
+
+.app-preview-section .mockup-sidebar {
+  width: 39%;
+  min-width: 120px;
+  max-width: 196px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.6rem 0.5rem;
+  border-right: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.06);
+}
+
+.app-preview-section .mockup-sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #212529;
+  font-family: 'Playfair Display', serif;
+}
+
+.app-preview-section .mockup-main {
+  flex: 1;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-preview-section .mockup-grid-hint {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0 0 0.5rem;
+  font-style: italic;
+}
+
+/* Tooltip hover targets (JS tooltip handles the visual) */
+.app-preview-section .mockup-card-hover {
+  cursor: default;
+}
+
+/* JS-driven tooltip (fixed position to the right of Add New Recipe card) */
+.mockup-card-tooltip-js {
+  position: absolute;
+  padding: 0.5rem 0.75rem;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: normal;
+  max-width: 200px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.mockup-card-tooltip-js.is-visible {
+  opacity: 1;
+}
+
+/* Align recipe editor & ingredients text with top of adjacent card */
+.app-preview-section .preview-content-align {
+  align-self: start;
+}
+
+/* Dietary flags on ingredient cards in mockup */
+.landing-app-preview .ingredient-card .recipe-card-body {
+  position: relative;
+}
+
+.app-preview-section .mockup-search-bar {
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.75rem;
+}
+
+.app-preview-section .mockup-search-placeholder {
+  color: #6c757d;
+}
+
+.landing-app-preview .preview-grid-layout .responsive-card-grid {
+  flex: 1;
+  min-height: 180px;
+}
+
+/* ===== Mobile responsive ===== */
+@media (max-width: 768px) {
+  /* Recipe grid: compact landscape instead of tall stacked cards */
+  .app-preview-section .preview-grid-layout {
+    min-height: auto;
+    max-height: 260px;
+    overflow: hidden;
+  }
+
+  .app-preview-section .preview-grid-layout .mockup-sidebar {
+    width: 28%;
+    max-width: 100px;
+    padding: 0.4rem 0.3rem;
+  }
+
+  .app-preview-section .preview-grid-layout .mockup-sidebar-title {
+    font-size: 0.8rem;
+  }
+
+  .app-preview-section .preview-grid-layout .category-item {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.65rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .app-preview-section .preview-grid-layout .mockup-main {
+    padding: 0.35rem;
+    gap: 0.25rem;
+  }
+
+  .app-preview-section .preview-grid-layout .mockup-search-bar {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  /* Hide hover hint and tooltips on mobile */
+  .app-preview-section .preview-grid-layout .mockup-grid-hint {
+    display: none;
+  }
+
+  .mockup-card-tooltip-js {
+    display: none !important;
+  }
+
+  .app-preview-section .preview-grid-layout .responsive-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
+    min-height: 0;
+  }
+
+  .app-preview-section .preview-grid-layout .recipe-card,
+  .app-preview-section .preview-grid-layout .add-recipe-card {
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: 0;
+  }
+
+  .app-preview-section .preview-grid-layout .recipe-card-body {
+    padding: 0.25rem;
+  }
+
+  .app-preview-section .preview-grid-layout .compact-recipe-card-title {
+    font-size: 0.55rem;
+  }
+
+  /* Dietary flags: much smaller on mobile grid */
+  .app-preview-section .preview-grid-layout .dietary-flags-fixed-slots {
+    gap: 0;
+  }
+
+  .app-preview-section .preview-grid-layout .dietary-flag-badge {
+    font-size: 0.3rem;
+    padding: 0.02rem 0.08rem;
+    gap: 0.05rem;
+  }
+
+  .app-preview-section .preview-grid-layout .dietary-flag-badge i {
+    font-size: 0.25rem;
+  }
+
+  .app-preview-section .preview-grid-layout .dietary-flag-slot {
+    min-height: 10px;
+  }
+
+  /* AI star decorations: hide on mobile grid to avoid oversized clutter */
+  .app-preview-section .preview-grid-layout .recipe-card.ai-generated::before,
+  .app-preview-section .preview-grid-layout .recipe-card.ai-generated::after,
+  .app-preview-section .preview-grid-layout .recipe-card.ai-generated .recipe-card-body::before,
+  .app-preview-section .preview-grid-layout .recipe-card.ai-generated .recipe-card-body::after {
+    display: none !important;
+  }
+
+  /* Recipe editor and ingredients taller on mobile for full content */
+  .app-preview-section .preview-item-modal .preview-mockup {
+    height: 520px;
+  }
+
+  .app-preview-section .preview-item-ingredients .preview-mockup {
+    height: 520px;
+  }
+
+  /* Remove excess whitespace under footer */
+  .footer {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+
+  /* AI showcase mobile tweaks */
+  .ai-showcase-content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-showcase-card-column {
+    justify-content: center;
+    display: flex;
+  }
+}
+

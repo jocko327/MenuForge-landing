@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - MenuForge</title>
+  <meta name="description" content="The story behind MenuForge — built by a brewery owner who lost every recipe in a single day.">
+  <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
+  <style>
+    .about-page {
+      padding: 10rem 2rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .about-back {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--primary-accent);
+      font-weight: 600;
+    }
+    .about-back:hover { color: var(--text-white); }
+    .about-page h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      -webkit-text-fill-color: var(--text-white);
+      background: none;
+    }
+    .about-page h2 {
+      font-size: 1.75rem;
+      color: var(--primary-accent);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+    .about-page p {
+      color: var(--text-white-80);
+      font-size: 1.1rem;
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+    .about-founder {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+    }
+    .about-founder-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-accent), #d9a95a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+    .about-founder-info h3 {
+      color: var(--text-white);
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+    .about-founder-info .about-founder-title {
+      color: var(--primary-accent);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    .about-highlight {
+      border-left: 3px solid var(--primary-accent);
+      padding: 1.5rem 1.5rem 1.5rem 2rem;
+      margin: 2rem 0;
+      background: rgba(241, 198, 113, 0.05);
+      border-radius: 0 12px 12px 0;
+    }
+    .about-highlight p {
+      margin-bottom: 0;
+      font-style: italic;
+      font-size: 1.15rem;
+    }
+    .about-cta {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .about-cta p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .about-founder {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  <div class="gradient-orb gradient-orb-3"></div>
+
+  <header class="header" id="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/menuforge-icon-192.png" alt="MenuForge Logo">
+        <span>MenuForge<span class="brand-ai">.ai</span></span>
+      </a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#ai-features">AI Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="desktop-only-link"><a href="https://app.menuforge.ai/login" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Launch App</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="about-page">
+    <a href="index.html" class="about-back">&larr; Back to Home</a>
+    <h1>About MenuForge</h1>
+
+    <div class="about-founder">
+      <div class="about-founder-icon">JL</div>
+      <div class="about-founder-info">
+        <h3>Jake Lohse</h3>
+        <p class="about-founder-title">Founder & Creator</p>
+      </div>
+    </div>
+
+    <h2>The Day Everything Disappeared</h2>
+    <p>In 2022, my last kitchen employee at Presidential Brewing Company in Portage, Michigan walked out of his job — that very day. No notice, no transition, no handoff. When I walked into the kitchen, I realized the full weight of what had just happened: every recipe was gone. Not lost in a fire or a hard drive crash — they simply never existed anywhere other than inside one person's head.</p>
+
+    <p>Nobody on my team knew how to make a single item we sold. Not the sauces, not the specials, not even the staple dishes our regulars expected every time they walked through the door. We were a brewery with a kitchen that had no idea how to feed anyone.</p>
+
+    <div class="about-highlight">
+      <p>"I realized that day that if your recipes live only in someone's memory, they can walk out the door with them."</p>
+    </div>
+
+    <h2>Building What We Needed</h2>
+    <p>I started building MenuForge for my own team. The goal was simple: never let that happen again. Every recipe documented. Every ingredient tracked with real costs. Every prep step written down so that any team member — new or seasoned — could execute the menu consistently.</p>
+
+    <p>As the tool took shape, I realized this wasn't just a problem at Presidential Brewing. Through my consulting business, <strong>Legendary Success Academy</strong>, I work with restaurant and food service operators across the country. One message I hammer home constantly: <em>you need to know the cost of everything you sell, down to the penny.</em> Most operators don't. They guess. They round. They lose money on items they think are profitable.</p>
+
+    <p>MenuForge was built to solve both problems — recipe preservation and recipe costing — in a single tool that's actually easy to use.</p>
+
+    <h2>Why AI?</h2>
+    <p>When I started integrating AI into the platform, it wasn't to chase a trend. It was because I saw operators spending hours writing menu descriptions, manually looking up volume-to-weight conversions, and struggling to come up with new recipes that used the ingredients they already had on hand.</p>
+
+    <p>AI handles all of that now. Tell it what you want, dial in how much of your existing pantry to use, set a cost target, and let it generate a recipe — complete with ingredients, prep steps, and marketing copy. It saves hours every week, and the recipes are genuinely good.</p>
+
+    <h2>The Book</h2>
+    <p>The lessons behind MenuForge didn't start with software — they started with years of building, failing, rebuilding, and learning what actually works in this industry. I wrote all of it down in my book, <strong><em>Shifting Gears: The Ultimate Roadmap to Building Your Legendary Brewery or Restaurant</em></strong>.</p>
+
+    <p>It covers everything from concept and business planning to operations, staffing, cost control, and the mindset shifts that separate businesses that survive from businesses that thrive. If you're opening, growing, or turning around a food or beverage operation, this book was written for you.</p>
+
+    <h2>What Drives Us</h2>
+    <p>MenuForge exists because independent restaurants, breweries, and food businesses deserve the same recipe management tools that large chains take for granted — without the enterprise price tag or the six-month implementation timeline.</p>
+
+    <p>Whether you're a single-location brewpub or a growing multi-unit concept, your recipes are your business. MenuForge makes sure they're documented, costed, and accessible to your entire team.</p>
+
+    <div class="about-cta">
+      <p>Ready to take control of your recipes?</p>
+      <a href="get-started.html" class="btn btn-primary btn-large">Get Started Free</a>
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 4rem;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 MenuForge. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuToggle')?.addEventListener('click', function() {
+      document.getElementById('navLinks')?.classList.toggle('active');
+    });
+  </script>
+  <script defer src="assets/js/exit-intent-popup.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
