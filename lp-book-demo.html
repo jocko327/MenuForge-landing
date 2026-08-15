@@ -46,8 +46,8 @@
     .lp-page {
       flex: 1; min-height: 0;
       display: flex; align-items: flex-start; justify-content: center;
-      padding: 0.75rem 1.5rem 2rem;
-      position: relative; z-index: 2;
+      padding: 0.75rem 1.5rem 2.5rem;
+      position: relative; z-index: 1;
     }
     .lp-grid {
       max-width: 1120px; width: 100%; margin: 0 auto;
@@ -122,11 +122,9 @@
     }
     .lp-proof strong { color: var(--primary-accent); }
     .lp-proof p { color: var(--text-white-80); font-size: 0.95rem; line-height: 1.55; margin: 0; }
-    .lp-trust { color: rgba(255,255,255,0.55); font-size: 0.88rem; margin: 0; }
-    .lp-alt { margin-top: 0.45rem; font-size: 0.95rem; color: var(--text-white-80); }
-    .lp-alt a { color: var(--primary-accent); font-weight: 600; }
     .lp-card {
       position: sticky; top: 1rem;
+      align-self: start;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 18px;
@@ -161,7 +159,14 @@
       border-radius: 8px; background: rgba(255,255,255,0.08);
       color: var(--primary-accent); font-size: 0.85rem;
     }
-    body.lp-body .footer { flex-shrink: 0; margin-top: 0; }
+    body.lp-body .footer {
+      flex-shrink: 0;
+      margin-top: 0;
+      position: relative;
+      z-index: 4;
+      background: #0a1628;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
     body.lp-body .gradient-orb-3 { display: none; }
   </style>
 </head>
@@ -201,15 +206,13 @@
           <ol>
             <li><strong>You bring a dish</strong> (and a recent invoice if you have one).</li>
             <li><strong>We build or open it in MenuForge</strong> and show plate cost + food cost % live.</li>
-            <li><strong>You leave with a clear next step</strong> — fix the price, change a pack, or try the free tier yourself.</li>
+            <li><strong>You leave with a clear next step</strong> — fix the price, change a pack, or decide if MenuForge fits your kitchen.</li>
           </ol>
         </div>
 
         <div class="lp-proof">
           <p><strong>Example from a real session:</strong> A beer-cheese soup at $7.99 looked fine until costing showed a <strong>$6.40 plate cost</strong> (80% food cost). One walkthrough changed the price and saved the margin.</p>
         </div>
-        <p class="lp-trust">Prefer to try alone first? Cost up to 5 dishes free — no credit card.</p>
-        <p class="lp-alt"><a href="lp-recipe-costing.html">Start free instead →</a></p>
       </div>
 
       <div class="lp-card">
