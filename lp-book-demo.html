@@ -75,7 +75,10 @@
     }
     .lp-card h2 { font-size: 1.35rem; margin-bottom: 0.35rem; -webkit-text-fill-color: var(--text-white); background: none; }
     .lp-card .lp-card-sub { color: var(--text-white-80); font-size: 0.95rem; margin-bottom: 1rem; }
-    .calendly-embed-wrap { min-height: 650px; border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.2); }
+    .calendly-embed-wrap { min-height: 700px; border-radius: 12px; overflow: hidden; background: #fff; }
+    .calendly-embed-wrap iframe { display: block; width: 100%; height: 700px; border: 0; }
+    .booking-fallback { margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-white-80); }
+    .booking-fallback a { color: var(--primary-accent); font-weight: 600; }
     .calendly-placeholder {
       display: none;
       padding: 2rem 1.25rem;
@@ -169,14 +172,14 @@
         window.addEventListener('message', function(e) {
           if (!e.data) return;
           if (isCalCom) {
-            if (e.origin.indexOf('cal.com') === -1) return;
+            if (String(e.origin || '').indexOf('cal.com') === -1) return;
             var t = e.data.type || e.data.event || (e.data.data && e.data.data.type);
             if (t === 'bookingSuccessful' || t === 'bookingSuccessfulV2' || t === '__bookingSuccessful') {
               fireDemoBooked();
             }
             return;
           }
-          if (e.origin.indexOf('calendly.com') === -1) return;
+          if (String(e.origin || '').indexOf('calendly.com') === -1) return;
           if (e.data.event === 'calendly.event_scheduled') {
             fireDemoBooked();
           }
@@ -184,30 +187,28 @@
       }
 
       function loadCalCom(url, wrap) {
-        var path = '';
+        // Plain iframe embed is more reliable than Cal's JS stub on this LP.
+        var src = url;
         try {
-          path = new URL(url).pathname.replace(/^\/+/, '').replace(/\/+$/, '');
+          var u = new URL(url);
+          if (!u.searchParams.has('embed')) u.searchParams.set('embed', 'true');
+          src = u.toString();
         } catch (err) {
-          path = 'menuforge/15min';
+          src = 'https://cal.com/menuforge/15min?embed=true';
         }
         wrap.innerHTML = '';
-        var s = document.createElement('script');
-        s.src = 'https://app.cal.com/embed/embed.js';
-        s.async = true;
-        s.onload = function() {
-          if (typeof window.Cal !== 'function') return;
-          window.Cal('init', { origin: 'https://cal.com' });
-          window.Cal('inline', {
-            elementOrSelector: wrap,
-            calLink: path,
-            layout: 'month_view'
-          });
-          window.Cal('ui', {
-            hideEventTypeDetails: false,
-            layout: 'month_view'
-          });
-        };
-        document.body.appendChild(s);
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.title = 'Book a MenuForge demo';
+        iframe.loading = 'lazy';
+        iframe.allow = 'payment';
+        wrap.appendChild(iframe);
+
+        var fallback = document.createElement('p');
+        fallback.className = 'booking-fallback';
+        fallback.innerHTML = 'Calendar not showing? <a href="' + url.replace(/"/g, '') + '" target="_blank" rel="noopener">Open booking in a new tab →</a>';
+        wrap.parentNode.insertBefore(fallback, wrap.nextSibling);
+
         bindBookingMessages(true);
       }
 
