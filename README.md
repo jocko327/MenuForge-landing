@@ -10,6 +10,13 @@ This is a modern, SEO-optimized static marketing site featuring:
 - Dark theme with animated gradients matching the login page
 - Fully responsive design for mobile, tablet, and desktop
 
+## Campaign docs (`marketing/`)
+
+Google Ads campaign specs, UI checklists, scorecards, and related Markdown live
+under `marketing/`. They are versioned here so they ship on **`main` only** and
+stay out of the app repo’s `staging` → `main` promotion. Nginx does not serve
+these files.
+
 ## File Structure
 
 ```
