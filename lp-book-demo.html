@@ -132,8 +132,8 @@
         <h2>Pick a time</h2>
         <p class="lp-card-sub">15-minute food cost walkthrough. Confirm on the calendar — you'll get an email invite.</p>
         <div id="calendlyPlaceholder" class="calendly-placeholder">
-          <p><strong>Calendly link not configured yet.</strong></p>
-          <p>Set <code>window.MF_CALENDLY_URL</code> in <code>assets/js/ads-config.js</code> to your scheduling link (e.g. <code>https://calendly.com/you/menuforge-demo</code>), then reload.</p>
+          <p><strong>Booking link not configured yet.</strong></p>
+          <p>Set <code>window.MF_BOOKING_URL</code> (or <code>MF_CALENDLY_URL</code>) in <code>assets/js/ads-config.js</code> to your Cal.com or Calendly link, then reload.</p>
         </div>
         <div class="calendly-embed-wrap" id="calendlyEmbed"></div>
       </div>
@@ -150,14 +150,68 @@
 
   <script>
     (function() {
-      function loadCalendly(url) {
-        var wrap = document.getElementById('calendlyEmbed');
-        var placeholder = document.getElementById('calendlyPlaceholder');
-        if (!url || /PLACEHOLDER|YOUR_|example\.com/i.test(url)) {
-          if (placeholder) placeholder.classList.add('is-visible');
-          return;
+      function fireDemoBooked() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { event_category: 'ads', event_label: 'book-demo' });
+          var label = window.MF_ADS_DEMO_CONVERSION_LABEL;
+          if (window.MF_ADS_CONVERSION_ID && label) {
+            gtag('event', 'conversion', {
+              send_to: window.MF_ADS_CONVERSION_ID + '/' + label
+            });
+          }
         }
-        if (placeholder) placeholder.classList.remove('is-visible');
+        if (typeof fbq === 'function') {
+          fbq('track', 'Schedule');
+        }
+      }
+
+      function bindBookingMessages(isCalCom) {
+        window.addEventListener('message', function(e) {
+          if (!e.data) return;
+          if (isCalCom) {
+            if (e.origin.indexOf('cal.com') === -1) return;
+            var t = e.data.type || e.data.event || (e.data.data && e.data.data.type);
+            if (t === 'bookingSuccessful' || t === 'bookingSuccessfulV2' || t === '__bookingSuccessful') {
+              fireDemoBooked();
+            }
+            return;
+          }
+          if (e.origin.indexOf('calendly.com') === -1) return;
+          if (e.data.event === 'calendly.event_scheduled') {
+            fireDemoBooked();
+          }
+        });
+      }
+
+      function loadCalCom(url, wrap) {
+        var path = '';
+        try {
+          path = new URL(url).pathname.replace(/^\/+/, '').replace(/\/+$/, '');
+        } catch (err) {
+          path = 'menuforge/15min';
+        }
+        wrap.innerHTML = '';
+        var s = document.createElement('script');
+        s.src = 'https://app.cal.com/embed/embed.js';
+        s.async = true;
+        s.onload = function() {
+          if (typeof window.Cal !== 'function') return;
+          window.Cal('init', { origin: 'https://cal.com' });
+          window.Cal('inline', {
+            elementOrSelector: wrap,
+            calLink: path,
+            layout: 'month_view'
+          });
+          window.Cal('ui', {
+            hideEventTypeDetails: false,
+            layout: 'month_view'
+          });
+        };
+        document.body.appendChild(s);
+        bindBookingMessages(true);
+      }
+
+      function loadCalendly(url, wrap) {
         var css = document.createElement('link');
         css.href = 'https://assets.calendly.com/assets/external/widget.css';
         css.rel = 'stylesheet';
@@ -176,31 +230,27 @@
           }
         };
         document.body.appendChild(s);
+        bindBookingMessages(false);
+      }
 
-        // Fire GA4 / optional Ads conversion when Calendly reports a booking.
-        window.addEventListener('message', function(e) {
-          if (!e.data || e.origin.indexOf('calendly.com') === -1) return;
-          var ev = e.data.event;
-          if (ev === 'calendly.event_scheduled') {
-            if (typeof gtag === 'function') {
-              gtag('event', 'generate_lead', { event_category: 'ads', event_label: 'book-demo' });
-              var label = window.MF_ADS_DEMO_CONVERSION_LABEL;
-              if (window.MF_ADS_CONVERSION_ID && label) {
-                gtag('event', 'conversion', {
-                  send_to: window.MF_ADS_CONVERSION_ID + '/' + label
-                });
-              }
-            }
-            if (typeof fbq === 'function') {
-              fbq('track', 'Schedule');
-            }
-          }
-        });
+      function loadBooking(url) {
+        var wrap = document.getElementById('calendlyEmbed');
+        var placeholder = document.getElementById('calendlyPlaceholder');
+        if (!url || /PLACEHOLDER|YOUR_|example\.com/i.test(url)) {
+          if (placeholder) placeholder.classList.add('is-visible');
+          return;
+        }
+        if (placeholder) placeholder.classList.remove('is-visible');
+        if (/cal\.com/i.test(url)) {
+          loadCalCom(url, wrap);
+        } else {
+          loadCalendly(url, wrap);
+        }
       }
 
       function start() {
-        var url = window.MF_CALENDLY_URL || '';
-        loadCalendly(url);
+        var url = window.MF_BOOKING_URL || window.MF_CALENDLY_URL || '';
+        loadBooking(url);
       }
 
       if (window.MF_ADS_CONFIG_READY && typeof window.MF_ADS_CONFIG_READY.then === 'function') {
