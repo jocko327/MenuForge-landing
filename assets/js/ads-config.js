@@ -15,11 +15,15 @@
   window.MF_ADS_LEAD_CONVERSION_LABEL = window.MF_ADS_LEAD_CONVERSION_LABEL || 'kzHQCI2Og7kcEIHAqLZD';
   window.MF_ADS_ACCOUNT_CONVERSION_LABEL = window.MF_ADS_ACCOUNT_CONVERSION_LABEL || 'ipseCL70zdUcEIHAqLZD';
   window.MF_ADS_FIRST_RECIPE_CONVERSION_LABEL = window.MF_ADS_FIRST_RECIPE_CONVERSION_LABEL || 'MsInCOK1-9UcEIHAqLZD';
+  // Paste Google Ads label for "MenuForge — Demo booked" when created (optional until Book Demo campaign launches).
+  window.MF_ADS_DEMO_CONVERSION_LABEL = window.MF_ADS_DEMO_CONVERSION_LABEL || '';
   window.MF_ADS_CONVERSION_LABEL = window.MF_ADS_LEAD_CONVERSION_LABEL;
   window.MF_GA4_ID = window.MF_GA4_ID || 'G-BVJ0H65CZ8';
   window.MF_ADS_LINKER_DOMAINS = ['menuforge.ai', 'www.menuforge.ai', 'app.menuforge.ai'];
   window.MF_FB_PIXEL_ID = '1564507615096204';
   window.MF_LINKEDIN_PARTNER_ID = '9513276';
+  // Calendly inline embed for lp-book-demo.html — replace with your real scheduling URL.
+  window.MF_CALENDLY_URL = window.MF_CALENDLY_URL || 'https://calendly.com/PLACEHOLDER/menuforge-demo';
 
   function apply(data) {
     if (!data) return;
