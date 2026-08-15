@@ -5,7 +5,7 @@ Fill this every **Monday** (or after each 7-day spend block).
 Campaigns:
 
 - **`MF Search v2 — First Recipe`** (self-serve → Account created → First recipe)
-- **`MF Search — Book Demo`** (→ Calendly booked)
+- **`MF Search — Book Demo`** (→ demo booked)
 
 Spec: [google-ads-campaign-v2.md](./google-ads-campaign-v2.md)
 
@@ -43,7 +43,7 @@ Spec: [google-ads-campaign-v2.md](./google-ads-campaign-v2.md)
 | Spend ($) | Google Ads | | ~$70/wk at $10/day |
 | Clicks | Google Ads | | |
 | CPC ($) | Ads | | |
-| **Demo booked** (conv.) | Ads / Calendly | | Primary for this campaign |
+| **Demo booked** (conv.) | Ads / Cal.com | | Primary for this campaign |
 | Cost / booked demo ($) | Spend ÷ Bookings | | Track; no hard target month 1 |
 | Showed / no-show | Calendar | | Manual |
 | Demo → paid (optional) | Stripe / CRM | | Stretch |

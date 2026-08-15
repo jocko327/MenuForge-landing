@@ -28,7 +28,7 @@ Reference spec: [google-ads-campaign-v2.md](./google-ads-campaign-v2.md)
    - Name: `MenuForge — Demo booked`
    - Category: **Submit lead form** or **Book appointment**
    - Count: **One**
-   - Fire on Calendly booking success (GTM / Calendly → Google Ads tag, or thank-you page hit)
+   - Fire on Cal.com booking success (GTM / Cal.com → Google Ads tag, or thank-you page hit)
 6. On **First Recipe** campaign: Goals = **`MenuForge — Account created` only**
 7. On **Book Demo** campaign: Goals = **`MenuForge — Demo booked` only**
 
@@ -107,7 +107,7 @@ Optional: shared list `MF junk intent v2` attached to First Recipe + Book Demo.
 8. RSA headlines/descriptions from v2 Book Demo section
 9. Mobile −50%
 
-Requires Calendly live on `lp-book-demo.html` first.
+Requires Cal.com live on `lp-book-demo.html` first.
 
 ---
 
@@ -130,7 +130,7 @@ Requires Calendly live on `lp-book-demo.html` first.
 - [ ] Max CPC raised/removed; “limited by maximum bid” cleared or improved
 - [ ] Mobile −50% (not −100%)
 - [ ] After 48h: Search terms review; negatives added
-- [ ] Demo LP + Calendly live before enabling Book Demo campaign
+- [ ] Demo LP + Cal.com live before enabling Book Demo campaign
 - [ ] Demo booked conversion fires once in a test book
 
 ---

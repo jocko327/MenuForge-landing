@@ -14,7 +14,7 @@
 **Primary conversion (v2 First Recipe):** `MenuForge — Account created` (Google-Free social or email register from LP).  
 **Secondary (observe until ~15–20 account conversions):** `MenuForge — First recipe saved`.  
 **Demoted to observe-only:** LP email thank-you lead (`lp-thank-you.html`).  
-**Primary conversion (Book Demo):** Calendly booking (website conversion on embed success / thank-you).
+**Primary conversion (Book Demo):** Cal.com booking (website conversion on embed success / thank-you).
 
 Landing pages (final URLs):
 
@@ -182,7 +182,7 @@ Price wings, pretzels, and cocktails with live ingredient costs. Try free today.
 - **Bidding:** Maximize clicks; max CPC uncapped or **$8–12** until delivery is healthy
 - **Devices:** Mobile −50%, Desktop 0%, Tablet −50% to −100%
 - **Final URL:** `https://menuforge.ai/lp-book-demo.html`
-- **Conversion goal:** **Calendly booking** only. Observe Account created; do not optimize toward signup.
+- **Conversion goal:** **Cal.com booking** only. Observe Account created; do not optimize toward signup.
 
 Keywords (high-intent software only — not “calculator”):
 
@@ -297,7 +297,7 @@ Review **Search terms** every 3–5 days (especially first 48 hours after bid/bu
 |---|---|---|
 | Account created | App after Google-Free social signup or email register (`source=Google-Free`) | **Primary** for First Recipe |
 | First recipe saved | App on first real recipe save (attributed users) | Secondary / optimize later |
-| Calendly booking | Demo LP embed success / thank-you | **Primary** for Book Demo |
+| Cal.com booking | Demo LP embed success / thank-you | **Primary** for Book Demo |
 | LP email lead | `lp-thank-you.html` | Observe only |
 | Purchase | Stripe | Observe only until volume |
 
@@ -320,7 +320,7 @@ Served at runtime by `GET /auth/config`. Restart backend after editing `.env`.
 1. **Social signup:** LP → Continue with Google → complete company name → **Account created** on `app.menuforge.ai`.
 2. **Email path:** LP email → **register** with `?src=Google-Free` (not thank-you-only lead) → **Account created**.
 3. **First recipe:** Save first real recipe as attributed user → **First recipe saved** fires once.
-4. **Demo:** Complete Calendly book on `lp-book-demo.html` → booking conversion fires.
+4. **Demo:** Complete Cal.com book on `lp-book-demo.html` → booking conversion fires.
 
 ---
 
