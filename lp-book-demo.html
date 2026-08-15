@@ -33,21 +33,34 @@
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1564507615096204&ev=PageView&noscript=1"/></noscript>
 
-  <title>Book a 15-Min Food Cost Walkthrough | MenuForge</title>
-  <meta name="description" content="Book 15 minutes to cost one dish from your menu live — plate cost, live ingredient prices, and the menu price that protects your margin. Built for restaurants and breweries.">
+  <title>Book a 20-Min Food Cost Walkthrough | MenuForge</title>
+  <meta name="description" content="Book 20 minutes to cost one dish from your menu live — plate cost, live ingredient prices, and the menu price that protects your margin. Built for restaurants and breweries.">
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
     body.lp-body { min-height: 100vh; display: flex; flex-direction: column; }
-    .lp-header { padding: 1rem 0; position: relative; z-index: 3; }
+    /* Keep header in document flow so sticky booking never slides under a fixed bar */
+    body.lp-body .header.lp-header {
+      position: relative !important;
+      top: auto;
+      left: auto;
+      right: auto;
+      z-index: 5;
+      background: transparent;
+      backdrop-filter: none;
+      border-bottom: none;
+      box-shadow: none;
+      padding: 1rem 0;
+    }
     .lp-header .nav-container { display: flex; align-items: center; justify-content: center; }
     .lp-page {
       flex: 1; min-height: 0;
       display: flex; align-items: flex-start; justify-content: center;
-      padding: 0.75rem 1.5rem 2.5rem;
-      position: relative; z-index: 1;
+      padding: 0.5rem 1.5rem 2.5rem;
+      position: relative;
+      z-index: 1;
     }
     .lp-grid {
       max-width: 1120px; width: 100%; margin: 0 auto;
@@ -113,7 +126,7 @@
     .lp-session li { margin-bottom: 0.45rem; }
     .lp-session li strong { color: var(--text-white); }
     .lp-proof {
-      margin: 0 0 1rem;
+      margin: 0;
       padding: 1rem 1.15rem;
       border-radius: 14px;
       border: 1px solid rgba(241,198,113,0.25);
@@ -123,7 +136,8 @@
     .lp-proof strong { color: var(--primary-accent); }
     .lp-proof p { color: var(--text-white-80); font-size: 0.95rem; line-height: 1.55; margin: 0; }
     .lp-card {
-      position: sticky; top: 1rem;
+      position: sticky;
+      top: 1rem;
       align-self: start;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.12);
@@ -159,12 +173,13 @@
       border-radius: 8px; background: rgba(255,255,255,0.08);
       color: var(--primary-accent); font-size: 0.85rem;
     }
+    /* Footer stays in normal flow under the grid so sticky releases cleanly above it */
     body.lp-body .footer {
       flex-shrink: 0;
       margin-top: 0;
       position: relative;
-      z-index: 4;
-      background: #0a1628;
+      z-index: 1;
+      background: rgba(10, 22, 40, 0.95);
       border-top: 1px solid rgba(255,255,255,0.08);
     }
     body.lp-body .gradient-orb-3 { display: none; }
@@ -187,9 +202,9 @@
   <section class="lp-page">
     <div class="lp-grid">
       <div class="lp-pitch">
-        <span class="lp-eyebrow">15-minute operator walkthrough</span>
+        <span class="lp-eyebrow">20-minute operator walkthrough</span>
         <h1>See if you're underpricing a dish — before you keep selling it.</h1>
-        <p class="lp-sub">Most kitchens guess food cost until a margin disappears. Book 15 minutes: we cost one real item from <em>your</em> menu live in MenuForge — plate cost, food cost %, and the price that hits your target. No pitch deck.</p>
+        <p class="lp-sub">Most kitchens guess food cost until a margin disappears. Book 20 minutes: we cost one real item from <em>your</em> menu live in MenuForge — plate cost, food cost %, and the price that hits your target. No pitch deck.</p>
 
         <div class="lp-why">
           <h2>Why book instead of clicking around alone</h2>
@@ -202,7 +217,7 @@
         </div>
 
         <div class="lp-session">
-          <h2>What happens in the 15 minutes</h2>
+          <h2>What happens in the 20 minutes</h2>
           <ol>
             <li><strong>You bring a dish</strong> (and a recent invoice if you have one).</li>
             <li><strong>We build or open it in MenuForge</strong> and show plate cost + food cost % live.</li>
@@ -279,7 +294,7 @@
           if (!u.searchParams.has('layout')) u.searchParams.set('layout', 'month_view');
           src = u.toString();
         } catch (err) {
-          src = 'https://cal.com/menuforge/15min?embed=true&layout=month_view';
+          src = 'https://cal.com/menuforge/20min?embed=true&layout=month_view';
         }
         wrap.innerHTML = '';
         var iframe = document.createElement('iframe');
