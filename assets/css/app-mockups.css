@@ -1011,3 +1011,129 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===================================================================
+   App gallery – uniform tiles of real product screenshots
+   =================================================================== */
+
+.app-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.025) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(241, 198, 113, 0.45);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), 0 0 40px rgba(241, 198, 113, 0.12);
+}
+
+.gallery-copy {
+  padding: 1.75rem 1.75rem 1.35rem;
+}
+
+.gallery-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary-accent);
+  background: rgba(241, 198, 113, 0.12);
+  border: 1px solid rgba(241, 198, 113, 0.30);
+  border-radius: 99px;
+  padding: 0.28rem 0.7rem;
+  margin-bottom: 0.85rem;
+}
+
+.gallery-copy h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: var(--text-white);
+  margin: 0 0 0.5rem;
+}
+
+.gallery-copy p {
+  color: var(--text-white-80);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Screenshot frame: identical on every tile, bleeds off the bottom edge */
+.gallery-shot {
+  position: relative;
+  margin: auto 1.5rem 0;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: none;
+  background: #0b1220;
+  box-shadow: 0 -10px 34px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-chrome {
+  display: block;
+  height: 26px;
+  background: linear-gradient(180deg, #1b2233 0%, #141a28 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.gallery-chrome::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow: 14px 0 0 #febc2e, 28px 0 0 #28c840;
+}
+
+.gallery-shot img {
+  display: block;
+  width: 100%;
+  /* height:auto is required so the width/height attributes don't win over
+     aspect-ratio and blow the image up to its intrinsic size. */
+  height: auto;
+  /* Uniform crop so mixed source sizes still line up tile to tile */
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (max-width: 900px) {
+  .app-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .gallery-copy {
+    padding: 1.35rem 1.25rem 1rem;
+  }
+
+  .gallery-copy h3 {
+    font-size: 1.25rem;
+  }
+
+  .gallery-shot {
+    margin: auto 1rem 0;
+  }
+}

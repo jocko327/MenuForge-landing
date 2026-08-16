@@ -180,6 +180,262 @@
   line-height: 1.35;
 }
 
+/* ===================================================================
+   AI reveal: panel starts small and grows to full-bleed on scroll
+   =================================================================== */
+
+.ai-reveal {
+  position: relative;
+  /* Scroll runway: the extra height is what drives the growth. */
+  height: 260vh;
+  margin: 4rem 0 0;
+}
+
+.ai-reveal-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+/* --p: 0 = small card, 1 = full bleed. Set by JS on scroll. */
+.ai-reveal-panel {
+  --p: 0;
+  position: relative;
+  overflow: hidden;
+  /* Grow from 62% of the viewport out to 100% */
+  width: calc((62% + 38% * var(--p)) * 1);
+  height: calc(62vh + 38vh * var(--p));
+  border-radius: calc(28px - 28px * var(--p));
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(241, 198, 113, 0.28) 0%, transparent 62%),
+    linear-gradient(160deg, #16132a 0%, #0f0f23 45%, #1b1533 100%);
+  border: 1px solid rgba(241, 198, 113, calc(0.55 - 0.35 * var(--p)));
+  box-shadow:
+    0 0 calc(40px + 60px * var(--p)) rgba(241, 198, 113, calc(0.18 + 0.14 * var(--p))),
+    0 30px 80px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: width, height, border-radius;
+}
+
+/* Gold bloom that intensifies as the panel opens */
+.ai-reveal-glow {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(closest-side at 22% 32%, rgba(241, 198, 113, calc(0.30 * (0.35 + var(--p)))) 0%, transparent 100%),
+    radial-gradient(closest-side at 82% 72%, rgba(255, 176, 59, calc(0.24 * (0.35 + var(--p)))) 0%, transparent 100%);
+  filter: blur(40px);
+}
+
+/* Warm top edge highlight */
+.ai-reveal-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(241, 198, 113, 0.35) 0%, transparent 3px),
+              linear-gradient(0deg, rgba(241, 198, 113, 0.10) 0%, transparent 30%);
+}
+
+.ai-reveal-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 3.25rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+  /* Content fades up as the panel opens so the small state stays calm */
+  opacity: calc(0.35 + 0.65 * var(--p));
+}
+
+/* ---------- Left column: copy + controls ---------- */
+
+.ai-reveal-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f1c671;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(241, 198, 113, 0.45);
+  border-radius: 99px;
+  background: rgba(241, 198, 113, 0.10);
+  margin-bottom: 1rem;
+}
+
+.ai-reveal-headline {
+  font-size: clamp(1.7rem, 3.4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+  /* Break as "The AI that / cooks with you" rather than orphaning "you" */
+  max-width: 12ch;
+  background: linear-gradient(100deg, #ffffff 0%, #f7dfae 45%, #f1c671 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ai-reveal-sub {
+  color: var(--text-white-80);
+  font-size: clamp(0.92rem, 1.05vw, 1.08rem);
+  line-height: 1.6;
+  margin: 0 0 clamp(1rem, 2vw, 1.75rem);
+  max-width: 46ch;
+}
+
+.ai-reveal-points {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.ai-reveal-point {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.ai-reveal-point-icon {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #0f0f23;
+  background: linear-gradient(135deg, #f1c671, #e0a94f);
+  box-shadow: 0 4px 14px rgba(241, 198, 113, 0.35);
+}
+
+.ai-reveal-point h4 {
+  color: #f7dfae;
+  font-size: 0.95rem;
+  margin: 0 0 0.15rem;
+}
+
+.ai-reveal-point p {
+  color: var(--text-white-60);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ---------- Right column: real app screenshot + AI card ---------- */
+
+.ai-reveal-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Shrink-wraps the screenshot so the floating card can anchor to its corner */
+.ai-reveal-stack {
+  position: relative;
+  width: 100%;
+}
+
+.ai-reveal-shot {
+  margin: 0;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 198, 113, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 30px 70px rgba(0, 0, 0, 0.55),
+    0 0 60px rgba(241, 198, 113, 0.18);
+  transform: perspective(1400px) rotateY(calc(-7deg + 7deg * var(--p)));
+  transition: transform 0.15s linear;
+}
+
+.ai-reveal-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Floating real AI recipe card, overlapping the screenshot's bottom-left */
+.ai-reveal-float {
+  position: absolute;
+  left: -7%;
+  bottom: -12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 3;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+}
+
+.ai-reveal-float-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0f0f23;
+  background: linear-gradient(135deg, #f1c671, #e0a94f);
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+/* Gold control panel */
+.ai-reveal-panel .ai-control-panel {
+  background: rgba(241, 198, 113, 0.06);
+  border: 1px solid rgba(241, 198, 113, 0.28);
+  border-radius: 16px;
+  padding: clamp(0.9rem, 1.6vw, 1.4rem);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 1024px) {
+  .ai-reveal { height: auto; margin-top: 3rem; }
+  .ai-reveal-stage { position: static; height: auto; padding: 2rem 1rem; }
+  .ai-reveal-panel {
+    --p: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  .ai-reveal-inner {
+    grid-template-columns: 1fr;
+    opacity: 1;
+    height: auto;
+    padding: 2rem 1.25rem;
+  }
+  .ai-reveal-shot { transform: none; }
+  .ai-reveal-float { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-reveal { height: auto; }
+  .ai-reveal-stage { position: static; height: auto; }
+  .ai-reveal-panel { --p: 1; width: 100%; height: auto; }
+  .ai-reveal-inner { opacity: 1; height: auto; }
+  .ai-reveal-shot { transform: none; }
+}
+
+
 /* Feature Highlights */
 .ai-feature-item {
   display: flex;
@@ -190,6 +446,24 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease;
   flex: 1;
+}
+
+.ai-feature-icon {
+  font-size: 1.5rem;
+  margin-top: 0.1rem;
+}
+
+.ai-feature-content h4 {
+  color: var(--text-white);
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.ai-feature-content p {
+  color: var(--text-white-80);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .ai-feature-item:hover {

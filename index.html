@@ -177,14 +177,14 @@
     </div>
   </section>
 
-  <!-- Features + AI Section -->
+  <!-- Features Section -->
   <section class="features" id="features">
     <div class="container container-85">
       <div class="section-title">
         <h2>Comprehensive Recipe Management Solutions</h2>
         <p>Everything you need for professional recipe creation and ingredients management</p>
       </div>
-      <div class="features-grid features-grid-three">
+      <div class="features-grid features-grid-four">
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Recipe Management">📋</span>
           <h3>Recipe Management & Costing</h3>
@@ -226,78 +226,93 @@
           <p>AI writes the dish copy from ingredients and sub-recipes, in your brand voice. Send it with photos already in the app.</p>
         </article>
       </div>
+    </div>
+  </section>
 
-      <!-- AI Showcase (integrated as feature-level block) -->
-      <div class="ai-showcase landing-app-preview" id="ai-features">
-        <div class="ai-showcase-bg" aria-hidden="true"></div>
-        <h2 class="ai-showcase-headline">The AI that cooks with you</h2>
-        <p class="ai-showcase-sub">Describe any dish in plain language. Control how much of your pantry to use, set a cost target, and let AI handle the rest.</p>
+  <!-- AI Showcase: panel grows from small to full-bleed as you scroll -->
+  <section class="ai-reveal" id="ai-features">
+    <div class="ai-reveal-stage">
+      <div class="ai-reveal-panel landing-app-preview">
+        <div class="ai-reveal-glow" aria-hidden="true"></div>
+        <div class="ai-reveal-grain" aria-hidden="true"></div>
 
-        <div class="ai-showcase-content">
-          <div class="ai-showcase-card-column">
-            <div class="recipe-card ai-generated ai-showcase-card">
-              <div class="recipe-card-body">
-                <div class="dietary-flags-container dietary-flags-fixed-slots">
-                  <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
-                  <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                  <div class="dietary-flag-slot slot-right"></div>
-                </div>
-                <div class="recipe-content-center">
-                  <h4 class="compact-recipe-card-title recipe-card-title">Lemon Herb Chicken Pasta</h4>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="ai-reveal-inner">
+          <div class="ai-reveal-copy">
+            <span class="ai-reveal-eyebrow">AI Recipe Generation</span>
+            <h2 class="ai-reveal-headline">The AI that cooks with you</h2>
+            <p class="ai-reveal-sub">Describe any dish in plain language. Set a cost target, tell it how much of your pantry to use, and let AI build the recipe around what you already stock.</p>
 
-          <div class="ai-showcase-sliders">
             <div class="ai-control-panel">
               <div class="ai-slider-group">
                 <div class="ai-slider-header">
-                  <span class="ai-slider-label cost">💰 Cost Target</span>
+                  <span class="ai-slider-label cost">Cost Target</span>
                   <span class="ai-slider-value cost">40%</span>
                 </div>
                 <div class="mf-slider-track mf-slider-cost">
                   <div class="mf-slider-thumb" style="left: 40%"></div>
                 </div>
-                <p class="ai-slider-desc">Set how much of your food cost budget the recipe should target.</p>
+                <p class="ai-slider-desc">How much of your food cost budget the recipe should target.</p>
               </div>
               <div class="ai-slider-group">
                 <div class="ai-slider-header">
-                  <span class="ai-slider-label pantry">📦 Pantry Usage</span>
+                  <span class="ai-slider-label pantry">Pantry Usage</span>
                   <span class="ai-slider-value pantry">75%</span>
                 </div>
                 <div class="mf-slider-track mf-slider-existing">
                   <div class="mf-slider-thumb" style="left: 75%"></div>
                 </div>
-                <p class="ai-slider-desc">Tell AI how much of your existing stored ingredients to use in the recipe.</p>
+                <p class="ai-slider-desc">How much of your stored ingredients AI should build from.</p>
               </div>
               <div class="ai-slider-group">
                 <div class="ai-slider-header">
-                  <span class="ai-slider-label insanity">🔥 Insanity</span>
+                  <span class="ai-slider-label insanity">Insanity</span>
                   <span class="ai-slider-value insanity">80%</span>
                 </div>
                 <div class="mf-slider-track mf-slider-insanity">
                   <div class="mf-slider-thumb" style="left: 80%"></div>
                 </div>
-                <p class="ai-slider-desc">How creative should AI get? Low stays classic, high gets experimental.</p>
+                <p class="ai-slider-desc">Low stays classic. High gets experimental.</p>
+              </div>
+            </div>
+
+            <div class="ai-reveal-points">
+              <div class="ai-reveal-point">
+                <span class="ai-reveal-point-icon">✎</span>
+                <div>
+                  <h4>Marketing-ready descriptions</h4>
+                  <p>AI reads your recipe and sub-recipes to write menu copy in your brand voice, then posts it to Facebook.</p>
+                </div>
+              </div>
+              <div class="ai-reveal-point">
+                <span class="ai-reveal-point-icon">⚖</span>
+                <div>
+                  <h4>Smart volume conversion</h4>
+                  <p>Buy by weight, use by volume. 1 lb strawberries becomes 3 cups sliced, automatically.</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="ai-showcase-features">
-            <div class="ai-feature-item">
-              <div class="ai-feature-icon">📝</div>
-              <div class="ai-feature-content">
-                <h4>Marketing-Ready Descriptions</h4>
-                <p>AI digs through your recipes, sub-recipes, and brand voice to write compelling menu copy — then post it to Facebook with photos already in MenuForge.</p>
+          <div class="ai-reveal-visual">
+            <div class="ai-reveal-stack">
+            <figure class="ai-reveal-shot">
+              <img src="assets/images/screenshot-recipes-grid.png" alt="MenuForge recipe grid with AI-generated recipes highlighted in gold" width="1600" height="1000" loading="lazy">
+            </figure>
+            <div class="ai-reveal-float">
+              <div class="recipe-card ai-generated ai-showcase-card">
+                <div class="recipe-card-body">
+                  <div class="dietary-flags-container dietary-flags-fixed-slots">
+                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
+                    <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
+                    <div class="dietary-flag-slot slot-right"></div>
+                  </div>
+                  <div class="recipe-content-center">
+                    <h4 class="compact-recipe-card-title recipe-card-title">Lemon Herb Chicken Pasta</h4>
+                  </div>
+                </div>
               </div>
+              <span class="ai-reveal-float-tag">Generated in ~20 seconds</span>
             </div>
-            <div class="ai-feature-item">
-              <div class="ai-feature-icon">⚖️</div>
-              <div class="ai-feature-content">
-                <h4>Smart Volume Conversion</h4>
-                <p>Buy by weight, use by volume. AI converts automatically (e.g., 1 lb strawberries = 3 cups sliced).</p>
-              </div>
             </div>
           </div>
         </div>
@@ -343,290 +358,82 @@
     <div class="container container-85">
       <div class="section-title">
         <h2>See MenuForge in Action</h2>
-        <p>Real app snapshots: recipes, ingredients, receipts, and Facebook posting</p>
+        <p>Real screenshots from the live app. No mockups.</p>
       </div>
-      <div class="landing-app-preview">
-      <div class="preview-grid preview-grid-snapshots">
+      <div class="app-gallery">
 
-        <!-- Recipe Grid (full width) -->
-        <div class="preview-item preview-item-fullwidth">
-          <div class="preview-mockup preview-grid-layout">
-            <aside class="mockup-sidebar">
-              <h3 class="mockup-sidebar-title">Categories</h3>
-              <div class="category-item selected">View All Recipes</div>
-              <div class="category-item">Batch</div>
-              <div class="category-item">Mains</div>
-              <div class="category-item">Sides</div>
-              <div class="category-item">Desserts</div>
-            </aside>
-            <main class="mockup-main">
-              <div class="mockup-search-bar mockup-search-pill"><span class="mockup-search-placeholder">Search recipes...</span></div>
-              <p class="mockup-grid-hint">Hover over the cards and dietary flags to see what the color coding means.</p>
-              <div class="responsive-card-grid">
-                <div class="recipe-card ai-generated mockup-card-hover" data-tooltip="AI-generated recipe">
-                  <div class="recipe-card-body">
-                    <div class="dietary-flags-container dietary-flags-fixed-slots">
-                      <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
-                      <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                      <div class="dietary-flag-slot slot-right"></div>
-                    </div>
-                    <div class="recipe-content-center">
-                      <h4 class="compact-recipe-card-title recipe-card-title">Lemon Herb Chicken Pasta</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="recipe-card mockup-card-hover" data-tooltip="Standard recipe">
-                  <div class="recipe-card-body">
-                    <div class="dietary-flags-container dietary-flags-fixed-slots">
-                      <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
-                      <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                      <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-outline" title="Gluten free substitute"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                    </div>
-                    <div class="recipe-content-center">
-                      <h4 class="compact-recipe-card-title recipe-card-title">House Burger</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="recipe-card recipe-costing-error mockup-card-hover" data-tooltip="Costing issue — check ingredient costs">
-                  <div class="recipe-card-body">
-                    <div class="dietary-flags-container dietary-flags-fixed-slots">
-                      <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-solid" title="Vegetarian"><i class="fa-solid fa-leaf"></i> V</span></div>
-                      <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-solid" title="Vegan"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                      <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-outline" title="Gluten free substitute"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                    </div>
-                    <div class="recipe-content-center">
-                      <h4 class="compact-recipe-card-title recipe-card-title">Caesar Salad</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="recipe-card no-prep-instructions mockup-card-hover" data-tooltip="Missing prep instructions">
-                  <div class="recipe-card-body">
-                    <div class="dietary-flags-container dietary-flags-fixed-slots">
-                      <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-solid" title="Vegetarian"><i class="fa-solid fa-leaf"></i> V</span></div>
-                      <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-solid" title="Vegan"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                      <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-solid" title="Gluten free"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                    </div>
-                    <div class="recipe-content-center">
-                      <h4 class="compact-recipe-card-title recipe-card-title">Grilled Veggie Bowl</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="recipe-card archived-recipe mockup-card-hover" data-tooltip="Archived recipe">
-                  <div class="recipe-card-body">
-                    <div class="dietary-flags-container dietary-flags-fixed-slots">
-                      <div class="dietary-flag-slot slot-left"></div>
-                      <div class="dietary-flag-slot slot-center"></div>
-                      <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-outline" title="Gluten free substitute"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                    </div>
-                    <div class="recipe-content-center">
-                      <h4 class="compact-recipe-card-title recipe-card-title">Prime Rib Sandwich</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="add-recipe-card">
-                  <div class="recipe-card-body card-body-centered">
-                    <h4 class="compact-recipe-card-title">+ Add New Recipe</h4>
-                  </div>
-                </div>
-              </div>
-            </main>
+        <article class="gallery-card">
+          <div class="gallery-copy">
+            <span class="gallery-tag">Recipes</span>
+            <h3>Your whole menu, at a glance</h3>
+            <p>Filter by category, search, and sort. Dietary flags and costing warnings sit right on the card, so problems surface before service.</p>
           </div>
-          <div class="preview-content">
-            <h3>Recipes &amp; grid layout</h3>
-            <p>Sidebar filters by category; the grid shows recipe cards with name and style. Drag to reorder or move between categories.</p>
-          </div>
-        </div>
+          <figure class="gallery-shot">
+            <span class="gallery-chrome" aria-hidden="true"></span>
+            <img src="assets/images/screenshot-recipes-grid.png" alt="MenuForge recipe grid with category sidebar and dietary flags" width="1600" height="1000" loading="lazy">
+          </figure>
+        </article>
 
-        <!-- Recipe Editor -->
-        <div class="preview-item preview-item-modal preview-item-card">
-          <div class="preview-mockup preview-mockup-card">
-            <div class="mockup-modal-shell">
-              <div class="mockup-modal-header">
-                <div class="mockup-modal-header-icon">🍽️</div>
-                <div class="mockup-modal-header-text">
-                  <h5>Lemon Herb Chicken Pasta</h5>
-                  <span class="mockup-modal-header-meta">Mains</span>
-                </div>
-                <div class="mockup-modal-dietary">
-                  <span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span>
-                  <span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span>
-                </div>
-              </div>
-              <div class="mockup-modal-tabs-row">
-                <div class="mockup-modal-tabs modal-mockup-tabs">
-                  <a class="mockup-tab active" href="#" data-tab="overview">Overview</a>
-                  <a class="mockup-tab" href="#" data-tab="ingredients">Ingredients</a>
-                  <a class="mockup-tab" href="#" data-tab="prep">Prep</a>
-                </div>
-                <div class="mockup-pricing-pills">
-                  <span class="mockup-pill mockup-pill-cost">Cost $6.92</span>
-                  <span class="mockup-pill mockup-pill-msp">MSP $23.07</span>
-                  <span class="mockup-pill mockup-pill-actual">Actual $24.95</span>
-                </div>
-              </div>
-              <div class="mockup-modal-body">
-                <div class="modal-mockup-panel" id="modal-mockup-overview">
-                  <div class="mockup-overview-row">
-                    <div class="mockup-overview-label">Category</div>
-                    <div class="mockup-overview-value">Mains</div>
-                  </div>
-                  <div class="mockup-overview-row">
-                    <div class="mockup-overview-label">Yield</div>
-                    <div class="mockup-overview-value">4 servings</div>
-                  </div>
-                  <div class="mockup-overview-desc">
-                    <div class="mockup-overview-label">Description</div>
-                    <p>A bright, aromatic pasta tossed with pan-seared chicken, fresh lemon zest, and garden herbs. Light enough for summer, satisfying enough for any season.</p>
-                  </div>
-                </div>
-                <div class="modal-mockup-panel" id="modal-mockup-ingredients" hidden>
-                  <table class="mockup-ingredients-table">
-                    <thead>
-                      <tr><th>Ingredient</th><th>Amount</th><th>UOM</th><th>Cost</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>Chicken breast</td><td>1</td><td>lb</td><td>$4.20</td></tr>
-                      <tr><td>Pasta</td><td>8</td><td>oz</td><td>$0.75</td></tr>
-                      <tr><td>Lemon</td><td>1</td><td>each</td><td>$0.50</td></tr>
-                      <tr><td>Olive oil</td><td>2</td><td>tbsp</td><td>$0.25</td></tr>
-                      <tr><td>Fresh basil</td><td>0.25</td><td>cup</td><td>$0.35</td></tr>
-                      <tr><td>Garlic</td><td>3</td><td>clove</td><td>$0.12</td></tr>
-                      <tr><td>Parmesan</td><td>1</td><td>oz</td><td>$0.75</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="modal-mockup-panel" id="modal-mockup-prep" hidden>
-                  <div class="mockup-prep-steps">
-                    <div class="mockup-prep-step"><span class="mockup-prep-num">1</span> Season chicken with salt, pepper, and lemon zest. Pan-sear in olive oil over medium-high heat, 6 min per side until golden and 165 F internal.</div>
-                    <div class="mockup-prep-step"><span class="mockup-prep-num">2</span> Cook pasta in salted boiling water until al dente (8-10 min). Reserve 1/2 cup pasta water, then drain.</div>
-                    <div class="mockup-prep-step"><span class="mockup-prep-num">3</span> Rest chicken 5 min, then slice. Toss pasta with sliced chicken, lemon juice, minced garlic, fresh basil, and reserved pasta water.</div>
-                    <div class="mockup-prep-step"><span class="mockup-prep-num">4</span> Top with shaved parmesan and a drizzle of olive oil. Serve immediately.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <article class="gallery-card">
+          <div class="gallery-copy">
+            <span class="gallery-tag">Costing</span>
+            <h3>Live plate cost on every line</h3>
+            <p>Every ingredient costs itself out as you type. Cost, minimum sell price, and your actual menu price stay pinned to the header.</p>
           </div>
-          <div class="preview-content preview-content-align">
-            <h3>Recipe editor</h3>
-            <p>Edit name, category, ingredients, and prep steps. Pricing pills show cost, minimum sell price, and actual price at a glance.</p>
-          </div>
-        </div>
+          <figure class="gallery-shot">
+            <span class="gallery-chrome" aria-hidden="true"></span>
+            <img src="assets/images/screenshot-recipe-editor.png" alt="MenuForge recipe editor showing per-ingredient costs and plate cost" width="1600" height="1000" loading="lazy">
+          </figure>
+        </article>
 
-        <!-- Ingredients Management -->
-        <div class="preview-item preview-item-ingredients preview-item-card">
-          <div class="preview-mockup preview-mockup-card preview-ingredients-card">
-            <div class="mockup-ingredients-search mockup-search-pill">Search ingredients...</div>
-            <div class="responsive-card-grid">
-              <div class="ingredient-card">
-                <div class="recipe-card-body card-body-centered">
-                  <div class="dietary-flags-container dietary-flags-fixed-slots">
-                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
-                    <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                    <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-solid" title="Gluten free"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                  </div>
-                  <div class="recipe-content-center">
-                    <h4 class="compact-recipe-card-title ingredient-name">Chicken breast</h4>
-                  </div>
-                  <div class="ingredient-price-container">$4.20/lb</div>
-                </div>
-              </div>
-              <div class="ingredient-card">
-                <div class="recipe-card-body card-body-centered">
-                  <div class="dietary-flags-container dietary-flags-fixed-slots">
-                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-solid" title="Vegetarian"><i class="fa-solid fa-leaf"></i> V</span></div>
-                    <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-solid" title="Vegan"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                    <div class="dietary-flag-slot slot-right"></div>
-                  </div>
-                  <div class="recipe-content-center">
-                    <h4 class="compact-recipe-card-title ingredient-name">Pasta</h4>
-                  </div>
-                  <div class="ingredient-price-container">$1.50/lb</div>
-                </div>
-              </div>
-              <div class="ingredient-card">
-                <div class="recipe-card-body card-body-centered">
-                  <div class="dietary-flags-container dietary-flags-fixed-slots">
-                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-solid" title="Vegetarian"><i class="fa-solid fa-leaf"></i> V</span></div>
-                    <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-solid" title="Vegan"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                    <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-solid" title="Gluten free"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                  </div>
-                  <div class="recipe-content-center">
-                    <h4 class="compact-recipe-card-title ingredient-name">Lemon</h4>
-                  </div>
-                  <div class="ingredient-price-container">$0.50/each</div>
-                </div>
-              </div>
-              <div class="ingredient-card">
-                <div class="recipe-card-body card-body-centered">
-                  <div class="dietary-flags-container dietary-flags-fixed-slots">
-                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-solid" title="Vegetarian"><i class="fa-solid fa-leaf"></i> V</span></div>
-                    <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-solid" title="Vegan"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                    <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-solid" title="Gluten free"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                  </div>
-                  <div class="recipe-content-center">
-                    <h4 class="compact-recipe-card-title ingredient-name">Olive oil</h4>
-                  </div>
-                  <div class="ingredient-price-container">$8.00/qt</div>
-                </div>
-              </div>
-              <div class="ingredient-card ai-generated">
-                <div class="recipe-card-body card-body-centered">
-                  <div class="dietary-flags-container dietary-flags-fixed-slots">
-                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-solid" title="Vegetarian"><i class="fa-solid fa-leaf"></i> V</span></div>
-                    <div class="dietary-flag-slot slot-center"></div>
-                    <div class="dietary-flag-slot slot-right"><span class="dietary-flag-badge flag-glutenfree-solid" title="Gluten free"><i class="fa-solid fa-bread-slice"></i> GF</span></div>
-                  </div>
-                  <div class="recipe-content-center">
-                    <h4 class="compact-recipe-card-title ingredient-name">Parmesan</h4>
-                  </div>
-                  <div class="ingredient-price-container">$12.00/lb</div>
-                </div>
-              </div>
-              <div class="add-recipe-card add-ingredient-card">
-                <div class="recipe-card-body card-body-centered">
-                  <h4 class="compact-recipe-card-title">+ Add ingredient</h4>
-                </div>
-              </div>
-            </div>
+        <article class="gallery-card">
+          <div class="gallery-copy">
+            <span class="gallery-tag">Pantry</span>
+            <h3>One pantry, every vendor</h3>
+            <p>Pack sizes, units, and vendor variants for each ingredient. Filter by supplier to see exactly what you buy and what it costs.</p>
           </div>
-          <div class="preview-content preview-content-align">
-            <h3>Ingredients management</h3>
-            <p>Track costs, pack sizes, vendors, and units. Cards show at a glance what you have and what it costs.</p>
-          </div>
-        </div>
+          <figure class="gallery-shot">
+            <span class="gallery-chrome" aria-hidden="true"></span>
+            <img src="assets/images/screenshot-pantry.png" alt="MenuForge pantry with vendor sidebar and ingredient variants" width="1600" height="1000" loading="lazy">
+          </figure>
+        </article>
 
-        <!-- Real production screenshots: receipts + Facebook -->
-        <div class="preview-item preview-item-fullwidth preview-item-screenshot">
-          <figure class="preview-screenshot-frame">
+        <article class="gallery-card">
+          <div class="gallery-copy">
+            <span class="gallery-tag">Receipts</span>
+            <h3>Invoices in, costs updated</h3>
+            <p>Email or upload a vendor invoice. Confirm the unmatched lines and live pack costs flow straight into your pantry.</p>
+          </div>
+          <figure class="gallery-shot">
+            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-receipt-review.png" alt="MenuForge receipt review matching invoice line items to ingredients" width="1024" height="615" loading="lazy">
           </figure>
-          <div class="preview-content preview-content-align">
-            <h3>Receipt matching</h3>
-            <p>Email or upload a vendor invoice. Review unmatched lines, confirm matches, and push live pack costs into your pantry.</p>
-          </div>
-        </div>
+        </article>
 
-        <div class="preview-item preview-item-fullwidth preview-item-screenshot">
-          <figure class="preview-screenshot-frame">
+        <article class="gallery-card">
+          <div class="gallery-copy">
+            <span class="gallery-tag">Price history</span>
+            <h3>See costs move before they hurt</h3>
+            <p>Track pack cost over time per ingredient. When a price updates, every recipe using it recosts automatically.</p>
+          </div>
+          <figure class="gallery-shot">
+            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-price-history.png" alt="MenuForge ingredient price history and trend chart" width="1024" height="620" loading="lazy">
           </figure>
-          <div class="preview-content preview-content-align">
-            <h3>Price history</h3>
-            <p>See how pack costs move over time. Every recipe that uses the ingredient recosts when a price updates.</p>
-          </div>
-        </div>
+        </article>
 
-        <div class="preview-item preview-item-fullwidth preview-item-screenshot">
-          <figure class="preview-screenshot-frame">
+        <article class="gallery-card">
+          <div class="gallery-copy">
+            <span class="gallery-tag">Marketing</span>
+            <h3>Post the dish to Facebook</h3>
+            <p>AI writes the caption from the recipe and its sub-recipes in your brand voice. Crop the photo, pick a meal-time slot, publish.</p>
+          </div>
+          <figure class="gallery-shot">
+            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-facebook-composer.png" alt="MenuForge Facebook composer with AI caption and recipe photo" width="1024" height="700" loading="lazy">
           </figure>
-          <div class="preview-content preview-content-align">
-            <h3>Post to Facebook</h3>
-            <p>AI writes the caption from the recipe and sub-recipes in your brand voice. Crop the photo, schedule a meal-time slot, and publish from MenuForge.</p>
-          </div>
-        </div>
+        </article>
 
-      </div>
       </div>
     </div>
   </section>
@@ -691,5 +498,44 @@
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    // AI showcase: drive --p from 0 (small panel) to 1 (full bleed) while the
+    // section is pinned, so the block grows out to fill the viewport on scroll.
+    (function () {
+      var section = document.querySelector('.ai-reveal');
+      var panel = section && section.querySelector('.ai-reveal-panel');
+      if (!section || !panel) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var ticking = false;
+
+      function update() {
+        ticking = false;
+        if (window.innerWidth <= 1024) {
+          panel.style.removeProperty('--p');
+          return;
+        }
+        var rect = section.getBoundingClientRect();
+        // Runway is the scrollable overshoot beyond the pinned viewport.
+        var runway = rect.height - window.innerHeight;
+        var p = runway > 0 ? -rect.top / runway : 0;
+        p = Math.min(1, Math.max(0, p));
+        // Finish the growth before the section unpins so it sits full-bleed.
+        p = Math.min(1, p / 0.75);
+        panel.style.setProperty('--p', p.toFixed(4));
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(update);
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>
