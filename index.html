@@ -237,11 +237,14 @@
         <div class="ai-reveal-grain" aria-hidden="true"></div>
 
         <div class="ai-reveal-inner">
-          <div class="ai-reveal-copy">
-            <span class="ai-reveal-eyebrow">AI Recipe Generation</span>
+          <header class="ai-reveal-head">
+            <span class="ai-reveal-eyebrow">AI Built For Kitchens</span>
             <h2 class="ai-reveal-headline">The AI that cooks with you</h2>
             <p class="ai-reveal-sub">Describe any dish in plain language. Set a cost target, tell it how much of your pantry to use, and let AI build the recipe around what you already stock.</p>
+          </header>
 
+          <div class="ai-reveal-demo">
+            <div class="ai-reveal-controls">
             <div class="ai-control-panel">
               <div class="ai-slider-group">
                 <div class="ai-slider-header">
@@ -275,44 +278,46 @@
               </div>
             </div>
 
-            <div class="ai-reveal-points">
-              <div class="ai-reveal-point">
-                <span class="ai-reveal-point-icon">✎</span>
-                <div>
-                  <h4>Marketing-ready descriptions</h4>
-                  <p>AI reads your recipe and sub-recipes to write menu copy in your brand voice, then posts it to Facebook.</p>
+              <div class="ai-reveal-result">
+                <div class="recipe-card ai-generated ai-showcase-card">
+                  <div class="recipe-card-body">
+                    <div class="dietary-flags-container dietary-flags-fixed-slots">
+                      <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
+                      <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
+                      <div class="dietary-flag-slot slot-right"></div>
+                    </div>
+                    <div class="recipe-content-center">
+                      <h4 class="compact-recipe-card-title recipe-card-title">Lemon Herb Chicken Pasta</h4>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="ai-reveal-point">
-                <span class="ai-reveal-point-icon">⚖</span>
-                <div>
-                  <h4>Smart volume conversion</h4>
-                  <p>Buy by weight, use by volume. 1 lb strawberries becomes 3 cups sliced, automatically.</p>
+                <div class="ai-reveal-result-copy">
+                  <strong>Costed in about 20 seconds</strong>
+                  <span>Every AI recipe lands in your grid tagged gold, with dietary flags already worked out from its ingredients.</span>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="ai-reveal-visual">
-            <div class="ai-reveal-stack">
             <figure class="ai-reveal-shot">
               <img src="assets/images/screenshot-recipes-grid.png" alt="MenuForge recipe grid with AI-generated recipes highlighted in gold" width="1600" height="1000" loading="lazy">
             </figure>
-            <div class="ai-reveal-float">
-              <div class="recipe-card ai-generated ai-showcase-card">
-                <div class="recipe-card-body">
-                  <div class="dietary-flags-container dietary-flags-fixed-slots">
-                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
-                    <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                    <div class="dietary-flag-slot slot-right"></div>
-                  </div>
-                  <div class="recipe-content-center">
-                    <h4 class="compact-recipe-card-title recipe-card-title">Lemon Herb Chicken Pasta</h4>
-                  </div>
-                </div>
-              </div>
-              <span class="ai-reveal-float-tag">Generated in ~20 seconds</span>
+          </div>
+
+          <div class="ai-reveal-tiles">
+            <div class="ai-tile">
+              <span class="ai-tile-icon">🧾</span>
+              <h4>AI receipt processing</h4>
+              <p>Email in a vendor invoice and AI reads it, pulls out every line item, and matches it to the right ingredient. Pack costs update themselves.</p>
             </div>
+            <div class="ai-tile">
+              <span class="ai-tile-icon">📣</span>
+              <h4>AI marketing copy</h4>
+              <p>AI writes menu descriptions and Facebook captions from the recipe and its sub-recipes, in your brand voice. Publish without leaving MenuForge.</p>
+            </div>
+            <div class="ai-tile">
+              <span class="ai-tile-icon">⚖️</span>
+              <h4>Smart volume conversion</h4>
+              <p>Buy by weight, use by volume. AI works out that 1 lb of strawberries is about 3 cups sliced, so your costing stays honest.</p>
             </div>
           </div>
         </div>
@@ -376,6 +381,18 @@
 
         <article class="gallery-card">
           <div class="gallery-copy">
+            <span class="gallery-tag">Card status colors</span>
+            <h3>Broken costing turns the card red</h3>
+            <p>A pink card means the costing is broken, usually a missing price or a unit that will not convert. A red border means the prep instructions are missing, and gold means AI wrote it. You spot the problems without opening a single recipe.</p>
+          </div>
+          <figure class="gallery-shot">
+            <span class="gallery-chrome" aria-hidden="true"></span>
+            <img src="assets/images/screenshot-card-status.png" alt="MenuForge recipe cards color coded for costing errors, missing prep, and AI generated" width="1600" height="1000" loading="lazy">
+          </figure>
+        </article>
+
+        <article class="gallery-card">
+          <div class="gallery-copy">
             <span class="gallery-tag">Costing</span>
             <h3>Live plate cost on every line</h3>
             <p>Every ingredient costs itself out as you type. Cost, minimum sell price, and your actual menu price stay pinned to the header.</p>
@@ -422,7 +439,7 @@
           </figure>
         </article>
 
-        <article class="gallery-card">
+        <article class="gallery-card gallery-card-wide">
           <div class="gallery-copy">
             <span class="gallery-tag">Marketing</span>
             <h3>Post the dish to Facebook</h3>
@@ -520,8 +537,8 @@
         var runway = rect.height - window.innerHeight;
         var p = runway > 0 ? -rect.top / runway : 0;
         p = Math.min(1, Math.max(0, p));
-        // Finish the growth before the section unpins so it sits full-bleed.
-        p = Math.min(1, p / 0.75);
+        // Reach full size early in the runway so the pinned stretch stays short.
+        p = Math.min(1, p / 0.6);
         panel.style.setProperty('--p', p.toFixed(4));
       }
 

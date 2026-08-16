@@ -1074,16 +1074,15 @@
   margin: 0;
 }
 
-/* Screenshot frame: identical on every tile, bleeds off the bottom edge */
+/* Screenshot frame: identical on every tile, fully visible inside the card */
 .gallery-shot {
   position: relative;
-  margin: auto 1.5rem 0;
-  border-radius: 10px 10px 0 0;
+  margin: auto 1.5rem 1.5rem;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: none;
   background: #0b1220;
-  box-shadow: 0 -10px 34px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.4);
 }
 
 .gallery-chrome {
@@ -1107,22 +1106,47 @@
   box-shadow: 14px 0 0 #febc2e, 28px 0 0 #28c840;
 }
 
+/* Never crop: every screenshot is shown whole, scaled to the tile width. */
 .gallery-shot img {
   display: block;
   width: 100%;
-  /* height:auto is required so the width/height attributes don't win over
-     aspect-ratio and blow the image up to its intrinsic size. */
   height: auto;
-  /* Uniform crop so mixed source sizes still line up tile to tile */
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: center top;
+}
+
+/* Full-width finale tile: copy beside the shot so it doesn't tower */
+.gallery-card-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 1rem;
+}
+
+.gallery-card-wide .gallery-copy {
+  padding: 2rem 0 2rem 2rem;
+}
+
+.gallery-card-wide .gallery-shot {
+  margin: 1.5rem 1.5rem 1.5rem 0;
 }
 
 @media (max-width: 900px) {
   .app-gallery {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .gallery-card-wide {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .gallery-card-wide .gallery-copy {
+    padding: 1.35rem 1.25rem 1rem;
+  }
+
+  .gallery-card-wide .gallery-shot {
+    margin: auto 1rem 1rem;
   }
 
   .gallery-copy {
@@ -1134,6 +1158,6 @@
   }
 
   .gallery-shot {
-    margin: auto 1rem 0;
+    margin: auto 1rem 1rem;
   }
 }

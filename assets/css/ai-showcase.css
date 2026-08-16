@@ -82,6 +82,8 @@
 /* Showcase card inherits all standard AI card styling (gold bg, shimmer, stars)
    from app-mockups.css. Only override size here. */
 .ai-showcase-card.recipe-card {
+  /* flex-basis pinned so the card keeps its square shape beside the caption */
+  flex: 0 0 195px;
   width: 195px;
   height: 195px;
   max-width: 195px;
@@ -186,8 +188,10 @@
 
 .ai-reveal {
   position: relative;
-  /* Scroll runway: the extra height is what drives the growth. */
-  height: 260vh;
+  /* Scroll runway: the overshoot past 100vh is what drives the growth.
+     Kept short so the panel reaches full size quickly instead of holding
+     the page still for a long stretch. */
+  height: 140vh;
   margin: 4rem 0 0;
 }
 
@@ -207,9 +211,9 @@
   --p: 0;
   position: relative;
   overflow: hidden;
-  /* Grow from 62% of the viewport out to 100% */
-  width: calc((62% + 38% * var(--p)) * 1);
-  height: calc(62vh + 38vh * var(--p));
+  /* Grow from 55% of the viewport out to 100% */
+  width: calc((55% + 45% * var(--p)) * 1);
+  height: calc(55vh + 45vh * var(--p));
   border-radius: calc(28px - 28px * var(--p));
   background:
     radial-gradient(120% 90% at 50% -10%, rgba(241, 198, 113, 0.28) 0%, transparent 62%),
@@ -246,22 +250,111 @@
               linear-gradient(0deg, rgba(241, 198, 113, 0.10) 0%, transparent 30%);
 }
 
+/* Laid out once at full size and scaled as a unit, so every child (including
+   the AI recipe card) grows with the panel and nothing reflows mid-scroll. */
 .ai-reveal-inner {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: 1240px;
-  height: 100%;
-  padding: clamp(1.5rem, 3vw, 3.25rem);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  gap: clamp(1.5rem, 3vw, 3rem);
-  align-items: center;
-  /* Content fades up as the panel opens so the small state stays calm */
-  opacity: calc(0.35 + 0.65 * var(--p));
+  width: min(1200px, 92vw);
+  padding: clamp(1rem, 2vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 2.2vw, 2rem);
+  /* Tops out below 1 so the panel keeps clearance from the fixed site header */
+  transform: scale(calc(0.52 + 0.40 * var(--p)));
+  transform-origin: center center;
+  will-change: transform;
 }
 
-/* ---------- Left column: copy + controls ---------- */
+/* ---------- Band 1: heading ---------- */
+
+.ai-reveal-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------- Band 2: controls + result | screenshot ---------- */
+
+.ai-reveal-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  align-items: center;
+}
+
+.ai-reveal-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* The generated card sits with the controls that produced it */
+.ai-reveal-result {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ai-reveal-result-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ai-reveal-result-copy strong {
+  color: #f1c671;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+}
+
+.ai-reveal-result-copy span {
+  color: var(--text-white-60);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* ---------- Band 3: other AI capabilities ---------- */
+
+.ai-reveal-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.4vw, 1.15rem);
+}
+
+.ai-tile {
+  background: rgba(241, 198, 113, 0.07);
+  border: 1px solid rgba(241, 198, 113, 0.24);
+  border-radius: 14px;
+  padding: clamp(0.85rem, 1.3vw, 1.15rem);
+}
+
+.ai-tile-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 0.55rem;
+  background: linear-gradient(135deg, rgba(241, 198, 113, 0.9), rgba(224, 169, 79, 0.9));
+  box-shadow: 0 4px 14px rgba(241, 198, 113, 0.3);
+}
+
+.ai-tile h4 {
+  color: #f7dfae;
+  font-size: 0.98rem;
+  margin: 0 0 0.3rem;
+}
+
+.ai-tile p {
+  color: var(--text-white-60);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------- Copy ---------- */
 
 .ai-reveal-eyebrow {
   display: inline-block;
@@ -283,8 +376,6 @@
   font-weight: 800;
   line-height: 1.1;
   margin: 0 0 0.75rem;
-  /* Break as "The AI that / cooks with you" rather than orphaning "you" */
-  max-width: 12ch;
   background: linear-gradient(100deg, #ffffff 0%, #f7dfae 45%, #f1c671 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -295,63 +386,11 @@
   color: var(--text-white-80);
   font-size: clamp(0.92rem, 1.05vw, 1.08rem);
   line-height: 1.6;
-  margin: 0 0 clamp(1rem, 2vw, 1.75rem);
-  max-width: 46ch;
+  margin: 0 auto;
+  max-width: 62ch;
 }
 
-.ai-reveal-points {
-  display: grid;
-  gap: 0.75rem;
-  margin-top: clamp(1rem, 2vw, 1.5rem);
-}
-
-.ai-reveal-point {
-  display: flex;
-  gap: 0.85rem;
-  align-items: flex-start;
-}
-
-.ai-reveal-point-icon {
-  flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  font-size: 1rem;
-  color: #0f0f23;
-  background: linear-gradient(135deg, #f1c671, #e0a94f);
-  box-shadow: 0 4px 14px rgba(241, 198, 113, 0.35);
-}
-
-.ai-reveal-point h4 {
-  color: #f7dfae;
-  font-size: 0.95rem;
-  margin: 0 0 0.15rem;
-}
-
-.ai-reveal-point p {
-  color: var(--text-white-60);
-  font-size: 0.84rem;
-  line-height: 1.45;
-  margin: 0;
-}
-
-/* ---------- Right column: real app screenshot + AI card ---------- */
-
-.ai-reveal-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-/* Shrink-wraps the screenshot so the floating card can anchor to its corner */
-.ai-reveal-stack {
-  position: relative;
-  width: 100%;
-}
+/* ---------- Real app screenshot ---------- */
 
 .ai-reveal-shot {
   margin: 0;
@@ -363,40 +402,12 @@
     0 0 0 1px rgba(0, 0, 0, 0.4),
     0 30px 70px rgba(0, 0, 0, 0.55),
     0 0 60px rgba(241, 198, 113, 0.18);
-  transform: perspective(1400px) rotateY(calc(-7deg + 7deg * var(--p)));
-  transition: transform 0.15s linear;
 }
 
 .ai-reveal-shot img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-/* Floating real AI recipe card, overlapping the screenshot's bottom-left */
-.ai-reveal-float {
-  position: absolute;
-  left: -7%;
-  bottom: -12%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  z-index: 3;
-  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
-}
-
-.ai-reveal-float-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #0f0f23;
-  background: linear-gradient(135deg, #f1c671, #e0a94f);
-  padding: 0.3rem 0.7rem;
-  border-radius: 99px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  white-space: nowrap;
 }
 
 /* Gold control panel */
@@ -418,21 +429,23 @@
     border-radius: 20px;
   }
   .ai-reveal-inner {
-    grid-template-columns: 1fr;
-    opacity: 1;
-    height: auto;
+    width: 100%;
+    transform: none;
     padding: 2rem 1.25rem;
   }
-  .ai-reveal-shot { transform: none; }
-  .ai-reveal-float { display: none; }
+  .ai-reveal-demo { grid-template-columns: 1fr; }
+  .ai-reveal-tiles { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .ai-reveal-result { flex-direction: column; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ai-reveal { height: auto; }
   .ai-reveal-stage { position: static; height: auto; }
   .ai-reveal-panel { --p: 1; width: 100%; height: auto; }
-  .ai-reveal-inner { opacity: 1; height: auto; }
-  .ai-reveal-shot { transform: none; }
+  .ai-reveal-inner { transform: none; }
 }
 
 
