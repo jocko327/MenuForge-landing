@@ -183,292 +183,281 @@
 }
 
 /* ===================================================================
-   AI reveal: panel starts small and grows to full-bleed on scroll
+   AI section: sticky heading, feature rows scroll beneath it
    =================================================================== */
 
-.ai-reveal {
+/* No overflow clipping here: it would create a scroll container and stop
+   .ai-sticky-head from sticking. */
+.ai-section {
   position: relative;
-  margin: 5rem 0;
-  /* No sticky pin: the section sits in normal flow so it travels up the page
-     at the same rate as everything else while the panel scales into place. */
+  padding: 5rem 0 6rem;
 }
 
-.ai-reveal-stage {
-  display: flex;
-  justify-content: center;
-  padding: 0 1.5rem;
-}
-
-/* --p: 0 = small, 1 = full size. Set by JS on scroll.
-   Only transform animates, so the document height never changes mid-scroll. */
-.ai-reveal-panel {
-  --p: 0;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 1320px;
-  border-radius: 28px;
-  transform: scale(calc(0.62 + 0.38 * var(--p)));
-  transform-origin: center center;
-  background:
-    radial-gradient(120% 90% at 50% -10%, rgba(241, 198, 113, 0.28) 0%, transparent 62%),
-    linear-gradient(160deg, #16132a 0%, #0f0f23 45%, #1b1533 100%);
-  border: 1px solid rgba(241, 198, 113, calc(0.55 - 0.25 * var(--p)));
-  box-shadow:
-    0 0 calc(40px + 60px * var(--p)) rgba(241, 198, 113, calc(0.18 + 0.14 * var(--p))),
-    0 30px 80px rgba(0, 0, 0, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  will-change: transform;
-}
-
-/* Gold bloom that intensifies as the panel opens */
-.ai-reveal-glow {
-  position: absolute;
-  inset: -20%;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(closest-side at 22% 32%, rgba(241, 198, 113, calc(0.30 * (0.35 + var(--p)))) 0%, transparent 100%),
-    radial-gradient(closest-side at 82% 72%, rgba(255, 176, 59, calc(0.24 * (0.35 + var(--p)))) 0%, transparent 100%);
-  filter: blur(40px);
-}
-
-/* Warm top edge highlight */
-.ai-reveal-grain {
+.ai-section-glow {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(241, 198, 113, 0.35) 0%, transparent 3px),
-              linear-gradient(0deg, rgba(241, 198, 113, 0.10) 0%, transparent 30%);
+  z-index: 0;
+  background:
+    radial-gradient(60% 40% at 20% 12%, rgba(241, 198, 113, 0.14) 0%, transparent 70%),
+    radial-gradient(55% 45% at 85% 65%, rgba(255, 176, 59, 0.10) 0%, transparent 70%);
 }
 
-.ai-reveal-inner {
+.ai-section .container {
   position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: clamp(2rem, 3.5vw, 3.5rem);
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.75rem, 3vw, 2.75rem);
+  z-index: 1;
 }
 
-/* ---------- Heading ---------- */
-
-.ai-reveal-head {
+/* Heading pins under the site header while the rows travel past it */
+.ai-sticky-head {
+  position: sticky;
+  top: 72px;
+  z-index: 5;
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
+  padding: 1.15rem 1.25rem 1.25rem;
+  margin-bottom: 3.5rem;
+  background: rgba(13, 13, 30, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(241, 198, 113, 0.20);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* ---------- Body: generator demo | capability list ---------- */
-
-.ai-reveal-demo {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 3vw, 3rem);
-  align-items: start;
-}
-
-/* Left: the generator presented as one self-contained unit */
-.ai-generator {
-  background: rgba(241, 198, 113, 0.05);
-  border: 1px solid rgba(241, 198, 113, 0.22);
-  border-radius: 20px;
-  padding: clamp(1.15rem, 1.8vw, 1.6rem);
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
-}
-
-.ai-generator-head {
-  display: flex;
-  gap: 0.85rem;
-  align-items: flex-start;
-}
-
-.ai-generator-icon {
-  flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  font-size: 1.15rem;
-  color: #0f0f23;
-  background: linear-gradient(135deg, #f1c671, #e0a94f);
-  box-shadow: 0 6px 18px rgba(241, 198, 113, 0.32);
-}
-
-.ai-generator-head h3 {
-  color: #f7dfae;
-  font-size: 1.12rem;
-  margin: 0 0 0.2rem;
-}
-
-.ai-generator-head p {
-  color: var(--text-white-60);
-  font-size: 0.86rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* The generated card, shown with the controls that produced it */
-.ai-reveal-result {
-  display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  padding-top: 1.15rem;
-  border-top: 1px solid rgba(241, 198, 113, 0.18);
-}
-
-.ai-reveal-result-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.ai-reveal-result-copy strong {
-  color: #f1c671;
-  font-size: 0.95rem;
-}
-
-.ai-reveal-result-copy span {
-  color: var(--text-white-60);
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-/* Right: the rest of what AI does, given room to actually be read */
-.ai-feature-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.ai-feature-row {
-  display: flex;
-  gap: 1.1rem;
-  align-items: flex-start;
-  padding: clamp(1.1rem, 1.8vw, 1.5rem) 0;
-  border-bottom: 1px solid rgba(241, 198, 113, 0.14);
-}
-
-.ai-feature-row:first-child { padding-top: 0; }
-.ai-feature-row:last-child { border-bottom: none; padding-bottom: 0; }
-
-.ai-feature-row-icon {
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 13px;
-  font-size: 1.2rem;
-  background: rgba(241, 198, 113, 0.12);
-  border: 1px solid rgba(241, 198, 113, 0.3);
-}
-
-.ai-feature-row h3 {
-  color: #f7dfae;
-  font-size: 1.18rem;
-  margin: 0 0 0.35rem;
-}
-
-.ai-feature-row p {
-  color: var(--text-white-80);
-  font-size: 0.92rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* ---------- Copy ---------- */
-
-.ai-reveal-eyebrow {
+.ai-eyebrow {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #f1c671;
-  padding: 0.4rem 0.85rem;
+  padding: 0.32rem 0.8rem;
   border: 1px solid rgba(241, 198, 113, 0.45);
   border-radius: 99px;
   background: rgba(241, 198, 113, 0.10);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.ai-reveal-headline {
-  font-size: clamp(1.7rem, 3.4vw, 3rem);
+.ai-sticky-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
   font-weight: 800;
   line-height: 1.1;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.35rem;
   background: linear-gradient(100deg, #ffffff 0%, #f7dfae 45%, #f1c671 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.ai-reveal-sub {
+.ai-sticky-head p {
   color: var(--text-white-80);
-  font-size: clamp(0.92rem, 1.05vw, 1.08rem);
-  line-height: 1.6;
+  font-size: clamp(0.9rem, 1vw, 1.02rem);
+  line-height: 1.55;
   margin: 0 auto;
   max-width: 62ch;
 }
 
-/* ---------- Real app screenshot ---------- */
+/* ---------- Feature rows ---------- */
 
-.ai-reveal-shot {
-  margin: 0;
-  width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(241, 198, 113, 0.35);
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.4),
-    0 30px 70px rgba(0, 0, 0, 0.55),
-    0 0 60px rgba(241, 198, 113, 0.18);
+.ai-rows {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 4.5vw, 4.5rem);
 }
 
-.ai-reveal-shot img {
+.ai-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ai-row.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Alternate sides so the eye zigzags down the section */
+.ai-row:nth-child(even) .ai-row-copy { order: 2; }
+
+.ai-row-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgba(241, 198, 113, 0.75);
+  margin-bottom: 0.6rem;
+}
+
+.ai-row-copy h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.4vw, 2.05rem);
+  line-height: 1.15;
+  color: #f7dfae;
+  margin: 0 0 0.85rem;
+}
+
+.ai-row-copy p {
+  color: var(--text-white-80);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 52ch;
+}
+
+.ai-row-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+/* Screenshot detail: whole crop, framed, never cropped again by CSS */
+.ai-row-shot {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 198, 113, 0.28);
+  background: #0b1220;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5), 0 0 45px rgba(241, 198, 113, 0.12);
+}
+
+.ai-row-shot img {
   display: block;
   width: 100%;
   height: auto;
 }
 
+/* Row 01: generated card sits under the controls that produced it */
+.ai-row-result {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.ai-row-result-tag {
+  color: #f1c671;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Row 04: conversion widget */
+.ai-convert {
+  border: 1px solid rgba(241, 198, 113, 0.28);
+  border-radius: 18px;
+  background: rgba(241, 198, 113, 0.06);
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.ai-convert-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(241, 198, 113, 0.18);
+}
+
+.ai-convert-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--text-white);
+}
+
+.ai-convert-chip {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #0f0f23;
+  background: linear-gradient(135deg, #f1c671, #e0a94f);
+  border-radius: 99px;
+  padding: 0.28rem 0.7rem;
+  white-space: nowrap;
+}
+
+.ai-convert-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2.25rem);
+  padding: 1.5rem 0 1.15rem;
+}
+
+.ai-convert-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ai-convert-side strong {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  color: #f7dfae;
+  line-height: 1;
+}
+
+.ai-convert-side span {
+  color: var(--text-white-60);
+  font-size: 0.8rem;
+}
+
+.ai-convert-arrow {
+  font-size: 1.5rem;
+  color: rgba(241, 198, 113, 0.8);
+}
+
+.ai-convert-note {
+  color: var(--text-white-60);
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
+}
+
 /* Gold control panel */
-.ai-reveal-panel .ai-control-panel {
+.ai-rows .ai-control-panel {
   background: rgba(241, 198, 113, 0.06);
   border: 1px solid rgba(241, 198, 113, 0.28);
   border-radius: 16px;
-  padding: clamp(0.9rem, 1.6vw, 1.4rem);
-  backdrop-filter: blur(10px);
+  padding: clamp(1rem, 1.8vw, 1.5rem);
 }
 
-@media (max-width: 1024px) {
-  .ai-reveal { margin: 3rem 0; }
-  .ai-reveal-stage { padding: 0 1rem; }
-  .ai-reveal-panel {
-    --p: 1;
-    transform: none;
-    border-radius: 20px;
+@media (max-width: 900px) {
+  .ai-section { padding: 3rem 0 4rem; }
+
+  .ai-sticky-head {
+    position: static;
+    padding: 0 0 0.5rem;
+    margin-bottom: 2.5rem;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
   }
-  .ai-reveal-inner { padding: 2rem 1.25rem; }
-  .ai-reveal-demo { grid-template-columns: 1fr; }
+
+  .ai-row {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  /* Visual always follows its copy once stacked */
+  .ai-row:nth-child(even) .ai-row-copy { order: 0; }
 }
 
 @media (max-width: 560px) {
-  .ai-reveal-result { flex-direction: column; align-items: flex-start; }
+  .ai-row-result { flex-direction: column; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ai-reveal-panel { --p: 1; transform: none; }
+  .ai-row { opacity: 1; transform: none; transition: none; }
 }
 
 
