@@ -188,44 +188,39 @@
 
 .ai-reveal {
   position: relative;
-  /* Scroll runway: the overshoot past 100vh is what drives the growth.
-     Kept short so the panel reaches full size quickly instead of holding
-     the page still for a long stretch. */
-  height: 140vh;
-  margin: 4rem 0 0;
+  margin: 5rem 0;
+  /* No sticky pin: the section sits in normal flow so it travels up the page
+     at the same rate as everything else while the panel scales into place. */
 }
 
 .ai-reveal-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
-  perspective: 1200px;
+  padding: 0 1.5rem;
 }
 
-/* --p: 0 = small card, 1 = full bleed. Set by JS on scroll. */
+/* --p: 0 = small, 1 = full size. Set by JS on scroll.
+   Only transform animates, so the document height never changes mid-scroll. */
 .ai-reveal-panel {
   --p: 0;
   position: relative;
   overflow: hidden;
-  /* Grow from 55% of the viewport out to 100% */
-  width: calc((55% + 45% * var(--p)) * 1);
-  height: calc(55vh + 45vh * var(--p));
-  border-radius: calc(28px - 28px * var(--p));
+  width: 100%;
+  max-width: 1320px;
+  border-radius: 28px;
+  transform: scale(calc(0.62 + 0.38 * var(--p)));
+  transform-origin: center center;
   background:
     radial-gradient(120% 90% at 50% -10%, rgba(241, 198, 113, 0.28) 0%, transparent 62%),
     linear-gradient(160deg, #16132a 0%, #0f0f23 45%, #1b1533 100%);
-  border: 1px solid rgba(241, 198, 113, calc(0.55 - 0.35 * var(--p)));
+  border: 1px solid rgba(241, 198, 113, calc(0.55 - 0.25 * var(--p)));
   box-shadow:
     0 0 calc(40px + 60px * var(--p)) rgba(241, 198, 113, calc(0.18 + 0.14 * var(--p))),
     0 30px 80px rgba(0, 0, 0, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  will-change: width, height, border-radius;
+  will-change: transform;
 }
 
 /* Gold bloom that intensifies as the panel opens */
@@ -250,107 +245,144 @@
               linear-gradient(0deg, rgba(241, 198, 113, 0.10) 0%, transparent 30%);
 }
 
-/* Laid out once at full size and scaled as a unit, so every child (including
-   the AI recipe card) grows with the panel and nothing reflows mid-scroll. */
 .ai-reveal-inner {
   position: relative;
   z-index: 2;
-  width: min(1200px, 92vw);
-  padding: clamp(1rem, 2vw, 2rem);
+  width: 100%;
+  padding: clamp(2rem, 3.5vw, 3.5rem);
   display: flex;
   flex-direction: column;
-  gap: clamp(1.25rem, 2.2vw, 2rem);
-  /* Tops out below 1 so the panel keeps clearance from the fixed site header */
-  transform: scale(calc(0.52 + 0.40 * var(--p)));
-  transform-origin: center center;
-  will-change: transform;
+  gap: clamp(1.75rem, 3vw, 2.75rem);
 }
 
-/* ---------- Band 1: heading ---------- */
+/* ---------- Heading ---------- */
 
 .ai-reveal-head {
   text-align: center;
-  max-width: 760px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
-/* ---------- Band 2: controls + result | screenshot ---------- */
+/* ---------- Body: generator demo | capability list ---------- */
 
 .ai-reveal-demo {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
-  gap: clamp(1.25rem, 2.5vw, 2.25rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
 }
 
-.ai-reveal-controls {
+/* Left: the generator presented as one self-contained unit */
+.ai-generator {
+  background: rgba(241, 198, 113, 0.05);
+  border: 1px solid rgba(241, 198, 113, 0.22);
+  border-radius: 20px;
+  padding: clamp(1.15rem, 1.8vw, 1.6rem);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
-/* The generated card sits with the controls that produced it */
+.ai-generator-head {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.ai-generator-icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  color: #0f0f23;
+  background: linear-gradient(135deg, #f1c671, #e0a94f);
+  box-shadow: 0 6px 18px rgba(241, 198, 113, 0.32);
+}
+
+.ai-generator-head h3 {
+  color: #f7dfae;
+  font-size: 1.12rem;
+  margin: 0 0 0.2rem;
+}
+
+.ai-generator-head p {
+  color: var(--text-white-60);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* The generated card, shown with the controls that produced it */
 .ai-reveal-result {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.1rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(241, 198, 113, 0.18);
 }
 
 .ai-reveal-result-copy {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .ai-reveal-result-copy strong {
   color: #f1c671;
-  font-size: 0.9rem;
-  letter-spacing: 0.2px;
+  font-size: 0.95rem;
 }
 
 .ai-reveal-result-copy span {
   color: var(--text-white-60);
-  font-size: 0.8rem;
-  line-height: 1.45;
-}
-
-/* ---------- Band 3: other AI capabilities ---------- */
-
-.ai-reveal-tiles {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.75rem, 1.4vw, 1.15rem);
-}
-
-.ai-tile {
-  background: rgba(241, 198, 113, 0.07);
-  border: 1px solid rgba(241, 198, 113, 0.24);
-  border-radius: 14px;
-  padding: clamp(0.85rem, 1.3vw, 1.15rem);
-}
-
-.ai-tile-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  font-size: 1rem;
-  margin-bottom: 0.55rem;
-  background: linear-gradient(135deg, rgba(241, 198, 113, 0.9), rgba(224, 169, 79, 0.9));
-  box-shadow: 0 4px 14px rgba(241, 198, 113, 0.3);
-}
-
-.ai-tile h4 {
-  color: #f7dfae;
-  font-size: 0.98rem;
-  margin: 0 0 0.3rem;
-}
-
-.ai-tile p {
-  color: var(--text-white-60);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   line-height: 1.5;
+}
+
+/* Right: the rest of what AI does, given room to actually be read */
+.ai-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-feature-row {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: clamp(1.1rem, 1.8vw, 1.5rem) 0;
+  border-bottom: 1px solid rgba(241, 198, 113, 0.14);
+}
+
+.ai-feature-row:first-child { padding-top: 0; }
+.ai-feature-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.ai-feature-row-icon {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  font-size: 1.2rem;
+  background: rgba(241, 198, 113, 0.12);
+  border: 1px solid rgba(241, 198, 113, 0.3);
+}
+
+.ai-feature-row h3 {
+  color: #f7dfae;
+  font-size: 1.18rem;
+  margin: 0 0 0.35rem;
+}
+
+.ai-feature-row p {
+  color: var(--text-white-80);
+  font-size: 0.92rem;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -420,21 +452,15 @@
 }
 
 @media (max-width: 1024px) {
-  .ai-reveal { height: auto; margin-top: 3rem; }
-  .ai-reveal-stage { position: static; height: auto; padding: 2rem 1rem; }
+  .ai-reveal { margin: 3rem 0; }
+  .ai-reveal-stage { padding: 0 1rem; }
   .ai-reveal-panel {
     --p: 1;
-    width: 100%;
-    height: auto;
+    transform: none;
     border-radius: 20px;
   }
-  .ai-reveal-inner {
-    width: 100%;
-    transform: none;
-    padding: 2rem 1.25rem;
-  }
+  .ai-reveal-inner { padding: 2rem 1.25rem; }
   .ai-reveal-demo { grid-template-columns: 1fr; }
-  .ai-reveal-tiles { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -442,10 +468,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ai-reveal { height: auto; }
-  .ai-reveal-stage { position: static; height: auto; }
-  .ai-reveal-panel { --p: 1; width: 100%; height: auto; }
-  .ai-reveal-inner { transform: none; }
+  .ai-reveal-panel { --p: 1; transform: none; }
 }
 
 
