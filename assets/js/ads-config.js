@@ -15,8 +15,8 @@
   window.MF_ADS_LEAD_CONVERSION_LABEL = window.MF_ADS_LEAD_CONVERSION_LABEL || 'kzHQCI2Og7kcEIHAqLZD';
   window.MF_ADS_ACCOUNT_CONVERSION_LABEL = window.MF_ADS_ACCOUNT_CONVERSION_LABEL || 'ipseCL70zdUcEIHAqLZD';
   window.MF_ADS_FIRST_RECIPE_CONVERSION_LABEL = window.MF_ADS_FIRST_RECIPE_CONVERSION_LABEL || 'MsInCOK1-9UcEIHAqLZD';
-  // Paste Google Ads label for "MenuForge — Demo booked" when created (optional until Book Demo campaign launches).
-  window.MF_ADS_DEMO_CONVERSION_LABEL = window.MF_ADS_DEMO_CONVERSION_LABEL || '';
+  // Google Ads label for "MenuForge Demo Booked" (Cal.com booking success on lp-book-demo).
+  window.MF_ADS_DEMO_CONVERSION_LABEL = window.MF_ADS_DEMO_CONVERSION_LABEL || 'D1b-CMSV4uIcEIHAqLZD';
   window.MF_ADS_CONVERSION_LABEL = window.MF_ADS_LEAD_CONVERSION_LABEL;
   window.MF_GA4_ID = window.MF_GA4_ID || 'G-BVJ0H65CZ8';
   window.MF_ADS_LINKER_DOMAINS = ['menuforge.ai', 'www.menuforge.ai', 'app.menuforge.ai'];
