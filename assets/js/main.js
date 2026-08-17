@@ -195,16 +195,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (stickyIsDisabled()) {
-      if (!head) {
-        reveal();
-        return;
-      }
       var mobileObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) reveal();
         });
-      }, { threshold: 0.55, rootMargin: '0px 0px -10% 0px' });
-      mobileObserver.observe(head);
+      }, { threshold: [0, 0.1, 0.2], rootMargin: '0px 0px -8% 0px' });
+      // Observe the whole section — the sticky head alone is too small for a high threshold
+      mobileObserver.observe(section);
+      requestAnimationFrame(function() {
+        var r = section.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.15) {
+          reveal();
+        }
+      });
       return;
     }
 

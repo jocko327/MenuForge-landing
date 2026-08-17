@@ -498,9 +498,29 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   }
 }
 
+/* Keep 2×4 on phones (do not collapse to a single column) */
 @media (max-width: 560px) {
   .features-grid.features-grid-four {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .features-grid.features-grid-four .feature-card {
+    padding: 1.15rem 0.9rem 1.25rem;
+  }
+
+  .features-grid.features-grid-four .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .features-grid.features-grid-four .feature-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .features-grid.features-grid-four .feature-card p {
+    font-size: 0.85rem;
+    line-height: 1.45;
   }
 }
 
@@ -740,12 +760,28 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     grid-template-columns: 1fr;
   }
 
+  .features-grid.features-grid-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .workflow-step::after {
     display: none;
   }
 
   .container {
-    padding: 0 1rem;
+    padding: 0 15px;
+  }
+
+  .container-85 {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
   h1 {

@@ -1149,7 +1149,13 @@
   }
 
   .gallery-item {
-    padding: 1rem 1rem 1.25rem;
+    padding: 1rem 0.85rem 1.25rem;
+    min-width: 0;
+  }
+
+  .gallery-shot,
+  .gallery-shot img {
+    max-width: 100%;
   }
 
   .gallery-copy h3,
