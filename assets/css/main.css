@@ -397,13 +397,17 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 
 @media (max-width: 1024px) {
   .section-sticky-head {
-    position: static;
-    background: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border: none;
-    box-shadow: none;
-    padding: 0 0 0.5rem;
+    top: 64px;
+    padding: 0.85rem 1rem 0.95rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .section-sticky-head h2 {
+    font-size: 1.45rem;
+  }
+
+  .section-sticky-head p {
+    font-size: 0.95rem;
   }
 }
 

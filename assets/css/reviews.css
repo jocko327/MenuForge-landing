@@ -34,10 +34,14 @@
 .review-card {
   --x: 0px;
   --y: 0px;
+  --ox: var(--x);
+  --oy: var(--y);
   --rot: 0deg;
   --z: 1;
   --drift-x: 12px;
   --drift-y: 10px;
+  --dox: var(--drift-x);
+  --doy: var(--drift-y);
   --drift-rot: 1.4deg;
   --dur: 14s;
   --delay: 0s;
@@ -63,7 +67,7 @@
   /* Park at home position until reveal starts the drift animation */
   transform:
     translate(-50%, -50%)
-    translate(var(--x), var(--y))
+    translate(var(--ox), var(--oy))
     rotate(var(--rot));
   /* No drift until the section reveals (sticky header pinned) */
   animation: none;
@@ -217,13 +221,13 @@
   0% {
     transform:
       translate(-50%, -50%)
-      translate(var(--x), var(--y))
+      translate(var(--ox), var(--oy))
       rotate(var(--rot));
   }
   100% {
     transform:
       translate(-50%, -50%)
-      translate(calc(var(--x) + var(--drift-x)), calc(var(--y) + var(--drift-y)))
+      translate(calc(var(--ox) + var(--dox)), calc(var(--oy) + var(--doy)))
       rotate(calc(var(--rot) + var(--drift-rot)));
   }
 }
@@ -235,7 +239,7 @@
     animation: none !important;
     transform:
       translate(-50%, -50%)
-      translate(var(--x), var(--y))
+      translate(var(--ox), var(--oy))
       rotate(var(--rot));
     transition: none;
   }
@@ -255,39 +259,66 @@
 @media (max-width: 900px) {
   .reviews-stage {
     min-height: 68vh;
+    overflow: hidden;
   }
 
   .review-card {
-    width: min(260px, 70vw);
+    --ox: calc(var(--x) * 0.42);
+    --oy: calc(var(--y) * 0.48);
+    --dox: calc(var(--drift-x) * 0.45);
+    --doy: calc(var(--drift-y) * 0.45);
+    width: min(240px, 58vw);
   }
 
   .review-card--featured {
-    width: min(330px, 88vw);
+    width: min(300px, 82vw);
   }
 }
 
 @media (max-width: 700px) {
   .reviews-section {
-    padding: 3rem 15px 3.5rem;
-    overflow-x: clip;
+    padding: 3rem 0 3.5rem;
   }
 
+  .reviews-section .container-85 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Clip cards to the stage only — never on the section, or sticky headers break */
   .reviews-stage {
-    min-height: 64vh;
+    min-height: 70vh;
     width: 100%;
     max-width: 100%;
+    overflow: hidden;
   }
 
-  .review-card:not(.review-card--featured) {
-    width: min(220px, 58vw);
+  .review-card {
+    --ox: calc(var(--x) * 0.22);
+    --oy: calc(var(--y) * 0.26);
+    --dox: calc(var(--drift-x) * 0.3);
+    --doy: calc(var(--drift-y) * 0.3);
+    width: min(168px, 42vw);
+  }
+
+  .review-card--featured {
+    width: min(260px, 78vw);
+    --ox: 0px;
+    --oy: 0px;
   }
 
   .review-card:not(.review-card--featured) .review-card-face {
-    padding: 0.9rem 0.95rem 0.85rem;
+    padding: 0.75rem 0.8rem 0.7rem;
   }
 
   .review-card:not(.review-card--featured) blockquote p {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .review-card:not(.review-card--featured) footer {
+    margin-top: 0.55rem;
+    padding-top: 0.45rem;
   }
 
   .review-card.review-card--edge {

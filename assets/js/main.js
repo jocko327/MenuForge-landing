@@ -160,14 +160,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Reviews: stagger pop-in once the sticky section header pins (mobile: when header enters view)
+  // Reviews: stagger pop-in once the sticky section header pins
   (function initReviewsReveal() {
     var section = document.querySelector('.reviews-section');
     if (!section) return;
 
     var head = section.querySelector('.section-sticky-head');
     var sentinel = section.querySelector('.reviews-sticky-sentinel');
-    var stickyTop = 72;
+    var stickyTop = window.matchMedia('(max-width: 1024px)').matches ? 64 : 72;
     var revealed = false;
 
     function reveal() {
@@ -184,37 +184,14 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    function stickyIsDisabled() {
-      return window.matchMedia('(max-width: 1024px)').matches;
-    }
-
-    function headIsPinned() {
+    function headPastPin() {
       if (!head) return false;
-      var top = head.getBoundingClientRect().top;
-      return top <= stickyTop + 1 && top >= stickyTop - 2;
-    }
-
-    if (stickyIsDisabled()) {
-      var mobileObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) reveal();
-        });
-      }, { threshold: [0, 0.1, 0.2], rootMargin: '0px 0px -8% 0px' });
-      // Observe the whole section — the sticky head alone is too small for a high threshold
-      mobileObserver.observe(section);
-      requestAnimationFrame(function() {
-        var r = section.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.9 && r.bottom > window.innerHeight * 0.15) {
-          reveal();
-        }
-      });
-      return;
+      return head.getBoundingClientRect().top <= stickyTop + 1;
     }
 
     if (sentinel) {
       var pinObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          // Sentinel has scrolled above the sticky offset → header is pinned
           if (!entry.isIntersecting && entry.boundingClientRect.top < stickyTop) {
             reveal();
           }
@@ -223,11 +200,16 @@ document.addEventListener('DOMContentLoaded', function() {
       pinObserver.observe(sentinel);
     }
 
-    // Deep link / refresh already scrolled into the reviews section
+    // Fallback if sticky pin detection misses (or deep-link already in section)
+    var sectionObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && headPastPin()) reveal();
+      });
+    }, { threshold: [0, 0.15, 0.35], rootMargin: '0px 0px -5% 0px' });
+    sectionObserver.observe(section);
+
     requestAnimationFrame(function() {
-      if (headIsPinned() || (head && head.getBoundingClientRect().top < stickyTop)) {
-        reveal();
-      }
+      if (headPastPin()) reveal();
     });
   })();
 });
