@@ -1,4 +1,6 @@
-/* Reviews scatter: overlapping quote cards with gentle drift */
+/* Reviews scatter: overlapping quote cards with gentle drift.
+   Drift lives on the outer card; hover scale lives on .review-card-face
+   so unhover never restarts the animation mid-cycle. */
 
 .reviews-section {
   padding: 4rem 0 5rem;
@@ -35,22 +37,15 @@
   top: 50%;
   width: min(300px, 72vw);
   margin: 0;
-  padding: 1.15rem 1.2rem 1.05rem;
-  border-radius: 16px;
-  background: linear-gradient(165deg, rgba(28, 28, 48, 0.97) 0%, rgba(16, 16, 32, 0.98) 100%);
-  border: 1px solid rgba(241, 198, 113, 0.22);
-  box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.42),
-    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
   color: var(--text-white);
   z-index: var(--z);
   cursor: default;
   outline: none;
   transform-origin: center center;
-  transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease,
-    border-color 0.28s ease;
   animation: review-drift-move var(--dur) ease-in-out var(--delay) infinite alternate;
   will-change: transform;
 }
@@ -58,6 +53,25 @@
 .review-card--featured {
   --rest-scale: 1.06;
   width: min(390px, 86vw);
+}
+
+.review-card-face {
+  padding: 1.15rem 1.2rem 1.05rem;
+  border-radius: 16px;
+  background: linear-gradient(165deg, rgba(28, 28, 48, 0.97) 0%, rgba(16, 16, 32, 0.98) 100%);
+  border: 1px solid rgba(241, 198, 113, 0.22);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  transform: scale(var(--rest-scale));
+  transform-origin: center center;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.review-card--featured .review-card-face {
   padding: 1.35rem 1.4rem 1.2rem;
   border-color: rgba(241, 198, 113, 0.45);
   background: linear-gradient(165deg, rgba(36, 32, 22, 0.98) 0%, rgba(20, 18, 28, 0.98) 100%);
@@ -69,25 +83,22 @@
 .review-card:hover,
 .review-card:focus-visible {
   z-index: 40;
+  animation-play-state: paused;
+}
+
+.review-card:hover .review-card-face,
+.review-card:focus-visible .review-card-face {
   border-color: rgba(241, 198, 113, 0.55);
   box-shadow:
     0 28px 55px rgba(0, 0, 0, 0.55),
     0 0 40px rgba(241, 198, 113, 0.14);
-  animation: none;
-  transform:
-    translate(-50%, -50%)
-    translate(var(--x), var(--y))
-    rotate(calc(var(--rot) * 0.25))
-    scale(1.16);
+  /* Enlarge and ease toward upright without touching the outer drift transform */
+  transform: scale(1.16) rotate(calc(var(--rot) * -0.75));
 }
 
-.review-card--featured:hover,
-.review-card--featured:focus-visible {
-  transform:
-    translate(-50%, -50%)
-    translate(var(--x), var(--y))
-    rotate(calc(var(--rot) * 0.2))
-    scale(1.18);
+.review-card--featured:hover .review-card-face,
+.review-card--featured:focus-visible .review-card-face {
+  transform: scale(1.18) rotate(calc(var(--rot) * -0.8));
 }
 
 .review-stars {
@@ -144,15 +155,13 @@
     transform:
       translate(-50%, -50%)
       translate(var(--x), var(--y))
-      rotate(var(--rot))
-      scale(var(--rest-scale));
+      rotate(var(--rot));
   }
   100% {
     transform:
       translate(-50%, -50%)
       translate(calc(var(--x) + var(--drift-x)), calc(var(--y) + var(--drift-y)))
-      rotate(calc(var(--rot) + var(--drift-rot)))
-      scale(var(--rest-scale));
+      rotate(calc(var(--rot) + var(--drift-rot)));
   }
 }
 
@@ -162,8 +171,7 @@
     transform:
       translate(-50%, -50%)
       translate(var(--x), var(--y))
-      rotate(var(--rot))
-      scale(var(--rest-scale));
+      rotate(var(--rot));
   }
 }
 
@@ -192,6 +200,9 @@
 
   .review-card:not(.review-card--featured) {
     width: min(220px, 58vw);
+  }
+
+  .review-card:not(.review-card--featured) .review-card-face {
     padding: 0.9rem 0.95rem 0.85rem;
   }
 
