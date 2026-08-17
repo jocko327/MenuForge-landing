@@ -159,6 +159,74 @@ document.addEventListener('DOMContentLoaded', function() {
       tooltipEl.classList.remove('is-visible');
     });
   });
+
+  // Reviews: stagger pop-in once the sticky section header pins (mobile: when header enters view)
+  (function initReviewsReveal() {
+    var section = document.querySelector('.reviews-section');
+    if (!section) return;
+
+    var head = section.querySelector('.section-sticky-head');
+    var sentinel = section.querySelector('.reviews-sticky-sentinel');
+    var stickyTop = 72;
+    var revealed = false;
+
+    function reveal() {
+      if (revealed) return;
+      revealed = true;
+      section.classList.add('is-revealed');
+      window.setTimeout(function() {
+        section.classList.add('is-settled');
+      }, 1800);
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      reveal();
+      return;
+    }
+
+    function stickyIsDisabled() {
+      return window.matchMedia('(max-width: 1024px)').matches;
+    }
+
+    function headIsPinned() {
+      if (!head) return false;
+      var top = head.getBoundingClientRect().top;
+      return top <= stickyTop + 1 && top >= stickyTop - 2;
+    }
+
+    if (stickyIsDisabled()) {
+      if (!head) {
+        reveal();
+        return;
+      }
+      var mobileObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) reveal();
+        });
+      }, { threshold: 0.55, rootMargin: '0px 0px -10% 0px' });
+      mobileObserver.observe(head);
+      return;
+    }
+
+    if (sentinel) {
+      var pinObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          // Sentinel has scrolled above the sticky offset → header is pinned
+          if (!entry.isIntersecting && entry.boundingClientRect.top < stickyTop) {
+            reveal();
+          }
+        });
+      }, { root: null, threshold: 0, rootMargin: '-' + stickyTop + 'px 0px 0px 0px' });
+      pinObserver.observe(sentinel);
+    }
+
+    // Deep link / refresh already scrolled into the reviews section
+    requestAnimationFrame(function() {
+      if (headIsPinned() || (head && head.getBoundingClientRect().top < stickyTop)) {
+        reveal();
+      }
+    });
+  })();
 });
 
 document.addEventListener('click', function(event) {

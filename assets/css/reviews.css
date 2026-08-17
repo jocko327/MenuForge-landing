@@ -12,6 +12,17 @@
   z-index: 20;
 }
 
+/* 1px sentinel above the sticky head — used to detect when the header pins */
+.reviews-sticky-sentinel {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .reviews-stage {
   position: relative;
   width: 100%;
@@ -30,6 +41,7 @@
   --drift-rot: 1.4deg;
   --dur: 14s;
   --delay: 0s;
+  --enter-delay: 0s;
   --rest-scale: 0.92;
 
   position: absolute;
@@ -46,14 +58,41 @@
   cursor: default;
   outline: none;
   transform-origin: center center;
-  animation: review-drift-move var(--dur) ease-in-out var(--delay) infinite alternate;
-  will-change: transform;
+  opacity: 0;
+  pointer-events: none;
+  /* Park at home position until reveal starts the drift animation */
+  transform:
+    translate(-50%, -50%)
+    translate(var(--x), var(--y))
+    rotate(var(--rot));
+  /* No drift until the section reveals (sticky header pinned) */
+  animation: none;
+  will-change: transform, opacity;
 }
 
 .review-card--featured {
   --rest-scale: 1.06;
   width: min(390px, 86vw);
 }
+
+/* Staggered pop-in order once .is-revealed is set */
+.review-card:nth-child(1) { --enter-delay: 0s; }
+.review-card:nth-child(2) { --enter-delay: 0.07s; }
+.review-card:nth-child(3) { --enter-delay: 0.14s; }
+.review-card:nth-child(4) { --enter-delay: 0.21s; }
+.review-card:nth-child(5) { --enter-delay: 0.28s; }
+.review-card:nth-child(6) { --enter-delay: 0.35s; }
+.review-card:nth-child(7) { --enter-delay: 0.42s; }
+.review-card:nth-child(8) { --enter-delay: 0.49s; }
+.review-card:nth-child(9) { --enter-delay: 0.56s; }
+.review-card:nth-child(10) { --enter-delay: 0.63s; }
+.review-card:nth-child(11) { --enter-delay: 0.70s; }
+.review-card:nth-child(12) { --enter-delay: 0.77s; }
+.review-card:nth-child(13) { --enter-delay: 0.84s; }
+.review-card:nth-child(14) { --enter-delay: 0.91s; }
+.review-card:nth-child(15) { --enter-delay: 0.98s; }
+.review-card:nth-child(16) { --enter-delay: 1.05s; }
+.review-card:nth-child(17) { --enter-delay: 1.12s; }
 
 .review-card-face {
   padding: 1.15rem 1.2rem 1.05rem;
@@ -63,8 +102,32 @@
   box-shadow:
     0 14px 36px rgba(0, 0, 0, 0.42),
     0 0 0 1px rgba(255, 255, 255, 0.04) inset;
-  transform: scale(var(--rest-scale));
+  transform: scale(0.28);
   transform-origin: center center;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.reviews-section.is-revealed .review-card {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s ease var(--enter-delay);
+  animation: review-drift-move var(--dur) ease-in-out infinite alternate;
+  animation-delay: calc(var(--enter-delay) + 0.5s + var(--delay));
+}
+
+.reviews-section.is-revealed .review-card-face {
+  transform: scale(var(--rest-scale));
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.45, 0.64, 1) var(--enter-delay),
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+/* After the staggered entrance finishes, hover/leave should be immediate */
+.reviews-section.is-revealed.is-settled .review-card-face {
   transition:
     transform 0.28s ease,
     box-shadow 0.28s ease,
@@ -167,11 +230,25 @@
 
 @media (prefers-reduced-motion: reduce) {
   .review-card {
+    opacity: 1;
+    pointer-events: auto;
     animation: none !important;
     transform:
       translate(-50%, -50%)
       translate(var(--x), var(--y))
       rotate(var(--rot));
+    transition: none;
+  }
+
+  .review-card-face {
+    transform: scale(var(--rest-scale));
+    transition: none;
+  }
+
+  .reviews-section.is-revealed .review-card,
+  .reviews-section.is-revealed .review-card-face {
+    transition: none;
+    animation: none !important;
   }
 }
 
