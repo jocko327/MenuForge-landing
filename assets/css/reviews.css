@@ -1,0 +1,205 @@
+/* Reviews scatter: overlapping quote cards with gentle drift */
+
+.reviews-section {
+  padding: 4rem 0 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.reviews-section .section-sticky-head {
+  z-index: 20;
+}
+
+.reviews-stage {
+  position: relative;
+  width: 100%;
+  min-height: 78vh;
+  margin: 0.5rem auto 0;
+  isolation: isolate;
+}
+
+.review-card {
+  --x: 0px;
+  --y: 0px;
+  --rot: 0deg;
+  --z: 1;
+  --drift-x: 12px;
+  --drift-y: 10px;
+  --drift-rot: 1.4deg;
+  --dur: 14s;
+  --delay: 0s;
+  --rest-scale: 0.92;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(300px, 72vw);
+  margin: 0;
+  padding: 1.15rem 1.2rem 1.05rem;
+  border-radius: 16px;
+  background: linear-gradient(165deg, rgba(28, 28, 48, 0.97) 0%, rgba(16, 16, 32, 0.98) 100%);
+  border: 1px solid rgba(241, 198, 113, 0.22);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  color: var(--text-white);
+  z-index: var(--z);
+  cursor: default;
+  outline: none;
+  transform-origin: center center;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+  animation: review-drift-move var(--dur) ease-in-out var(--delay) infinite alternate;
+  will-change: transform;
+}
+
+.review-card--featured {
+  --rest-scale: 1.06;
+  width: min(390px, 86vw);
+  padding: 1.35rem 1.4rem 1.2rem;
+  border-color: rgba(241, 198, 113, 0.45);
+  background: linear-gradient(165deg, rgba(36, 32, 22, 0.98) 0%, rgba(20, 18, 28, 0.98) 100%);
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.5),
+    0 0 32px rgba(241, 198, 113, 0.12);
+}
+
+.review-card:hover,
+.review-card:focus-visible {
+  z-index: 40;
+  border-color: rgba(241, 198, 113, 0.55);
+  box-shadow:
+    0 28px 55px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(241, 198, 113, 0.14);
+  animation: none;
+  transform:
+    translate(-50%, -50%)
+    translate(var(--x), var(--y))
+    rotate(calc(var(--rot) * 0.25))
+    scale(1.16);
+}
+
+.review-card--featured:hover,
+.review-card--featured:focus-visible {
+  transform:
+    translate(-50%, -50%)
+    translate(var(--x), var(--y))
+    rotate(calc(var(--rot) * 0.2))
+    scale(1.18);
+}
+
+.review-stars {
+  display: flex;
+  gap: 0.18rem;
+  margin: 0 0 0.65rem;
+  color: var(--primary-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.review-card blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.review-card blockquote p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-white-80);
+}
+
+.review-card--featured blockquote p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-white);
+}
+
+.review-card footer {
+  margin-top: 0.85rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.review-card footer strong {
+  display: block;
+  color: #f7dfae;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.review-card footer span {
+  color: var(--text-white-60);
+  font-size: 0.72rem;
+}
+
+@keyframes review-drift-move {
+  0% {
+    transform:
+      translate(-50%, -50%)
+      translate(var(--x), var(--y))
+      rotate(var(--rot))
+      scale(var(--rest-scale));
+  }
+  100% {
+    transform:
+      translate(-50%, -50%)
+      translate(calc(var(--x) + var(--drift-x)), calc(var(--y) + var(--drift-y)))
+      rotate(calc(var(--rot) + var(--drift-rot)))
+      scale(var(--rest-scale));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-card {
+    animation: none !important;
+    transform:
+      translate(-50%, -50%)
+      translate(var(--x), var(--y))
+      rotate(var(--rot))
+      scale(var(--rest-scale));
+  }
+}
+
+@media (max-width: 900px) {
+  .reviews-stage {
+    min-height: 68vh;
+  }
+
+  .review-card {
+    width: min(260px, 70vw);
+  }
+
+  .review-card--featured {
+    width: min(330px, 88vw);
+  }
+}
+
+@media (max-width: 700px) {
+  .reviews-section {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .reviews-stage {
+    min-height: 64vh;
+  }
+
+  .review-card:not(.review-card--featured) {
+    width: min(220px, 58vw);
+    padding: 0.9rem 0.95rem 0.85rem;
+  }
+
+  .review-card:not(.review-card--featured) blockquote p {
+    font-size: 0.78rem;
+  }
+
+  .review-card.review-card--edge {
+    display: none;
+  }
+}
