@@ -809,6 +809,10 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   .footer-links .desktop-only-link {
     display: none !important;
   }
+
+  .footer-section-desktop {
+    display: none !important;
+  }
 }
 
 @media (max-width: 480px) {
