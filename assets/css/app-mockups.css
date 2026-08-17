@@ -1019,7 +1019,7 @@
 .app-gallery {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 3.5rem 2.25rem;
+  gap: 2rem 1.75rem;
   margin-top: 3rem;
   align-items: start;
 }
@@ -1030,11 +1030,22 @@
 .gallery-span-7 { grid-column: span 7; }
 .gallery-span-8 { grid-column: span 8; }
 
-/* No card chrome: the screenshot is the object, the copy sits under it */
+/* Light rounded container groups each screenshot with its copy */
 .gallery-item {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.15rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.gallery-item:hover {
+  border-color: rgba(241, 198, 113, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35), 0 0 35px rgba(241, 198, 113, 0.1);
+  transform: translateY(-3px);
 }
 
 .gallery-copy {
@@ -1070,7 +1081,7 @@
   margin: 0;
 }
 
-/* Screenshot frame: whole image, no crop, lifts on hover */
+/* Rounded image frame — no OS window chrome */
 .gallery-shot {
   position: relative;
   margin: 0;
@@ -1078,40 +1089,9 @@
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.13);
   background: #0b1220;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.4s ease,
-              box-shadow 0.4s ease;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
-.gallery-item:hover .gallery-shot {
-  transform: translateY(-6px);
-  border-color: rgba(241, 198, 113, 0.45);
-  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.55), 0 0 45px rgba(241, 198, 113, 0.14);
-}
-
-.gallery-chrome {
-  display: block;
-  height: 26px;
-  background: linear-gradient(180deg, #1b2233 0%, #141a28 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
-}
-
-.gallery-chrome::before {
-  content: '';
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff5f57;
-  box-shadow: 14px 0 0 #febc2e, 28px 0 0 #28c840;
-}
-
-/* Never crop: every screenshot is shown whole, scaled to the tile width. */
 .gallery-shot img {
   display: block;
   width: 100%;
@@ -1130,7 +1110,7 @@
 @media (max-width: 1024px) {
   .app-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem 1.75rem;
+    gap: 1.5rem;
   }
 
   .gallery-span-4,
@@ -1148,11 +1128,15 @@
 @media (max-width: 700px) {
   .app-gallery {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 
   .gallery-span-7:first-child {
     grid-column: span 1;
+  }
+
+  .gallery-item {
+    padding: 1rem 1rem 1.25rem;
   }
 
   .gallery-copy h3,

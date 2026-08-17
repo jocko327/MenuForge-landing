@@ -183,39 +183,82 @@
 }
 
 /* ===================================================================
-   AI section: sticky heading, feature rows scroll beneath it
+   AI section: grows to full page width over 60vh, sticky header, rows beneath
    =================================================================== */
 
-/* No overflow clipping here: it would create a scroll container and stop
-   .ai-sticky-head from sticking. */
+/* No overflow on this section: it would create a scroll container and stop
+   .ai-panel-head from sticking. */
 .ai-section {
   position: relative;
-  padding: 5rem 0 6rem;
+  padding: 4rem 0 5rem;
 }
 
-.ai-section-glow {
+/* Full-bleed layout box. Laid out at final size; only transform animates so
+   document height never changes and the section scrolls at normal rate. */
+.ai-panel {
+  --p: 0;
+  position: relative;
+  width: 100%;
+  border-radius: calc(28px - 12px * var(--p));
+  transform: scale(calc(0.6 + 0.4 * var(--p)));
+  transform-origin: top center;
+  will-change: transform;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(241, 198, 113, 0.22) 0%, transparent 62%),
+    linear-gradient(160deg, #16132a 0%, #0f0f23 45%, #1b1533 100%);
+  border: 1px solid rgba(241, 198, 113, calc(0.45 - 0.15 * var(--p)));
+  box-shadow:
+    0 0 calc(40px + 50px * var(--p)) rgba(241, 198, 113, calc(0.14 + 0.12 * var(--p))),
+    0 30px 80px rgba(0, 0, 0, 0.45);
+  /* Drop transform once full so sticky offset is not in scaled space */
+}
+
+.ai-panel.is-full {
+  transform: none;
+  will-change: auto;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.ai-panel > .ai-panel-head {
+  margin-top: 1.25rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  width: auto;
+}
+
+.ai-panel-glow {
   position: absolute;
-  inset: 0;
+  /* Vertical bleed only — horizontal bleed widens scrollWidth and causes overflow */
+  inset: -10% 0;
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(60% 40% at 20% 12%, rgba(241, 198, 113, 0.14) 0%, transparent 70%),
-    radial-gradient(55% 45% at 85% 65%, rgba(255, 176, 59, 0.10) 0%, transparent 70%);
+    radial-gradient(closest-side at 22% 18%, rgba(241, 198, 113, 0.22) 0%, transparent 100%),
+    radial-gradient(closest-side at 82% 72%, rgba(255, 176, 59, 0.14) 0%, transparent 100%);
+  filter: blur(40px);
 }
 
-.ai-section .container {
-  position: relative;
+.ai-panel-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(241, 198, 113, 0.28) 0%, transparent 3px),
+    linear-gradient(0deg, rgba(241, 198, 113, 0.08) 0%, transparent 28%);
 }
 
-/* Heading pins under the site header while the rows travel past it */
-.ai-sticky-head {
+/* Sticky header pins under the site header once growth is done */
+.ai-panel-head {
   position: sticky;
   top: 72px;
   z-index: 5;
   text-align: center;
-  padding: 1.15rem 1.25rem 1.25rem;
-  margin-bottom: 3.5rem;
+  padding: 1.15rem 1.5rem 1.25rem;
+  margin: 0 auto;
+  max-width: 1240px;
   background: rgba(13, 13, 30, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -239,7 +282,7 @@
   margin-bottom: 0.75rem;
 }
 
-.ai-sticky-head h2 {
+.ai-panel-head h2 {
   font-size: clamp(1.6rem, 2.8vw, 2.25rem);
   font-weight: 800;
   line-height: 1.1;
@@ -250,12 +293,22 @@
   -webkit-text-fill-color: transparent;
 }
 
-.ai-sticky-head p {
+.ai-panel-head p {
   color: var(--text-white-80);
   font-size: clamp(0.9rem, 1vw, 1.02rem);
   line-height: 1.55;
   margin: 0 auto;
   max-width: 62ch;
+}
+
+/* Inner max-width so lines stay readable when the panel is full-bleed */
+.ai-panel-body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 4vw, 3.5rem) clamp(1.25rem, 3vw, 2.5rem) clamp(3rem, 5vw, 4.5rem);
 }
 
 /* ---------- Feature rows ---------- */
@@ -281,7 +334,6 @@
   transform: none;
 }
 
-/* Alternate sides so the eye zigzags down the section */
 .ai-row:nth-child(even) .ai-row-copy { order: 2; }
 
 .ai-row-num {
@@ -317,7 +369,6 @@
   align-items: stretch;
 }
 
-/* Screenshot detail: whole crop, framed, never cropped again by CSS */
 .ai-row-shot {
   margin: 0;
   border-radius: 14px;
@@ -333,7 +384,6 @@
   height: auto;
 }
 
-/* Row 01: generated card sits under the controls that produced it */
 .ai-row-result {
   display: flex;
   align-items: center;
@@ -346,7 +396,6 @@
   font-weight: 600;
 }
 
-/* Row 04: conversion widget */
 .ai-convert {
   border: 1px solid rgba(241, 198, 113, 0.28);
   border-radius: 18px;
@@ -421,7 +470,6 @@
   margin: 0;
 }
 
-/* Gold control panel */
 .ai-rows .ai-control-panel {
   background: rgba(241, 198, 113, 0.06);
   border: 1px solid rgba(241, 198, 113, 0.28);
@@ -429,26 +477,41 @@
   padding: clamp(1rem, 1.8vw, 1.5rem);
 }
 
-@media (max-width: 900px) {
-  .ai-section { padding: 3rem 0 4rem; }
+@media (max-width: 1024px) {
+  .ai-panel {
+    --p: 1;
+    transform: none;
+    border-radius: 20px;
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+  }
 
-  .ai-sticky-head {
+  .ai-panel.is-full {
+    border-radius: 20px;
+    border-left: 1px solid rgba(241, 198, 113, 0.3);
+    border-right: 1px solid rgba(241, 198, 113, 0.3);
+  }
+
+  .ai-panel-head {
     position: static;
-    padding: 0 0 0.5rem;
-    margin-bottom: 2.5rem;
+    margin: 1.25rem 1.25rem 0;
     background: none;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border: none;
     box-shadow: none;
+    padding: 0.5rem 0 0;
   }
+}
+
+@media (max-width: 900px) {
+  .ai-section { padding: 3rem 0 4rem; }
 
   .ai-row {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
 
-  /* Visual always follows its copy once stacked */
   .ai-row:nth-child(even) .ai-row-copy { order: 0; }
 }
 
@@ -457,6 +520,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ai-panel { --p: 1; transform: none; }
+  .ai-panel.is-full { transform: none; }
   .ai-row { opacity: 1; transform: none; transition: none; }
 }
 

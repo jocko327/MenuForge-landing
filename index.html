@@ -229,130 +229,133 @@
     </div>
   </section>
 
-  <!-- AI Showcase: sticky section header, feature rows scroll beneath it -->
+  <!-- AI Showcase: grows to full width over 60vh, sticky header, rows scroll beneath -->
   <section class="ai-section" id="ai-features">
-    <div class="ai-section-glow" aria-hidden="true"></div>
-    <div class="container">
+    <div class="ai-panel landing-app-preview">
+      <div class="ai-panel-glow" aria-hidden="true"></div>
+      <div class="ai-panel-grain" aria-hidden="true"></div>
 
-      <header class="ai-sticky-head">
+      <header class="ai-panel-head">
         <span class="ai-eyebrow">AI built for kitchens</span>
         <h2>The AI that cooks with you</h2>
         <p>Four places it takes the tedious work off your hands.</p>
       </header>
 
-      <div class="ai-rows landing-app-preview">
+      <div class="ai-panel-body">
+        <div class="ai-rows">
 
-        <article class="ai-row">
-          <div class="ai-row-copy">
-            <span class="ai-row-num">01</span>
-            <h3>Recipe generation</h3>
-            <p>Describe any dish in plain language, then tell AI how to build it. Set a cost target, how much of your existing pantry to work from, and how far it is allowed to stray from the classic. What comes back is costed against what you actually pay, tagged gold in your grid, with dietary flags already worked out from its ingredients.</p>
-          </div>
-          <div class="ai-row-visual">
-            <div class="ai-control-panel">
-              <div class="ai-slider-group">
-                <div class="ai-slider-header">
-                  <span class="ai-slider-label cost">Cost Target</span>
-                  <span class="ai-slider-value cost">40%</span>
-                </div>
-                <div class="mf-slider-track mf-slider-cost">
-                  <div class="mf-slider-thumb" style="left: 40%"></div>
-                </div>
-                <p class="ai-slider-desc">How much of your food cost budget the recipe should target.</p>
-              </div>
-              <div class="ai-slider-group">
-                <div class="ai-slider-header">
-                  <span class="ai-slider-label pantry">Pantry Usage</span>
-                  <span class="ai-slider-value pantry">75%</span>
-                </div>
-                <div class="mf-slider-track mf-slider-existing">
-                  <div class="mf-slider-thumb" style="left: 75%"></div>
-                </div>
-                <p class="ai-slider-desc">How much of your stored ingredients AI should build from.</p>
-              </div>
-              <div class="ai-slider-group">
-                <div class="ai-slider-header">
-                  <span class="ai-slider-label insanity">Insanity</span>
-                  <span class="ai-slider-value insanity">80%</span>
-                </div>
-                <div class="mf-slider-track mf-slider-insanity">
-                  <div class="mf-slider-thumb" style="left: 80%"></div>
-                </div>
-                <p class="ai-slider-desc">Low stays classic. High gets experimental.</p>
-              </div>
+          <article class="ai-row">
+            <div class="ai-row-copy">
+              <span class="ai-row-num">01</span>
+              <h3>Recipe generation</h3>
+              <p>Describe any dish in plain language, then tell AI how to build it. Set a cost target, how much of your existing pantry to work from, and how far it is allowed to stray from the classic. What comes back is costed against what you actually pay, tagged gold in your grid, with dietary flags already worked out from its ingredients.</p>
             </div>
-            <div class="ai-row-result">
-              <div class="recipe-card ai-generated ai-showcase-card">
-                <div class="recipe-card-body">
-                  <div class="dietary-flags-container dietary-flags-fixed-slots">
-                    <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
-                    <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
-                    <div class="dietary-flag-slot slot-right"></div>
+            <div class="ai-row-visual">
+              <div class="ai-control-panel">
+                <div class="ai-slider-group">
+                  <div class="ai-slider-header">
+                    <span class="ai-slider-label cost">Cost Target</span>
+                    <span class="ai-slider-value cost">40%</span>
                   </div>
-                  <div class="recipe-content-center">
-                    <h4 class="compact-recipe-card-title recipe-card-title">Lemon Herb Chicken Pasta</h4>
+                  <div class="mf-slider-track mf-slider-cost">
+                    <div class="mf-slider-thumb" style="left: 40%"></div>
+                  </div>
+                  <p class="ai-slider-desc">How much of your food cost budget the recipe should target.</p>
+                </div>
+                <div class="ai-slider-group">
+                  <div class="ai-slider-header">
+                    <span class="ai-slider-label pantry">Pantry Usage</span>
+                    <span class="ai-slider-value pantry">75%</span>
+                  </div>
+                  <div class="mf-slider-track mf-slider-existing">
+                    <div class="mf-slider-thumb" style="left: 75%"></div>
+                  </div>
+                  <p class="ai-slider-desc">How much of your stored ingredients AI should build from.</p>
+                </div>
+                <div class="ai-slider-group">
+                  <div class="ai-slider-header">
+                    <span class="ai-slider-label insanity">Insanity</span>
+                    <span class="ai-slider-value insanity">80%</span>
+                  </div>
+                  <div class="mf-slider-track mf-slider-insanity">
+                    <div class="mf-slider-thumb" style="left: 80%"></div>
+                  </div>
+                  <p class="ai-slider-desc">Low stays classic. High gets experimental.</p>
+                </div>
+              </div>
+              <div class="ai-row-result">
+                <div class="recipe-card ai-generated ai-showcase-card">
+                  <div class="recipe-card-body">
+                    <div class="dietary-flags-container dietary-flags-fixed-slots">
+                      <div class="dietary-flag-slot slot-left"><span class="dietary-flag-badge flag-vegetarian-outline" title="Vegetarian substitute"><i class="fa-solid fa-leaf"></i> V</span></div>
+                      <div class="dietary-flag-slot slot-center"><span class="dietary-flag-badge flag-vegan-outline" title="Vegan substitute"><i class="fa-solid fa-seedling"></i> Vg</span></div>
+                      <div class="dietary-flag-slot slot-right"></div>
+                    </div>
+                    <div class="recipe-content-center">
+                      <h4 class="compact-recipe-card-title recipe-card-title">Lemon Herb Chicken Pasta</h4>
+                    </div>
                   </div>
                 </div>
+                <span class="ai-row-result-tag">Costed in about 20 seconds</span>
               </div>
-              <span class="ai-row-result-tag">Costed in about 20 seconds</span>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="ai-row">
-          <div class="ai-row-copy">
-            <span class="ai-row-num">02</span>
-            <h3>Receipt processing</h3>
-            <p>Email in a vendor invoice and AI reads the page, pulls out every line item, and matches it to the right ingredient in your pantry. Confirm anything it could not place, and the new pack costs flow straight through, recosting every recipe that uses them.</p>
-          </div>
-          <div class="ai-row-visual">
-            <figure class="ai-row-shot">
-              <img src="assets/images/detail-receipt-match.png" alt="MenuForge matching an invoice line item to an existing pantry ingredient" width="864" height="550" loading="lazy">
-            </figure>
-          </div>
-        </article>
-
-        <article class="ai-row">
-          <div class="ai-row-copy">
-            <span class="ai-row-num">03</span>
-            <h3>Marketing copy</h3>
-            <p>AI reads the recipe and its sub-recipes to write menu descriptions and Facebook captions in your brand voice. Crop the photo, pick a meal-time slot, and publish without ever leaving MenuForge.</p>
-          </div>
-          <div class="ai-row-visual">
-            <figure class="ai-row-shot">
-              <img src="assets/images/detail-ai-caption.png" alt="AI generated Facebook caption written from a MenuForge recipe" width="760" height="248" loading="lazy">
-            </figure>
-          </div>
-        </article>
-
-        <article class="ai-row">
-          <div class="ai-row-copy">
-            <span class="ai-row-num">04</span>
-            <h3>Volume conversion</h3>
-            <p>You buy by weight and cook by volume, and that gap is where costing quietly breaks. Ask AI and it works out the conversion for that specific ingredient, so a recipe measured in cups still costs against the case price you paid.</p>
-          </div>
-          <div class="ai-row-visual">
-            <div class="ai-convert">
-              <div class="ai-convert-head">
-                <span class="ai-convert-name">Strawberries</span>
-                <span class="ai-convert-chip">AI suggested</span>
-              </div>
-              <div class="ai-convert-body">
-                <div class="ai-convert-side">
-                  <strong>1 lb</strong>
-                  <span>as purchased</span>
-                </div>
-                <span class="ai-convert-arrow" aria-hidden="true">&#8594;</span>
-                <div class="ai-convert-side">
-                  <strong>3 cups</strong>
-                  <span>sliced</span>
-                </div>
-              </div>
-              <p class="ai-convert-note">Costed against the case price, not a guess.</p>
+          <article class="ai-row">
+            <div class="ai-row-copy">
+              <span class="ai-row-num">02</span>
+              <h3>Receipt processing</h3>
+              <p>Email in a vendor invoice and AI reads the page, pulls out every line item, and matches it to the right ingredient in your pantry. Confirm anything it could not place, and the new pack costs flow straight through, recosting every recipe that uses them.</p>
             </div>
-          </div>
-        </article>
+            <div class="ai-row-visual">
+              <figure class="ai-row-shot">
+                <img src="assets/images/detail-receipt-match.png" alt="MenuForge matching an invoice line item to an existing pantry ingredient" width="864" height="550" loading="lazy">
+              </figure>
+            </div>
+          </article>
 
+          <article class="ai-row">
+            <div class="ai-row-copy">
+              <span class="ai-row-num">03</span>
+              <h3>Marketing copy</h3>
+              <p>AI reads the recipe and its sub-recipes to write menu descriptions and Facebook captions in your brand voice. Crop the photo, pick a meal-time slot, and publish without ever leaving MenuForge.</p>
+            </div>
+            <div class="ai-row-visual">
+              <figure class="ai-row-shot">
+                <img src="assets/images/detail-ai-caption.png" alt="AI generated Facebook caption written from a MenuForge recipe" width="760" height="248" loading="lazy">
+              </figure>
+            </div>
+          </article>
+
+          <article class="ai-row">
+            <div class="ai-row-copy">
+              <span class="ai-row-num">04</span>
+              <h3>Volume conversion</h3>
+              <p>You buy by weight and cook by volume, and that gap is where costing quietly breaks. Ask AI and it works out the conversion for that specific ingredient, so a recipe measured in cups still costs against the case price you paid.</p>
+            </div>
+            <div class="ai-row-visual">
+              <div class="ai-convert">
+                <div class="ai-convert-head">
+                  <span class="ai-convert-name">Strawberries</span>
+                  <span class="ai-convert-chip">AI suggested</span>
+                </div>
+                <div class="ai-convert-body">
+                  <div class="ai-convert-side">
+                    <strong>1 lb</strong>
+                    <span>as purchased</span>
+                  </div>
+                  <span class="ai-convert-arrow" aria-hidden="true">&#8594;</span>
+                  <div class="ai-convert-side">
+                    <strong>3 cups</strong>
+                    <span>sliced</span>
+                  </div>
+                </div>
+                <p class="ai-convert-note">Costed against the case price, not a guess.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </div>
   </section>
@@ -401,7 +404,6 @@
 
         <article class="gallery-item gallery-span-7">
           <figure class="gallery-shot">
-            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-recipes-grid.png" alt="MenuForge recipe grid with category sidebar, dietary flags, and color coded status" width="1600" height="770" loading="lazy">
           </figure>
           <div class="gallery-copy">
@@ -413,7 +415,6 @@
 
         <article class="gallery-item gallery-span-5">
           <figure class="gallery-shot">
-            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-pantry.png" alt="MenuForge pantry with vendor sidebar and ingredient variants" width="1600" height="775" loading="lazy">
           </figure>
           <div class="gallery-copy">
@@ -425,7 +426,6 @@
 
         <article class="gallery-item gallery-span-4">
           <figure class="gallery-shot">
-            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-recipe-editor.png" alt="MenuForge recipe editor showing per-ingredient costs and plate cost" width="1600" height="1000" loading="lazy">
           </figure>
           <div class="gallery-copy">
@@ -437,7 +437,6 @@
 
         <article class="gallery-item gallery-span-8">
           <figure class="gallery-shot">
-            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-receipt-review.png" alt="MenuForge receipt review matching invoice line items to ingredients" width="1024" height="615" loading="lazy">
           </figure>
           <div class="gallery-copy">
@@ -449,7 +448,6 @@
 
         <article class="gallery-item gallery-span-7">
           <figure class="gallery-shot">
-            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-price-history.png" alt="MenuForge ingredient price history showing cost changes over a month" width="1024" height="594" loading="lazy">
           </figure>
           <div class="gallery-copy">
@@ -461,7 +459,6 @@
 
         <article class="gallery-item gallery-span-5">
           <figure class="gallery-shot">
-            <span class="gallery-chrome" aria-hidden="true"></span>
             <img src="assets/images/screenshot-facebook-composer.png" alt="MenuForge Facebook composer with AI caption and recipe photo" width="800" height="890" loading="lazy">
           </figure>
           <div class="gallery-copy">
@@ -536,6 +533,47 @@
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
+    // AI panel: scale from 0.6 to 1 over 60vh of scroll, then drop the
+    // transform so the sticky header can pin under the site header.
+    (function () {
+      var section = document.querySelector('.ai-section');
+      var panel = section && section.querySelector('.ai-panel');
+      if (!section || !panel) return;
+
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) {
+        panel.classList.add('is-full');
+        panel.style.setProperty('--p', '1');
+      }
+
+      var ticking = false;
+
+      function update() {
+        ticking = false;
+        if (window.innerWidth <= 1024 || reduce) {
+          panel.style.setProperty('--p', '1');
+          panel.classList.add('is-full');
+          return;
+        }
+        var vh = window.innerHeight;
+        var top = section.getBoundingClientRect().top;
+        var p = Math.min(1, Math.max(0, (vh - top) / (vh * 0.6)));
+        panel.style.setProperty('--p', p.toFixed(4));
+        panel.classList.toggle('is-full', p >= 0.995);
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(update);
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    })();
+
     // Fade each AI feature row up as it comes into view.
     (function () {
       var rows = document.querySelectorAll('.ai-row');
@@ -553,7 +591,7 @@
           entry.target.classList.add('is-visible');
           io.unobserve(entry.target);
         });
-      }, { rootMargin: '0px 0px -5% 0px', threshold: 0.05 });
+      }, { rootMargin: '40% 0px 0px 0px', threshold: 0.01 });
 
       rows.forEach(function (row) { io.observe(row); });
     })();
