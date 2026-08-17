@@ -623,7 +623,7 @@
 .app-preview-section {
   --ml-radius-md: 12px;
   --ml-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-  padding: 6rem 0;
+  padding: 4rem 0 6rem;
   position: relative;
   z-index: 1;
 }
@@ -1035,6 +1035,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
+  height: 100%;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 20px;
@@ -1050,6 +1051,9 @@
 
 .gallery-copy {
   max-width: 60ch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .gallery-tag {
