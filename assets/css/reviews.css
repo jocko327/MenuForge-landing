@@ -9,7 +9,8 @@
 }
 
 .reviews-section .section-sticky-head {
-  z-index: 20;
+  /* Stay below the scatter so cards are not sliced by the sticky title */
+  z-index: 2;
 }
 
 /* 1px sentinel above the sticky head — used to detect when the header pins */
@@ -25,6 +26,7 @@
 
 .reviews-stage {
   position: relative;
+  z-index: 5;
   width: 100%;
   min-height: 78vh;
   margin: 0.5rem auto 0;
