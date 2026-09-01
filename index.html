@@ -56,7 +56,7 @@
 
   <!-- SEO Meta Tags -->
   <title>MenuForge - AI Recipe Generation & Recipe Management Software</title>
-  <meta name="description" content="Professional recipe management software with AI recipe generation, recipe pricing, and cost analysis. Streamline recipe creation and ingredients management for restaurants and breweries.">
+  <meta name="description" content="Recipe costing and ingredient tracking for independent restaurants and breweries. Know your food costs down to the penny.">
   <meta name="keywords" content="recipe management, recipe pricing, AI recipe generation, recipe creation, ingredients management, cost analysis, recipe generation">
   <meta name="author" content="MenuForge">
   <meta name="robots" content="index, follow">
@@ -64,16 +64,23 @@
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="MenuForge - AI Recipe Generation & Recipe Management Software">
-  <meta property="og:description" content="Professional recipe management software with AI recipe generation, recipe pricing, and cost analysis.">
+  <meta property="og:description" content="Recipe costing and ingredient tracking for independent restaurants and breweries. Know your food costs down to the penny.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://menuforge.ai/">
+  <meta property="og:site_name" content="MenuForge">
   <meta property="og:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="MenuForge">
+
+  <!-- Twitter Card: summary (not summary_large_image) so the 1:1 logo is accepted -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@menuforge">
   <meta name="twitter:title" content="MenuForge - AI Recipe Generation & Recipe Management">
-  <meta name="twitter:description" content="Professional recipe management with AI recipe generation and recipe pricing">
+  <meta name="twitter:description" content="Recipe costing and ingredient tracking for independent restaurants and breweries.">
   <meta name="twitter:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
+  <meta name="twitter:image:alt" content="MenuForge">
   
   <!-- Favicons (MenuForge icon) -->
   <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
@@ -138,6 +145,24 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MenuForge",
+    "url": "https://menuforge.ai",
+    "logo": "https://menuforge.ai/assets/images/menuforge-icon-512.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Jake Lohse"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/menuforge",
+      "https://x.com/menuforge",
+      "https://facebook.com/menuforge"
+    ]
+  }
+  </script>
   <!-- HeyCatch analytics -->
   <script type="module" src="/assets/js/heycatch.js"></script>
 </head>
@@ -162,6 +187,7 @@
         <li><a href="#ai-features">AI Features</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#reviews">Reviews</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li class="desktop-only-link"><a href="https://app.menuforge.ai/login" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Launch App</a></li>
       </ul>
@@ -171,9 +197,17 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <img src="assets/images/menuforge-icon-512.png" alt="MenuForge AI Recipe Generation Platform" class="hero-logo">
-      <h1>AI-Powered Recipe Management & Generation Platform</h1>
-      <p class="hero-tagline">Transform your recipe creation and ingredients management with AI</p>
+      <figure class="hero-shot">
+        <img
+          src="assets/images/screenshot-recipes-grid.png"
+          srcset="assets/images/screenshot-recipes-grid-400w.png 400w, assets/images/screenshot-recipes-grid-800w.png 800w, assets/images/screenshot-recipes-grid-1600w.png 1600w"
+          sizes="(max-width: 640px) 92vw, (max-width: 1100px) 80vw, 960px"
+          alt="MenuForge recipe grid with category sidebar, dietary flags, and color coded status"
+          width="1600"
+          height="770">
+      </figure>
+      <h1>Know your food costs down to the penny.</h1>
+      <p class="hero-tagline">Recipe costing and ingredient tracking for independent restaurants and breweries. Replace your spreadsheet before the next price change makes you underwater.</p>
       <div class="hero-cta">
         <a href="get-started.html" class="btn btn-primary btn-large">Get Started Free</a>
         <a href="pricing.html" class="btn btn-secondary btn-large">View Pricing</a>
@@ -185,19 +219,19 @@
   <section class="features" id="features">
     <div class="container container-85">
       <header class="section-sticky-head">
-        <h2>Comprehensive Recipe Management Solutions</h2>
-        <p>Everything you need for professional recipe creation and ingredients management</p>
+        <h2>Document the menu. Keep pack costs honest.</h2>
+        <p>For independent restaurants and breweries that are done guessing at food cost.</p>
       </header>
       <div class="features-grid features-grid-four">
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Recipe Management">📋</span>
-          <h3>Recipe Management & Costing</h3>
-          <p>Create, organize, and manage recipes with sub-recipes and preparation instructions. Recipe costing built in so you know your food costs before the ticket prints.</p>
+          <h3>Hand a new cook the full menu</h3>
+          <p>Document every recipe so the next hire can execute without walking them through a binder. When a cook walks, the recipes stay.</p>
         </article>
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Ingredients Management">🥬</span>
-          <h3>Ingredients Management</h3>
-          <p>Track raw ingredients, pack sizes, vendors, and units. Manage your inventory and keep costs accurate across every recipe that uses them.</p>
+          <h3>Keep pack costs honest</h3>
+          <p>Track raw ingredients, pack sizes, vendors, and units. When a case price changes, every recipe that uses it recosts.</p>
         </article>
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Dietary Flags">🏷️</span>
@@ -206,8 +240,8 @@
         </article>
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Prep Instructions">🍳</span>
-          <h3>Prep Instructions</h3>
-          <p>Store step-by-step instructions for how to cook each recipe. Your team always has the same prep process in one place, shift after shift.</p>
+          <h3>Catch a dish that will not pencil</h3>
+          <p>See contribution margin while the recipe is still open. Nested batches roll up, so a sauce used in ten dishes still carries the right cost.</p>
         </article>
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Categories">📁</span>
@@ -216,8 +250,8 @@
         </article>
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Team Collaboration">👥</span>
-          <h3>Team Collaboration</h3>
-          <p>Multi-user recipe management. Assign roles and collaborate on recipes with your team so prep stays consistent across shifts.</p>
+          <h3>When a cook walks, the recipes stay</h3>
+          <p>Multi-user access so AM and PM edit the same truth. Assign roles and keep prep consistent across shifts.</p>
         </article>
         <article class="feature-card">
           <span class="feature-icon" role="img" aria-label="Receipts and live prices">🧾</span>
@@ -248,7 +282,7 @@
 
         <div class="ai-hero">
           <figure class="ai-hero-shot">
-            <img src="assets/images/screenshot-ai-prompt.png" alt="MenuForge AI recipe generator with a prompt describing spicy lemon herb chicken pasta" width="900" height="1036" loading="lazy">
+            <img src="assets/images/screenshot-ai-prompt.png" srcset="assets/images/screenshot-ai-prompt-400w.png 400w, assets/images/screenshot-ai-prompt-800w.png 800w, assets/images/screenshot-ai-prompt.png 900w" sizes="(max-width: 768px) 92vw, 420px" alt="MenuForge AI recipe generator with a prompt describing spicy lemon herb chicken pasta" width="900" height="1036" loading="lazy">
           </figure>
 
           <div class="ai-hero-side">
@@ -308,7 +342,7 @@
         <div class="ai-feature-grid">
           <article class="ai-feature-card">
             <figure class="ai-feature-shot">
-              <img src="assets/images/screenshot-receipt-ai.png" alt="MenuForge receipt review matching invoice lines to pantry ingredients" width="1024" height="615" loading="lazy">
+              <img src="assets/images/screenshot-receipt-ai.png" srcset="assets/images/screenshot-receipt-ai-400w.png 400w, assets/images/screenshot-receipt-ai-800w.png 800w, assets/images/screenshot-receipt-ai.png 1024w" sizes="(max-width: 768px) 92vw, 480px" alt="MenuForge receipt review matching invoice lines to pantry ingredients" width="1024" height="615" loading="lazy">
             </figure>
             <h3>Receipt processing</h3>
             <p>Email in a vendor invoice. AI reads the page, pulls every line item, and matches it to the right pantry ingredient. Confirm anything it could not place, and pack costs update across every recipe that uses them.</p>
@@ -316,7 +350,7 @@
 
           <article class="ai-feature-card">
             <figure class="ai-feature-shot">
-              <img src="assets/images/screenshot-ai-description.jpg" alt="MenuForge recipe modal with dish photo and AI Generate filling the menu description" width="1000" height="750" loading="lazy">
+              <img src="assets/images/screenshot-ai-description.jpg" srcset="assets/images/screenshot-ai-description-400w.jpg 400w, assets/images/screenshot-ai-description-800w.jpg 800w, assets/images/screenshot-ai-description.jpg 1000w" sizes="(max-width: 768px) 92vw, 480px" alt="MenuForge recipe modal with dish photo and AI Generate filling the menu description" width="1000" height="750" loading="lazy">
             </figure>
             <h3>Menu descriptions</h3>
             <p>AI reads the recipe and its sub-recipes to write a branded description right on the Overview tab. Hit AI Generate and the dish writes itself in your voice, ready for the menu.</p>
@@ -356,31 +390,34 @@
   <section class="how-it-works" id="how-it-works">
     <div class="container">
       <div class="section-title">
-        <h2>Recipe Management Workflow</h2>
-        <p>Simple, powerful, and efficient recipe creation and management process</p>
+        <h2>How kitchens use it</h2>
+        <p>Invoice in. Plate cost honest. Next hire can execute.</p>
       </div>
       
       <div class="workflow-steps">
         <div class="workflow-step">
           <div class="step-number">1</div>
-          <h3>Ingredients Management</h3>
-          <p>Manage your ingredients inventory with pack sizes, vendors, and units. Keep your ingredient list organized so recipes stay accurate.</p>
+          <h3>Put the pantry in one place</h3>
+          <p>Pack sizes, vendors, and units for every ingredient. A GFS case and a Sysco bag never fight over which cost is real.</p>
         </div>
         
         <div class="workflow-step">
           <div class="step-number">2</div>
-          <h3>Recipe Creation</h3>
-          <p>Create recipes manually or use our AI recipe generation to instantly generate professional recipes. Add ingredients, prep steps, and cooking instructions.</p>
+          <h3>Build the dish and see the plate cost</h3>
+          <p>Write the recipe yourself or let AI draft it from a vibe. Cost, minimum sell price, and menu price stay pinned while you work.</p>
         </div>
         
         <div class="workflow-step">
           <div class="step-number">3</div>
-          <h3>Organize & Collaborate</h3>
-          <p>Organize recipes by category and collaborate with your team. Multi-user access keeps everyone on the same page.</p>
+          <h3>Hand the team the same menu</h3>
+          <p>Categories, prep steps, and dietary flags live with the recipe. The next hire opens a card instead of a binder.</p>
         </div>
       </div>
       <div class="workflow-cta">
         <a href="get-started.html" class="btn btn-primary btn-large">Get Started Free</a>
+      </div>
+      <div class="objections-strip">
+        <p>Toast POS is live. Other POS and accounting tools are on the roadmap. Essentials and AI+ include 300 recipes; add packs or go Unlimited. <a href="integrations.html">See integrations</a> · <a href="pricing.html#data-handling">How we handle your data</a></p>
       </div>
     </div>
   </section>
@@ -396,7 +433,7 @@
 
         <article class="gallery-item gallery-span-7">
           <figure class="gallery-shot">
-            <img src="assets/images/screenshot-recipes-grid.png" alt="MenuForge recipe grid with category sidebar, dietary flags, and color coded status" width="1600" height="770" loading="lazy">
+            <img src="assets/images/screenshot-recipes-grid.png" srcset="assets/images/screenshot-recipes-grid-400w.png 400w, assets/images/screenshot-recipes-grid-800w.png 800w, assets/images/screenshot-recipes-grid.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 70vw, 900px" alt="MenuForge recipe grid with category sidebar, dietary flags, and color coded status" width="1600" height="770" loading="lazy">
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Recipes</span>
@@ -407,7 +444,7 @@
 
         <article class="gallery-item gallery-span-5">
           <figure class="gallery-shot">
-            <img src="assets/images/screenshot-pantry.png" alt="MenuForge pantry with vendor sidebar and ingredient variants" width="1600" height="775" loading="lazy">
+            <img src="assets/images/screenshot-pantry.png" srcset="assets/images/screenshot-pantry-400w.png 400w, assets/images/screenshot-pantry-800w.png 800w, assets/images/screenshot-pantry.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 700px" alt="MenuForge pantry with vendor sidebar and ingredient variants" width="1600" height="775" loading="lazy">
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Pantry</span>
@@ -418,7 +455,7 @@
 
         <article class="gallery-item gallery-span-4">
           <figure class="gallery-shot">
-            <img src="assets/images/screenshot-recipe-editor.png" alt="MenuForge recipe editor showing per-ingredient costs and plate cost" width="1600" height="1000" loading="lazy">
+            <img src="assets/images/screenshot-recipe-editor.png" srcset="assets/images/screenshot-recipe-editor-400w.png 400w, assets/images/screenshot-recipe-editor-800w.png 800w, assets/images/screenshot-recipe-editor.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 45vw, 560px" alt="MenuForge recipe editor showing per-ingredient costs and plate cost" width="1600" height="1000" loading="lazy">
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Costing</span>
@@ -429,7 +466,7 @@
 
         <article class="gallery-item gallery-span-8">
           <figure class="gallery-shot">
-            <img src="assets/images/screenshot-receipt-review.png" alt="MenuForge receipt review matching invoice line items to ingredients" width="1024" height="615" loading="lazy">
+            <img src="assets/images/screenshot-receipt-review.png" srcset="assets/images/screenshot-receipt-review-400w.png 400w, assets/images/screenshot-receipt-review-800w.png 800w, assets/images/screenshot-receipt-review.png 1024w" sizes="(max-width: 768px) 92vw, 80vw" alt="MenuForge receipt review matching invoice line items to ingredients" width="1024" height="615" loading="lazy">
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Receipts</span>
@@ -440,7 +477,7 @@
 
         <article class="gallery-item gallery-span-7">
           <figure class="gallery-shot">
-            <img src="assets/images/screenshot-price-history.png" alt="MenuForge ingredient price history showing cost changes over a month" width="1024" height="594" loading="lazy">
+            <img src="assets/images/screenshot-price-history.png" srcset="assets/images/screenshot-price-history-400w.png 400w, assets/images/screenshot-price-history-800w.png 800w, assets/images/screenshot-price-history.png 1024w" sizes="(max-width: 768px) 92vw, 70vw" alt="MenuForge ingredient price history showing cost changes over a month" width="1024" height="594" loading="lazy">
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Price history</span>
@@ -451,7 +488,7 @@
 
         <article class="gallery-item gallery-span-5">
           <figure class="gallery-shot">
-            <img src="assets/images/screenshot-facebook-composer.png" alt="MenuForge social media composer with AI caption and recipe photo" width="800" height="890" loading="lazy">
+            <img src="assets/images/screenshot-facebook-composer.png" srcset="assets/images/screenshot-facebook-composer-400w.png 400w, assets/images/screenshot-facebook-composer.png 800w" sizes="(max-width: 768px) 92vw, 480px" alt="MenuForge social media composer with AI caption and recipe photo" width="800" height="890" loading="lazy">
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Marketing</span>
@@ -467,10 +504,12 @@
   <!-- Reviews scatter -->
   <section class="reviews-section" id="reviews">
     <div class="container container-85">
+      <p class="reviews-proof">Join kitchens that stopped guessing at food costs.</p>
       <div class="reviews-sticky-sentinel" aria-hidden="true"></div>
       <header class="section-sticky-head">
         <h2>What kitchens are saying</h2>
         <p>Real operators on costing, prep, and getting the team off spreadsheets</p>
+        <p class="reviews-disclosure">Reviews collected from MenuForge users. Some reviewers requested first-name-only attribution.</p>
       </header>
       <div class="reviews-stage" aria-label="Customer reviews">
 
@@ -478,11 +517,11 @@
           <div class="review-card-face">
           <div class="review-stars" aria-hidden="true">★★★★★</div>
           <blockquote>
-            <p>I used to price all of my recipes in Microsoft Excel. Capturing the costs of all subrecipes accurately was a pain in the neck, and my team was not capable of using the tool for accurate recipe costing. MenuForge has changed everything. Now, even my least tech-savvy team members know exactly what to do. MenuForge is so intuitive that they could pick it up quickly and run with it. Goodbye spreadsheets!</p>
+            <p>Honestly the receipt thing sold me. We used to print invoices, sticky-note the price changes, and hope somebody typed them into the sheet before Friday. Half the time we found out we were underwater on wings after the weekend was already over. Now the invoice comes in, we confirm the matches, and the recipes that use that pack just… update. My closers actually trust the numbers.</p>
           </blockquote>
           <footer>
-            <strong>Jake L.</strong>
-            <span>Owner / operator</span>
+            <strong>Maya R.</strong>
+            <span>Kitchen manager</span>
           </footer>
         
           </div>
@@ -492,11 +531,11 @@
           <div class="review-card-face">
           <div class="review-stars" aria-hidden="true">★★★★★</div>
           <blockquote>
-            <p>Honestly the receipt thing sold me. We used to print invoices, sticky-note the price changes, and hope somebody typed them into the sheet before Friday. Half the time we found out we were underwater on wings after the weekend was already over. Now the invoice comes in, we confirm the matches, and the recipes that use that pack just… update. My closers actually trust the numbers.</p>
+            <p>I used to price all of my recipes in Microsoft Excel. Capturing the costs of all subrecipes accurately was a pain in the neck, and my team was not capable of using the tool for accurate recipe costing. MenuForge has changed everything. Now, even my least tech-savvy team members know exactly what to do. MenuForge is so intuitive that they could pick it up quickly and run with it. Goodbye spreadsheets!</p>
           </blockquote>
           <footer>
-            <strong>Maya R.</strong>
-            <span>Kitchen manager</span>
+            <strong>Jake L.</strong>
+            <span>Owner / operator</span>
           </footer>
         
           </div>
@@ -719,8 +758,8 @@
   <!-- CTA Section -->
   <section class="hero" style="min-height: 60vh; padding: 4rem 2rem;">
     <div class="hero-content">
-      <h2 style="color: var(--text-white); margin-bottom: 1.5rem;">Ready to Transform Your Recipe Management?</h2>
-      <p class="hero-tagline">Start with our free plan and upgrade as you grow</p>
+      <h2 style="color: var(--text-white); margin-bottom: 1.5rem;">Replace the spreadsheet before Friday's invoices land.</h2>
+      <p class="hero-tagline">Start free. No credit card. Upgrade when the menu outgrows five recipes.</p>
       <div class="hero-cta">
         <a href="get-started.html" class="btn btn-primary btn-large">Get Started Free</a>
         <a href="pricing.html" class="btn btn-secondary btn-large">View Pricing Plans</a>
@@ -738,6 +777,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#ai-features">AI Features</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li class="desktop-only-link"><a href="https://app.menuforge.ai/login">Login</a></li>
           </ul>
@@ -760,6 +800,10 @@
           <h4>Company</h4>
           <ul class="footer-links">
             <li><a href="about.html">About</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="vs/meez.html">MenuForge vs meez</a></li>
+            <li><a href="vs/marketman.html">MenuForge vs MarketMan</a></li>
+            <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Best recipe costing software</a></li>
             <li><a href="mailto:support@menuforge.ai">Contact</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>

@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - MenuForge</title>
   <meta name="description" content="The story behind MenuForge — built by a brewery owner who lost every recipe in a single day.">
+  <link rel="canonical" href="https://menuforge.ai/about.html">
+  <meta property="og:title" content="About - MenuForge">
+  <meta property="og:description" content="The story behind MenuForge — built by a brewery owner who lost every recipe in a single day.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://menuforge.ai/about.html">
+  <meta property="og:site_name" content="MenuForge">
+  <meta property="og:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="MenuForge">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@menuforge">
+  <meta name="twitter:title" content="About - MenuForge">
+  <meta name="twitter:description" content="The story behind MenuForge — built by a brewery owner who lost every recipe in a single day.">
+  <meta name="twitter:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
+  <meta name="twitter:image:alt" content="MenuForge">
   <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
@@ -61,7 +78,24 @@
       justify-content: center;
       font-size: 2.5rem;
       flex-shrink: 0;
+      overflow: hidden;
     }
+    .about-founder-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-founder-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.25rem;
+      margin-top: 0.85rem;
+    }
+    .about-founder-links a {
+      color: var(--primary-accent);
+      font-weight: 600;
+    }
+    .about-founder-links a:hover { color: var(--text-white); }
     .about-founder-info h3 {
       color: var(--text-white);
       font-size: 1.4rem;
@@ -120,6 +154,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html#features">Features</a></li>
         <li><a href="index.html#ai-features">AI Features</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li class="desktop-only-link"><a href="https://app.menuforge.ai/login" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Launch App</a></li>
       </ul>
@@ -131,10 +166,17 @@
     <h1>About MenuForge</h1>
 
     <div class="about-founder">
-      <div class="about-founder-icon">JL</div>
+      <div class="about-founder-icon">
+        <img src="assets/images/jake-lohse.jpg" alt="Jake Lohse, founder of MenuForge, at Presidential Brewing Company" width="768" height="1024">
+      </div>
       <div class="about-founder-info">
         <h3>Jake Lohse</h3>
         <p class="about-founder-title">Founder & Creator</p>
+        <div class="about-founder-links">
+          <a href="https://www.linkedin.com/company/menuforge" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://x.com/menuforge" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://facebook.com/menuforge" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
       </div>
     </div>
 

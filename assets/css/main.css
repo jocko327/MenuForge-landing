@@ -325,7 +325,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 1040px;
   position: relative;
   z-index: 2;
 }
@@ -336,6 +336,21 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   margin: 0 auto 2rem;
   filter: drop-shadow(0 0 30px rgba(241, 198, 113, 0.6));
   animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.hero-shot {
+  margin: 0 auto 2rem;
+  max-width: 960px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 40px rgba(241, 198, 113, 0.18);
+}
+
+.hero-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @keyframes glow-pulse {
@@ -359,6 +374,20 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.objections-strip {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  text-align: center;
+  color: var(--text-white-80);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.objections-strip a {
+  color: var(--primary-accent);
+  font-weight: 600;
 }
 
 /* Features Section */

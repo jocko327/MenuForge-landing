@@ -13,6 +13,20 @@
   z-index: 25;
 }
 
+.reviews-disclosure {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-white-60);
+}
+
+.reviews-proof {
+  text-align: center;
+  margin: 0 0 1.25rem;
+  color: var(--text-white-80);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
 /* 1px sentinel above the sticky head — used to detect when the header pins */
 .reviews-sticky-sentinel {
   position: relative;

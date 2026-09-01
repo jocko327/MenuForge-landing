@@ -11,10 +11,23 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://menuforge.ai/pricing.html">
   
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter: 1:1 logo on every share -->
   <meta property="og:title" content="MenuForge Pricing - Recipe Management Software Plans">
   <meta property="og:description" content="Affordable recipe management plans starting free. AI+ features from $139.95/mo">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://menuforge.ai/pricing.html">
+  <meta property="og:site_name" content="MenuForge">
+  <meta property="og:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="MenuForge">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@menuforge">
+  <meta name="twitter:title" content="MenuForge Pricing - Recipe Management Software Plans">
+  <meta name="twitter:description" content="Affordable recipe management plans starting free. AI+ features from $139.95/mo">
+  <meta name="twitter:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
+  <meta name="twitter:image:alt" content="MenuForge">
   
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
@@ -133,19 +146,25 @@
     }
     
     .pricing-card.featured::before {
-      content: 'MOST POPULAR';
+      content: none;
+    }
+
+    .popular-badge {
       position: absolute;
-      top: -30px;
+      top: -18px;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, var(--primary-accent), #d9a95a);
-      color: var(--bg-dark-primary);
-      padding: 0.5rem 1.5rem;
+      background: #1a1a2e;
+      color: #F1C671;
+      padding: 0.6rem 1.75rem;
       border-radius: 20px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 1px;
-      z-index: 2;
+      border: 2px solid #F1C671;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      z-index: 3;
+      white-space: nowrap;
     }
 
     /* Gold AI+ card */
@@ -209,14 +228,8 @@
       border-color: rgba(255, 215, 0, 0.9);
     }
 
-    /* Dark contrasting badge on gold card */
     .pricing-card.gold-ai.featured::before {
-      background: #1a1a2e;
-      color: #F1C671;
-      padding: 0.6rem 1.75rem;
-      font-size: 0.8rem;
-      border: 2px solid #F1C671;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      content: none;
     }
 
     .pricing-card.gold-ai .btn.plan-cta {
@@ -402,7 +415,136 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .pricing-anchor {
+      text-align: center;
+      max-width: 720px;
+      margin: -1.5rem auto 2.5rem;
+      color: var(--text-white-80);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .compare-wrap {
+      max-width: 1300px;
+      margin: 4rem auto 0;
+      overflow-x: auto;
+    }
+
+    .compare-wrap h2 {
+      text-align: center;
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      color: var(--text-white-80);
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+    }
+
+    .compare-table th:first-child,
+    .compare-table td:first-child {
+      text-align: left;
+    }
+
+    .compare-table th {
+      color: var(--primary-accent);
+      font-weight: 700;
+    }
+
+    .data-handling {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      color: var(--text-white-80);
+      line-height: 1.7;
+    }
+
+    .data-handling h2 {
+      color: var(--text-white);
+      margin-bottom: 1rem;
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I change plans later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can upgrade or downgrade your plan at any time. Upgrades take effect immediately, and downgrades will apply at the end of your current billing period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept all major credit cards (Visa, Mastercard, American Express, Discover) through our secure payment processor, Stripe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the annual billing discount work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you choose annual billing, you save 10% compared to paying monthly. You'll be billed once per year at the discounted rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the recipe limit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Essentials and AI+ plans include up to 300 recipes (including archived). You can expand your storage with a recipe add-on pack: +500 recipes for +$20/mo or +1,000 recipes for +$50/mo. The Unlimited plan has no recipe limits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do AI recipe credits work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The AI+ plan includes 25 AI recipe generation calls per month. Each request to generate a recipe counts as one call, regardless of how many recipes AI returns. Follow-up conversation after a recipe is returned does not count against your limit. If you need more, you can purchase additional credits: 5 for $20 or 10 for $35 as a one-time charge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AI features are included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The AI+ and Unlimited plans include AI recipe generation, unlimited AI-powered recipe description generation, unlimited AI unit conversion assistance, receipt processing (email or upload invoices with live ingredient prices and price-change alerts), and posting recipes to social media with AI copy written in your brand voice. The AI+ plan includes 25 AI recipe calls per month, while the Unlimited plan has no limits. Receipt processing and social media posting are not included on Free or Essentials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I cancel my subscription anytime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period, then automatically downgrade to the Free plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Essentials and AI+?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both plans include 300 recipes and core recipe management features. AI+ adds AI-powered recipe generation (25/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to 6 users vs. 3 on Essentials. Free and Essentials do not include receipt processing or social media posting."
+        }
+      }
+    ]
+  }
+  </script>
   <!-- HeyCatch analytics -->
   <script type="module" src="/assets/js/heycatch.js"></script>
 </head>
@@ -428,6 +570,7 @@
         <li><a href="index.html#features">Features</a></li>
         <li><a href="index.html#ai-features">AI Features</a></li>
         <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li class="desktop-only-link"><a href="https://app.menuforge.ai/login" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">Launch App</a></li>
       </ul>
@@ -441,6 +584,7 @@
         <h1>Choose Your Plan</h1>
         <p>Start free, upgrade as you grow. All plans include recipe management and cost tracking.</p>
       </div>
+      <p class="pricing-anchor">Less than one sous chef shift a month. Less than a quarter of what MarketMan charges. No setup fees, no six-month implementation.</p>
       
       <!-- Billing Toggle -->
       <div class="billing-toggle">
@@ -503,6 +647,7 @@
         
         <!-- AI+ Plan (Featured) -->
         <div class="pricing-card featured gold-ai">
+          <span class="popular-badge">Most Popular</span>
           <h3 class="plan-name">AI+</h3>
           <div class="plan-price">
             <span class="price-monthly">$139.95</span>
@@ -575,6 +720,65 @@
           </div>
         </div>
       </div>
+
+      <div class="compare-wrap">
+        <h2>Compare plans</h2>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>What you get</th>
+              <th>Free</th>
+              <th>Essentials</th>
+              <th>AI+</th>
+              <th>Unlimited</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Users</td>
+              <td>1</td>
+              <td>3</td>
+              <td>6</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Recipes</td>
+              <td>5</td>
+              <td>300</td>
+              <td>300</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>AI recipes / month</td>
+              <td>—</td>
+              <td>—</td>
+              <td>25</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Receipt processing</td>
+              <td>—</td>
+              <td>—</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Post to social media</td>
+              <td>—</td>
+              <td>—</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td>Email</td>
+              <td>Email</td>
+              <td>Priority (24–48hr)</td>
+              <td>Priority (24–48hr)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       
       <!-- FAQ Section -->
       <div class="faq-section">
@@ -622,6 +826,11 @@
           <p class="faq-answer">Both plans include <span data-faq-limit="basic-recipes">300</span> recipes and core recipe management features. AI+ adds AI-powered recipe generation (<span data-faq-limit="ai_plus-ai">25</span>/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to <span data-faq-limit="ai_plus-users">6</span> users vs. <span data-faq-limit="basic-users">3</span> on Essentials. Free and Essentials do not include receipt processing or social media posting.</p>
         </div>
       </div>
+
+      <div class="data-handling" id="data-handling">
+        <h2>How we handle your data</h2>
+        <p>MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe. We do not currently hold SOC 2 or GDPR certifications, but we follow industry best practices for data security.</p>
+      </div>
     </div>
   </section>
 
@@ -646,6 +855,7 @@
             <li><a href="index.html#features">Features</a></li>
             <li><a href="index.html#ai-features">AI Features</a></li>
             <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
             <li><a href="index.html#how-it-works">How It Works</a></li>
             <li class="desktop-only-link"><a href="https://app.menuforge.ai/login">Login</a></li>
           </ul>
@@ -666,6 +876,10 @@
           <h4>Company</h4>
           <ul class="footer-links">
             <li><a href="about.html">About</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="vs/meez.html">MenuForge vs meez</a></li>
+            <li><a href="vs/marketman.html">MenuForge vs MarketMan</a></li>
+            <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Best recipe costing software</a></li>
             <li><a href="mailto:support@menuforge.ai">Contact</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>

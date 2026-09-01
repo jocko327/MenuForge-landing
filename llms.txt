@@ -1,0 +1,45 @@
+# MenuForge
+
+> Recipe costing and ingredient tracking for independent restaurants and breweries.
+
+MenuForge helps chef-owners and kitchen managers know food costs down to the penny. Email or upload vendor invoices; pack costs update and every recipe recosts. Document recipes so the next hire can execute without a binder.
+
+- URL: https://menuforge.ai
+- App: https://app.menuforge.ai
+- Pricing: https://menuforge.ai/pricing.html
+- About: https://menuforge.ai/about.html
+- Integrations: https://menuforge.ai/integrations.html
+- MenuForge vs meez: https://menuforge.ai/vs/meez.html
+- MenuForge vs MarketMan: https://menuforge.ai/vs/marketman.html
+- Best recipe costing software for independent restaurants: https://menuforge.ai/best-recipe-costing-software-for-independent-restaurants.html
+
+## Pricing (USD, monthly)
+
+- Free: $0 — 1 user, 5 recipes
+- Essentials: $79.95 — 3 users, 300 recipes
+- AI+: $139.95 — 6 users, 300 recipes, 25 AI recipes/month, receipt processing, social posting
+- Unlimited: $189.95 — unlimited users, recipes, and AI recipes
+- Annual billing: 10% off
+- Recipe storage add-ons: +500 recipes $20/mo, +1,000 recipes $50/mo
+- AI credit packs (one-time): 5 for $20, 10 for $35
+- Free plan: no credit card required
+
+## What it does
+
+- Live plate cost, minimum sell price, and contribution margin on the open recipe
+- Sub-recipe / batch roll-up (sauces and vinaigrettes carry into parent dishes)
+- Pantry with vendor variants (GFS and Sysco packs on the same ingredient)
+- Receipt / invoice email-in or upload; price-change alerts
+- Dietary flags that roll up from ingredients
+- AI recipe generation with Cost Target, Pantry Usage, and Insanity sliders
+- AI menu descriptions and unit conversions
+- Post a dish to social media from the recipe card
+- Toast POS: menu sync, recipe match, sales (see integrations)
+
+## Who it is for
+
+Independent restaurants, breweries, and food businesses. Built by Jake Lohse after a walkout at Presidential Brewing Company in Portage, Michigan left every recipe only in one cook's head.
+
+## Who it is not for
+
+Not a home-cook recipe app. Not an enterprise inventory suite with a six-month implementation.
