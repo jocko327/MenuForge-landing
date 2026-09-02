@@ -19,12 +19,28 @@
   color: var(--text-white-60);
 }
 
-.reviews-proof {
+.reviews-proof-badge {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  padding: 1.25rem 1.5rem;
   text-align: center;
-  margin: 0 0 1.25rem;
-  color: var(--text-white-80);
-  font-size: 1.05rem;
-  font-weight: 600;
+  border: 1px solid rgba(241, 198, 113, 0.35);
+  border-radius: 16px;
+  background: rgba(241, 198, 113, 0.08);
+}
+
+.reviews-proof {
+  margin: 0;
+  color: var(--text-white);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.reviews-proof-note {
+  margin: 0.6rem 0 0;
+  color: var(--text-white-60);
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 /* 1px sentinel above the sticky head — used to detect when the header pins */

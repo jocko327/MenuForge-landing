@@ -361,18 +361,70 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   flex-wrap: wrap;
 }
 
-.objections-strip {
-  max-width: 720px;
-  margin: 2.5rem auto 0;
-  text-align: center;
-  color: var(--text-white-80);
-  font-size: 1rem;
-  line-height: 1.6;
+.integrations-section {
+  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
 }
 
-.objections-strip a {
+.integrations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.integrations-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+}
+
+.integrations-card h3 {
+  color: var(--primary-accent);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.integrations-card p,
+.integrations-note {
+  color: var(--text-white-80);
+  line-height: 1.7;
+}
+
+.integrations-card a,
+.integrations-note a {
   color: var(--primary-accent);
   font-weight: 600;
+}
+
+.integrations-note {
+  max-width: 720px;
+  margin: 1.75rem auto 0;
+  text-align: center;
+}
+
+.data-handling-home {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  text-align: left;
+  color: var(--text-white-80);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.data-handling-home h3 {
+  color: var(--text-white);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .integrations-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Features Section */
