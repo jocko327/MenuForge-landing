@@ -11,6 +11,8 @@ MenuForge helps chef-owners and kitchen managers know food costs down to the pen
 - Integrations: https://menuforge.ai/integrations.html
 - MenuForge vs meez: https://menuforge.ai/vs/meez.html
 - MenuForge vs MarketMan: https://menuforge.ai/vs/marketman.html
+- MenuForge vs xtraCHEF: https://menuforge.ai/vs/xtrachef.html
+- MenuForge vs WISK: https://menuforge.ai/vs/wisk.html
 - Best recipe costing software for independent restaurants: https://menuforge.ai/best-recipe-costing-software-for-independent-restaurants.html
 
 ## Pricing (USD, monthly)
