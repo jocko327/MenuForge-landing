@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     navLinks.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1100) {
           navLinks.classList.remove('active');
           mobileMenuToggle.textContent = '☰';
         }

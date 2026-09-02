@@ -197,42 +197,45 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   top: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem 0;
-  background: rgba(15, 15, 35, 0.8);
-  backdrop-filter: blur(10px);
+  padding: 0.7rem 0;
+  background: rgba(15, 15, 35, 0.88);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
   transition: var(--transition-smooth);
 }
 
 .header.scrolled {
-  padding: 1rem 0;
-  background: rgba(15, 15, 35, 0.95);
+  padding: 0.55rem 0;
+  background: rgba(15, 15, 35, 0.96);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
-  max-width: 1200px;
+  max-width: 1480px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.65rem;
+  flex: 0 0 auto;
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-white);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .logo img {
-  height: 50px;
-  width: 50px;
+  height: 36px;
+  width: 36px;
   filter: drop-shadow(0 0 10px rgba(241, 198, 113, 0.5));
 }
 
@@ -243,15 +246,26 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  gap: 0.15rem 1.1rem;
   align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.nav-links li {
+  flex: 0 0 auto;
 }
 
 .nav-links a {
   color: var(--text-white-80);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.92rem;
+  line-height: 1;
+  white-space: nowrap;
   transition: var(--transition-smooth);
 }
 
@@ -259,8 +273,21 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   color: var(--primary-accent);
 }
 
+.nav-cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.15rem !important;
+  font-size: 0.9rem !important;
+  white-space: nowrap;
+  line-height: 1;
+}
+
 .nav-links .btn-primary,
-.nav-links .btn-primary:hover {
+.nav-links .btn-primary:hover,
+.nav-cta.btn-primary,
+.nav-cta.btn-primary:hover {
   color: var(--bg-dark-primary) !important;
 }
 
@@ -437,7 +464,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 /* Sticky section titles (Features, See MenuForge in Action) — same pin model as AI */
 .section-sticky-head {
   position: sticky;
-  top: 72px;
+  top: 64px;
   z-index: 5;
   text-align: center;
   margin: 0 0 2.5rem;
@@ -788,6 +815,36 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   color: var(--text-white);
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* Collapse the header before links wrap or crash the logo */
+@media (max-width: 1100px) {
+  .mobile-menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-cta {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 15, 35, 0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1.25rem 1.5rem 1.5rem;
+    gap: 1.1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
 
 /* Responsive Design */
