@@ -43,6 +43,19 @@
   font-weight: 400;
 }
 
+.reviews-avatar-grid {
+  display: none;
+}
+
+.review-founder-label {
+  margin: 0 0 0.65rem;
+  color: var(--primary-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 /* 1px sentinel above the sticky head — used to detect when the header pins */
 .reviews-sticky-sentinel {
   position: relative;

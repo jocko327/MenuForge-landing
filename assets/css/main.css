@@ -16,6 +16,8 @@
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Open Sans', sans-serif;
   --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Locked so sticky section titles pin flush to the bar — no scroll-state gap */
+  --site-header-height: 56px;
 }
 
 /* Reset & Base */
@@ -31,7 +33,7 @@ html {
 }
 
 [id] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: calc(var(--site-header-height) + 16px);
 }
 
 body {
@@ -197,7 +199,10 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.7rem 0;
+  height: var(--site-header-height);
+  padding: 0;
+  display: flex;
+  align-items: center;
   background: rgba(15, 15, 35, 0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -206,12 +211,12 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 }
 
 .header.scrolled {
-  padding: 0.55rem 0;
   background: rgba(15, 15, 35, 0.96);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
+  width: 100%;
   max-width: 1480px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -228,6 +233,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   font-family: var(--font-heading);
   font-size: 1.45rem;
   font-weight: 700;
+  line-height: 1;
   color: var(--text-white);
   text-decoration: none;
   white-space: nowrap;
@@ -365,6 +371,20 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
+.hero-product {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(241, 198, 113, 0.55);
+  box-shadow:
+    0 0 28px rgba(241, 198, 113, 0.55),
+    0 0 56px rgba(241, 198, 113, 0.28),
+    0 24px 60px rgba(0, 0, 0, 0.45);
+  background: rgba(15, 15, 35, 0.6);
+}
+
 @keyframes glow-pulse {
   0%, 100% { filter: drop-shadow(0 0 30px rgba(241, 198, 113, 0.6)); }
   50% { filter: drop-shadow(0 0 50px rgba(241, 198, 113, 0.9)); }
@@ -433,6 +453,34 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   text-align: center;
 }
 
+.not-for-section {
+  padding: 0 0 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.not-for-callout {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.not-for-callout h2 {
+  color: var(--text-white);
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+}
+
+.not-for-callout p {
+  color: var(--text-white-80);
+  line-height: 1.7;
+  margin: 0;
+}
+
 .data-handling-home {
   max-width: 720px;
   margin: 2.5rem auto 0;
@@ -464,7 +512,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 /* Sticky section titles (Features, See MenuForge in Action) — same pin model as AI */
 .section-sticky-head {
   position: sticky;
-  top: 64px;
+  top: var(--site-header-height);
   z-index: 5;
   text-align: center;
   margin: 0 0 2.5rem;
@@ -490,7 +538,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 
 @media (max-width: 1024px) {
   .section-sticky-head {
-    top: 64px;
+    top: var(--site-header-height);
     padding: 0.85rem 1rem 0.95rem;
     margin: 0 0 1.5rem;
   }
@@ -812,6 +860,8 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   display: none;
   background: none;
   border: none;
+  padding: 0.35rem;
+  line-height: 1;
   color: var(--text-white);
   font-size: 1.5rem;
   cursor: pointer;
@@ -873,7 +923,8 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     padding: 8rem 1rem 3rem;
   }
 
-  .hero-logo {
+  .hero-logo,
+  .hero-product {
     margin-top: 1rem;
   }
 

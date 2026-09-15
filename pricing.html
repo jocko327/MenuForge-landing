@@ -36,7 +36,7 @@
   <link rel="apple-touch-icon" href="assets/images/menuforge-icon-192.png">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/main.css?v=20260902h">
+  <link rel="stylesheet" href="assets/css/main.css?v=20260902k">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
   
   <style>
@@ -468,6 +468,20 @@
       line-height: 1.7;
     }
 
+    .moneyback-guarantee {
+      max-width: 800px;
+      margin: 1.75rem auto 0;
+      text-align: center;
+      color: var(--text-white);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .moneyback-guarantee a {
+      color: var(--primary-accent);
+      font-weight: 600;
+    }
+
     .data-handling h2 {
       color: var(--text-white);
       margin-bottom: 1rem;
@@ -532,6 +546,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period, then automatically downgrade to the Free plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a money-back guarantee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every paid plan has a 30-day money-back guarantee. No questions asked."
         }
       },
       {
@@ -626,10 +648,10 @@
         
         <!-- Essentials Plan -->
         <div class="pricing-card">
-          <h3 class="plan-name">Essentials</h3>
+          <h3 class="plan-name" data-plan-name="basic">Essentials</h3>
           <div class="plan-price">
-            <span class="price-monthly">$79.95</span>
-            <span class="price-annual" style="display: none;">$71.96</span>
+            <span class="price-monthly" data-plan-price="basic">$79.95</span>
+            <span class="price-annual" data-plan-price="basic-annual" style="display: none;">$71.96</span>
             <span>/month</span>
           </div>
           <p class="price-period price-period-text">Billed monthly</p>
@@ -655,10 +677,10 @@
         <!-- AI+ Plan (Featured) -->
         <div class="pricing-card featured gold-ai">
           <span class="popular-badge">Most Popular</span>
-          <h3 class="plan-name">AI+</h3>
+          <h3 class="plan-name" data-plan-name="ai_plus">AI+</h3>
           <div class="plan-price">
-            <span class="price-monthly">$139.95</span>
-            <span class="price-annual" style="display: none;">$125.96</span>
+            <span class="price-monthly" data-plan-price="ai_plus">$139.95</span>
+            <span class="price-annual" data-plan-price="ai_plus-annual" style="display: none;">$125.96</span>
             <span>/month</span>
           </div>
           <p class="price-period price-period-text">Billed monthly</p>
@@ -684,10 +706,10 @@
 
         <!-- Unlimited Plan -->
         <div class="pricing-card">
-          <h3 class="plan-name">Unlimited</h3>
+          <h3 class="plan-name" data-plan-name="unlimited">Unlimited</h3>
           <div class="plan-price">
-            <span class="price-monthly">$189.95</span>
-            <span class="price-annual" style="display: none;">$170.96</span>
+            <span class="price-monthly" data-plan-price="unlimited">$189.95</span>
+            <span class="price-annual" data-plan-price="unlimited-annual" style="display: none;">$170.96</span>
             <span>/month</span>
           </div>
           <p class="price-period price-period-text">Billed monthly</p>
@@ -710,6 +732,8 @@
           </button>
         </div>
       </div>
+
+      <p class="moneyback-guarantee">30-day money-back guarantee on all paid plans. No questions asked. <a href="terms.html#refunds">Full details</a></p>
 
       <!-- Add-ons Section -->
       <div class="addons-section">
@@ -783,6 +807,48 @@
               <td>Priority (24–48hr)</td>
               <td>Priority (24–48hr)</td>
             </tr>
+            <tr>
+              <td>Sub-recipes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Dietary flags</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Price history</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>AI menu descriptions</td>
+              <td>—</td>
+              <td>—</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>AI unit conversions</td>
+              <td>—</td>
+              <td>—</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Custom branding</td>
+              <td>—</td>
+              <td>—</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -826,6 +892,11 @@
         <div class="faq-item">
           <h3 class="faq-question">Can I cancel my subscription anytime?</h3>
           <p class="faq-answer">Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period, then automatically downgrade to the Free plan.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Is there a money-back guarantee?</h3>
+          <p class="faq-answer">Yes. Every paid plan has a 30-day money-back guarantee. No questions asked. See the <a href="terms.html#refunds">terms</a> for details.</p>
         </div>
         
         <div class="faq-item">
@@ -910,7 +981,7 @@
 
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js"></script>
-  <script src="assets/js/main.js?v=20260902h"></script>
-  <script src="assets/js/pricing.js"></script>
+  <script src="assets/js/main.js?v=20260902i"></script>
+  <script src="assets/js/pricing.js?v=20260902k"></script>
 </body>
 </html>

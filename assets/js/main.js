@@ -167,7 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var head = section.querySelector('.section-sticky-head');
     var sentinel = section.querySelector('.reviews-sticky-sentinel');
-    var stickyTop = window.matchMedia('(max-width: 1024px)').matches ? 64 : 72;
+    var header = document.querySelector('.header');
+    var stickyTop = header ? header.offsetHeight : 56;
     var revealed = false;
 
     function reveal() {

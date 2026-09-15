@@ -55,7 +55,7 @@
   <!-- End LinkedIn Insight Tag -->
 
   <!-- SEO Meta Tags -->
-  <title>MenuForge - AI Recipe Generation & Recipe Management Software</title>
+  <title>MenuForge - Know Your Food Costs Down to the Penny</title>
   <meta name="description" content="Recipe costing and ingredient tracking for independent restaurants and breweries. Know your food costs down to the penny.">
   <meta name="keywords" content="recipe management, recipe pricing, AI recipe generation, recipe creation, ingredients management, cost analysis, recipe generation">
   <meta name="author" content="MenuForge">
@@ -63,7 +63,7 @@
   <link rel="canonical" href="https://menuforge.ai/">
   
   <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="MenuForge - AI Recipe Generation & Recipe Management Software">
+  <meta property="og:title" content="MenuForge - Know Your Food Costs Down to the Penny">
   <meta property="og:description" content="Recipe costing and ingredient tracking for independent restaurants and breweries. Know your food costs down to the penny.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://menuforge.ai/">
@@ -77,7 +77,7 @@
   <!-- Twitter Card: summary (not summary_large_image) so the 1:1 logo is accepted -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@menuforge">
-  <meta name="twitter:title" content="MenuForge - AI Recipe Generation & Recipe Management">
+  <meta name="twitter:title" content="MenuForge - Know Your Food Costs Down to the Penny">
   <meta name="twitter:description" content="Recipe costing and ingredient tracking for independent restaurants and breweries.">
   <meta name="twitter:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
   <meta name="twitter:image:alt" content="MenuForge">
@@ -90,11 +90,11 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20260902h">
+  <link rel="stylesheet" href="assets/css/main.css?v=20260902l">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
   <link rel="stylesheet" href="assets/css/app-mockups.css">
-  <link rel="stylesheet" href="assets/css/ai-showcase.css">
-  <link rel="stylesheet" href="assets/css/reviews.css">
+  <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20260902i">
+  <link rel="stylesheet" href="assets/css/reviews.css?v=20260902k">
   
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -154,7 +154,8 @@
     "logo": "https://menuforge.ai/assets/images/menuforge-icon-512.png",
     "founder": {
       "@type": "Person",
-      "name": "Jake Lohse"
+      "name": "Jake Lohse",
+      "sameAs": "https://www.linkedin.com/in/jake-lohse"
     },
     "sameAs": [
       "https://www.linkedin.com/company/menuforge",
@@ -198,7 +199,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <img src="assets/images/menuforge-icon-512.png" alt="MenuForge" class="hero-logo">
+      <img src="assets/images/screenshot-recipes-grid.png" srcset="assets/images/screenshot-recipes-grid-400w.png 400w, assets/images/screenshot-recipes-grid-800w.png 800w, assets/images/screenshot-recipes-grid.png 1600w" sizes="(max-width: 768px) 92vw, 720px" alt="MenuForge recipe grid with category sidebar, dietary flags, and color coded status" width="1600" height="770" class="hero-product">
       <h1>Know your food costs down to the penny.</h1>
       <p class="hero-tagline">Recipe costing and ingredient tracking for independent restaurants and breweries. Replace your spreadsheet before the next price change makes you underwater.</p>
       <div class="hero-cta">
@@ -400,6 +401,15 @@
     </div>
   </section>
 
+  <section class="not-for-section" id="not-for">
+    <div class="container">
+      <div class="not-for-callout">
+        <h2>Who it's not for</h2>
+        <p>MenuForge is not a home-cook recipe app, and it's not an enterprise inventory suite with a six-month implementation. If you have under 5 recipes or need full POS-based inventory counts, this is not your tool.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- How It Works Section -->
   <section class="how-it-works" id="how-it-works">
     <div class="container">
@@ -517,7 +527,8 @@
     <div class="container container-85">
       <div class="reviews-proof-badge">
         <p class="reviews-proof">Join kitchens that stopped guessing at food costs.</p>
-        <p class="reviews-proof-note">Named kitchens, photos, and a customer count go here once operators agree to be listed. We are not inventing those.</p>
+        <div class="reviews-avatar-grid" aria-hidden="true"></div>
+        <p class="reviews-proof-note">Named kitchens, photos, initials, and a customer count go here once operators agree to be listed. We are not inventing those.</p>
       </div>
       <div class="reviews-sticky-sentinel" aria-hidden="true"></div>
       <header class="section-sticky-head">
@@ -541,15 +552,15 @@
           </div>
         </article>
 
-        <article class="review-card" style="--x:-320px;--y:-150px;--rot:-18deg;--z:6;--drift-x:14px;--drift-y:9px;--drift-rot:-1.2deg;--dur:13s;--delay:0.4s;" tabindex="0">
+        <article class="review-card review-card--founder" style="--x:-320px;--y:-150px;--rot:-18deg;--z:6;--drift-x:14px;--drift-y:9px;--drift-rot:-1.2deg;--dur:13s;--delay:0.4s;" tabindex="0">
           <div class="review-card-face">
-          <div class="review-stars" aria-hidden="true">★★★★★</div>
+          <p class="review-founder-label">From the founder</p>
           <blockquote>
             <p>I used to price all of my recipes in Microsoft Excel. Capturing the costs of all subrecipes accurately was a pain in the neck, and my team was not capable of using the tool for accurate recipe costing. MenuForge has changed everything. Now, even my least tech-savvy team members know exactly what to do. MenuForge is so intuitive that they could pick it up quickly and run with it. Goodbye spreadsheets!</p>
           </blockquote>
           <footer>
-            <strong>Jake L.</strong>
-            <span>Owner / operator</span>
+            <strong>Jake Lohse</strong>
+            <span>Founder</span>
           </footer>
         
           </div>
@@ -840,7 +851,7 @@
 
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js"></script>
-  <script src="assets/js/main.js?v=20260902h"></script>
+  <script src="assets/js/main.js?v=20260902i"></script>
   <script>
     // AI panel: scale from 0.6 to 1 over 120vh of scroll, then drop the
     // transform so the sticky header can pin under the site header.

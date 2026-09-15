@@ -232,7 +232,7 @@
 /* Sticky gold shimmer header — full width with even side padding */
 .ai-panel-head {
   position: sticky;
-  top: 72px;
+  top: var(--site-header-height);
   z-index: 5;
   text-align: center;
   margin: 1.25rem clamp(1.5rem, 3vw, 2.5rem) 0;
@@ -651,7 +651,7 @@
   }
 
   .ai-panel-head {
-    top: 64px;
+    top: var(--site-header-height);
     margin: 1rem 0 0;
     padding: 1rem 15px 1.1rem;
   }

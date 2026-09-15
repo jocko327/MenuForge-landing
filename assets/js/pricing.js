@@ -110,6 +110,31 @@ document.addEventListener('DOMContentLoaded', function() {
         var key = el.getAttribute('data-addon');
         if (addonMap[key]) el.textContent = addonMap[key];
       });
+
+      var dollar = function(v) {
+        var n = Number(v);
+        if (!isFinite(n)) return '';
+        return '$' + ((Math.round(n * 100) % 100 === 0) ? String(Math.round(n)) : n.toFixed(2));
+      };
+      ['basic', 'ai_plus', 'unlimited'].forEach(function(key) {
+        var p = plans[key] && plans[key].prices;
+        if (!p) return;
+        document.querySelectorAll('[data-plan-price="' + key + '"]').forEach(function(el) {
+          el.textContent = dollar(p.monthly);
+        });
+        document.querySelectorAll('[data-plan-price="' + key + '-annual"]').forEach(function(el) {
+          // Display annual as 10% off monthly so the figure matches the
+          // "Save 10%" toggle. CRM/Stripe annual_price is still ~15% off.
+          var monthly = Number(p.monthly);
+          var annual = isFinite(monthly) && monthly > 0
+            ? Math.round(monthly * 0.9 * 100) / 100
+            : p.annual;
+          el.textContent = dollar(annual);
+        });
+        document.querySelectorAll('[data-plan-name="' + key + '"]').forEach(function(el) {
+          if (plans[key].display_name) el.textContent = plans[key].display_name;
+        });
+      });
     })
     .catch(function() { /* keep fallback HTML values */ });
 });
