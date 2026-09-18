@@ -323,18 +323,18 @@
   padding: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 4vw, 3.5rem);
 }
 
-/* ---------- Hero: prompt shot + interactive fine-tune ---------- */
+/* ---------- Hero: full-width shot, sliders in a row underneath ---------- */
 
 .ai-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
-  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.15rem, 2vw, 1.6rem);
+  margin-bottom: clamp(2.25rem, 3.5vw, 3rem);
 }
 
 .ai-hero-shot {
   margin: 0;
+  width: 100%;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(241, 198, 113, 0.35);
@@ -348,24 +348,29 @@
   height: auto;
 }
 
+.ai-hero-side {
+  width: 100%;
+}
+
 .ai-hero-side h3 {
   font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
   color: #f7dfae;
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.4rem;
 }
 
 .ai-hero-lead {
   color: var(--text-white-80);
-  font-size: 0.98rem;
-  line-height: 1.65;
-  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  max-width: 62ch;
 }
 
 .ai-tune {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
 .ai-tune-card {
@@ -663,8 +668,7 @@
   }
 
   .ai-hero {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1.1rem;
     min-width: 0;
   }
 
@@ -673,7 +677,6 @@
     max-width: 100%;
     min-width: 0;
     margin: 0;
-    aspect-ratio: auto;
   }
 
   .ai-hero-shot img {
@@ -681,7 +684,6 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: min(70vw, 420px);
     object-fit: contain;
     object-position: top center;
   }
@@ -725,6 +727,12 @@
   }
 }
 
+@media (max-width: 700px) {
+  .ai-tune {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 560px) {
   .ai-hero-result { flex-direction: column; align-items: flex-start; }
 
@@ -748,7 +756,7 @@
   }
 
   .ai-hero-shot img {
-    max-height: min(78vw, 360px);
+    height: auto;
   }
 }
 
