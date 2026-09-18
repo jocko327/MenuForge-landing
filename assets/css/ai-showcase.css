@@ -183,7 +183,7 @@
 }
 
 /* ===================================================================
-   AI section: grows over 120vh, sticky gold header, hero + feature grid
+   AI section: grows until the gold header pins, then sticky + feature grid
    =================================================================== */
 
 /* No overflow on this section: it would stop .ai-panel-head from sticking. */

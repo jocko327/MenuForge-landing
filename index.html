@@ -93,7 +93,7 @@
   <link rel="stylesheet" href="assets/css/main.css?v=20260902l">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
   <link rel="stylesheet" href="assets/css/app-mockups.css">
-  <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20260918a">
+  <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20260918b">
   <link rel="stylesheet" href="assets/css/reviews.css?v=20260902k">
   
   <!-- Schema.org Structured Data -->
@@ -457,12 +457,12 @@
 
         <article class="gallery-item gallery-span-4">
           <figure class="gallery-shot">
-            <img src="assets/images/menuforge-recipe-prep-pos-cost.png" srcset="assets/images/menuforge-recipe-prep-pos-cost-400w.png 400w, assets/images/menuforge-recipe-prep-pos-cost-800w.png 800w, assets/images/menuforge-recipe-prep-pos-cost.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 45vw, 560px" alt="Prep instructions, dietary flag in the header, connected to Toast POS, with minimum sell price, cost, and actual sell price from POS." width="1600" height="837" loading="lazy">
+            <img src="assets/images/menuforge-catering-cost-per-plate.png" srcset="assets/images/menuforge-catering-cost-per-plate-400w.png 400w, assets/images/menuforge-catering-cost-per-plate-800w.png 800w, assets/images/menuforge-catering-cost-per-plate.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 45vw, 560px" alt="Catering recipes provide cost per plate measurements, with a cost on every ingredient line and cost per serving in the header." width="1600" height="838" loading="lazy">
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Costing</span>
             <h3>Live plate cost on every line</h3>
-            <p>Prep steps, dietary flags, and the header stay in one place: cost, minimum sell price, and the actual Toast sell price. Nested batch recipes roll up too, so a sauce used in ten dishes still carries the right cost into each one. Change an amount or a unit and the totals move with you. You catch a dish that will not pencil before it ever hits the board.</p>
+            <p>Every ingredient costs itself out as you type. Cost and minimum sell price stay pinned in the header — including cost per serving on a catering bar written for 25 people. Nested batches roll up, so a sauce used in ten dishes still carries the right cost. Change an amount or a unit and the totals move with you. You catch a dish that will not pencil before it ever hits the board.</p>
           </div>
         </article>
 
@@ -895,12 +895,14 @@
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js?v=20260902i"></script>
   <script>
-    // AI panel: scale from 0.6 to 1 over 120vh of scroll, then drop the
-    // transform so the sticky header can pin under the site header.
+    // AI panel: scale from 0.6 to 1, finishing when the gold header pins
+    // under the site nav — not a few extra pixels later.
     (function () {
       var section = document.querySelector('.ai-section');
       var panel = section && section.querySelector('.ai-panel');
-      if (!section || !panel) return;
+      var head = panel && panel.querySelector('.ai-panel-head');
+      var siteHeader = document.getElementById('header');
+      if (!section || !panel || !head) return;
 
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduce) {
@@ -918,8 +920,11 @@
           return;
         }
         var vh = window.innerHeight;
-        var top = section.getBoundingClientRect().top;
-        var p = Math.min(1, Math.max(0, (vh - top) / (vh * 1.2)));
+        var pinAt = siteHeader ? siteHeader.getBoundingClientRect().bottom : 56;
+        var headTop = head.getBoundingClientRect().top;
+        // Full width when the gold header meets the site nav — not 0.2vh later.
+        var done = headTop <= pinAt + 12;
+        var p = done ? 1 : Math.min(1, Math.max(0, (vh - headTop) / Math.max(80, vh - pinAt)));
         panel.style.setProperty('--p', p.toFixed(4));
         panel.classList.toggle('is-full', p >= 0.995);
       }
