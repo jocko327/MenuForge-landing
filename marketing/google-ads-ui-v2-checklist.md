@@ -100,7 +100,7 @@ Optional: shared list `MF junk intent v2` attached to First Recipe + Book Demo.
 1. New Search campaign, same networks/location/language rules
 2. Name: **`MF Search — Book Demo`**
 3. Budget: **$10/day**
-4. Bidding: Maximize clicks, max CPC **$8–12** or uncapped
+4. Bidding: **Maximize conversions**, no Target CPA, no max CPC cap
 5. Conversion goal: **`MenuForge — Demo booked` only**
 6. One ad group: high-intent software keywords from v2 Book Demo section
 7. Final URL: `https://menuforge.ai/lp-book-demo.html`

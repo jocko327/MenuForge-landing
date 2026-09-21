@@ -46,12 +46,14 @@ That is a different searcher than someone looking for a recipe cost calculator.
 - **Locations:** United States — **Presence: people in or regularly in targeted locations**.
 - **Language:** English.
 - **Budget:** **$10–12/day** to start.
-- **Bidding:** **Maximize clicks**. Max CPC **$8–12** or uncapped until delivery is healthy. Do not start at $4.50 (v2 starved that way).
+- **Bidding:** **Maximize conversions**. **No target CPA** yet (a CPA target with zero bookings will stall spend). **No max CPC cap.** Conversion used for bidding: **`MenuForge — Demo booked` only.** Account created, first recipe, and the old email lead stay observe-only so the algorithm cannot chase them.
 - **Devices:** Mobile **−50%**. Desktop 0%. Tablet −50% to −100%. This page is screenshot-heavy; desktop is the better walkthrough, but a −100% mobile cut kills the auction.
 - **Schedule:** All day to start.
 - **Conversion goal (campaign):** **`MenuForge — Demo booked` only.**
 - **Ad rotation:** Optimize.
 - Turn off AI Max / auto-created assets where Google offers them.
+
+We are bidding on conversions from day one on purpose. The win is a booked call, not a cheap click. Expect uneven spend in the first 1–2 weeks while Google has no demo history. If impressions die or you see “limited by bid strategy,” do **not** add a Target CPA. Check that Demo booked is the only campaign goal, then wait or raise budget slightly. Review Search Terms at 48 hours so it does not learn on login / invoice-template junk.
 
 Do **not** raise this above ~$15/day until Search Terms look like restaurants, taprooms, and purchasing — not accounting, invoice templates, or Sysco login.
 

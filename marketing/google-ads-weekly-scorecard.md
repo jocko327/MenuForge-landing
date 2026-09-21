@@ -95,7 +95,7 @@ Review: **Audiences, keywords, and content → Search terms** (filter one campai
 
 **Intent check:** Mostly restaurant / menu / brewery? Any baking / free / home cook flooding in?
 
-**Delivery check:** Still seeing “limited by maximum bid” or unable to spend daily budget? Raise/remove CPC cap further; confirm Mobile is −50% not −100%.
+**Delivery check:** Demo campaigns use Maximize conversions with no Target CPA. If spend dies, do not add a CPA target. Confirm **Demo booked** is the only bidding goal, Mobile is −50% not −100%, and Search Terms are not junk. First Recipe still uses Maximize clicks until account-create volume exists.
 
 ---
 

@@ -179,7 +179,7 @@ Price wings, pretzels, and cocktails with live ingredient costs. Try free today.
 - **Budget:** **$10/day**
 - **Type:** Search only — no PMax / Display / Search partners
 - **Locations / language:** Same as v2 (US presence, English)
-- **Bidding:** Maximize clicks; max CPC uncapped or **$8–12** until delivery is healthy
+- **Bidding:** **Maximize conversions**. **No target CPA.** **No max CPC cap.** Same rule as the Top 10 campaign: a booked call is the win, even before volume exists.
 - **Devices:** Mobile −50%, Desktop 0%, Tablet −50% to −100%
 - **Final URL:** `https://menuforge.ai/lp-book-demo.html`
 - **Conversion goal:** **Cal.com booking** only. Observe Account created; do not optimize toward signup.

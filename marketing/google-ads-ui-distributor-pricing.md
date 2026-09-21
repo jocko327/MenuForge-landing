@@ -27,9 +27,10 @@ Reference spec: [google-ads-campaign-distributor-pricing.md](./google-ads-campai
 7. Locations: **United States** → Presence only
 8. Languages: **English**
 9. Budget: **$10–12/day**
-10. Bidding: **Maximize clicks** | Max CPC **$8–12** or uncapped
-11. Turn off AI Max / auto-created assets where offered
-12. Devices after create: Mobile **−50%**, Desktop 0%, Tablet −50% to −100%
+10. Bidding: **Maximize conversions**. Leave **Set a target cost per action** **off**. No max CPC cap.
+11. Confirm campaign goals: **`MenuForge — Demo booked` only** (Account created / Ad Lead not used for bidding)
+12. Turn off AI Max / auto-created assets where offered
+13. Devices after create: Mobile **−50%**, Desktop 0%, Tablet −50% to −100%
 
 ---
 
@@ -80,7 +81,7 @@ Reference spec: [google-ads-campaign-distributor-pricing.md](./google-ads-campai
 - [ ] Test Cal.com book still records **`MenuForge — Demo booked`**
 - [ ] First Recipe budget reduced if needed so combined stay ~$35/day
 - [ ] This campaign **Enabled**; Search partners / Display **off**
-- [ ] Max CPC $8–12 or uncapped (not $4.50)
+- [ ] Bidding is Maximize conversions, no Target CPA, no max CPC cap
 - [ ] Mobile −50% (not −100%)
 - [ ] After 48h: Search terms review; add negatives
 - [ ] No $8,800 claim written as a guarantee in sitelinks or callouts
