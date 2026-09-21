@@ -82,33 +82,33 @@ Keywords — phrase `"..."` and exact `[...]` where listed:
 - Final URL: `https://menuforge.ai/negotiate-distributor-pricing.html`
 - Paths: `top-10` / `invoices`
 
-Headlines (15, ≤30 chars):
+Headlines (15, ≤30 chars). Pain or the $8,800 win. No process lines.
 
 ```
-See Your Top 10 Spend
-Stop Hunting Invoices
-Paying Too Much On Top 10
-Invoice-Backed Top 10
-No Portal Has This List
-Rank Spend From Invoices
-Send Volume, Not A Feeling
-Food Cost From Real Invoices
-Walk In With The Numbers
-Book A Pricing Walkthrough
-Case Prices Quietly Climb
-Top 10 Items, Real Cases
-Your Rep Will Not Send This
-About $8,800 In A Year
-Built For Kitchens Like Yours
+You Are Paying Too Much
+You Pay Too Much On Top 10
+Paying Too Much For Cases
+Your Top 10 Cost Too Much
+Overpaying On What You Buy
+Stop Overpaying On Top Items
+Cases You Buy Cost Too Much
+You Can Save $8,800/Year
+You Can Save $8,800 Per Year
+Save $8,800 Per Year
+Save About $8,800 A Year
+$8,800 A Year On Your Top 10
+Paying Too Much. Save $8,800
+Book 20 Min. Stop Overpaying
+One Kitchen: $8,800 A Year
 ```
 
 Descriptions (4, ≤90 chars):
 
 ```
-No portal lists your Top 10 spend. MenuForge ranks cases and drift from your invoices.
-Hunt invoice by invoice for your top spend. MenuForge already ranked it from receipts.
-Book 20 minutes. We show invoice-backed spend and drift, not a pitch deck.
-Walk in with case counts and current case cost. That is a different conversation.
+You are paying too much on the items you order most. See the Top 10 and the drift.
+You can save about $8,800 a year. Presidential cut ~14% on the ten they buy most.
+Most kitchens overpay and never see a Top 10. Book 20 minutes and walk the list.
+Stop hunting invoices. You are paying too much on volume you already buy.
 ```
 
 ---
@@ -135,33 +135,33 @@ Keywords:
 - Final URL: same
 - Paths: `pricing` / `top-10`
 
-Headlines (15, ≤30 chars):
+Headlines (15, ≤30 chars). Same two ideas, different wording so Google does not flag duplicates.
 
 ```
-Distributor Prices Drift
-Paying Too Much On Top 10
-See Your Top 10 Spend
-Send Volume, Not A Feeling
-Walk In With The Numbers
-Book A Pricing Walkthrough
-Invoice-Backed Top 10
-About $8,800 In A Year
-Case Prices Quietly Climb
-Stop Hunting Invoices
-Food Cost From Real Invoices
-A Kitchen Cut About 14%
-Negotiate With Real Cases
-Vendor Prices, Ranked
-Built For Kitchens Like Yours
+You Are Paying Too Much
+You Pay Too Much For Cases
+Paying Too Much Every Week
+Distributor Bills Run High
+Overpaying On Your Top Cases
+Stop Overpaying On Volume
+You Overpay On What You Order
+You Can Save $8,800/Year
+Save $8,800 Per Year
+You Can Save $8,800 A Year
+About $8,800 Back In A Year
+$8,800 Less On The Top 10
+Cut About 14%. Save $8,800
+Book Time. Stop Overpaying
+A Kitchen Saved $8,800
 ```
 
 Descriptions (4, ≤90 chars):
 
 ```
-Most distributors will not hand you a Top 10. MenuForge ranks the cases you buy most.
-Presidential Brewing sent their Top 10 and cut about 14%. About $8,800 in a year.
-Apply new case prices to the volume you already buy. That shows up on a P&L.
-Book 20 minutes. Invoice-backed spend and drift, not a hunch about prices.
+You are paying too much for the cases you buy every week. That is the meeting.
+One kitchen saved about $8,800 a year after they sent their Top 10 spend list.
+Distributors will not show your Top 10. You keep overpaying invoice by invoice.
+Book 20 minutes. See if you are paying too much, and what $8,800 a year looks like.
 ```
 
 ---
