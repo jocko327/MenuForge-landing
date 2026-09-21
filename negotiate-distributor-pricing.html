@@ -94,10 +94,25 @@
     }
     .drift-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      grid-template-columns: minmax(0, 1fr) 287px;
+      gap: 1.75rem;
       align-items: start;
       margin-bottom: 2.75rem;
+    }
+    .drift-rail-card {
+      margin: 0;
+      width: 287px;
+      max-width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0b0f1a;
+    }
+    .drift-rail-card img {
+      display: block;
+      width: 287px;
+      max-width: 100%;
+      height: auto;
     }
     .drift-steps { list-style: none; padding: 0; margin: 0; }
     .drift-steps li {
@@ -139,6 +154,8 @@
       .drift-page { padding-top: 6.5rem; }
       .drift-stats { grid-template-columns: 1fr; }
       .drift-cta-row .btn { width: 100%; max-width: 420px; }
+      .drift-grid { grid-template-columns: 1fr; }
+      .drift-rail-card { width: 287px; margin: 0 auto; }
     }
   </style>
   <script type="application/ld+json">
@@ -232,10 +249,20 @@
           </li>
         </ol>
       </div>
+      <figure class="drift-rail-card">
+        <img
+          src="assets/images/receipts-top-spend-rail.jpg"
+          width="287"
+          height="471"
+          alt="Top 10 spend list: Raw Hamburger +4.7%, Chicken Fillets +21.8%, Cheese Curds +12.3%, and more, with case counts."
+          loading="lazy"
+        >
+      </figure>
     </div>
 
-    <h2>Why this hits harder than a spreadsheet</h2>
-    <p>Most operators know a few SKUs went up. They do not have case counts, current case cost, and six-month drift on the same page. MenuForge reads the invoice, keeps pack size honest, and ranks spend so the items you actually buy sit at the top, not the ones that are easy to remember.</p>
+    <h2>Your distributor will not hand you this list</h2>
+    <p>Most distributors do not give you an easy Top 10. There is no portal page with the items you buy the most, the cases you pulled, and what you spent. You hunt invoice by invoice, add it up in a spreadsheet, and still miss the ones that quietly climbed.</p>
+    <p>Not with MenuForge. Receipts already ranks spend and drift from the invoices you already have. Case counts, current case cost, and six-month change sit on one page. Presidential sent that list. The rep saw volume and the current price. That is a different conversation than “prices feel high.”</p>
     <p>When chicken fillets are +21.8% and still in your top three, that is the meeting. When hamburger is thousands of dollars of cases, a few points of relief pays for the software many times over.</p>
 
     <p class="drift-note">This is Presidential Brewing Company’s result after sharing their MenuForge Top 10 with their distributor. Your mix, vendor, and contract will differ. The point is the same: walk in with invoice-backed volume and drift, not a hunch.</p>
