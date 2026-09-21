@@ -630,6 +630,15 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   line-height: 1.7;
 }
 
+.feature-card p a {
+  color: var(--primary-accent);
+  font-weight: 600;
+}
+
+.feature-card p a:hover {
+  color: var(--text-white);
+}
+
 .features-grid-four {
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
