@@ -285,7 +285,7 @@ Same stack as v2. No new conversion action.
 | LP email lead | Observe |
 | Stripe purchase | Observe |
 
-The case-study page already loads `ads-config.js` + the Ads tag. `ads-attribution.js` stores `gclid` / UTMs so Book a walkthrough keeps them on `menuforge.ai`. Demo conversion still fires on `lp-book-demo.html` after Cal.com success.
+The case-study page embeds the same Cal.com / Calendly widget as `lp-book-demo.html` (full width). `booking-embed.js` fires **`MenuForge — Demo booked`** on this page when the booking succeeds. `ads-attribution.js` keeps `gclid` / UTMs on `menuforge.ai`.
 
 Verify once with Tag Assistant: ad preview or `?gclid=test` on the case-study URL → Book a walkthrough → complete a test Cal.com book → `Demo booked` recorded.
 

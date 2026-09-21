@@ -73,6 +73,40 @@
     .drift-stat span { color: var(--text-white-80); font-size: 0.92rem; }
     .drift-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.25rem; justify-content: center; align-items: center; }
     .drift-cta-row .btn { min-height: 48px; }
+    .drift-booking {
+      width: 100%;
+      margin: 0 0 2.5rem;
+      scroll-margin-top: 5.5rem;
+    }
+    .drift-booking h2 { text-align: center; }
+    .drift-booking-sub {
+      text-align: center;
+      max-width: 36rem;
+      margin: 0 auto 1.15rem;
+      color: var(--text-white-80);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    .calendly-embed-wrap {
+      width: 100%;
+      min-height: 720px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .calendly-embed-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 720px;
+      border: 0;
+    }
+    .booking-fallback { margin-top: 0.65rem; font-size: 0.85rem; color: var(--text-white-80); text-align: center; }
+    .booking-fallback a { color: var(--primary-accent); font-weight: 600; }
+    .calendly-placeholder {
+      display: none; padding: 2rem 1.25rem; text-align: center;
+      color: var(--text-white-80); line-height: 1.55;
+    }
+    .calendly-placeholder.is-visible { display: block; }
     .drift-shot {
       margin: 0 0 2.5rem;
       border-radius: 16px;
@@ -157,6 +191,8 @@
       .drift-page { padding-top: 6.5rem; }
       .drift-stats { grid-template-columns: 1fr; }
       .drift-cta-row .btn { width: 100%; max-width: 420px; }
+      .calendly-embed-wrap { min-height: 640px; }
+      .calendly-embed-wrap iframe { height: 640px; }
       .drift-grid { grid-template-columns: 1fr; }
       .drift-rail-card {
         height: auto;
@@ -216,9 +252,14 @@
       <div class="drift-stat" role="listitem"><strong>10 items</strong><span>The cases Presidential buys most</span></div>
     </div>
 
-    <div class="drift-cta-row">
-      <a href="lp-book-demo.html" class="btn btn-primary btn-large">Book a 20-min walkthrough</a>
-    </div>
+    <section class="drift-booking" id="book">
+      <h2>Book a 20-min walkthrough</h2>
+      <p class="drift-booking-sub">Pick a time here. Bring a recent invoice if you have one. We will walk the Top 10 live.</p>
+      <div id="calendlyPlaceholder" class="calendly-placeholder">
+        <p><strong>Booking link not configured yet.</strong></p>
+      </div>
+      <div class="calendly-embed-wrap" id="calendlyEmbed"></div>
+    </section>
 
     <figure class="drift-shot">
       <img
@@ -281,9 +322,9 @@
 
     <div class="drift-bottom">
       <h2>Bring numbers to the next bid</h2>
-      <p>Book 20 minutes. Bring a recent invoice if you have one. We will walk your Top 10 live.</p>
-      <div class="drift-cta-row" style="justify-content:center;">
-        <a href="lp-book-demo.html" class="btn btn-primary btn-large">Book a 20-min walkthrough</a>
+      <p>Pick a time above. Bring a recent invoice if you have one. We will walk your Top 10 live.</p>
+      <div class="drift-cta-row">
+        <a href="#book" class="btn btn-primary btn-large">Pick a time</a>
       </div>
     </div>
   </main>
@@ -297,5 +338,6 @@
   </footer>
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js?v=20260902i"></script>
+  <script src="assets/js/booking-embed.js"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
   window.MF_ADS_LINKER_DOMAINS = ['menuforge.ai', 'www.menuforge.ai', 'app.menuforge.ai'];
   window.MF_FB_PIXEL_ID = '1564507615096204';
   window.MF_LINKEDIN_PARTNER_ID = '9513276';
-  // Booking embed URL for lp-book-demo.html (Cal.com or Calendly).
+  // Booking embed URL for lp-book-demo.html and negotiate-distributor-pricing.html (Cal.com or Calendly).
   window.MF_CALENDLY_URL = window.MF_CALENDLY_URL || 'https://cal.com/menuforge/20min';
   window.MF_BOOKING_URL = window.MF_BOOKING_URL || window.MF_CALENDLY_URL;
 
