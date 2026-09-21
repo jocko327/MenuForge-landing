@@ -96,15 +96,17 @@
     }
     .drift-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 287px;
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: 1.75rem;
-      align-items: start;
+      align-items: stretch;
       margin-bottom: 2.75rem;
     }
     .drift-rail-card {
       margin: 0;
-      width: 287px;
-      max-width: 100%;
+      /* 1px so the crop does not set the row height; min-height follows the steps */
+      height: 1px;
+      min-height: 100%;
+      width: auto;
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.14);
@@ -112,9 +114,8 @@
     }
     .drift-rail-card img {
       display: block;
-      width: 287px;
-      max-width: 100%;
-      height: auto;
+      height: 100%;
+      width: auto;
     }
     .drift-steps { list-style: none; padding: 0; margin: 0; }
     .drift-steps li {
@@ -157,7 +158,17 @@
       .drift-stats { grid-template-columns: 1fr; }
       .drift-cta-row .btn { width: 100%; max-width: 420px; }
       .drift-grid { grid-template-columns: 1fr; }
-      .drift-rail-card { width: 287px; margin: 0 auto; }
+      .drift-rail-card {
+        height: auto;
+        min-height: 0;
+        width: 200px;
+        margin: 0 auto;
+      }
+      .drift-rail-card img {
+        height: auto;
+        width: 200px;
+        max-width: 100%;
+      }
     }
   </style>
   <script type="application/ld+json">
