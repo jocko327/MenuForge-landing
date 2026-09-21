@@ -6,8 +6,9 @@ Campaigns:
 
 - **`MF Search v2 — First Recipe`** (self-serve → Account created → First recipe)
 - **`MF Search — Book Demo`** (→ demo booked)
+- **`MF Search — Distributor Top 10`** (case-study LP → demo booked)
 
-Spec: [google-ads-campaign-v2.md](./google-ads-campaign-v2.md)
+Specs: [google-ads-campaign-v2.md](./google-ads-campaign-v2.md), [google-ads-campaign-distributor-pricing.md](./google-ads-campaign-distributor-pricing.md)
 
 ---
 
@@ -48,6 +49,17 @@ Spec: [google-ads-campaign-v2.md](./google-ads-campaign-v2.md)
 | Showed / no-show | Calendar | | Manual |
 | Demo → paid (optional) | Stripe / CRM | | Stretch |
 
+### Campaign C — Distributor Top 10
+
+| Metric | Source | This week | Target / note |
+|---|---|---:|---|
+| Spend ($) | Google Ads | | ~$70–85/wk at $10–12/day |
+| Clicks | Google Ads | | |
+| CPC ($) | Ads | | Often $5–12 |
+| **Demo booked** (conv.) | Ads / Cal.com | | Primary for this campaign |
+| Cost / booked demo ($) | Spend ÷ Bookings | | Track; no hard kill in week 1 |
+| Search terms clean? | Ads | | Restaurant / invoices / purchasing, not login or AP |
+
 ---
 
 ## Google Ads — Search terms (top 10–20 by spend)
@@ -62,6 +74,13 @@ Review: **Audiences, keywords, and content → Search terms** (filter one campai
 | | | | | |
 
 ### Book Demo
+
+| Search term | Impr. | Clicks | Cost | Action |
+|---|---:|---:|---:|---|
+| | | | | keep / negative / watch |
+| | | | | |
+
+### Distributor Top 10
 
 | Search term | Impr. | Clicks | Cost | Action |
 |---|---:|---:|---:|---|

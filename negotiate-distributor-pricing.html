@@ -6,12 +6,14 @@
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVJ0H65CZ8"></script>
   <script src="assets/js/ads-config.js"></script>
+  <script src="assets/js/ads-attribution.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-BVJ0H65CZ8');
-    if (window.MF_ADS_CONVERSION_ID) { gtag('config', window.MF_ADS_CONVERSION_ID); }
+    var linker = { domains: window.MF_ADS_LINKER_DOMAINS || ['menuforge.ai', 'www.menuforge.ai', 'app.menuforge.ai'] };
+    if (window.MF_ADS_CONVERSION_ID) { gtag('config', window.MF_ADS_CONVERSION_ID, { linker: linker }); }
   </script>
 
   <title>You Are Paying Too Much for the Items You Order the Most | MenuForge</title>

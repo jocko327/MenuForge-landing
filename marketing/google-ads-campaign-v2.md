@@ -371,7 +371,7 @@ Use [google-ads-weekly-scorecard.md](./google-ads-weekly-scorecard.md) every wee
 
 - Meta / LinkedIn paid budget (pixels stay)
 - PMax / Display / YouTube
-- Multiple feature LPs (receipts, Facebook, AI) for Search ads
+- Multiple feature LPs on the **First Recipe** campaign (receipts, Facebook, AI). Receipts / Top 10 has its own Search campaign: [google-ads-campaign-distributor-pricing.md](./google-ads-campaign-distributor-pricing.md)
 - Homepage as ad final URL
 - Full Mailchimp journey rebuild
 - Stripe pricing changes

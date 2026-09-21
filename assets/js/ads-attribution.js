@@ -49,7 +49,7 @@
 
   function applyAll() {
     var nodes = document.querySelectorAll(
-      '#socialGoogle, #socialFacebook, a.social-btn, a[href*="/auth/oauth/"]'
+      '#socialGoogle, #socialFacebook, a.social-btn, a[href*="/auth/oauth/"], a[href*="get-started.html"], a[href*="lp-book-demo.html"]'
     );
     for (var i = 0; i < nodes.length; i++) appendTracking(nodes[i]);
   }
