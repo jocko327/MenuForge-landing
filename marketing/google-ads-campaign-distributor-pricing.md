@@ -264,7 +264,6 @@ Review **Search terms** at 48 hours, then every 3–5 days. Add negatives aggres
 - Book a walkthrough → `https://menuforge.ai/lp-book-demo.html`
 - Pricing → `https://menuforge.ai/pricing.html`
 - This case study → `https://menuforge.ai/negotiate-distributor-pricing.html`
-- Start free (costing only) → `https://menuforge.ai/lp-recipe-costing.html`
 
 **Callouts:** `Invoice-backed Top 10`, `No hunting invoices`, `Restaurants & breweries`, `Built by an operator`, `Case counts and drift`
 
@@ -284,7 +283,7 @@ Same stack as v2. No new conversion action.
 | LP email lead | Observe |
 | Stripe purchase | Observe |
 
-The case-study page already loads `ads-config.js` + the Ads tag. `ads-attribution.js` stores `gclid` / UTMs so Book a walkthrough and Get started keep them on `menuforge.ai`. Demo conversion still fires on `lp-book-demo.html` after Cal.com success.
+The case-study page already loads `ads-config.js` + the Ads tag. `ads-attribution.js` stores `gclid` / UTMs so Book a walkthrough keeps them on `menuforge.ai`. Demo conversion still fires on `lp-book-demo.html` after Cal.com success.
 
 Verify once with Tag Assistant: ad preview or `?gclid=test` on the case-study URL → Book a walkthrough → complete a test Cal.com book → `Demo booked` recorded.
 

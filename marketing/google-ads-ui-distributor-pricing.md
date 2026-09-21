@@ -67,7 +67,7 @@ Reference spec: [google-ads-campaign-distributor-pricing.md](./google-ads-campai
 
 1. Attach shared list `MF junk intent v2` if it exists
 2. Add the invoice/accounting negatives from the spec at **campaign** level
-3. Sitelinks: Book a walkthrough, Pricing, this case study, Start free (costing LP only)
+3. Sitelinks: Book a walkthrough, Pricing, this case study. No Start free sitelink on this campaign.
 4. Callouts from spec
 5. No homepage final URL. No “free calculator.” No “free Top 10.”
 
