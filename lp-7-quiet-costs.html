@@ -296,8 +296,13 @@
 
     @media (max-width: 880px) {
       .lp-split { grid-template-columns: 1fr; gap: 1.5rem; }
-      .lp-cover { max-width: 360px; margin: 0 auto; }
-      .lp-cover img { max-height: 52vh; object-fit: contain; width: 100%; background: #070b16; }
+      .lp-cover { max-width: 320px; margin: 0 auto; }
+      .lp-cover img {
+        max-height: min(42vh, calc(100dvh - 23rem));
+        object-fit: contain;
+        width: 100%;
+        background: #070b16;
+      }
       .lp-hero-cta { align-items: stretch; }
       .lp-hero-cta .btn { width: 100%; }
       .lp-header-cta { display: none; }
@@ -308,9 +313,13 @@
       body.lp-body { padding-bottom: 5.5rem; }
     }
     @media (max-width: 390px) {
-      .lp-page { padding: 1rem; }
+      .lp-page { padding: 1rem; padding-bottom: 0.5rem; }
+      .lp-pitch h1 { font-size: 1.7rem; margin-bottom: 0.55rem; }
+      .lp-pitch .lp-sub { font-size: 0.98rem; margin-bottom: 0.75rem; }
+      .lp-hero-cta { display: none; }
       .lp-card { padding: 1.35rem 1.15rem; }
-      .lp-cover img { max-height: 46vh; }
+      .lp-cover { max-width: 280px; }
+      .lp-cover img { max-height: min(40vh, calc(100dvh - 20rem)); }
     }
   </style>
   <script type="module" src="/assets/js/heycatch.js"></script>
