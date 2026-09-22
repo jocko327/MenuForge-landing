@@ -36,7 +36,7 @@
   <link rel="apple-touch-icon" href="assets/images/menuforge-icon-192.png">
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/main.css?v=20260902k">
+  <link rel="stylesheet" href="assets/css/main.css?v=20260922a">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
   
   <style>
@@ -398,6 +398,14 @@
       }
     }
 
+    .plan-cta-trial {
+      display: none;
+    }
+
+    .pricing-mobile-trial {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .pricing-grid {
         grid-template-columns: 1fr;
@@ -413,6 +421,40 @@
 
       .addons-grid {
         grid-template-columns: 1fr;
+      }
+
+      .plan-cta-subscribe {
+        display: none !important;
+      }
+
+      .plan-cta-trial {
+        display: inline-block !important;
+        width: 100%;
+        text-align: center;
+      }
+
+      .pricing-mobile-trial {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1001;
+        padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom));
+        background: rgba(15, 15, 35, 0.96);
+        border-top: 1px solid rgba(241, 198, 113, 0.35);
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      .pricing-mobile-trial .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.85rem 1rem;
+      }
+
+      body.pricing-page {
+        padding-bottom: 5.5rem;
       }
     }
 
@@ -578,7 +620,7 @@
   <!-- HeyCatch analytics -->
   <script type="module" src="/assets/js/heycatch.js"></script>
 </head>
-<body>
+<body class="pricing-page">
   <!-- Animated Background Orbs -->
   <div class="gradient-orb gradient-orb-1"></div>
   <div class="gradient-orb gradient-orb-2"></div>
@@ -591,9 +633,6 @@
         <img src="assets/images/menuforge-icon-192.png" alt="MenuForge">
         <span>MenuForge<span class="brand-ai">.ai</span></span>
       </a>
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-        ☰
-      </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html#features">Features</a></li>
         <li><a href="index.html#ai-features">AI</a></li>
@@ -601,8 +640,16 @@
         <li><a href="integrations.html">Integrations</a></li>
         <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Compare</a></li>
         <li><a href="pricing.html">Pricing</a></li>
+        <li class="nav-mobile-cta"><a href="get-started.html" class="btn btn-primary">Start free trial</a></li>
+        <li class="nav-mobile-cta"><a href="https://app.menuforge.ai/login" class="btn btn-secondary">Launch App</a></li>
       </ul>
-      <a href="https://app.menuforge.ai/login" class="btn btn-primary nav-cta">Launch App</a>
+      <div class="nav-actions">
+        <a href="get-started.html" class="btn btn-primary nav-cta nav-cta-signup">Start free</a>
+        <a href="https://app.menuforge.ai/login" class="btn btn-secondary nav-cta nav-cta-login">Launch App</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
     </nav>
   </header>
 
@@ -669,9 +716,10 @@
             <li>Recipe add-ons available</li>
           </ul>
           
-          <button class="btn btn-primary plan-cta" onclick="subscribeToPlan('essentials', document.getElementById('billingToggle').classList.contains('annual'))">
+          <button class="btn btn-primary plan-cta plan-cta-subscribe" onclick="subscribeToPlan('essentials', document.getElementById('billingToggle').classList.contains('annual'))">
             Subscribe to Essentials
           </button>
+          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial">Start free trial</a>
         </div>
         
         <!-- AI+ Plan (Featured) -->
@@ -699,9 +747,10 @@
             <li>AI &amp; recipe add-ons available</li>
           </ul>
           
-          <button class="btn btn-primary plan-cta" onclick="subscribeToPlan('ai_plus', document.getElementById('billingToggle').classList.contains('annual'))">
+          <button class="btn btn-primary plan-cta plan-cta-subscribe" onclick="subscribeToPlan('ai_plus', document.getElementById('billingToggle').classList.contains('annual'))">
             Subscribe to AI+
           </button>
+          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial">Start free trial</a>
         </div>
 
         <!-- Unlimited Plan -->
@@ -727,9 +776,10 @@
             <li>Early access to new features</li>
           </ul>
           
-          <button class="btn btn-primary plan-cta" onclick="subscribeToPlan('unlimited', document.getElementById('billingToggle').classList.contains('annual'))">
+          <button class="btn btn-primary plan-cta plan-cta-subscribe" onclick="subscribeToPlan('unlimited', document.getElementById('billingToggle').classList.contains('annual'))">
             Subscribe to Unlimited
           </button>
+          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial">Start free trial</a>
         </div>
       </div>
 
@@ -928,6 +978,10 @@
     </div>
   </section>
 
+  <div class="pricing-mobile-trial" role="region" aria-label="Start a free trial">
+    <a href="get-started.html" class="btn btn-primary">Start free trial</a>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -982,6 +1036,6 @@
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js?v=20260902i"></script>
-  <script src="assets/js/pricing.js?v=20260902k"></script>
+  <script src="assets/js/pricing.js?v=20260922a"></script>
 </body>
 </html>

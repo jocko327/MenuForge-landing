@@ -145,41 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
  * @param {boolean} isAnnual - true for annual billing, false for monthly
  */
 async function subscribeToPlan(plan, isAnnual) {
-  const button = event.target;
-  const originalText = button.textContent;
-  button.disabled = true;
-  button.textContent = 'Processing...';
-  
-  try {
-    const response = await fetch(`${API_BASE_URL}/stripe/create-checkout-session`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        plan: plan,
-        billing_period: isAnnual ? 'annual' : 'monthly'
-      })
-    });
-    
-    if (!response.ok) {
-      throw new Error('Failed to create checkout session');
-    }
-    
-    const data = await response.json();
-    
-    if (data.checkout_url) {
-      window.location.href = data.checkout_url;
-    } else {
-      throw new Error('No checkout URL received');
-    }
-    
-  } catch (error) {
-    console.error('Subscription error:', error);
-    alert('Unable to process subscription. Please try again or contact support.');
-    button.disabled = false;
-    button.textContent = originalText;
-  }
+  // Marketing-site visitors are anonymous. Stripe checkout from this
+  // hostname has no session and used to fail with a native alert.
+  // Send them into the free trial; they can upgrade in-app after signup.
+  var params = new URLSearchParams();
+  if (plan) params.set('plan', plan);
+  if (isAnnual) params.set('billing', 'annual');
+  var query = params.toString();
+  window.location.href = 'get-started.html' + (query ? '?' + query : '');
 }
 
 window.subscribeToPlan = subscribeToPlan;
