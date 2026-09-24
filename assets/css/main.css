@@ -424,6 +424,22 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   margin-bottom: 1.5rem;
 }
 
+.hero-h1-sub {
+  display: block;
+  margin-top: 0.65rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2.3vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.3;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: var(--primary-accent);
+  color: var(--primary-accent);
+  text-shadow: none;
+}
+
 .hero-tagline {
   font-size: 1.5rem;
   color: var(--text-white-80);
