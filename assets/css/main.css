@@ -390,6 +390,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1100px;
 }
 
 .hero-logo {
@@ -428,6 +429,36 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   color: var(--text-white-80);
   margin-bottom: 3rem;
   font-weight: 300;
+}
+
+.hero-home .hero-tagline {
+  margin-bottom: 1.5rem;
+}
+
+.hero-pains {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-pains li {
+  flex: 1 1 200px;
+  max-width: 220px;
+  margin: 0;
+  padding: 0.85rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid rgba(241, 198, 113, 0.28);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-white-80);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-align: left;
 }
 
 .hero-cta {
@@ -1003,20 +1034,33 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     order: 2;
   }
 
-  .hero-home .hero-content > .hero-cta {
+  .hero-home .hero-content > .hero-pains {
     order: 3;
+  }
+
+  .hero-home .hero-content > .hero-cta {
+    order: 4;
     width: 100%;
     margin-bottom: 1.75rem;
   }
 
   .hero-home .hero-content > .hero-product {
-    order: 4;
+    order: 5;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   .hero-home .hero-tagline {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-pains {
     margin-bottom: 1.5rem;
+  }
+
+  .hero-pains li {
+    flex: 1 1 calc(50% - 0.75rem);
+    max-width: none;
   }
 
   .features-grid,
@@ -1081,6 +1125,10 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 }
 
 @media (max-width: 480px) {
+  .hero-pains li {
+    flex: 1 1 100%;
+  }
+
   .screenshot-grid {
     grid-template-columns: 1fr;
   }
