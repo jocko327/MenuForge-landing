@@ -940,6 +940,11 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   font-size: 0.95rem;
 }
 
+.footer-bottom a {
+  color: var(--primary-accent);
+  font-weight: 600;
+}
+
 /* Mobile Menu */
 .mobile-menu-toggle {
   display: none;

@@ -165,3 +165,46 @@
   color: var(--primary-accent);
   font-weight: 600;
 }
+
+.compare-page--pair .compare-grid {
+  min-width: 0;
+}
+
+.changelog-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.changelog-item {
+  margin: 0 0 1.25rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(241, 198, 113, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.changelog-item h2 {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  font-size: 1.25rem;
+}
+
+.changelog-item ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.changelog-item li {
+  margin-bottom: 0.55rem;
+}
+
+.changelog-item li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .changelog-item {
+    padding: 1rem 1rem;
+  }
+}
