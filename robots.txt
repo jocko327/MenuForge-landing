@@ -1,4 +1,18 @@
 # robots.txt for MenuForge Marketing Site
 User-agent: *
 Allow: /
+
+# AI crawlers are welcome to read and cite the marketing site.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://menuforge.ai/sitemap.xml

@@ -55,32 +55,31 @@
   <!-- End LinkedIn Insight Tag -->
 
   <!-- SEO Meta Tags -->
-  <title>MenuForge - Recipe Costing That Fires the Spreadsheet</title>
-  <meta name="description" content="Recipe costing and ingredient tracking for independent restaurants and breweries. Know your food costs down to the penny.">
-  <meta name="keywords" content="recipe management, recipe pricing, AI recipe generation, recipe creation, ingredients management, cost analysis, recipe generation">
+  <title>Recipe Costing Software for Independent Restaurants &amp; Breweries | MenuForge</title>
+  <meta name="description" content="MenuForge is web-based recipe costing software for independent restaurants and breweries. It reads vendor invoices with AI and recosts every recipe and sub-recipe. From $79.95/mo, 7-day free trial.">
   <meta name="author" content="MenuForge">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://menuforge.ai/">
   
   <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="MenuForge - Recipe Costing That Fires the Spreadsheet">
-  <meta property="og:description" content="Recipe costing and ingredient tracking for independent restaurants and breweries. Know your food costs down to the penny.">
+  <meta property="og:title" content="Recipe Costing Software for Independent Restaurants | MenuForge">
+  <meta property="og:description" content="Know your plate cost the day the invoice arrives. MenuForge reads vendor invoices and recosts every recipe and sub-recipe. 7-day free trial.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://menuforge.ai/">
   <meta property="og:site_name" content="MenuForge">
-  <meta property="og:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
+  <meta property="og:image" content="https://menuforge.ai/assets/images/og-menuforge-1200x630.png">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
-  <meta property="og:image:alt" content="MenuForge">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MenuForge recipe grid with plate cost status on every recipe card">
 
-  <!-- Twitter Card: summary (not summary_large_image) so the 1:1 logo is accepted -->
-  <meta name="twitter:card" content="summary">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@menuforge">
-  <meta name="twitter:title" content="MenuForge - Recipe Costing That Fires the Spreadsheet">
-  <meta name="twitter:description" content="Recipe costing and ingredient tracking for independent restaurants and breweries.">
-  <meta name="twitter:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
-  <meta name="twitter:image:alt" content="MenuForge">
+  <meta name="twitter:title" content="Recipe Costing Software for Independent Restaurants | MenuForge">
+  <meta name="twitter:description" content="Know your plate cost the day the invoice arrives. Invoices in, every recipe recosted. 7-day free trial.">
+  <meta name="twitter:image" content="https://menuforge.ai/assets/images/og-menuforge-1200x630.png">
+  <meta name="twitter:image:alt" content="MenuForge recipe grid with plate cost status on every recipe card">
   
   <!-- Favicons (MenuForge icon) -->
   <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
@@ -98,71 +97,162 @@
   
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "MenuForge",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "description": "Professional recipe management software with AI recipe generation, recipe pricing, and cost analysis for restaurants and breweries",
-    "url": "https://menuforge.ai",
-    "offers": [
-      {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "name": "AI+ Trial"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://menuforge.ai/#org",
+      "name": "MenuForge",
+      "url": "https://menuforge.ai/",
+      "logo": "https://menuforge.ai/assets/images/menuforge-icon-512.png",
+      "foundingDate": "2026",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Portage",
+        "addressRegion": "MI",
+        "addressCountry": "US"
       },
-      {
-        "@type": "Offer",
-        "price": "79.95",
-        "priceCurrency": "USD",
-        "name": "Essentials Plan"
+      "founder": {
+        "@type": "Person",
+        "name": "Jake Lohse",
+        "sameAs": "https://www.linkedin.com/in/jake-lohse"
       },
-      {
-        "@type": "Offer",
-        "price": "139.95",
-        "priceCurrency": "USD",
-        "name": "AI+ Plan"
-      },
-      {
-        "@type": "Offer",
-        "price": "189.95",
-        "priceCurrency": "USD",
-        "name": "Unlimited Plan"
-      }
-    ],
-    "featureList": [
-      "AI Recipe Generation",
-      "Recipe Management",
-      "Recipe Pricing",
-      "Recipe Creation",
-      "Ingredients Management",
-      "Receipt Processing",
-      "Social Media Posting",
-      "Cost Analysis",
-      "Team Collaboration"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "MenuForge",
-    "url": "https://menuforge.ai",
-    "logo": "https://menuforge.ai/assets/images/menuforge-icon-512.png",
-    "founder": {
-      "@type": "Person",
-      "name": "Jake Lohse",
-      "sameAs": "https://www.linkedin.com/in/jake-lohse"
+      "email": "support@menuforge.ai",
+      "sameAs": [
+        "https://www.linkedin.com/company/menuforge",
+        "https://x.com/menuforge",
+        "https://facebook.com/MenuForgeAI"
+      ]
     },
-    "sameAs": [
-      "https://www.linkedin.com/company/menuforge",
-      "https://x.com/menuforge",
-      "https://facebook.com/MenuForgeAI"
-    ]
-  }
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://menuforge.ai/#app",
+      "name": "MenuForge",
+      "url": "https://menuforge.ai/",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Recipe costing software",
+      "operatingSystem": "Web",
+      "description": "Web-based recipe costing software for independent restaurants and breweries. Tracks ingredient pack prices, reads vendor invoices with AI, and recosts every recipe and sub-recipe automatically.",
+      "publisher": {
+        "@id": "https://menuforge.ai/#org"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essentials",
+          "price": "79.95",
+          "priceCurrency": "USD",
+          "url": "https://menuforge.ai/pricing.html",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "79.95",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "AI+",
+          "price": "139.95",
+          "priceCurrency": "USD",
+          "url": "https://menuforge.ai/pricing.html",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "139.95",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Unlimited",
+          "price": "189.95",
+          "priceCurrency": "USD",
+          "url": "https://menuforge.ai/pricing.html",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "189.95",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        }
+      ],
+      "featureList": [
+        "Live plate cost and food cost %",
+        "Sub-recipe and batch roll-up",
+        "Vendor invoice and receipt processing (AI+)",
+        "Ingredient price history and alerts",
+        "Dietary flags",
+        "AI recipe generation",
+        "AI menu descriptions",
+        "Toast POS integration"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://menuforge.ai/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is MenuForge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MenuForge is web-based recipe costing software for independent restaurants and breweries. It tracks ingredient pack prices, reads vendor invoices with AI, and recosts every recipe and sub-recipe automatically. Plans start at $79.95/month, with a 7-day free trial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does recipe costing software cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MenuForge Essentials is $79.95/month, AI+ is $139.95/month, and Unlimited is $189.95/month. Annual billing saves 10%. Every plan starts with a 7-day free trial of AI+, no credit card required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import my recipe spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. MenuForge does not import Excel or CSV recipe workbooks today. Most kitchens start with their top 10 dishes: add the ingredients once, and AI can draft a recipe from a short description so you are not retyping every tab."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MenuForge work with QuickBooks or Restaurant365?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Toast POS is the only live integration. You can export recipes and costs to CSV for your accountant, and other POS and accounting tools are on the roadmap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which plan includes invoice and receipt processing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Receipt processing is included on AI+ and Unlimited, and in the free trial. Essentials does not include it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the AI calculate my food cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. AI drafts recipes, descriptions, and unit conversions. Plate cost always comes from your own pack prices and invoices, and you review an AI draft before it is saved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use MenuForge for more than one location?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each MenuForge account covers one location and one Toast connection. Restaurant groups with several locations should book a walkthrough so we can talk through setup."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <!-- HeyCatch analytics -->
   <script type="module" src="/assets/js/heycatch.js"></script>
@@ -176,7 +266,7 @@
   <!-- Header/Navigation -->
   <header class="header" id="header">
     <nav class="nav-container">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <img src="assets/images/menuforge-icon-192.png" alt="MenuForge">
         <span>MenuForge<span class="brand-ai">.ai</span></span>
       </a>

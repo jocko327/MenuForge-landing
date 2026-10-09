@@ -2,6 +2,8 @@
 
 > Recipe costing and ingredient tracking for independent restaurants and breweries.
 
+MenuForge is web-based recipe costing software for independent restaurants and breweries. It tracks ingredient pack prices, reads vendor invoices with AI, and recosts every recipe and sub-recipe automatically. Plans start at $79.95/month, with a 7-day free trial. It does not import recipe spreadsheets yet, and Toast is the only live POS integration.
+
 MenuForge helps chef-owners and kitchen managers know food costs down to the penny. Email or upload vendor invoices; pack costs update and every recipe recosts. Document recipes so the next hire can execute without a binder.
 
 - URL: https://menuforge.ai
@@ -22,11 +24,13 @@ MenuForge helps chef-owners and kitchen managers know food costs down to the pen
 ## Pricing (USD, monthly)
 
 - Trial: fully loaded AI+ (days, receipts, and AI recipes come from live CRM trial_settings)
-- Essentials: $79.95 — 3 users, 300 recipes
-- AI+: $139.95 — 6 users, 300 recipes, 25 AI recipes/month, receipt processing, social posting
+- Essentials: $79.95 — 3 users, 150 recipes (no receipt processing)
+- AI+: $139.95 — 6 users, 250 recipes, 25 AI recipes/month, receipt processing, Toast POS and inventory, social posting
 - Unlimited: $189.95 — unlimited users, recipes, and AI recipes
+- One location per account
 - Annual billing: 10% off
-- Recipe storage add-ons: +500 recipes $20/mo, +1,000 recipes $50/mo
+- Recipe storage add-ons: +300 recipes $35/mo, +500 recipes $50/mo
+- Live plan limits: https://app.menuforge.ai/auth/plan-info
 - AI credit packs (one-time): 5 for $20, 10 for $35
 - AI+ trial: no credit card required
 
