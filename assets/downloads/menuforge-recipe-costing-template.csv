@@ -1,0 +1,9 @@
+Ingredient,Vendor,Pack description,Pack cost ($),Pack size,Unit,Usable yield %,Cost per usable unit ($)
+Ground beef 80/20,Sysco,10 lb case,52.8,10,lb,100,5.2800
+Brioche bun,GFS,48 ct case,18.6,48,each,100,0.3875
+"Cheddar, sliced",Sysco,120 slice pack,24.9,120,slice,100,0.2075
+Romaine,Produce Co,24 ct case,38.5,24,head,75,2.1389
+Yellow onion,Produce Co,50 lb sack,31.0,50,lb,90,0.6889
+Fryer oil,Sysco,35 lb jug,48.75,35,lb,100,1.3929
+Russet potatoes,Produce Co,50 lb case,29.4,50,lb,85,0.6918
+Kosher salt,GFS,3 lb box,4.85,48,oz,100,0.1010

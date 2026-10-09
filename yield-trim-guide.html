@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yield and Trim Guide for Restaurant Recipe Costing | MenuForge</title>
+  <meta name="description" content="How to calculate yield %, run a yield test, and cost trimmed produce and proteins correctly. Includes typical yield ranges and the formulas.">
+  <link rel="canonical" href="https://menuforge.ai/yield-trim-guide.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Yield and Trim Guide for Restaurant Recipe Costing | MenuForge">
+  <meta property="og:description" content="How to calculate yield %, run a yield test, and cost trimmed produce and proteins correctly. Includes typical yield ranges and the formulas.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://menuforge.ai/yield-trim-guide.html">
+  <meta property="og:site_name" content="MenuForge">
+  <meta property="og:image" content="https://menuforge.ai/assets/images/og-menuforge-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MenuForge recipe grid with plate cost status on every recipe card">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@menuforge">
+  <meta name="twitter:title" content="Yield and Trim Guide for Restaurant Recipe Costing | MenuForge">
+  <meta name="twitter:description" content="How to calculate yield %, run a yield test, and cost trimmed produce and proteins correctly. Includes typical yield ranges and the formulas.">
+  <meta name="twitter:image" content="https://menuforge.ai/assets/images/og-menuforge-1200x630.png">
+  <link rel="icon" type="image/png" href="assets/images/menuforge-icon-192.png">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261009b">
+  <link rel="stylesheet" href="assets/css/compare.css?v=20261009b">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://menuforge.ai/yield-trim-guide.html#page",
+      "url": "https://menuforge.ai/yield-trim-guide.html",
+      "name": "Yield and Trim Guide for Restaurant Recipe Costing | MenuForge",
+      "description": "How to calculate yield %, run a yield test, and cost trimmed produce and proteins correctly. Includes typical yield ranges and the formulas.",
+      "isPartOf": {
+        "@id": "https://menuforge.ai/#website"
+      },
+      "publisher": {
+        "@id": "https://menuforge.ai/#org"
+      },
+      "dateModified": "2026-10-09",
+      "headline": "Yield and Trim Guide for Restaurant Recipe Costing | MenuForge",
+      "author": {
+        "@type": "Person",
+        "name": "Jake Lohse",
+        "url": "https://menuforge.ai/about.html"
+      },
+      "datePublished": "2026-10-09",
+      "image": "https://menuforge.ai/assets/images/og-menuforge-1200x630.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://menuforge.ai/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Yield and trim guide",
+          "item": "https://menuforge.ai/yield-trim-guide.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate yield percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the usable (edible portion) weight by the as-purchased weight and multiply by 100. 7.5 lb usable from a 10 lb case is a 75% yield."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does yield affect recipe cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the as-purchased cost per unit by the yield. At a 75% yield, every usable unit costs a third more than the invoice price per unit."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <script type="module" src="/assets/js/heycatch.js"></script>
+</head>
+<body>
+  <div class="gradient-orb gradient-orb-1"></div>
+  <div class="gradient-orb gradient-orb-2"></div>
+  <header class="header" id="header">
+    <nav class="nav-container">
+      <a href="/" class="logo">
+        <img src="assets/images/menuforge-icon-192.png" alt="MenuForge">
+        <span>MenuForge<span class="brand-ai">.ai</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Compare</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li class="nav-mobile-cta"><a href="get-started.html" class="btn btn-primary" data-trial-cta>Start 7-day free trial</a></li>
+        <li class="nav-mobile-cta"><a href="https://app.menuforge.ai/login" class="btn btn-secondary">Launch App</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="get-started.html" class="btn btn-primary nav-cta nav-cta-signup" data-trial-cta>Start free trial</a>
+        <a href="https://app.menuforge.ai/login" class="btn btn-secondary nav-cta nav-cta-login">Launch App</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    </nav>
+  </header>
+
+  <main class="compare-page content-page">
+    <a href="/" class="compare-back">&larr; Home</a>
+    <h1>Yield and trim guide for recipe costing</h1>
+    <p class="compare-lead">Yield is the share of what you buy that ends up on the plate. If you pay for a 10 lb case and only 7.5 lb is usable after trimming, your yield is 75%, and every usable pound costs a third more than the invoice price per pound.</p>
+
+    <div class="content-formula">Yield % = usable weight &divide; as-purchased weight &times; 100</div>
+    <div class="content-formula">Usable cost per unit = as-purchased cost per unit &divide; yield %</div>
+
+    <h2>Why it matters</h2>
+    <p>Skip yield and you under-cost every dish that uses trimmed produce, whole fish, or butchered proteins. Romaine at $1.60 a head with a 75% yield really costs $2.13 per usable head. On a high-volume salad, that gap is the difference between a 26% and a 35% plate.</p>
+
+    <h2>How to run a yield test</h2>
+    <ol>
+      <li>Weigh the item as purchased (AP weight).</li>
+      <li>Trim, peel, portion, or cook it the way your kitchen actually does.</li>
+      <li>Weigh the usable product (EP weight, edible portion).</li>
+      <li>Divide EP by AP. Repeat on two or three deliveries and use the average.</li>
+    </ol>
+    <p>Run the test with the cook who preps it every day, not the most careful person in the building. You want the yield you actually get.</p>
+
+    <h2>Typical starting points</h2>
+    <p>These are rough ranges to use until you run your own test. Your supplier, spec, and knife work will move them.</p>
+    <div class="content-table-wrap">
+      <table class="content-table">
+        <thead><tr><th>Item</th><th>Rough usable yield</th><th>What you lose</th></tr></thead>
+        <tbody>
+          <tr><td>Yellow onions</td><td>85&ndash;90%</td><td>Skin, root, top</td></tr>
+          <tr><td>Carrots</td><td>80&ndash;85%</td><td>Peel, ends</td></tr>
+          <tr><td>Romaine</td><td>70&ndash;80%</td><td>Outer leaves, core</td></tr>
+          <tr><td>Russet potatoes (peeled)</td><td>80&ndash;85%</td><td>Peel, eyes</td></tr>
+          <tr><td>Pineapple</td><td>50&ndash;55%</td><td>Rind, core, crown</td></tr>
+          <tr><td>Whole chicken (meat off the bone)</td><td>60&ndash;70%</td><td>Bones, skin, fat</td></tr>
+          <tr><td>Beef tenderloin, untrimmed</td><td>65&ndash;75%</td><td>Silverskin, chain, fat</td></tr>
+          <tr><td>Whole salmon to fillet</td><td>55&ndash;65%</td><td>Head, frame, skin</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Cooking loss counts too</h2>
+    <p>Proteins lose weight in the oven or on the grill. If a 6 oz raw patty cooks down to 4.5 oz, and your recipe is written in cooked weight, the cooking yield is 75%. Pick one (raw or cooked) and use it consistently on the recipe.</p>
+
+    <h2>Putting yield into your costing</h2>
+    <p>Use the yield % column in the free <a href="plate-cost-calculator.html">plate cost calculator</a> or <a href="recipe-costing-spreadsheet-template.html">spreadsheet template</a>. Then read <a href="how-to-calculate-food-cost-percentage.html">how to calculate food cost percentage</a> to price the dish.</p>
+    <h2>Questions</h2>
+    <div class="home-faq">
+      <details class="home-faq-item">
+        <summary>How do you calculate yield percentage?</summary>
+        <p>Divide the usable (edible portion) weight by the as-purchased weight and multiply by 100. 7.5 lb usable from a 10 lb case is a 75% yield.</p>
+      </details>
+      <details class="home-faq-item">
+        <summary>How does yield affect recipe cost?</summary>
+        <p>Divide the as-purchased cost per unit by the yield. At a 75% yield, every usable unit costs a third more than the invoice price per unit.</p>
+      </details>
+    </div>
+    <div class="compare-cta content-cta">
+      <h2>Cost your menu with real pack prices</h2>
+      <p>A fully loaded <span data-trial-days>7</span>-day free trial of AI+. No credit card. <span data-trial-receipts>10</span> receipts and <span data-trial-ai-recipes>5</span> AI recipes included.</p>
+      <a href="get-started.html" class="btn btn-primary btn-large" data-trial-cta>Start 7-day free trial</a>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section footer-section-desktop">
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="/#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="plate-cost-calculator.html">Plate cost calculator</a></li>
+            <li><a href="recipe-costing-spreadsheet-template.html">Free costing template</a></li>
+            <li><a href="how-to-calculate-food-cost-percentage.html">Food cost % guide</a></li>
+            <li><a href="yield-trim-guide.html">Yield &amp; trim guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-section footer-section-desktop">
+          <h4>Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="recipe-costing-software.html">Recipe costing software</a></li>
+            <li><a href="invoice-receipt-processing.html">Invoice &amp; receipt processing</a></li>
+            <li><a href="ai-recipe-generator.html">AI recipe generator</a></li>
+            <li><a href="allergen-dietary-flags.html">Dietary flags</a></li>
+            <li><a href="toast-integration.html">Toast POS integration</a></li>
+            <li><a href="catering-costing.html">Catering costing</a></li>
+            <li><a href="breweries.html">Breweries &amp; taprooms</a></li>
+            <li><a href="negotiate-distributor-pricing.html">Negotiate better case prices</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+            <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Compare recipe costing software</a></li>
+            <li><a href="mailto:support@menuforge.ai">Contact</a></li>
+            <li><a href="security.html">Security &amp; data</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MenuForge. All rights reserved. <a href="changelog.html">Changelog</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=20260902i"></script>
+  <script src="assets/js/plan-prices.js?v=20261009d"></script>
+</body>
+</html>
