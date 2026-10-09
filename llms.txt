@@ -29,7 +29,7 @@ MenuForge helps chef-owners and kitchen managers know food costs down to the pen
 - Invoice and receipt processing (AI+ and Unlimited): https://menuforge.ai/invoice-receipt-processing.html
 - AI recipe generator: https://menuforge.ai/ai-recipe-generator.html
 - Dietary flags (vegetarian, vegan, gluten-free; not a full allergen list): https://menuforge.ai/allergen-dietary-flags.html
-- Toast POS integration: https://menuforge.ai/toast-integration.html
+- POS integration (Toast live, more POS coming): https://menuforge.ai/toast-integration.html
 - Catering costing: https://menuforge.ai/catering-costing.html
 - Breweries and taprooms (food and drinks, not beer recipes): https://menuforge.ai/breweries.html
 
