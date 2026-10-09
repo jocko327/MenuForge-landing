@@ -228,3 +228,218 @@
     padding: 1rem 1rem;
   }
 }
+
+/* Solution, guide, and tool pages */
+.content-page {
+  max-width: 880px;
+}
+
+.content-page ul,
+.content-page ol {
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.content-page li {
+  margin-bottom: 0.55rem;
+}
+
+.content-page h3 {
+  font-size: 1.15rem;
+  color: var(--text-white);
+  margin: 1.6rem 0 0.6rem;
+}
+
+.content-figure {
+  margin: 2rem 0;
+}
+
+.content-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.content-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--text-white-60);
+}
+
+.content-formula {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(241, 198, 113, 0.3);
+  border-radius: 12px;
+  background: rgba(241, 198, 113, 0.06);
+  font-weight: 700;
+  color: var(--text-white);
+  font-size: 1.05rem;
+}
+
+.content-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+.content-table th,
+.content-table td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-white-80);
+}
+
+.content-table th {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.content-cta h2 {
+  margin-top: 0;
+}
+
+.content-cta p {
+  margin: 0 auto 1.25rem;
+  max-width: 56ch;
+}
+
+.content-download {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+/* Plate cost calculator */
+.calc-card {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border: 1px solid rgba(241, 198, 113, 0.25);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.calc-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto;
+  gap: 0.5rem;
+  align-items: end;
+  margin-bottom: 0.6rem;
+}
+
+.calc-row label,
+.calc-settings label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-white-60);
+  margin-bottom: 0.25rem;
+}
+
+.calc-card input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(15, 15, 35, 0.6);
+  color: var(--text-white);
+  font-size: 1rem;
+}
+
+.calc-line-cost {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--text-white);
+  white-space: nowrap;
+}
+
+.calc-remove {
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: none;
+  color: var(--text-white-60);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.calc-settings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.calc-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.calc-result {
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: rgba(241, 198, 113, 0.08);
+  text-align: center;
+}
+
+.calc-result strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--primary-accent);
+}
+
+.calc-result span {
+  font-size: 0.85rem;
+  color: var(--text-white-60);
+}
+
+@media (max-width: 768px) {
+  .calc-row {
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .calc-row .calc-name {
+    grid-column: 1 / -1;
+  }
+
+  .calc-settings {
+    grid-template-columns: 1fr;
+  }
+
+  .content-download .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .calc-results {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .calc-result strong {
+    font-size: 1.15rem;
+  }
+
+  .content-page h1 {
+    font-size: 1.85rem;
+  }
+}
