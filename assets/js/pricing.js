@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function subscribeToPlan(plan, isAnnual) {
   // Marketing-site visitors are anonymous. Stripe checkout from this
   // hostname has no session and used to fail with a native alert.
-  // Send them into the free trial; they can upgrade in-app after signup.
+  // Send them into the AI+ trial; they can upgrade in-app after signup.
   var params = new URLSearchParams();
   if (plan) params.set('plan', plan);
   if (isAnnual) params.set('billing', 'annual');
