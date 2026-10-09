@@ -147,6 +147,26 @@
   color: var(--text-white-60);
 }
 
+.compare-proof {
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid var(--primary-accent);
+  background: rgba(241, 198, 113, 0.08);
+  border-radius: 0 10px 10px 0;
+  line-height: 1.55;
+}
+
+.compare-proof a,
+.compare-verified a {
+  color: var(--primary-accent);
+}
+
+.compare-verified {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-white-60);
+}
+
 .compare-cta {
   text-align: center;
   margin-top: 3rem;
