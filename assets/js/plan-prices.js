@@ -76,8 +76,8 @@
           || el.classList.contains('nav-cta-signup')
           || el.classList.contains('lp-header-cta');
         el.textContent = compact
-          ? 'Start AI+ trial'
-          : ('Start ' + days + '-day AI+ trial');
+          ? 'Start free trial'
+          : ('Start ' + days + '-day free trial');
       });
     }
     if (receipts >= 0) {

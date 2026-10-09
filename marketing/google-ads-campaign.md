@@ -64,7 +64,7 @@ Descriptions (4):
 ```
 Document recipes and see true plate cost, food cost %, and suggested menu price.
 Live ingredient prices flow into every recipe. Stop guessing your food cost.
-Start a fully loaded AI+ trial. No credit card. Built by a real food-service operator.
+Start a fully loaded AI+ free trial. No credit card. Built by a real food-service operator.
 Plate cost, margins, build sheets, and AI recipes in one tool. Try it free.
 ```
 
@@ -152,7 +152,7 @@ Descriptions (4):
 ```
 Store every recipe with prep steps, costs, and scaling in one place.
 When staff leave, your recipes stay. Consistent prep and real plate cost.
-Describe a dish and AI drafts a full costed recipe. Start the AI+ trial today.
+Describe a dish and AI drafts a full costed recipe. Start your free trial today.
 Build sheets for the line, costing for the office. Try free, no card.
 ```
 
@@ -203,9 +203,9 @@ Sitelinks (point all to menuforge.ai pages):
 - "Pricing" -> `https://menuforge.ai/pricing.html`
 - "How It Works" -> `https://menuforge.ai/index.html#how-it-works`
 - "AI Features" -> `https://menuforge.ai/index.html#ai-features`
-- "Start AI+ Trial" -> `https://menuforge.ai/lp-recipe-costing.html`
+- "Start Free Trial" -> `https://menuforge.ai/lp-recipe-costing.html`
 
-Callouts: `AI+ Trial`, `No Credit Card`, `True Plate Cost`, `Built by an Operator`,
+Callouts: `Free AI+ Trial`, `No Credit Card`, `True Plate Cost`, `Built by an Operator`,
 `For Restaurants & Breweries`, `AI Recipe Generation`.
 
 Structured snippet (Header: "Features"): Recipe Costing, Menu Pricing, Build Sheets,

@@ -22,7 +22,7 @@ Record once for `https://menuforge.ai/lp-recipe-costing.html`.
 | **5–20s** | Add 4–5 ingredients with pack cost → plate cost and food cost % appear. |
 | **20–35s** | Change one ingredient price; show the plate cost move live. |
 | **35–50s** | Set target margin → show suggested menu price. |
-| **50–60s** | End card on screen or title: “Start a fully loaded AI+ trial. No card.” + menuforge.ai |
+| **50–60s** | End card on screen or title: “Start a fully loaded AI+ free trial. No card.” + menuforge.ai |
 
 ## After recording
 

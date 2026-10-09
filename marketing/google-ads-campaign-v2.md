@@ -95,7 +95,7 @@ Headlines (15, ≤30 chars):
 ```
 Know Your True Plate Cost
 Restaurant Food Cost Software
-Start a 7-Day AI+ Trial
+Start a 7-Day Free Trial
 Menu Price From Target Margin
 Built by an Operator
 Stop Guessing Food Cost
@@ -106,16 +106,16 @@ Live Ingredient Costing
 See Your Real Food Cost %
 Cost, Price, Profit
 Menu Costing Software
-Fully Loaded AI+ Trial
+Fully Loaded Free Trial
 Restaurant Recipe Costing
 ```
 
 Descriptions (4, ≤90 chars):
 
 ```
-Start a fully loaded AI+ trial — true plate cost, food cost %, and suggested price.
+Start a fully loaded free trial — true plate cost, food cost %, and suggested price.
 Live ingredient prices flow into every recipe. Built for restaurants & breweries.
-Start a fully loaded AI+ trial. No credit card. Receipts and AI recipes included.
+Start a fully loaded AI+ free trial. No credit card. Receipts and AI recipes included.
 Document recipes, prep, and margins. Full AI+ during the trial, then subscribe.
 ```
 
@@ -151,14 +151,14 @@ Brewery Kitchen Costing
 Bar Food Cost Software
 Cost Cocktails Accurately
 Know Your True Plate Cost
-Start a 7-Day AI+ Trial
+Start a 7-Day Free Trial
 Food Cost for Breweries
 Bar Menu Costing Software
 Menu Price From Margin
 No Credit Card Required
 True Plate Cost in Minutes
 Stop Guessing Food Cost
-Fully Loaded AI+ Trial
+Fully Loaded Free Trial
 Built for Bars & Breweries
 Built by an Operator
 ```
@@ -168,8 +168,8 @@ Descriptions:
 ```
 Cost taproom food and bar cocktails — true plate cost, food cost %, suggested price.
 Built for brewery kitchens and bars. Not for beer brewing recipes — food & drinks.
-Start a fully loaded AI+ trial. No credit card. Receipts and AI recipes included.
-Price wings, pretzels, and cocktails with live ingredient costs. Start the AI+ trial.
+Start a fully loaded AI+ free trial. No credit card. Receipts and AI recipes included.
+Price wings, pretzels, and cocktails with live ingredient costs. Start your free trial.
 ```
 
 ---
@@ -282,7 +282,7 @@ Review **Search terms** every 3–5 days (especially first 48 hours after bid/bu
 
 - Pricing → `https://menuforge.ai/pricing.html`
 - How It Works → `https://menuforge.ai/index.html#how-it-works`
-- Start AI+ Trial → `https://menuforge.ai/lp-recipe-costing.html`
+- Start Free Trial → `https://menuforge.ai/lp-recipe-costing.html`
 - Book a demo → `https://menuforge.ai/lp-book-demo.html`
 
 **Callouts:** `No credit card`, `True plate cost`, `Restaurants & breweries`, `Built by an operator`, `Fully loaded AI+ trial`.
@@ -332,7 +332,7 @@ Record once (desktop, no face required), 45–60s, 1080p mp4, captions on, no st
 2. **5–20s** — Add 4–5 ingredients with pack cost → plate cost and food cost % appear.
 3. **20–35s** — Change one ingredient price; show the plate cost move live.
 4. **35–50s** — Target margin → suggested menu price.
-5. **50–60s** — End card: “Start a fully loaded AI+ trial. No card.” + menuforge.ai
+5. **50–60s** — End card: “Start a fully loaded AI+ free trial. No card.” + menuforge.ai
 
 Embed on `lp-recipe-costing.html` above the fold after the file is recorded.
 
