@@ -484,6 +484,10 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   flex-wrap: wrap;
 }
 
+.hero-home .hero-cta {
+  margin-bottom: 2.5rem;
+}
+
 .integrations-section {
   padding: 5rem 0;
   position: relative;
