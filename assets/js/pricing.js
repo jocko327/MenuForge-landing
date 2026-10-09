@@ -67,8 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
       var fmt = function(v) { return (v === null || v === undefined) ? 'Unlimited' : String(v); };
 
       var cardMap = {
-        'free-users': function() { return fmt(plans.free.max_users) + ' user account'; },
-        'free-recipes': function() { return 'Up to ' + fmt(plans.free.max_recipes) + ' recipes'; },
         'basic-users': function() { return 'Up to ' + fmt(plans.basic.max_users) + ' users'; },
         'basic-recipes': function() { return 'Up to ' + fmt(plans.basic.max_recipes) + ' recipes'; },
         'ai_plus-users': function() { return 'Up to ' + fmt(plans.ai_plus.max_users) + ' users'; },

@@ -58,7 +58,7 @@ marketing-site/
 ### Pricing Page (`pricing.html`)
 - **Billing Toggle**: Monthly vs Annual (10% savings)
 - **Three Tiers**:
-  - **Free**: 1 user, 5 recipes
+  - **Trial**: fully loaded AI+; days, receipts, and AI recipes from CRM `trial_settings` via `GET /auth/plan-info`
   - **Basic**: $69.95/mo, 3 users, unlimited recipes
   - **Premium**: $129.95/mo, 10 users, AI features
 - **Stripe Integration**: Direct checkout flow
@@ -183,9 +183,8 @@ Visit: `http://localhost:8080`
 
 ### Updating Prices
 Edit `pricing.html`:
-- Lines 189-191: Free tier details
-- Lines 204-224: Basic tier (monthly/annual prices)
-- Lines 238-258: Premium tier (monthly/annual prices)
+- Trial numbers hydrate from `GET /auth/plan-info` (`trial.trial_days`, `receipt_limit`, `ai_recipe_limit`)
+- Paid plan prices hydrate from the same endpoint
 
 ### Adding Screenshots
 1. Place images in `assets/images/screenshots/`

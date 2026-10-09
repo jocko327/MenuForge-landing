@@ -9,7 +9,7 @@
 1. **Self-serve:** Ad click → LP account → first **real** saved recipe → habit → paid upgrade.
 2. **Demo:** Ad click → book 15-min walkthrough → show → paid upgrade.
 
-**Offer (product truth):** Free tier = **up to 5 costed recipes** + unlimited ingredients, no card.
+**Offer (product truth):** Fully loaded **AI+ trial** (days, receipts, and AI recipes are CRM `trial_settings`, currently 7 / 10 / 5). No free plan. No card.
 
 **Primary conversion (v2 First Recipe):** `MenuForge — Account created` (Google-Free social or email register from LP).  
 **Secondary (observe until ~15–20 account conversions):** `MenuForge — First recipe saved`.  
@@ -88,14 +88,14 @@ Keywords — phrase `"..."` and exact `[...]` where listed:
 **Responsive Search Ad**
 
 - Final URL: `https://menuforge.ai/lp-recipe-costing.html`
-- Paths: `food-cost` / `5-free`
+- Paths: `food-cost` / `ai-trial`
 
 Headlines (15, ≤30 chars):
 
 ```
 Know Your True Plate Cost
 Restaurant Food Cost Software
-Cost Up to 5 Dishes Free
+Start a 7-Day AI+ Trial
 Menu Price From Target Margin
 Built by an Operator
 Stop Guessing Food Cost
@@ -106,17 +106,17 @@ Live Ingredient Costing
 See Your Real Food Cost %
 Cost, Price, Profit
 Menu Costing Software
-5 Recipes Free Forever
+Fully Loaded AI+ Trial
 Restaurant Recipe Costing
 ```
 
 Descriptions (4, ≤90 chars):
 
 ```
-Cost up to 5 menu items free — true plate cost, food cost %, and suggested price.
+Start a fully loaded AI+ trial — true plate cost, food cost %, and suggested price.
 Live ingredient prices flow into every recipe. Built for restaurants & breweries.
-Start free in minutes. No credit card. Unlimited ingredients, 5 costed recipes.
-Document recipes, prep, and margins. Cost real dishes free before you upgrade.
+Start a fully loaded AI+ trial. No credit card. Receipts and AI recipes included.
+Document recipes, prep, and margins. Full AI+ during the trial, then subscribe.
 ```
 
 ### Ad group B — Taproom food & bar cocktails
@@ -151,14 +151,14 @@ Brewery Kitchen Costing
 Bar Food Cost Software
 Cost Cocktails Accurately
 Know Your True Plate Cost
-Cost Up to 5 Dishes Free
+Start a 7-Day AI+ Trial
 Food Cost for Breweries
 Bar Menu Costing Software
 Menu Price From Margin
 No Credit Card Required
 True Plate Cost in Minutes
 Stop Guessing Food Cost
-5 Recipes Free Forever
+Fully Loaded AI+ Trial
 Built for Bars & Breweries
 Built by an Operator
 ```
@@ -168,8 +168,8 @@ Descriptions:
 ```
 Cost taproom food and bar cocktails — true plate cost, food cost %, suggested price.
 Built for brewery kitchens and bars. Not for beer brewing recipes — food & drinks.
-Start free: up to 5 costed recipes. No credit card. Unlimited ingredients.
-Price wings, pretzels, and cocktails with live ingredient costs. Try free today.
+Start a fully loaded AI+ trial. No credit card. Receipts and AI recipes included.
+Price wings, pretzels, and cocktails with live ingredient costs. Start the AI+ trial.
 ```
 
 ---
@@ -282,10 +282,10 @@ Review **Search terms** every 3–5 days (especially first 48 hours after bid/bu
 
 - Pricing → `https://menuforge.ai/pricing.html`
 - How It Works → `https://menuforge.ai/index.html#how-it-works`
-- Start Free → `https://menuforge.ai/lp-recipe-costing.html`
+- Start AI+ Trial → `https://menuforge.ai/lp-recipe-costing.html`
 - Book a demo → `https://menuforge.ai/lp-book-demo.html`
 
-**Callouts:** `No credit card`, `True plate cost`, `Restaurants & breweries`, `Built by an operator`, `Up to 5 recipes free`.
+**Callouts:** `No credit card`, `True plate cost`, `Restaurants & breweries`, `Built by an operator`, `Fully loaded AI+ trial`.
 
 **Do not** sitelink to soft “free calculator” pages. **Do not** use `index.html` as a campaign final URL.
 
@@ -332,7 +332,7 @@ Record once (desktop, no face required), 45–60s, 1080p mp4, captions on, no st
 2. **5–20s** — Add 4–5 ingredients with pack cost → plate cost and food cost % appear.
 3. **20–35s** — Change one ingredient price; show the plate cost move live.
 4. **35–50s** — Target margin → suggested menu price.
-5. **50–60s** — End card: “Cost up to 5 dishes free. No card.” + menuforge.ai
+5. **50–60s** — End card: “Start a fully loaded AI+ trial. No card.” + menuforge.ai
 
 Embed on `lp-recipe-costing.html` above the fold after the file is recorded.
 

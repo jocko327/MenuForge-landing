@@ -113,7 +113,7 @@ Requires Cal.com live on `lp-book-demo.html` first.
 
 ## I. Extensions (optional)
 
-- Sitelinks: Pricing, How it works, Start free (costing LP), Book a demo
+- Sitelinks: Pricing, How it works, Start AI+ trial (costing LP), Book a demo
 - Callouts: No credit card, True plate cost, Restaurants & breweries, Built by an operator
 - **No** “free calculator” sitelinks
 - **No** homepage (`index.html`) as final URL

@@ -6,14 +6,14 @@
   
   <!-- SEO Meta Tags -->
   <title>MenuForge Pricing - Recipe Management Software Plans</title>
-  <meta name="description" content="Choose the perfect MenuForge plan for your restaurant or brewery. Free recipe management, Essentials at $79.95/mo, AI+ with AI recipe generation at $139.95/mo, or Unlimited at $189.95/mo. Save 10% with annual billing.">
+  <meta name="description" content="Start a fully loaded AI+ trial, then choose Essentials, AI+, or Unlimited. Trial length and included receipts and AI recipes come from live MenuForge settings.">
   <meta name="keywords" content="recipe management pricing, recipe software cost, AI recipe generation pricing, restaurant software pricing">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://menuforge.ai/pricing.html">
   
   <!-- Open Graph / Twitter: 1:1 logo on every share -->
   <meta property="og:title" content="MenuForge Pricing - Recipe Management Software Plans">
-  <meta property="og:description" content="Affordable recipe management plans starting free. AI+ features from $139.95/mo">
+  <meta property="og:description" content="A fully loaded AI+ trial, then Essentials, AI+, or Unlimited. No free plan.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://menuforge.ai/pricing.html">
   <meta property="og:site_name" content="MenuForge">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@menuforge">
   <meta name="twitter:title" content="MenuForge Pricing - Recipe Management Software Plans">
-  <meta name="twitter:description" content="Affordable recipe management plans starting free. AI+ features from $139.95/mo">
+  <meta name="twitter:description" content="A fully loaded AI+ trial, then Essentials, AI+, or Unlimited. No free plan.">
   <meta name="twitter:image" content="https://menuforge.ai/assets/images/menuforge-icon-512.png">
   <meta name="twitter:image:alt" content="MenuForge">
   
@@ -116,7 +116,7 @@
     
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       max-width: 1300px;
       margin: 0 auto;
@@ -602,7 +602,7 @@
         "name": "What AI features are included?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The AI+ and Unlimited plans include AI recipe generation, unlimited AI-powered recipe description generation, unlimited AI unit conversion assistance, receipt processing (email or upload invoices with live ingredient prices and price-change alerts), and posting recipes to social media with AI copy written in your brand voice. The AI+ plan includes 25 AI recipe calls per month, while the Unlimited plan has no limits. Receipt processing and social media posting are not included on Free or Essentials."
+          "text": "The AI+ and Unlimited plans include AI recipe generation, unlimited AI-powered recipe description generation, unlimited AI unit conversion assistance, receipt processing (email or upload invoices with live ingredient prices and price-change alerts), and posting recipes to social media with AI copy written in your brand voice. The AI+ plan includes 25 AI recipe calls per month, while the Unlimited plan has no limits. Receipt processing and social media posting are not included on Essentials. New kitchens start on a fully loaded AI+ trial."
         }
       },
       {
@@ -610,7 +610,7 @@
         "name": "Can I cancel my subscription anytime?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period, then automatically downgrade to the Free plan."
+          "text": "Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period. After a trial, subscribe to keep AI+ features."
         }
       },
       {
@@ -626,7 +626,7 @@
         "name": "What's the difference between Essentials and AI+?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Both plans include 300 recipes and core recipe management features. AI+ adds AI-powered recipe generation (25/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to 6 users vs. 3 on Essentials. Free and Essentials do not include receipt processing or social media posting."
+          "text": "Both plans include 300 recipes and core recipe management features. AI+ adds AI-powered recipe generation (25/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to 6 users vs. 3 on Essentials. Essentials does not include receipt processing or social media posting."
         }
       },
       {
@@ -664,11 +664,11 @@
         <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Compare</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li class="nav-mobile-cta"><a href="get-started.html" class="btn btn-primary">Start free trial</a></li>
+        <li class="nav-mobile-cta"><a href="get-started.html" class="btn btn-primary" data-trial-cta>Start 7-day AI+ trial</a></li>
         <li class="nav-mobile-cta"><a href="https://app.menuforge.ai/login" class="btn btn-secondary">Launch App</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="get-started.html" class="btn btn-primary nav-cta nav-cta-signup">Start free</a>
+        <a href="get-started.html" class="btn btn-primary nav-cta nav-cta-signup" data-trial-cta>Start 7-day AI+ trial</a>
         <a href="https://app.menuforge.ai/login" class="btn btn-secondary nav-cta nav-cta-login">Launch App</a>
       </div>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
@@ -682,7 +682,7 @@
     <div class="container">
       <div class="section-title">
         <h1>Choose Your Plan</h1>
-        <p>Start free, upgrade as you grow. All plans include recipe management and cost tracking.</p>
+        <p>Start a fully loaded <span data-plan-name="ai_plus">AI+</span> trial — <span data-trial-days>7</span> days, <span data-trial-receipts>10</span> receipts, and <span data-trial-ai-recipes>5</span> AI recipes. Then pick the plan that fits.</p>
       </div>
       <p class="pricing-anchor">Less than one sous chef shift a month. Well under a MarginEdge location seat. No setup fees, no six-month implementation.</p>
       
@@ -695,28 +695,6 @@
       
       <!-- Pricing Cards -->
       <div class="pricing-grid">
-        <!-- Free Plan -->
-        <div class="pricing-card">
-          <h3 class="plan-name">Free</h3>
-          <div class="plan-price">
-            $0
-            <span>/month</span>
-          </div>
-          <p class="price-period">Perfect for trying MenuForge</p>
-          
-          <ul class="plan-features">
-            <li data-plan-limit="free-users">1 user account</li>
-            <li data-plan-limit="free-recipes">Up to 5 recipes</li>
-            <li>Recipe creation &amp; management</li>
-            <li>Basic recipe pricing</li>
-            <li>Ingredient cost tracking</li>
-            <li>Vendor management</li>
-            <li>Email support</li>
-          </ul>
-          
-          <a href="get-started.html" class="btn btn-secondary plan-cta">Get Started Free</a>
-        </div>
-        
         <!-- Essentials Plan -->
         <div class="pricing-card">
           <h3 class="plan-name" data-plan-name="basic">Essentials</h3>
@@ -730,7 +708,7 @@
           <ul class="plan-features">
             <li data-plan-limit="basic-users">Up to 3 users</li>
             <li data-plan-limit="basic-recipes">Up to 300 recipes</li>
-            <li>All Free features</li>
+            <li>Recipe creation, costing, and vendor management</li>
             <li>Advanced recipe pricing</li>
             <li>Detailed cost analytics</li>
             <li>Recipe categories &amp; organization</li>
@@ -743,7 +721,7 @@
           <button class="btn btn-primary plan-cta plan-cta-subscribe" onclick="subscribeToPlan('essentials', document.getElementById('billingToggle').classList.contains('annual'))">
             Subscribe to Essentials
           </button>
-          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial">Start free trial</a>
+          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial" data-trial-cta>Start 7-day AI+ trial</a>
           <p class="pay-trust">
             <span>Payments by Stripe</span>
             <span class="pay-trust-marks" aria-hidden="true">
@@ -783,7 +761,7 @@
           <button class="btn btn-primary plan-cta plan-cta-subscribe" onclick="subscribeToPlan('ai_plus', document.getElementById('billingToggle').classList.contains('annual'))">
             Subscribe to AI+
           </button>
-          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial">Start free trial</a>
+          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial" data-trial-cta>Start 7-day AI+ trial</a>
           <p class="pay-trust">
             <span>Payments by Stripe</span>
             <span class="pay-trust-marks" aria-hidden="true">
@@ -821,7 +799,7 @@
           <button class="btn btn-primary plan-cta plan-cta-subscribe" onclick="subscribeToPlan('unlimited', document.getElementById('billingToggle').classList.contains('annual'))">
             Subscribe to Unlimited
           </button>
-          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial">Start free trial</a>
+          <a href="get-started.html" class="btn btn-primary plan-cta plan-cta-trial" data-trial-cta>Start 7-day AI+ trial</a>
           <p class="pay-trust">
             <span>Payments by Stripe</span>
             <span class="pay-trust-marks" aria-hidden="true">
@@ -869,7 +847,6 @@
           <thead>
             <tr>
               <th>What you get</th>
-              <th>Free</th>
               <th>Essentials</th>
               <th>AI+</th>
               <th>Unlimited</th>
@@ -878,14 +855,12 @@
           <tbody>
             <tr>
               <td>Users</td>
-              <td>1</td>
               <td>3</td>
               <td>6</td>
               <td>Unlimited</td>
             </tr>
             <tr>
               <td>Recipes</td>
-              <td>5</td>
               <td>300</td>
               <td>300</td>
               <td>Unlimited</td>
@@ -893,13 +868,11 @@
             <tr>
               <td>AI recipes / month</td>
               <td>—</td>
-              <td>—</td>
               <td>25</td>
               <td>Unlimited</td>
             </tr>
             <tr>
               <td>Receipt processing</td>
-              <td>—</td>
               <td>—</td>
               <td>Yes</td>
               <td>Yes</td>
@@ -907,13 +880,11 @@
             <tr>
               <td>Post to social media</td>
               <td>—</td>
-              <td>—</td>
               <td>Yes</td>
               <td>Yes</td>
             </tr>
             <tr>
               <td>Support</td>
-              <td>Email</td>
               <td>Email</td>
               <td>Priority (24–48hr)</td>
               <td>Priority (24–48hr)</td>
@@ -923,11 +894,9 @@
               <td>Yes</td>
               <td>Yes</td>
               <td>Yes</td>
-              <td>Yes</td>
             </tr>
             <tr>
               <td>Dietary flags</td>
-              <td>Yes</td>
               <td>Yes</td>
               <td>Yes</td>
               <td>Yes</td>
@@ -937,11 +906,9 @@
               <td>Yes</td>
               <td>Yes</td>
               <td>Yes</td>
-              <td>Yes</td>
             </tr>
             <tr>
               <td>AI menu descriptions</td>
-              <td>—</td>
               <td>—</td>
               <td>Unlimited</td>
               <td>Unlimited</td>
@@ -949,13 +916,11 @@
             <tr>
               <td>AI unit conversions</td>
               <td>—</td>
-              <td>—</td>
               <td>Unlimited</td>
               <td>Unlimited</td>
             </tr>
             <tr>
               <td>Custom branding</td>
-              <td>—</td>
               <td>—</td>
               <td>Yes</td>
               <td>Yes</td>
@@ -997,12 +962,12 @@
 
         <div class="faq-item">
           <h3 class="faq-question">What AI features are included?</h3>
-          <p class="faq-answer">The AI+ and Unlimited plans include AI recipe generation, unlimited AI-powered recipe description generation, unlimited AI unit conversion assistance, receipt processing (email or upload invoices with live ingredient prices and price-change alerts), and posting recipes to social media with AI copy written in your brand voice. The AI+ plan includes <span data-faq-limit="ai_plus-ai">25</span> AI recipe calls per month, while the Unlimited plan has no limits. Receipt processing and social media posting are not included on Free or Essentials.</p>
+          <p class="faq-answer">The AI+ and Unlimited plans include AI recipe generation, unlimited AI-powered recipe description generation, unlimited AI unit conversion assistance, receipt processing (email or upload invoices with live ingredient prices and price-change alerts), and posting recipes to social media with AI copy written in your brand voice. The AI+ plan includes <span data-faq-limit="ai_plus-ai">25</span> AI recipe calls per month, while the Unlimited plan has no limits. Receipt processing and social media posting are not included on Essentials. New kitchens start on a fully loaded AI+ trial (<span data-trial-days>7</span> days, <span data-trial-receipts>10</span> receipts, <span data-trial-ai-recipes>5</span> AI recipes).</p>
         </div>
         
         <div class="faq-item">
           <h3 class="faq-question">Can I cancel my subscription anytime?</h3>
-          <p class="faq-answer">Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period, then automatically downgrade to the Free plan.</p>
+          <p class="faq-answer">Absolutely. You can cancel your subscription at any time from your account settings. You'll retain access until the end of your current billing period. After a trial, subscribe to keep AI+ features.</p>
         </div>
 
         <div class="faq-item">
@@ -1012,7 +977,7 @@
         
         <div class="faq-item">
           <h3 class="faq-question">What's the difference between Essentials and AI+?</h3>
-          <p class="faq-answer">Both plans include <span data-faq-limit="basic-recipes">300</span> recipes and core recipe management features. AI+ adds AI-powered recipe generation (<span data-faq-limit="ai_plus-ai">25</span>/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to <span data-faq-limit="ai_plus-users">6</span> users vs. <span data-faq-limit="basic-users">3</span> on Essentials. Free and Essentials do not include receipt processing or social media posting.</p>
+          <p class="faq-answer">Both plans include <span data-faq-limit="basic-recipes">300</span> recipes and core recipe management features. AI+ adds AI-powered recipe generation (<span data-faq-limit="ai_plus-ai">25</span>/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to <span data-faq-limit="ai_plus-users">6</span> users vs. <span data-faq-limit="basic-users">3</span> on Essentials. Essentials does not include receipt processing or social media posting.</p>
         </div>
 
         <div class="faq-item">
@@ -1032,15 +997,15 @@
   <section class="hero" style="min-height: 50vh; padding: 4rem 2rem;">
     <div class="hero-content">
       <h2 style="color: var(--text-white); margin-bottom: 1.5rem;">Ready to Get Started?</h2>
-      <p class="hero-tagline">Start with our free plan, no credit card required</p>
+      <p class="hero-tagline">Start a fully loaded <span data-trial-days>7</span>-day AI+ trial. No credit card. <span data-trial-receipts>10</span> receipts and <span data-trial-ai-recipes>5</span> AI recipes included.</p>
       <div class="hero-cta">
-        <a href="get-started.html" class="btn btn-primary btn-large">Create Free Account</a>
+        <a href="get-started.html" class="btn btn-primary btn-large" data-trial-cta>Start 7-day AI+ trial</a>
       </div>
     </div>
   </section>
 
   <div class="pricing-mobile-trial" role="region" aria-label="Start a free trial">
-    <a href="get-started.html" class="btn btn-primary">Start free trial</a>
+    <a href="get-started.html" class="btn btn-primary" data-trial-cta>Start 7-day AI+ trial</a>
   </div>
 
   <!-- Footer -->
@@ -1101,6 +1066,7 @@
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js?v=20260902i"></script>
-  <script src="assets/js/pricing.js?v=20260922a"></script>
+  <script src="assets/js/plan-prices.js?v=20261009a"></script>
+  <script src="assets/js/pricing.js?v=20261009a"></script>
 </body>
 </html>

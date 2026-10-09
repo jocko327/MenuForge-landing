@@ -62,6 +62,29 @@
       var vendor = vendors[el.getAttribute('data-compare-name')];
       if (vendor && vendor.name) el.textContent = vendor.name;
     });
+
+    var trial = (data && data.trial) || {};
+    var days = Number(trial.trial_days);
+    var receipts = Number(trial.receipt_limit);
+    var ai = Number(trial.ai_recipe_limit);
+    if (days > 0) {
+      document.querySelectorAll('[data-trial-days]').forEach(function (el) {
+        el.textContent = String(days);
+      });
+      document.querySelectorAll('[data-trial-cta]').forEach(function (el) {
+        el.textContent = 'Start ' + days + '-day AI+ trial';
+      });
+    }
+    if (receipts >= 0) {
+      document.querySelectorAll('[data-trial-receipts]').forEach(function (el) {
+        el.textContent = String(receipts);
+      });
+    }
+    if (ai >= 0) {
+      document.querySelectorAll('[data-trial-ai-recipes]').forEach(function (el) {
+        el.textContent = String(ai);
+      });
+    }
   }
 
   var request = fetch(API_BASE_URL + '/auth/plan-info')

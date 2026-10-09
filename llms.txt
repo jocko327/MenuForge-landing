@@ -21,14 +21,14 @@ MenuForge helps chef-owners and kitchen managers know food costs down to the pen
 
 ## Pricing (USD, monthly)
 
-- Free: $0 — 1 user, 5 recipes
+- Trial: fully loaded AI+ (days, receipts, and AI recipes come from live CRM trial_settings)
 - Essentials: $79.95 — 3 users, 300 recipes
 - AI+: $139.95 — 6 users, 300 recipes, 25 AI recipes/month, receipt processing, social posting
 - Unlimited: $189.95 — unlimited users, recipes, and AI recipes
 - Annual billing: 10% off
 - Recipe storage add-ons: +500 recipes $20/mo, +1,000 recipes $50/mo
 - AI credit packs (one-time): 5 for $20, 10 for $35
-- Free plan: no credit card required
+- AI+ trial: no credit card required
 
 ## What it does
 
