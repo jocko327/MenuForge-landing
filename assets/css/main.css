@@ -977,6 +977,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     padding: 0.5rem 0.95rem !important;
     font-size: 0.85rem !important;
     min-height: 40px;
+    white-space: nowrap;
   }
 
   .nav-mobile-cta {
@@ -1146,6 +1147,11 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 }
 
 @media (max-width: 480px) {
+  .nav-cta-signup {
+    padding: 0.45rem 0.7rem !important;
+    font-size: 0.78rem !important;
+  }
+
   .hero-pains li {
     flex: 1 1 100%;
   }

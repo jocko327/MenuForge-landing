@@ -72,7 +72,12 @@
         el.textContent = String(days);
       });
       document.querySelectorAll('[data-trial-cta]').forEach(function (el) {
-        el.textContent = 'Start ' + days + '-day AI+ trial';
+        var compact = el.classList.contains('nav-cta')
+          || el.classList.contains('nav-cta-signup')
+          || el.classList.contains('lp-header-cta');
+        el.textContent = compact
+          ? 'Start AI+ trial'
+          : ('Start ' + days + '-day AI+ trial');
       });
     }
     if (receipts >= 0) {
