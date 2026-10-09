@@ -1221,6 +1221,18 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   z-index: 1;
 }
 
+.hero-home {
+  padding-bottom: 2.5rem;
+}
+
+.hero-home .hero-pains {
+  margin-bottom: 0;
+}
+
+.hero-home + .proof-band {
+  padding-top: 1.5rem;
+}
+
 .proof-card,
 .ai-truth,
 .brewery-teaser,
@@ -1498,6 +1510,14 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   .home-faq-section,
   .founder-section {
     padding: 2.5rem 0;
+  }
+
+  .hero-home {
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-home + .proof-band {
+    padding-top: 1rem;
   }
 
   .hero-definition {
