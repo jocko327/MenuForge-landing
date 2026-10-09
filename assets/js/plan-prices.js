@@ -63,6 +63,29 @@
       if (vendor && vendor.name) el.textContent = vendor.name;
     });
 
+    function quota(value) {
+      return value === null || value === undefined ? 'Unlimited' : Number(value).toLocaleString('en-US');
+    }
+    [['data-plan-users', 'max_users'], ['data-plan-recipes', 'max_recipes'], ['data-plan-ai', 'max_ai_recipes_per_month']]
+      .forEach(function (pair) {
+        document.querySelectorAll('[' + pair[0] + ']').forEach(function (el) {
+          var plan = plans[el.getAttribute(pair[0])];
+          if (plan && pair[1] in plan) el.textContent = quota(plan[pair[1]]);
+        });
+      });
+
+    var addons = (data && data.recipe_addons) || {};
+    var addonMap = {
+      'pack500-extra': addons.recipe_pack_500 && addons.recipe_pack_500.extra_recipes,
+      'pack500-price': addons.recipe_pack_500 && addons.recipe_pack_500.price_monthly,
+      'pack1000-extra': addons.recipe_pack_1000 && addons.recipe_pack_1000.extra_recipes,
+      'pack1000-price': addons.recipe_pack_1000 && addons.recipe_pack_1000.price_monthly
+    };
+    document.querySelectorAll('[data-addon]').forEach(function (el) {
+      var v = addonMap[el.getAttribute('data-addon')];
+      if (v !== undefined && v !== null) el.textContent = Number(v).toLocaleString('en-US');
+    });
+
     var trial = (data && data.trial) || {};
     var days = Number(trial.trial_days);
     var receipts = Number(trial.receipt_limit);

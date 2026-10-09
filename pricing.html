@@ -36,7 +36,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20260924c">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261009b">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
   
   <style>
@@ -585,7 +585,7 @@
         "name": "What is the recipe limit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Essentials and AI+ plans include up to 300 recipes (including archived). You can expand your storage with a recipe add-on pack: +500 recipes for +$20/mo or +1,000 recipes for +$50/mo. The Unlimited plan has no recipe limits."
+          "text": "Essentials includes up to 150 recipes and AI+ up to 250 (including archived). You can expand storage with a recipe add-on pack: +300 recipes for +$35/mo or +500 recipes for +$50/mo. The Unlimited plan has no recipe limits."
         }
       },
       {
@@ -625,7 +625,7 @@
         "name": "What's the difference between Essentials and AI+?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Both plans include 300 recipes and core recipe management features. AI+ adds AI-powered recipe generation (25/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to 6 users vs. 3 on Essentials. Essentials does not include receipt processing or social media posting."
+          "text": "Both plans include core recipe management features; Essentials holds 150 recipes and AI+ holds 250. AI+ adds AI-powered recipe generation (25/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to 6 users vs. 3 on Essentials. Essentials does not include receipt processing or social media posting."
         }
       },
       {
@@ -633,7 +633,7 @@
         "name": "How do you handle our recipe and cost data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe. We do not currently hold SOC 2 or GDPR certifications, but we follow industry best practices for data security."
+          "text": "MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe. Details on backups, export, and certifications are on our security page (https://menuforge.ai/security.html)."
         }
       }
     ]
@@ -706,7 +706,7 @@
           
           <ul class="plan-features">
             <li data-plan-limit="basic-users">Up to 3 users</li>
-            <li data-plan-limit="basic-recipes">Up to 300 recipes</li>
+            <li data-plan-limit="basic-recipes">Up to 150 recipes</li>
             <li>Recipe creation, costing, and vendor management</li>
             <li>Advanced recipe pricing</li>
             <li>Detailed cost analytics</li>
@@ -745,7 +745,7 @@
           
           <ul class="plan-features">
             <li data-plan-limit="ai_plus-users">Up to 6 users</li>
-            <li data-plan-limit="ai_plus-recipes">Up to 300 recipes</li>
+            <li data-plan-limit="ai_plus-recipes">Up to 250 recipes</li>
             <li>All Essentials features</li>
             <li data-plan-limit="ai_plus-ai"><strong>25 AI Recipes per month</strong></li>
             <li><strong>Unlimited AI descriptions</strong></li>
@@ -830,7 +830,7 @@
           <div class="addon-card">
             <h4>Recipe Storage Packs</h4>
             <p>Need more recipes? Add additional recipe storage to your Essentials, AI+, or Unlimited plan.</p>
-            <p class="addon-price" data-addon-price="recipes"><span data-addon="pack500-extra">500</span> recipes: +$<span data-addon="pack500-price">20</span>/month &bull; <span data-addon="pack1000-extra">1,000</span> recipes: +$<span data-addon="pack1000-price">50</span>/month</p>
+            <p class="addon-price" data-addon-price="recipes"><span data-addon="pack500-extra">300</span> recipes: +$<span data-addon="pack500-price">35</span>/month &bull; <span data-addon="pack1000-extra">500</span> recipes: +$<span data-addon="pack1000-price">50</span>/month</p>
           </div>
           <div class="addon-card">
             <h4>AI Recipe Credits</h4>
@@ -860,8 +860,8 @@
             </tr>
             <tr>
               <td>Recipes</td>
-              <td>300</td>
-              <td>300</td>
+              <td>150</td>
+              <td>250</td>
               <td>Unlimited</td>
             </tr>
             <tr>
@@ -951,7 +951,7 @@
         
         <div class="faq-item">
           <h3 class="faq-question">What is the recipe limit?</h3>
-          <p class="faq-answer">Essentials and AI+ plans include up to <span data-faq-limit="basic-recipes">300</span> recipes (including archived). You can expand your storage with a recipe add-on pack: +<span data-addon="pack500-extra">500</span> recipes for +$<span data-addon="pack500-price">20</span>/mo or +<span data-addon="pack1000-extra">1,000</span> recipes for +$<span data-addon="pack1000-price">50</span>/mo. The Unlimited plan has no recipe limits.</p>
+          <p class="faq-answer">Essentials includes up to <span data-faq-limit="basic-recipes">150</span> recipes and AI+ up to <span data-faq-limit="ai_plus-recipes">250</span> (including archived). You can expand your storage with a recipe add-on pack: +<span data-addon="pack500-extra">300</span> recipes for +$<span data-addon="pack500-price">35</span>/mo or +<span data-addon="pack1000-extra">500</span> recipes for +$<span data-addon="pack1000-price">50</span>/mo. The Unlimited plan has no recipe limits.</p>
         </div>
 
         <div class="faq-item">
@@ -976,18 +976,18 @@
         
         <div class="faq-item">
           <h3 class="faq-question">What's the difference between Essentials and AI+?</h3>
-          <p class="faq-answer">Both plans include <span data-faq-limit="basic-recipes">300</span> recipes and core recipe management features. AI+ adds AI-powered recipe generation (<span data-faq-limit="ai_plus-ai">25</span>/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to <span data-faq-limit="ai_plus-users">6</span> users vs. <span data-faq-limit="basic-users">3</span> on Essentials. Essentials does not include receipt processing or social media posting.</p>
+          <p class="faq-answer">Both plans include core recipe management features; Essentials holds <span data-faq-limit="basic-recipes">150</span> recipes and AI+ holds <span data-faq-limit="ai_plus-recipes">250</span>. AI+ adds AI-powered recipe generation (<span data-faq-limit="ai_plus-ai">25</span>/month), unlimited AI descriptions, unlimited unit conversions, custom branding, receipt processing, and posting recipes to social media. AI+ also supports up to <span data-faq-limit="ai_plus-users">6</span> users vs. <span data-faq-limit="basic-users">3</span> on Essentials. Essentials does not include receipt processing or social media posting.</p>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question">How do you handle our recipe and cost data?</h3>
-          <p class="faq-answer">MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe. We do not currently hold SOC 2 or GDPR certifications, but we follow industry best practices for data security. See the <a href="#data-handling">data-handling statement</a> below.</p>
+          <p class="faq-answer">MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe. See <a href="security.html">security and data handling</a> for backups, export, and certifications.</p>
         </div>
       </div>
 
       <div class="data-handling" id="data-handling">
         <h2>How we handle your data</h2>
-        <p>MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe. We do not currently hold SOC 2 or GDPR certifications, but we follow industry best practices for data security.</p>
+        <p>MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe.</p>
       </div>
     </div>
   </section>
@@ -1065,7 +1065,7 @@
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js?v=20260902i"></script>
-  <script src="assets/js/plan-prices.js?v=20261009c"></script>
-  <script src="assets/js/pricing.js?v=20261009a"></script>
+  <script src="assets/js/plan-prices.js?v=20261009d"></script>
+  <script src="assets/js/pricing.js?v=20261009b"></script>
 </body>
 </html>

@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var faqMap = {
         'basic-recipes': function() { return fmt(plans.basic.max_recipes); },
         'basic-users': function() { return fmt(plans.basic.max_users); },
+        'ai_plus-recipes': function() { return fmt(plans.ai_plus.max_recipes); },
         'ai_plus-ai': function() { return fmt(plans.ai_plus.max_ai_recipes_per_month); },
         'ai_plus-users': function() { return fmt(plans.ai_plus.max_users); },
       };

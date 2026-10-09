@@ -89,7 +89,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20260924c">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261009b">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
   <link rel="stylesheet" href="assets/css/app-mockups.css">
   <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20260918b">
@@ -274,7 +274,7 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#ai-features">AI</a></li>
         <li><a href="#how-it-works">Workflow</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="integrations.html">Integrations</a></li>
         <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Compare</a></li>
         <li><a href="about.html">About</a></li>
@@ -295,71 +295,196 @@
   <!-- Hero Section -->
   <section class="hero hero-home">
     <div class="hero-content">
-      <img src="assets/images/menuforge-recipe-grid-pricing-issues.png" srcset="assets/images/menuforge-recipe-grid-pricing-issues-400w.png 400w, assets/images/menuforge-recipe-grid-pricing-issues-800w.png 800w, assets/images/menuforge-recipe-grid-pricing-issues.png 1600w" sizes="(max-width: 768px) 92vw, 720px" alt="MenuForge recipe grid. Red recipes are pricing issues." width="1600" height="837" class="hero-product">
-      <h1>Spreadsheets are for suckers.<span class="hero-h1-sub">Costing recipes has never been easier.</span></h1>
-      <p class="hero-tagline">Recipe costing for independent restaurants and breweries — without the 47-tab workbook, the four-layer batch math, and the person who is the only one allowed to touch cell G14.</p>
-      <ul class="hero-pains">
-        <li>Nested batch math that takes a Saturday and still lies about the vinaigrette.</li>
-        <li>One case price change, then a scavenger hunt through every formula that still thinks chicken is $1.89.</li>
-        <li>Hit Recalc and wait. The dinner rush will not.</li>
-        <li>Training someone else on your sheet. They smile. They nod. They never open it again.</li>
-        <li>How much garlic salt ends up in the burger — by way of house seasoning, seasoned beef, then the patty? Recipe Inception. Excel lost count two layers ago.</li>
-      </ul>
+      <h1>Know your plate cost the day the invoice arrives.<span class="hero-h1-sub">Spreadsheets are for suckers. Costing recipes has never been easier.</span></h1>
+      <p class="hero-tagline hero-definition">MenuForge is web-based recipe costing software for independent restaurants and breweries. It tracks ingredient pack prices, reads vendor invoices with AI, and recosts every recipe and sub-recipe automatically. Plans start at <span data-plan-price="basic">$79.95</span>/month, with a <span data-trial-days>7</span>-day free trial.</p>
       <div class="hero-cta">
         <a href="get-started.html" class="btn btn-primary btn-large" data-trial-cta>Start 7-day free trial</a>
         <a href="pricing.html" class="btn btn-secondary btn-large">View Pricing</a>
       </div>
+      <img class="hero-product" src="assets/images/menuforge-recipe-grid-pricing-issues.png" srcset="assets/images/menuforge-recipe-grid-pricing-issues-400w.png 400w, assets/images/menuforge-recipe-grid-pricing-issues-800w.png 800w, assets/images/menuforge-recipe-grid-pricing-issues.png 1600w" sizes="(max-width: 768px) 92vw, 720px" alt="MenuForge recipe grid. Pink cards are recipes with costing problems." width="1600" height="837">
+      <ul class="hero-pains">
+        <li>Nested batch math that takes a Saturday and still lies about the vinaigrette.</li>
+        <li>One case price change, then a scavenger hunt through every formula that still thinks chicken is $1.89.</li>
+        <li>How much garlic salt ends up in the burger by way of house seasoning, seasoned beef, then the patty? Excel lost count two layers ago.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features" id="features">
+  <!-- Case study proof -->
+  <section class="proof-band" id="proof">
+    <div class="container">
+      <div class="proof-card">
+        <div class="proof-copy">
+          <span class="proof-eyebrow">Case study: Presidential Brewing Company, Portage, Michigan</span>
+          <h2>About $8,800 a year back from ten line items</h2>
+          <p>Presidential Brewing used MenuForge invoice history to pull their Top 10 spend, sent it to their distributor, and came back with about 14% tighter pricing on the items they buy most. Receipt processing and Top 10 spend are part of the <strong>AI+ plan</strong>, and both are included in the free trial.</p>
+          <a class="proof-link" href="negotiate-distributor-pricing.html">Read the case study</a>
+        </div>
+        <ul class="proof-stats" role="list">
+          <li><strong>$8,800</strong><span>Projected savings over a year</span></li>
+          <li><strong>~14%</strong><span>Tighter pricing on the top 10 items</span></li>
+          <li><strong>10</strong><span>Line items renegotiated</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- The loop -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-title">
+        <h2>Invoice in. Every recipe recosted.</h2>
+        <p>The loop that replaces the workbook.</p>
+      </div>
+      <div class="workflow-steps">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <h3>The invoice comes in</h3>
+          <p>Email or upload a vendor invoice. AI reads each line and matches it to a pantry ingredient. You confirm anything it could not place. <span class="plan-pill">AI+ and Unlimited</span></p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <h3>Pack costs update</h3>
+          <p>The new case price lands on the ingredient, with price history and alerts when something jumps.</p>
+        </div>
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <h3>Every dish recosts</h3>
+          <p>Recipes and nested sub-recipes recost on their own. Plate cost, food cost %, and minimum sell price stay current.</p>
+        </div>
+      </div>
+      <div class="start-callout">
+        <h3>Coming from a spreadsheet?</h3>
+        <p>There is no spreadsheet import yet. Most kitchens start with their top 10 dishes: add those ingredients once, and AI can draft a recipe from a short description so you are not retyping every tab. On Essentials, you enter pack prices by hand instead of from invoices.</p>
+      </div>
+      <div class="workflow-cta">
+        <a href="get-started.html" class="btn btn-primary btn-large" data-trial-cta>Start 7-day free trial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features: one merged section -->
+  <section class="app-preview-section" id="features">
     <div class="container container-85">
       <header class="section-sticky-head">
-        <h2>Document the menu. Keep pack costs honest.</h2>
-        <p>For independent restaurants and breweries that are done pretending the spreadsheet is a strategy.</p>
+        <h2>What MenuForge does</h2>
+        <p>Real screenshots from the live app. No mockups.</p>
       </header>
-      <div class="features-grid features-grid-four">
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Recipe Management">📋</span>
-          <h3>Hand a new cook the full menu</h3>
-          <p>Document every recipe so the next hire can execute without walking them through a binder. When a cook walks, the recipes stay.</p>
+      <div class="app-gallery">
+
+        <article class="gallery-item gallery-span-7">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-recipe-grid-pricing-issues.png" srcset="assets/images/menuforge-recipe-grid-pricing-issues-400w.png 400w, assets/images/menuforge-recipe-grid-pricing-issues-800w.png 800w, assets/images/menuforge-recipe-grid-pricing-issues.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 70vw, 900px" alt="MenuForge recipe grid. Pink cards are recipes with costing problems." width="1600" height="837" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Recipes</span>
+            <h3>Your whole menu, at a glance</h3>
+            <p>Pink cards have a costing problem (a missing price or a unit that will not convert), red borders are missing prep steps, and dietary flags roll up from every ingredient. AM and PM teams edit the same cards.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Ingredients Management">🥬</span>
-          <h3>Keep pack costs honest</h3>
-          <p>Track raw ingredients, pack sizes, vendors, and units. When a case price changes, every recipe that uses it recosts.</p>
+
+        <article class="gallery-item gallery-span-5">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-pantry-grid-vendor-filters.png" srcset="assets/images/menuforge-pantry-grid-vendor-filters-400w.png 400w, assets/images/menuforge-pantry-grid-vendor-filters-800w.png 800w, assets/images/menuforge-pantry-grid-vendor-filters.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 700px" alt="Pantry grid with vendor filters, dietary flags on ingredients, and vendor variants." width="1600" height="838" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Pantry</span>
+            <h3>One pantry, every vendor</h3>
+            <p>Pack sizes, units, item numbers, and vendor variants live on one ingredient, so a GFS case and a Sysco bag never fight over the real cost.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Dietary Flags">🏷️</span>
-          <h3>Dietary Flags</h3>
-          <p>Instantly see if a recipe is vegetarian, vegan, or gluten free based on all included ingredients. Substitute flags show when alternatives are available.</p>
+
+        <article class="gallery-item gallery-span-8">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-receipt-processing.png" srcset="assets/images/menuforge-receipt-processing-400w.png 400w, assets/images/menuforge-receipt-processing-800w.png 800w, assets/images/menuforge-receipt-processing.png 1600w" sizes="(max-width: 768px) 92vw, 80vw" alt="MenuForge receipt processing page with vendor invoices and price-change movers." width="1600" height="838" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Receipts</span>
+            <h3>Invoices in, costs updated</h3>
+            <span class="plan-pill">AI+ and Unlimited plans, included in the free trial</span>
+            <p>Confirm the unmatched lines and pack costs flow into the pantry, then every recipe that uses them recosts. Price-change alerts call out the spikes worth acting on.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Prep Instructions">🍳</span>
-          <h3>Catch a dish that will not pencil</h3>
-          <p>See contribution margin while the recipe is still open. Nested batches roll up, so a sauce used in ten dishes still carries the right cost.</p>
+
+        <article class="gallery-item gallery-span-4">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-catering-cost-per-plate.png" srcset="assets/images/menuforge-catering-cost-per-plate-400w.png 400w, assets/images/menuforge-catering-cost-per-plate-800w.png 800w, assets/images/menuforge-catering-cost-per-plate.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 45vw, 560px" alt="Recipe editor with a cost on every ingredient line and cost per serving in the header." width="1600" height="838" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Costing</span>
+            <h3>Live plate cost on every line</h3>
+            <p>Cost and minimum sell price stay pinned while you type, including cost per serving on a catering bar written for 25.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Categories">📁</span>
-          <h3>Categories & Organization</h3>
-          <p>Organize recipes by category: Batch, Mains, Sides, and more. Filter and find what you need quickly when the ticket rail is already full.</p>
+
+        <article class="gallery-item gallery-span-7">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-price-change-trends.png" srcset="assets/images/menuforge-price-change-trends-400w.png 400w, assets/images/menuforge-price-change-trends-800w.png 800w, assets/images/menuforge-price-change-trends.png 1600w" sizes="(max-width: 768px) 92vw, 70vw" alt="One-month price change trends for ingredients, with same-order then versus paid now." width="1600" height="833" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Price history</span>
+            <h3>See costs move before they hurt</h3>
+            <span class="plan-pill">AI+ and Unlimited plans</span>
+            <p>Track pack cost over time with the percent change called out, and spot seasonality in produce, oils, and proteins before the P&amp;L does.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Team Collaboration">👥</span>
-          <h3>When a cook walks, the recipes stay</h3>
-          <p>Multi-user access so AM and PM edit the same truth. Assign roles and keep prep consistent across shifts.</p>
+
+        <article class="gallery-item gallery-span-5">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-facebook-prep-alert.png" srcset="assets/images/menuforge-facebook-prep-alert-400w.png 400w, assets/images/menuforge-facebook-prep-alert-800w.png 800w, assets/images/menuforge-facebook-prep-alert.png 1600w" sizes="(max-width: 768px) 92vw, 480px" alt="Recipe ingredients and Post to Facebook, with alerts about missing prep instructions." width="1600" height="837" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Marketing</span>
+            <h3>Post the dish to social media</h3>
+            <p>AI writes the caption from the recipe and its sub-recipes in your brand voice, and the photo is already in the app.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Receipts and live prices">🧾</span>
-          <h3>Receipts &amp; live prices</h3>
-          <p>Email or upload invoices. Pack costs update; every recipe recosts. Send your Top 10 spend to the distributor when cases drift. <a href="negotiate-distributor-pricing.html">See how one restaurant saved $8,800 a year →</a></p>
+
+        <article class="gallery-item gallery-span-7">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-pos-modifier-dishes.png" srcset="assets/images/menuforge-pos-modifier-dishes-400w.png 400w, assets/images/menuforge-pos-modifier-dishes-800w.png 800w, assets/images/menuforge-pos-modifier-dishes.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 70vw, 900px" alt="Matching Toast menu items and modifiers to MenuForge recipes." width="1600" height="833" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Toast POS</span>
+            <h3>See which plates a modifier sells on</h3>
+            <span class="plan-pill">AI+ and Unlimited plans</span>
+            <p>Match Toast items and choices to recipes, and pull sales to see what sold against what it costs to make.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" role="img" aria-label="Post to social media">📣</span>
-          <h3>Post to social media</h3>
-          <p>AI writes the dish copy from ingredients and sub-recipes, in your brand voice. Send it with photos already in the app.</p>
+
+        <article class="gallery-item gallery-span-5">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-category-required-sides.png" srcset="assets/images/menuforge-category-required-sides-400w.png 400w, assets/images/menuforge-category-required-sides-800w.png 800w, assets/images/menuforge-category-required-sides.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 700px" alt="Required sides and standard ingredients on a recipe category." width="1600" height="837" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Categories</span>
+            <h3>Never forget the bun and fries</h3>
+            <p>Required sides live on the category, so plate cost includes what actually leaves the window.</p>
+          </div>
         </article>
+
+        <article class="gallery-item gallery-span-7">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-ai-builds-recipe-batches.png" srcset="assets/images/menuforge-ai-builds-recipe-batches-400w.png 400w, assets/images/menuforge-ai-builds-recipe-batches-800w.png 800w, assets/images/menuforge-ai-builds-recipe-batches.png 1600w" sizes="(max-width: 768px) 92vw, 70vw" alt="AI builds a recipe from an instruction and adds new ingredients and batch recipes as needed." width="1600" height="835" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">AI recipes</span>
+            <h3>AI drafts the dish and the batches</h3>
+            <p>Give it a prompt and the sliders. It adds missing ingredients and nested batches, then MenuForge costs the plate against your pack prices.</p>
+          </div>
+        </article>
+
+        <article class="gallery-item gallery-span-5">
+          <figure class="gallery-shot">
+            <img src="assets/images/menuforge-category-ai-instructions.png" srcset="assets/images/menuforge-category-ai-instructions-400w.png 400w, assets/images/menuforge-category-ai-instructions-800w.png 800w, assets/images/menuforge-category-ai-instructions.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 700px" alt="Category instructions saved for AI recipe generation." width="1600" height="833" loading="lazy">
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">AI context</span>
+            <h3>Teach AI how this category cooks</h3>
+            <p>Save category instructions once, and the next AI draft in Burgers or Catering follows your kitchen rules.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -423,6 +548,7 @@
               <img src="assets/images/menuforge-receipt-ingredient-matching.png" srcset="assets/images/menuforge-receipt-ingredient-matching-400w.png 400w, assets/images/menuforge-receipt-ingredient-matching-800w.png 800w, assets/images/menuforge-receipt-ingredient-matching.png 1600w" sizes="(max-width: 768px) 92vw, 480px" alt="Receipt to ingredient matching, showing ingredient variants." width="1600" height="836" loading="lazy">
             </figure>
             <h3>Receipt processing</h3>
+            <span class="plan-pill">AI+ and Unlimited plans</span>
             <p>Email in a vendor invoice. AI reads the page, pulls every line item, and matches it to the right pantry ingredient. Confirm anything it could not place, and pack costs update across every recipe that uses them.</p>
           </article>
 
@@ -464,6 +590,49 @@
     </div>
   </section>
 
+  <!-- What AI does and does not do -->
+  <section class="ai-truth-section" id="ai-truth">
+    <div class="container">
+      <div class="ai-truth">
+        <h2>What the AI does, and what it does not</h2>
+        <div class="ai-truth-grid">
+          <div>
+            <h3>AI drafts</h3>
+            <ul>
+              <li>Recipes and nested batches from a short description</li>
+              <li>Invoice line matching to your pantry ingredients</li>
+              <li>Menu descriptions and social captions</li>
+              <li>Unit conversions, like pounds to sliced cups</li>
+            </ul>
+          </div>
+          <div>
+            <h3>You stay in control</h3>
+            <ul>
+              <li>Plate cost always comes from your pack prices and invoices, never from the AI</li>
+              <li>You review an AI recipe before it saves</li>
+              <li>You confirm invoice lines AI could not place</li>
+              <li>Pink cards flag any recipe whose cost cannot be trusted yet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breweries -->
+  <section class="brewery-teaser-section" id="breweries">
+    <div class="container">
+      <div class="brewery-teaser">
+        <div>
+          <span class="proof-eyebrow">Breweries and taprooms</span>
+          <h2>Cost the taproom kitchen and the bar</h2>
+          <p>Pretzels, wings, and cocktails get the same live plate cost as any restaurant menu. Batch sauces and house mixes roll up into every dish and drink that uses them. MenuForge costs food and drinks, not beer brewing.</p>
+        </div>
+        <a class="btn btn-secondary btn-large" href="breweries.html">MenuForge for breweries</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Integrations (D1.4): between AI and workflow -->
   <section class="integrations-section" id="integrations">
     <div class="container">
@@ -481,7 +650,7 @@
           <p>No QuickBooks, Restaurant365, or other POS yet. Export recipes and costs to CSV for your accountant. <a href="mailto:support@menuforge.ai?subject=POS%20integration%20waitlist">Join the waitlist</a> and name the system you need.</p>
         </article>
       </div>
-      <p class="integrations-note">Essentials and AI+ include 300 recipes. Add a pack or go Unlimited if the menu is bigger. <a href="integrations.html">Full integrations page</a></p>
+      <p class="integrations-note"><a href="integrations.html">Full integrations page</a></p>
     </div>
   </section>
 
@@ -494,186 +663,108 @@
     </div>
   </section>
 
-  <!-- How It Works Section -->
-  <section class="how-it-works" id="how-it-works">
+  <!-- Plans and limits -->
+  <section class="limits-section" id="limits">
     <div class="container">
       <div class="section-title">
-        <h2>How kitchens use it</h2>
-        <p>Invoice in. Plate cost honest. Next hire can execute.</p>
+        <h2>Plans and limits</h2>
+        <p>Plain numbers, so a growing group knows where the ceilings are.</p>
       </div>
-      
-      <div class="workflow-steps">
-        <div class="workflow-step">
-          <div class="step-number">1</div>
-          <h3>Put the pantry in one place</h3>
-          <p>Pack sizes, vendors, and units for every ingredient. A GFS case and a Sysco bag never fight over which cost is real.</p>
-        </div>
-        
-        <div class="workflow-step">
-          <div class="step-number">2</div>
-          <h3>Build the dish and see the plate cost</h3>
-          <p>Write the recipe yourself or let AI draft it from a vibe. Cost, minimum sell price, and menu price stay pinned while you work.</p>
-        </div>
-        
-        <div class="workflow-step">
-          <div class="step-number">3</div>
-          <h3>Hand the team the same menu</h3>
-          <p>Categories, prep steps, and dietary flags live with the recipe. The next hire opens a card instead of a binder.</p>
-        </div>
+      <div class="limits-grid">
+        <article class="limits-card">
+          <h3 data-plan-name="basic">Essentials</h3>
+          <p class="limits-price"><span data-plan-price="basic">$79.95</span>/mo</p>
+          <ul>
+            <li><span data-plan-users="basic">3</span> users</li>
+            <li><span data-plan-recipes="basic">150</span> recipes</li>
+            <li>Costing, pantry, dietary flags, build sheets</li>
+            <li>No receipt processing</li>
+          </ul>
+        </article>
+        <article class="limits-card limits-card-featured">
+          <h3 data-plan-name="ai_plus">AI+</h3>
+          <p class="limits-price"><span data-plan-price="ai_plus">$139.95</span>/mo</p>
+          <ul>
+            <li><span data-plan-users="ai_plus">6</span> users</li>
+            <li><span data-plan-recipes="ai_plus">250</span> recipes</li>
+            <li>Receipt processing, price history, Toast POS</li>
+            <li><span data-plan-ai="ai_plus">25</span> AI recipes per month</li>
+          </ul>
+        </article>
+        <article class="limits-card">
+          <h3 data-plan-name="unlimited">Unlimited</h3>
+          <p class="limits-price"><span data-plan-price="unlimited">$189.95</span>/mo</p>
+          <ul>
+            <li>Unlimited users</li>
+            <li>Unlimited recipes</li>
+            <li>Everything in AI+</li>
+            <li>Unlimited AI recipes</li>
+          </ul>
+        </article>
       </div>
-      <div class="workflow-cta">
-        <a href="get-started.html" class="btn btn-primary btn-large" data-trial-cta>Start 7-day free trial</a>
-      </div>
+      <p class="limits-note">Each account covers one location and one Toast connection. Need more recipes on Essentials or AI+? Add <span data-addon="pack500-extra">300</span> recipes for $<span data-addon="pack500-price">35</span>/mo or <span data-addon="pack1000-extra">500</span> for $<span data-addon="pack1000-price">50</span>/mo. Running several locations? <a href="lp-book-demo.html">Book a walkthrough</a>.</p>
     </div>
   </section>
 
-  <!-- See MenuForge in Action -->
-  <section class="app-preview-section" id="screenshots">
-    <div class="container container-85">
-      <header class="section-sticky-head">
-        <h2>See MenuForge in Action</h2>
-        <p>Real screenshots from the live app. No mockups.</p>
-      </header>
-      <div class="app-gallery">
+  <!-- Homepage FAQ -->
+  <section class="home-faq-section" id="faq">
+    <div class="container">
+      <div class="section-title">
+        <h2>Questions operators ask first</h2>
+      </div>
+      <div class="home-faq">
+        <details class="home-faq-item">
+          <summary>What is MenuForge?</summary>
+          <p>MenuForge is web-based recipe costing software for independent restaurants and breweries. It tracks ingredient pack prices, reads vendor invoices with AI, and recosts every recipe and sub-recipe automatically. Plans start at $79.95/month, with a 7-day free trial.</p>
+        </details>
+        <details class="home-faq-item">
+          <summary>How much does recipe costing software cost?</summary>
+          <p>MenuForge Essentials is $79.95/month, AI+ is $139.95/month, and Unlimited is $189.95/month. Annual billing saves 10%. Every plan starts with a 7-day free trial of AI+, no credit card required.</p>
+        </details>
+        <details class="home-faq-item">
+          <summary>Can I import my recipe spreadsheet?</summary>
+          <p>Not yet. MenuForge does not import Excel or CSV recipe workbooks today. Most kitchens start with their top 10 dishes: add the ingredients once, and AI can draft a recipe from a short description so you are not retyping every tab.</p>
+        </details>
+        <details class="home-faq-item">
+          <summary>Does MenuForge work with QuickBooks or Restaurant365?</summary>
+          <p>Not yet. Toast POS is the only live integration. You can export recipes and costs to CSV for your accountant, and other POS and accounting tools are on the roadmap.</p>
+        </details>
+        <details class="home-faq-item">
+          <summary>Which plan includes invoice and receipt processing?</summary>
+          <p>Receipt processing is included on AI+ and Unlimited, and in the free trial. Essentials does not include it.</p>
+        </details>
+        <details class="home-faq-item">
+          <summary>Does the AI calculate my food cost?</summary>
+          <p>No. AI drafts recipes, descriptions, and unit conversions. Plate cost always comes from your own pack prices and invoices, and you review an AI draft before it is saved.</p>
+        </details>
+        <details class="home-faq-item">
+          <summary>Can I use MenuForge for more than one location?</summary>
+          <p>Each MenuForge account covers one location and one Toast connection. Restaurant groups with several locations should book a walkthrough so we can talk through setup.</p>
+        </details>
+      </div>
+      <p class="home-faq-more">More answers on the <a href="pricing.html#faq">pricing page</a>.</p>
+    </div>
+  </section>
 
-        <article class="gallery-item gallery-span-7">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-recipe-grid-pricing-issues.png" srcset="assets/images/menuforge-recipe-grid-pricing-issues-400w.png 400w, assets/images/menuforge-recipe-grid-pricing-issues-800w.png 800w, assets/images/menuforge-recipe-grid-pricing-issues.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 70vw, 900px" alt="MenuForge recipe grid. Red recipes are pricing issues." width="1600" height="837" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Recipes</span>
-            <h3>Your whole menu, at a glance</h3>
-            <p>Filter by category, search, and sort, with dietary flags right on the card. The colors do the triage for you: a pink card means the costing is broken, usually a missing price or a unit that will not convert. A red border means the prep instructions are missing, and gold means AI wrote it. You spot every problem without opening a single recipe. Keep the board clean for service, then drill into only the dishes that need a fix. The same grid is where you hand a new cook the full menu without walking them through a binder.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-5">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-pantry-grid-vendor-filters.png" srcset="assets/images/menuforge-pantry-grid-vendor-filters-400w.png 400w, assets/images/menuforge-pantry-grid-vendor-filters-800w.png 800w, assets/images/menuforge-pantry-grid-vendor-filters.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 700px" alt="Pantry grid with vendor filters, dietary flags on ingredients, variants noted, and ingredient list download." width="1600" height="838" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Pantry</span>
-            <h3>One pantry, every vendor</h3>
-            <p>Pack sizes, units, and vendor variants for each ingredient live in one place. Filter by supplier to see exactly what you buy and what it costs, then keep those pack prices flowing into every recipe that uses them. When a vendor swaps a case size, you update it once and the rest of the menu stays honest. Nicknames, item numbers, and alternate packs stay attached to the same ingredient so a GFS case and a Sysco bag never fight over which cost is real. Build recipes from the pantry you already trust, and the plate cost inherits the truth without another spreadsheet pass.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-4">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-catering-cost-per-plate.png" srcset="assets/images/menuforge-catering-cost-per-plate-400w.png 400w, assets/images/menuforge-catering-cost-per-plate-800w.png 800w, assets/images/menuforge-catering-cost-per-plate.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 45vw, 560px" alt="Catering recipes provide cost per plate measurements, with a cost on every ingredient line and cost per serving in the header." width="1600" height="838" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Costing</span>
-            <h3>Live plate cost on every line</h3>
-            <p>Every ingredient costs itself out as you type. Cost and minimum sell price stay pinned in the header — including cost per serving on a catering bar written for 25 people. Nested batches roll up, so a sauce used in ten dishes still carries the right cost. Change an amount or a unit and the totals move with you. You catch a dish that will not pencil before it ever hits the board.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-8">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-receipt-processing.png" srcset="assets/images/menuforge-receipt-processing-400w.png 400w, assets/images/menuforge-receipt-processing-800w.png 800w, assets/images/menuforge-receipt-processing.png 1600w" sizes="(max-width: 768px) 92vw, 80vw" alt="MenuForge receipt processing page with vendor invoices and price-change movers." width="1600" height="838" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Receipts</span>
-            <h3>Invoices in, costs updated</h3>
-            <p>Email or upload a vendor invoice. Confirm the unmatched lines and live pack costs flow straight into your pantry, then every recipe that uses those ingredients recosts itself without a spreadsheet pass. Price-change alerts call out the spikes worth acting on, so you decide whether to raise a menu price, swap a vendor, or leave the build alone before the next order guide goes out.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-7">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-price-change-trends.png" srcset="assets/images/menuforge-price-change-trends-400w.png 400w, assets/images/menuforge-price-change-trends-800w.png 800w, assets/images/menuforge-price-change-trends.png 1600w" sizes="(max-width: 768px) 92vw, 70vw" alt="One-month price change trends for ingredients, with same-order then versus paid now." width="1600" height="833" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Price history</span>
-            <h3>See costs move before they hurt</h3>
-            <p>Trends show what is happening to raw goods pricing so you can predict whether COGS are heading up or down before the P&amp;L surprises you. Track pack cost over time per ingredient, with the percent change called out so a quiet creep does not sneak past. Over months of invoices you also see seasonality in produce, oils, and proteins that rise and fall on a calendar, so you can plan specials, lock in a case, or rewrite a build while the window is still open. When a price updates, every recipe using it recosts automatically. Use the history to brief owners, defend a menu change, or catch a vendor that keeps edging the case price without telling you.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-5">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-facebook-prep-alert.png" srcset="assets/images/menuforge-facebook-prep-alert-400w.png 400w, assets/images/menuforge-facebook-prep-alert-800w.png 800w, assets/images/menuforge-facebook-prep-alert.png 1600w" sizes="(max-width: 768px) 92vw, 480px" alt="Recipe ingredients and Post to Facebook, with alerts about missing prep instructions." width="1600" height="837" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Marketing</span>
-            <h3>Post the dish to social media</h3>
-            <p>AI writes the caption from the recipe and its sub-recipes in your brand voice. Crop the photo, pick a meal-time slot, and publish without bouncing between tools. Missing prep instructions surface as an alert before you ship the post, so the same card that costs the dish also keeps the cook and the caption honest.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-7">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-pos-modifier-dishes.png" srcset="assets/images/menuforge-pos-modifier-dishes-400w.png 400w, assets/images/menuforge-pos-modifier-dishes-800w.png 800w, assets/images/menuforge-pos-modifier-dishes.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 70vw, 900px" alt="Investigate which dishes a modifier is tied to when matching from POS to a MenuForge recipe for accurate inventory reduction." width="1600" height="833" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Toast POS</span>
-            <h3>See which plates a modifier sells on</h3>
-            <p>Match Toast menu items and choices to MenuForge recipes, then open the dishes that modifier is tied to. Inventory reduction follows the parent plate, so a Choice like American cheese depletes the right burger — not a guess from the modifier name alone.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-5">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-catering-cost-per-plate.png" srcset="assets/images/menuforge-catering-cost-per-plate-400w.png 400w, assets/images/menuforge-catering-cost-per-plate-800w.png 800w, assets/images/menuforge-catering-cost-per-plate.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 700px" alt="Catering recipes provide cost per plate measurements." width="1600" height="838" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Catering</span>
-            <h3>Cost per plate on a 25-person bar</h3>
-            <p>Catering recipes write the full bar once, then show cost per serving next to the batch. Fifty Toast sales of a salad bar that serves 25 pull two written recipes — not fifty full bars.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-4">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-category-required-sides.png" srcset="assets/images/menuforge-category-required-sides-400w.png 400w, assets/images/menuforge-category-required-sides-800w.png 800w, assets/images/menuforge-category-required-sides.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 45vw, 560px" alt="Add required sides and standard ingredients to a category so you never forget the bun and the fries in your pricing." width="1600" height="837" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Categories</span>
-            <h3>Never forget the bun and fries</h3>
-            <p>Required sides and standard ingredients live on the category. Every burger picks up the fries (or the bun) so plate cost includes what actually leaves the window.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-8">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-ai-builds-recipe-batches.png" srcset="assets/images/menuforge-ai-builds-recipe-batches-400w.png 400w, assets/images/menuforge-ai-builds-recipe-batches-800w.png 800w, assets/images/menuforge-ai-builds-recipe-batches.png 1600w" sizes="(max-width: 768px) 92vw, 80vw" alt="AI builds a recipe from your instruction and adds new ingredients and new batch recipes as needed." width="1600" height="835" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">AI recipes</span>
-            <h3>AI writes the dish and the batches</h3>
-            <p>Give it a prompt and the sliders. AI adds new ingredients and nested batch recipes when the pantry does not already have them, then costs the plate against real pack prices.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-7">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-ingredient-vendor-variants.png" srcset="assets/images/menuforge-ingredient-vendor-variants-400w.png 400w, assets/images/menuforge-ingredient-vendor-variants-800w.png 800w, assets/images/menuforge-ingredient-vendor-variants.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 70vw, 900px" alt="Ingredient vendor info, item number, variant scrolling, and the active variant." width="1600" height="836" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Vendors</span>
-            <h3>Item numbers and active packs</h3>
-            <p>Vendor, item number, and every pack variant sit on the ingredient. Scroll the variants, keep one active, and recipes inherit that pack cost — a GFS case and a Sysco bag never fight over which price is real.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item gallery-span-5">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-category-ai-instructions.png" srcset="assets/images/menuforge-category-ai-instructions-400w.png 400w, assets/images/menuforge-category-ai-instructions-800w.png 800w, assets/images/menuforge-category-ai-instructions.png 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1200px) 55vw, 700px" alt="Save instructions on a category to send to AI when building a recipe in this category." width="1600" height="833" loading="lazy">
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">AI context</span>
-            <h3>Teach AI how this category cooks</h3>
-            <p>Save category instructions once. The next AI recipe in Burgers or Catering gets that voice, those sides, and those kitchen rules without retyping the brief.</p>
-          </div>
-        </article>
-
+  <!-- Founder story (stands in for reviews until verified reviews exist) -->
+  <section class="founder-section" id="founder">
+    <div class="container">
+      <div class="founder-card">
+        <img src="assets/images/jake-lohse.jpg" alt="Jake Lohse, founder of MenuForge" width="160" height="160" loading="lazy">
+        <div>
+          <p class="founder-label">Why MenuForge exists</p>
+          <blockquote>
+            <p>I used to price every recipe in Excel. Capturing sub-recipe costs accurately was a pain, and nobody else on my team could use the workbook. After a walkout left our recipes in one cook's head, I built the tool I needed at Presidential Brewing Company.</p>
+          </blockquote>
+          <p class="founder-sig"><strong>Jake Lohse</strong>, founder. <a href="about.html">Read the story</a></p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Reviews scatter -->
-  <section class="reviews-section" id="reviews">
+  <!-- Hidden until verified reviews are available. Remove the hidden attribute (and restore the nav link) to show. -->
+  <section class="reviews-section" id="reviews" hidden>
     <div class="container container-85">
       <div class="reviews-sticky-sentinel" aria-hidden="true"></div>
       <header class="section-sticky-head">
@@ -934,10 +1025,7 @@
         <a href="get-started.html" class="btn btn-primary btn-large" data-trial-cta>Start 7-day free trial</a>
         <a href="pricing.html" class="btn btn-secondary btn-large">View Pricing Plans</a>
       </div>
-      <div class="data-handling data-handling-home" id="data-handling">
-        <h3>How we handle your data</h3>
-        <p>MenuForge stores your recipes, ingredient costs, and vendor data. We do not sell your data. All data is encrypted in transit and at rest. Payment processing is handled by Stripe. We do not currently hold SOC 2 or GDPR certifications, but we follow industry best practices for data security.</p>
-      </div>
+      <p class="security-line">Your recipes and costs are encrypted, exportable, and never sold. <a href="security.html">How we protect your data</a></p>
     </div>
   </section>
 
@@ -953,6 +1041,9 @@
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="integrations.html">Integrations</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="plate-cost-calculator.html">Plate cost calculator</a></li>
+            <li><a href="recipe-costing-spreadsheet-template.html">Free costing template</a></li>
             <li class="desktop-only-link"><a href="https://app.menuforge.ai/login">Login</a></li>
           </ul>
         </div>
@@ -960,14 +1051,14 @@
         <div class="footer-section footer-section-desktop">
           <h4>Solutions</h4>
           <ul class="footer-links">
-            <li><a href="#features">Recipe Management & Costing</a></li>
-            <li><a href="#ai-features">AI Recipe Generation</a></li>
-            <li><a href="#features">Ingredients Management</a></li>
-            <li><a href="#features">Dietary Flags</a></li>
+            <li><a href="recipe-costing-software.html">Recipe costing software</a></li>
+            <li><a href="invoice-receipt-processing.html">Invoice &amp; receipt processing</a></li>
+            <li><a href="ai-recipe-generator.html">AI recipe generator</a></li>
+            <li><a href="allergen-dietary-flags.html">Allergen &amp; dietary flags</a></li>
+            <li><a href="toast-integration.html">Toast POS integration</a></li>
+            <li><a href="catering-costing.html">Catering costing</a></li>
+            <li><a href="breweries.html">Breweries &amp; taprooms</a></li>
             <li><a href="negotiate-distributor-pricing.html">Negotiate better case prices</a></li>
-            <li><a href="#features">Receipts &amp; live prices</a></li>
-            <li><a href="#features">Post to social media</a></li>
-            <li><a href="#features">Team Collaboration</a></li>
           </ul>
         </div>
         
@@ -986,7 +1077,7 @@
             <li><a href="vs/kitchenpro.html">MenuForge vs KitchenPro</a></li>
             <li><a href="best-recipe-costing-software-for-independent-restaurants.html">Best recipe costing software</a></li>
             <li><a href="mailto:support@menuforge.ai">Contact</a></li>
-            <li><a href="#data-handling">Data handling</a></li>
+            <li><a href="security.html">Security &amp; data</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
           </ul>
@@ -1002,7 +1093,7 @@
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js"></script>
   <script src="assets/js/main.js?v=20260902i"></script>
-  <script src="assets/js/plan-prices.js?v=20261009c"></script>
+  <script src="assets/js/plan-prices.js?v=20261009d"></script>
   <script>
     // AI panel: scale from 0.6 to 1, finishing when the gold header pins
     // under the site nav — not a few extra pixels later.
