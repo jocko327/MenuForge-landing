@@ -481,7 +481,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 }
 
 .hero-visual {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
@@ -1172,9 +1172,18 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     margin-bottom: 1.25rem;
   }
 
+  .hero-home .hero-product {
+    display: none;
+  }
+
   .hero-visual {
+    display: flex;
     flex-direction: column;
     margin-bottom: 1.35rem;
+  }
+
+  .gallery-desktop-only {
+    display: none;
   }
 
   .hero-chips {

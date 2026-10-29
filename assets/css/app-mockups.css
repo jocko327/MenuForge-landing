@@ -1024,6 +1024,11 @@
   align-items: stretch;
 }
 
+.gallery-mobile,
+.gallery-mobile-only {
+  display: none;
+}
+
 .outcome-gallery {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1186,5 +1191,19 @@
 
   .gallery-span-7:first-child .gallery-copy p {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-desktop {
+    display: none !important;
+  }
+
+  .app-gallery.gallery-mobile {
+    display: grid;
+  }
+
+  .gallery-mobile-only {
+    display: block;
   }
 }
