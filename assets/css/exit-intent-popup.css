@@ -186,6 +186,29 @@
   font-size: 0.82rem;
 }
 
+.mf-popup-calc {
+  display: block;
+  margin: 0 0 0.7rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: var(--primary-accent, #F1C671);
+  color: var(--bg-dark-primary, #0f0f23);
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.mf-popup-calc:hover {
+  color: var(--bg-dark-primary, #0f0f23);
+}
+
+.mf-popup-calc-note {
+  margin: 0 0 1rem;
+  color: var(--text-white-60, rgba(255, 255, 255, 0.65));
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
 .mf-popup-success {
   display: none;
   text-align: center;

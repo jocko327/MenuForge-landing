@@ -1,6 +1,17 @@
 // MenuForge Marketing Site - Main JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
+  var trialMicrocopy = 'No card. Plans from $79.95/mo. 30-day money-back guarantee.';
+  document.querySelectorAll('[data-trial-cta]').forEach(function(btn) {
+    if (btn.closest('header, .header, .nav-links, .nav-actions')) return;
+    var group = btn.parentElement;
+    if (!group || group.querySelector('.trial-microcopy')) return;
+    var note = document.createElement('p');
+    note.className = 'trial-microcopy';
+    note.textContent = trialMicrocopy;
+    group.appendChild(note);
+  });
+
   var mobileMenuToggle = document.getElementById('mobileMenuToggle');
   var navLinks = document.getElementById('navLinks');
   var header = document.getElementById('header');

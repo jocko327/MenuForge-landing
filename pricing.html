@@ -36,8 +36,8 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261009b">
-  <link rel="stylesheet" href="assets/css/exit-intent-popup.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261029a">
+  <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
   
   <style>
     /* Container override for pricing page to match main.css update */
@@ -151,20 +151,23 @@
 
     .popular-badge {
       position: absolute;
-      top: -18px;
+      top: -22px;
       left: 50%;
       transform: translateX(-50%);
       background: #1a1a2e;
       color: #F1C671;
-      padding: 0.6rem 1.75rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
       border: 2px solid #F1C671;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
       z-index: 3;
-      white-space: nowrap;
+      text-align: center;
+      max-width: calc(100% - 1rem);
+      white-space: normal;
     }
 
     /* Gold AI+ card */
@@ -734,7 +737,7 @@
         
         <!-- AI+ Plan (Featured) -->
         <div class="pricing-card featured gold-ai">
-          <span class="popular-badge">Most Popular</span>
+          <span class="popular-badge">What your free trial includes</span>
           <h3 class="plan-name" data-plan-name="ai_plus">AI+</h3>
           <div class="plan-price">
             <span class="price-monthly" data-plan-price="ai_plus">$139.95</span>
@@ -1065,8 +1068,8 @@
   </footer>
 
   <!-- JavaScript -->
-  <script defer src="assets/js/exit-intent-popup.js"></script>
-  <script src="assets/js/main.js?v=20260902i"></script>
+  <script defer src="assets/js/exit-intent-popup.js?v=20261029a"></script>
+  <script src="assets/js/main.js?v=20261029a"></script>
   <script src="assets/js/plan-prices.js?v=20261009d"></script>
   <script src="assets/js/pricing.js?v=20261009b"></script>
 </body>

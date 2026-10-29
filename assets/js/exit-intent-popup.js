@@ -70,6 +70,8 @@
       '  </section>',
       '  <section class="mf-popup-content">',
       '    <form class="mf-popup-form" novalidate>',
+      '      <a class="mf-popup-calc" href="/plate-cost-calculator.html">Open the plate cost calculator</a>',
+      '      <p class="mf-popup-calc-note">Instant plate cost. No email. The guide is below if you still want it.</p>',
       '      <h3>Send me the guide</h3>',
       '      <div class="mf-popup-field"><label for="mf-first-name">First name</label><input id="mf-first-name" name="first_name" autocomplete="given-name" required></div>',
       '      <div class="mf-popup-field"><label for="mf-last-name">Last name</label><input id="mf-last-name" name="last_name" autocomplete="family-name" required></div>',
@@ -225,38 +227,21 @@
 
     window.setTimeout(function() {
       dwellComplete = true;
-    }, 10000);
+    }, 8000);
 
     document.addEventListener('mouseleave', function(event) {
-      if (event.clientY <= 0) showPopup('mouseleave');
+      if (event.clientY <= 0) showPopup('exit-intent');
     });
-
-    document.addEventListener('visibilitychange', function() {
-      if (document.visibilityState === 'hidden') showPopup('visibility');
-    });
-
-    window.addEventListener('beforeunload', function() {
-      showPopup('beforeunload');
-    });
-
-    document.addEventListener('click', function(event) {
-      var link = event.target.closest ? event.target.closest('a') : null;
-      if (!isTrackedNavigation(link)) return;
-      if (showPopup('navigation')) {
-        event.preventDefault();
-        pendingNavigation = link.href;
-      }
-    }, true);
 
     window.addEventListener('scroll', function() {
-      var current = window.scrollY || 0;
-      if (current < lastScrollY) {
-        scrollUpDistance += lastScrollY - current;
-      } else {
-        scrollUpDistance = 0;
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      var depth = (window.scrollY || 0) / scrollable;
+      if (depth >= 0.6) {
+        dwellComplete = true;
+        showPopup('scroll-60');
       }
-      lastScrollY = current;
-      if (scrollUpDistance > 260 && current > 180) showPopup('mobile-scroll');
     }, { passive: true });
   });
 })();
