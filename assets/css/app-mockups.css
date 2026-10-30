@@ -1206,4 +1206,180 @@
   .gallery-mobile-only {
     display: block;
   }
+
+  .gallery-mobile .recipe-modal {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .gallery-mobile .mf-live-pill.is-sell.is-ok {
+    background: rgba(25, 135, 84, 0.08);
+    border: 1px solid rgba(25, 135, 84, 0.18);
+    color: #198754;
+  }
+
+  .gallery-mobile .mf-live-lines.is-stacked li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "grip name name flags"
+      ". . amt cost";
+    align-items: center;
+    row-gap: 0.35vh;
+  }
+
+  .gallery-mobile .mf-live-lines.is-stacked .grip { grid-area: grip; }
+  .gallery-mobile .mf-live-lines.is-stacked .name {
+    grid-area: name;
+    white-space: normal;
+  }
+  .gallery-mobile .mf-live-lines.is-stacked .mf-live-flags {
+    grid-area: flags;
+    justify-self: end;
+  }
+  .gallery-mobile .mf-live-lines.is-stacked .amt { grid-area: amt; }
+  .gallery-mobile .mf-live-lines.is-stacked .cost { grid-area: cost; }
+
+  .gallery-mobile .mf-live-flags {
+    display: inline-flex;
+    gap: 0.7vw;
+  }
+
+  .gallery-mobile .flag {
+    font-family: var(--font-heading);
+    font-size: 2.5vw;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0.15vh 0.7vw;
+    border-radius: 4px;
+  }
+
+  .gallery-mobile .flag-v { color: #fd7e14; }
+  .gallery-mobile .flag-vg { color: #2e7d32; }
+  .gallery-mobile .flag-gf { color: #e3b04b; }
+  .gallery-mobile .flag.is-sub {
+    background: #fff;
+    border: 1.5px solid currentColor;
+  }
+
+  .gallery-mobile .mf-trend-search {
+    margin-bottom: 0.7vh;
+    padding: 0.7vh 2.2vw;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background: #fff;
+    color: #6c757d;
+    font-size: 3.2vw;
+  }
+
+  .gallery-mobile .mf-trend-period,
+  .gallery-mobile .mf-trend-note {
+    margin: 0 0 0.4vh;
+    color: #6c757d;
+    line-height: 1.35;
+  }
+
+  .gallery-mobile .mf-trend-period { font-size: 3.15vw; }
+  .gallery-mobile .mf-trend-note { font-size: 2.8vw; margin-bottom: 0.8vh; }
+
+  .gallery-mobile .mf-mock-scroll {
+    max-height: 34vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+  }
+
+  .gallery-mobile .mf-prep-scroll {
+    max-height: 28vh;
+  }
+
+  .gallery-mobile .mf-trend-cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery-mobile .mf-trend-cards li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45vh 1.6vw;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1vh 2.2vw;
+    margin-bottom: 0.8vh;
+  }
+
+  .gallery-mobile .mf-trend-ing { grid-column: 1 / -1; }
+  .gallery-mobile .mf-trend-ing strong {
+    display: block;
+    font-size: 3.6vw;
+    color: #212529;
+  }
+  .gallery-mobile .mf-trend-ing span {
+    display: block;
+    margin-top: 0.15vh;
+    font-size: 2.8vw;
+    color: #6c757d;
+  }
+
+  .gallery-mobile .mf-trend-cards em {
+    display: block;
+    font-style: normal;
+    font-size: 2.5vw;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #6b7280;
+  }
+
+  .gallery-mobile .mf-trend-cards b {
+    display: block;
+    margin-top: 0.1vh;
+    font-size: 3.3vw;
+    font-weight: 700;
+    color: #212529;
+  }
+
+  .gallery-mobile .mf-trend-cards .is-up,
+  .gallery-mobile .mf-trend-cards .is-down { text-align: right; }
+  .gallery-mobile .mf-trend-cards .is-up b { color: #dc3545; }
+  .gallery-mobile .mf-trend-cards .is-down b { color: #198754; }
+
+  .gallery-mobile .mf-prep-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 3.3vw;
+  }
+
+  .gallery-mobile .mf-prep-table th {
+    font-family: var(--font-heading);
+    font-size: 2.7vw;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #6c757d;
+    text-align: left;
+    padding: 0 0.4vw 0.6vh;
+  }
+
+  .gallery-mobile .mf-prep-table th:first-child,
+  .gallery-mobile .mf-prep-table td:first-child {
+    width: 8vw;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #6c757d;
+  }
+
+  .gallery-mobile .mf-prep-table td {
+    line-height: 1.45;
+    padding: 0.7vh 0.6vw;
+    border-top: 1px solid #e9ecef;
+    vertical-align: top;
+    color: #212529;
+  }
 }

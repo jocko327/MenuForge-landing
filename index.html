@@ -89,9 +89,9 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261030f">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261030g">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
-  <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261029c">
+  <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261030h">
   <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261029h">
   <link rel="stylesheet" href="assets/css/reviews.css?v=20260902k">
   
@@ -469,7 +469,7 @@
       <header class="section-sticky-head">
         <h2>What MenuForge does</h2>
         <p class="gallery-desktop-only">Real screenshots from the live app. No mockups.</p>
-        <p class="gallery-mobile-only">Sub-recipes, price jumps, and prep from Presidential Brewing.</p>
+        <p class="gallery-mobile-only">Price moves, plate cost, and prep from Presidential Brewing.</p>
       </header>
       <div class="app-gallery gallery-desktop">
 
@@ -591,111 +591,187 @@
 
         <article class="gallery-item">
           <figure class="gallery-shot sheet-shot">
-            <div class="sheet" role="img" aria-label="Brat Haus Burger uses three batch recipes. Bacon Jam Batch, 1 fluid ounce, $0.41. Dijon Aioli, 2 fluid ounces, $0.37. House Fried Potato Chips, 18 fluid ounces, $0.63. Plate cost $3.76.">
-              <div class="sheet-head">
-                <div>
-                  <strong>Brat Haus Burger</strong>
-                  <span>3 batch recipes inside</span>
-                </div>
-                <span class="sheet-x" aria-hidden="true">&times;</span>
-              </div>
-              <ul class="batch-lines">
-                <li>
-                  <span class="batch-name">Bacon Jam Batch</span>
-                  <span class="batch-meta">1 fl oz of a 4 cup batch</span>
-                  <span class="batch-meta">Whole batch $11.90</span>
-                  <b>This plate $0.41</b>
-                </li>
-                <li>
-                  <span class="batch-name">Dijon Aioli</span>
-                  <span class="batch-meta">2 fl oz of a 1 quart batch</span>
-                  <span class="batch-meta">Whole batch $6.44</span>
-                  <b>This plate $0.37</b>
-                </li>
-                <li>
-                  <span class="batch-name">House Fried Potato Chips</span>
-                  <span class="batch-meta">18 fl oz of a 302 fl oz batch</span>
-                  <span class="batch-meta">Whole batch $10.50</span>
-                  <b>This plate $0.63</b>
-                </li>
-              </ul>
-              <div class="sheet-total"><span>Plate cost</span><b>$3.76</b></div>
-            </div>
-          </figure>
-          <div class="gallery-copy">
-            <span class="gallery-tag">Sub-recipes</span>
-            <h3>Know every plate cost</h3>
-            <p>Three other recipes sit inside Brat Haus Burger. The fluid ounces actually used are priced from each batch, then rolled into the $3.76 plate.</p>
-          </div>
-        </article>
-
-        <article class="gallery-item">
-          <figure class="gallery-shot sheet-shot">
-            <div class="sheet" role="img" aria-label="1 Month Trend Details. Onion Powder up 42.4 percent, Iceberg Lettuce up 23.7 percent, Cole Slaw Blend up 23.6 percent.">
-              <div class="sheet-head">
-                <div>
+            <div class="recipe-modal" aria-label="1 Month Trend Details from Presidential Brewing. Onion Powder up 42.4 percent. Romaine Lettuce down 29.5 percent. Iceberg Lettuce up 23.7 percent.">
+              <div class="mf-live-head">
+                <div class="mf-live-title">
                   <strong>1 Month Trend Details</strong>
-                  <span>Top 3 movers · Gordon Food Services</span>
                 </div>
-                <span class="sheet-x" aria-hidden="true">&times;</span>
+                <span class="mf-live-x" aria-hidden="true">&times;</span>
               </div>
-              <ul class="trend-lines">
-                <li>
-                  <span class="trend-name">Onion Powder</span>
-                  <span class="trend-meta">1 case · then $19.99 · now $42.70</span>
-                  <b class="trend-up">+$12.72 · +42.4%</b>
-                </li>
-                <li>
-                  <span class="trend-name">Iceberg Lettuce</span>
-                  <span class="trend-meta">5 cases · then $256.15 · now $316.85</span>
-                  <b class="trend-up">+$60.70 · +23.7%</b>
-                </li>
-                <li>
-                  <span class="trend-name">Cole Slaw Blend</span>
-                  <span class="trend-meta">2 cases · then $16.98 · now $20.98</span>
-                  <b class="trend-up">+$4.00 · +23.6%</b>
-                </li>
-              </ul>
+              <div class="mf-live-body">
+                <div class="mf-trend-search">Search any ingredient to review all price changes…</div>
+                <p class="mf-trend-period">Period: <strong>1 Month</strong> (52 items from the last 2 weeks)</p>
+                <p class="mf-trend-note">Same basket: last 2 weeks of purchases, re-priced at stored prices from this period ago.</p>
+                <div class="mf-mock-scroll">
+                  <ul class="mf-trend-cards">
+                    <li>
+                      <div class="mf-trend-ing"><strong>Onion Powder</strong><span>Gordon Food Services · #195173</span></div>
+                      <div><em>Cases</em><b>1</b></div>
+                      <div><em>Same order then</em><b>$19.99</b></div>
+                      <div><em>Paid now</em><b>$42.70</b></div>
+                      <div class="is-up"><em>Chg $</em><b>+12.72</b></div>
+                      <div class="is-up"><em>Chg %</em><b>+42.4%</b></div>
+                    </li>
+                    <li>
+                      <div class="mf-trend-ing"><strong>Romaine Lettuce</strong><span>Gordon Food Services</span></div>
+                      <div><em>Cases</em><b>6</b></div>
+                      <div><em>Same order then</em><b>$291.63</b></div>
+                      <div><em>Paid now</em><b>$137.13</b></div>
+                      <div class="is-down"><em>Chg $</em><b>-85.94</b></div>
+                      <div class="is-down"><em>Chg %</em><b>-29.5%</b></div>
+                    </li>
+                    <li>
+                      <div class="mf-trend-ing"><strong>Iceberg Lettuce</strong><span>Gordon Food Services · #162170</span></div>
+                      <div><em>Cases</em><b>5</b></div>
+                      <div><em>Same order then</em><b>$256.15</b></div>
+                      <div><em>Paid now</em><b>$316.85</b></div>
+                      <div class="is-up"><em>Chg $</em><b>+60.70</b></div>
+                      <div class="is-up"><em>Chg %</em><b>+23.7%</b></div>
+                    </li>
+                    <li>
+                      <div class="mf-trend-ing"><strong>Cole Slaw Blend</strong><span>Gordon Food Services · #1982261</span></div>
+                      <div><em>Cases</em><b>2</b></div>
+                      <div><em>Same order then</em><b>$16.98</b></div>
+                      <div><em>Paid now</em><b>$20.98</b></div>
+                      <div class="is-up"><em>Chg $</em><b>+4.00</b></div>
+                      <div class="is-up"><em>Chg %</em><b>+23.6%</b></div>
+                    </li>
+                    <li>
+                      <div class="mf-trend-ing"><strong>Celery Stalks</strong><span>Gordon Food Services · #781592</span></div>
+                      <div><em>Cases</em><b>1</b></div>
+                      <div><em>Same order then</em><b>$34.23</b></div>
+                      <div><em>Paid now</em><b>$32.94</b></div>
+                      <div class="is-down"><em>Chg $</em><b>-8.14</b></div>
+                      <div class="is-down"><em>Chg %</em><b>-19.8%</b></div>
+                    </li>
+                    <li>
+                      <div class="mf-trend-ing"><strong>Green Peppers</strong><span>Gordon Food Services · #592315</span></div>
+                      <div><em>Cases</em><b>1</b></div>
+                      <div><em>Same order then</em><b>$44.17</b></div>
+                      <div><em>Paid now</em><b>$52.54</b></div>
+                      <div class="is-up"><em>Chg $</em><b>+8.37</b></div>
+                      <div class="is-up"><em>Chg %</em><b>+19.0%</b></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </figure>
           <div class="gallery-copy">
-            <span class="gallery-tag">Price jumps</span>
-            <h3>Catch price jumps</h3>
-            <p>The 1-month trend from Presidential Brewing. Onion powder, iceberg lettuce, and cole slaw all cost more than they did a month ago.</p>
+            <span class="gallery-tag">Price history</span>
+            <h3>See costs move before they hurt</h3>
+            <p>Your invoices get emailed or uploaded to MenuForge. We match your invoice lines with items from your pantry, track pack cost over time with the percent change called out, and spot seasonality in produce, oils, and proteins before the P&amp;L does.</p>
           </div>
         </article>
 
         <article class="gallery-item">
           <figure class="gallery-shot sheet-shot">
-            <div class="sheet" role="img" aria-label="Prep tab for Brat Haus Burger, eight steps from toasting the bun to topping with a toothpick.">
-              <div class="sheet-head">
-                <div>
-                  <strong>Brat Haus Burger</strong>
-                  <span>Burgers</span>
+            <div class="recipe-modal" aria-label="Pepperoni Pizza ingredients. Pizza Sauce 7 fluid ounces $0.58. Mozzarella 8 fluid ounces $0.55. Pepperoni 18 each $0.39. Italian Seasoning 1 fluid ounce $0.45. Pizza Dough 300 grams $1.24. Plate cost $3.23.">
+              <div class="mf-live-head">
+                <div class="mf-live-title">
+                  <strong>Pepperoni Pizza</strong>
+                  <span>Pizzas</span>
                 </div>
-                <span class="sheet-x" aria-hidden="true">&times;</span>
+                <span class="mf-live-x" aria-hidden="true">&times;</span>
               </div>
-              <div class="recipe-tabs" aria-hidden="true">
-                <span>Overview</span>
-                <span>Ingredients</span>
-                <span class="is-active">Prep</span>
+              <div class="mf-live-body">
+                <div class="mf-live-tabs" aria-hidden="true">
+                  <span>Overview</span>
+                  <span class="is-active">Ingredients</span>
+                  <span>Prep</span>
+                </div>
+                <div class="mf-live-prices">
+                  <div class="mf-live-pill is-cost"><span>Cost</span><b>$3.23</b></div>
+                  <div class="mf-live-pill is-msp"><span>MSP</span><b>$12.90</b></div>
+                  <div class="mf-live-pill is-sell is-ok"><span>Sell</span><b>$14.00</b></div>
+                </div>
+                <ul class="mf-live-lines is-stacked">
+                  <li>
+                    <span class="grip" aria-hidden="true">⋮⋮</span>
+                    <span class="name">Pizza Sauce</span>
+                    <span class="mf-live-flags"><span class="flag flag-v">V</span></span>
+                    <span class="amt">7 fl oz</span>
+                    <span class="cost">$0.58</span>
+                  </li>
+                  <li>
+                    <span class="grip" aria-hidden="true">⋮⋮</span>
+                    <span class="name">Shredded Cheese (Mozzarella)</span>
+                    <span class="mf-live-flags"><span class="flag flag-v">V</span><span class="flag flag-vg is-sub">Vg</span><span class="flag flag-gf">GF</span></span>
+                    <span class="amt">8 fl oz</span>
+                    <span class="cost">$0.55</span>
+                  </li>
+                  <li>
+                    <span class="grip" aria-hidden="true">⋮⋮</span>
+                    <span class="name">Pepperoni</span>
+                    <span class="mf-live-flags"><span class="flag flag-gf">GF</span></span>
+                    <span class="amt">18 Each</span>
+                    <span class="cost">$0.39</span>
+                  </li>
+                  <li>
+                    <span class="grip" aria-hidden="true">⋮⋮</span>
+                    <span class="name">Italian Seasoning</span>
+                    <span class="mf-live-flags"><span class="flag flag-v">V</span><span class="flag flag-vg">Vg</span><span class="flag flag-gf">GF</span></span>
+                    <span class="amt">1 fl oz</span>
+                    <span class="cost">$0.45</span>
+                  </li>
+                  <li>
+                    <span class="grip" aria-hidden="true">⋮⋮</span>
+                    <span class="name">Pizza Dough</span>
+                    <span class="mf-live-flags"><span class="flag flag-v">V</span><span class="flag flag-vg">Vg</span></span>
+                    <span class="amt">300 Gram</span>
+                    <span class="cost">$1.24</span>
+                  </li>
+                </ul>
               </div>
-              <ol class="prep-steps">
-                <li>Toast a Brioche bun on the grill</li>
-                <li>add a bratwurst patty to the grill and cook both sides until all the pink is gone</li>
-                <li>add a scoop of bacon jam to the top of the brat patty</li>
-                <li>smash the bacon jam down with a slice of Gouda cheese and melt under steam pan</li>
-                <li>add Dijon Aioli to both toasted buns</li>
-                <li>place patty on bottom bun</li>
-                <li>Add crispy onion to the top of the patty</li>
-                <li>Top with bun and toothpick before serving</li>
-              </ol>
+            </div>
+          </figure>
+          <div class="gallery-copy">
+            <span class="gallery-tag">Costing</span>
+            <h3>See how each ingredient is affecting your plate.</h3>
+            <p>Menuforge shows you every ingredient line by line. You can see dietary flags, recipe amounts, and total costs on each ingredient to fine-tune your recipes and meet your objectives.</p>
+          </div>
+        </article>
+
+        <article class="gallery-item">
+          <figure class="gallery-shot sheet-shot">
+            <div class="recipe-modal" aria-label="Prep tab for Pepperoni Pizza. Eight steps from rolling the dough to cutting eight pieces.">
+              <div class="mf-live-head">
+                <div class="mf-live-title">
+                  <strong>Pepperoni Pizza</strong>
+                  <span>Pizzas</span>
+                </div>
+                <span class="mf-live-x" aria-hidden="true">&times;</span>
+              </div>
+              <div class="mf-live-body">
+                <div class="mf-live-tabs" aria-hidden="true">
+                  <span>Overview</span>
+                  <span>Ingredients</span>
+                  <span class="is-active">Prep</span>
+                </div>
+                <div class="mf-mock-scroll mf-prep-scroll">
+                  <table class="mf-prep-table">
+                    <thead>
+                      <tr><th>#</th><th>Instruction</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>1</td><td>Roll out pizza dough and put on 12&quot; pizza screen</td></tr>
+                      <tr><td>2</td><td>Roll with roller to aerate the crust</td></tr>
+                      <tr><td>3</td><td>Add pizza sauce, Mozzarella, and Pepperoni</td></tr>
+                      <tr><td>4</td><td>Sprinkle Italian Seasoning on top</td></tr>
+                      <tr><td>5</td><td>Bake at 450 degrees for 4 minutes</td></tr>
+                      <tr><td>6</td><td>Rotate the pizza 180 degrees</td></tr>
+                      <tr><td>7</td><td>Bake for another 4 minutes</td></tr>
+                      <tr><td>8</td><td>Pull from oven, transfer to serving tray, cut into 8 pieces</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Prep</span>
-            <h3>Anyone on the line can cook it</h3>
-            <p>Prep lives on the recipe. Brat Haus Burger’s eight steps are on the card, so the whole staff cooks it the same way.</p>
+            <h3>Make the dish right, every time.</h3>
+            <p>Every kitchen has that one cook who just knows how to cook everything, but what happens when they are not there? Dishes are cooked inconsistently, portions are wrong, and your customers are unhappy. MenuForge stores your cooking instructions so everybody on the team can make the recipe the same way, every time.</p>
           </div>
         </article>
 
