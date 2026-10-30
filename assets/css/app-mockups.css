@@ -1393,4 +1393,429 @@
     vertical-align: top;
     color: #212529;
   }
+
+  /* Pepperoni Pizza — production RecipeViewModal, phone edit mode */
+  .gallery-mobile .mf-app-recipe {
+    background: #f4f6f9;
+    color: #212529;
+    border-radius: 0;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  .gallery-mobile .mf-app-head {
+    position: relative;
+    background: #0f0f23;
+    padding: 1rem 3.4rem 1rem 1rem;
+  }
+
+  .gallery-mobile .mf-app-head::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(241, 198, 113, 0), rgba(241, 198, 113, 0.9), rgba(241, 198, 113, 0));
+  }
+
+  .gallery-mobile .mf-app-name {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 0.45rem 0.7rem;
+  }
+
+  .gallery-mobile .mf-app-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .gallery-mobile .mf-app-close span {
+    font-size: 26px;
+    line-height: 1;
+    transform: translateY(-1px);
+  }
+
+  .gallery-mobile .mf-app-body {
+    background: #f4f6f9;
+    padding: 0.75rem;
+  }
+
+  .gallery-mobile .mf-app-tabrow {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+
+  .gallery-mobile .mf-app-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+    margin-bottom: 0.75rem;
+  }
+
+  .gallery-mobile .mf-app-tabs span {
+    border-radius: 12px 12px 0 0;
+    padding: 0.55rem 0.7rem;
+    color: rgba(15, 23, 42, 0.68);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  .gallery-mobile .mf-app-tabs .is-active {
+    position: relative;
+    color: #0f0f23;
+    background: rgba(241, 198, 113, 0.14);
+  }
+
+  .gallery-mobile .mf-app-tabs .is-active::after {
+    content: "";
+    position: absolute;
+    left: 0.7rem;
+    right: 0.7rem;
+    bottom: -1px;
+    height: 3px;
+    border-radius: 999px;
+    background: #F1C671;
+  }
+
+  .gallery-mobile .mf-app-prices {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35rem;
+    width: 100%;
+  }
+
+  .gallery-mobile .mf-app-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    min-width: 0;
+    border-radius: 8px;
+    padding: 0.28rem 0.35rem;
+    overflow: hidden;
+  }
+
+  .gallery-mobile .mf-app-pill span,
+  .gallery-mobile .mf-app-pill b {
+    font-family: var(--font-heading);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .gallery-mobile .mf-app-pill > span {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .gallery-mobile .mf-app-pill > b,
+  .gallery-mobile .mf-app-actual b {
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .gallery-mobile .mf-app-pill.is-cost {
+    background: rgba(180, 35, 24, 0.08);
+    border: 1px solid rgba(180, 35, 24, 0.18);
+    color: #b42318;
+  }
+
+  .gallery-mobile .mf-app-pill.is-msp {
+    background: rgba(241, 198, 113, 0.12);
+    border: 1px solid rgba(241, 198, 113, 0.35);
+    color: #b8860b;
+  }
+
+  .gallery-mobile .mf-app-pill.is-actual {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    background: rgba(25, 135, 84, 0.08);
+    border: 1px solid rgba(25, 135, 84, 0.18);
+    color: #198754;
+  }
+
+  .gallery-mobile .mf-app-actual {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    border-radius: 4px;
+    padding: 0 3px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(25, 135, 84, 0.25);
+  }
+
+  .gallery-mobile .mf-app-actual input {
+    width: 4.8ch;
+    border: 0;
+    background: transparent;
+    color: #198754;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    padding: 0;
+    outline: none;
+  }
+
+  .gallery-mobile .mf-app-add {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.45rem 0.5rem 0.25rem;
+  }
+
+  .gallery-mobile .mf-app-add span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-height: 36px;
+    padding: 0.35rem 0.7rem 0.35rem 0.45rem;
+    border: 1.5px solid #198754;
+    border-radius: 20px;
+    color: #198754;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .gallery-mobile .mf-app-ings {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery-mobile .mf-app-ings li {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 0.25rem;
+    padding: 0.35rem 0.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .gallery-mobile .mf-app-ings .grip {
+    flex: 0 0 auto;
+    margin-right: 0.5rem;
+    color: #aaa;
+    font-size: 1.1rem;
+    line-height: 1;
+    letter-spacing: -0.12em;
+  }
+
+  .gallery-mobile .mf-app-cells {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0.45rem;
+  }
+
+  .gallery-mobile .mf-app-ing {
+    flex: 1 1 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .gallery-mobile .mf-app-field {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .gallery-mobile .mf-app-field input,
+  .gallery-mobile .mf-app-amt input,
+  .gallery-mobile .mf-app-unit {
+    box-sizing: border-box;
+    height: 38px;
+    border-radius: 4px;
+    background: #fff;
+    color: #212529;
+    font-family: var(--font-body);
+    font-size: 16px;
+  }
+
+  .gallery-mobile .mf-app-field input {
+    display: block;
+    width: 100%;
+    border: 1px solid #ced4da;
+    padding: 0 28px 0 8px;
+  }
+
+  .gallery-mobile .mf-app-field .fa-eye {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    font-size: 14px;
+    opacity: 0.55;
+  }
+
+  .gallery-mobile .mf-app-flags {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .gallery-mobile .mf-app-flags .flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.22rem;
+    border-radius: 6px;
+    padding: 0.05rem 0.2rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    line-height: 1;
+    background: transparent;
+    border: 0;
+  }
+
+  .gallery-mobile .mf-app-flags .flag i {
+    font-size: 0.72rem;
+  }
+
+  .gallery-mobile .mf-app-flags .flag-v { color: #fd7e14; }
+  .gallery-mobile .mf-app-flags .flag-vg { color: #2e7d32; }
+  .gallery-mobile .mf-app-flags .flag-gf { color: #e3b04b; }
+
+  .gallery-mobile .mf-app-flags .flag.is-sub {
+    background: #fff;
+    border: 1.5px solid currentColor;
+  }
+
+  .gallery-mobile .mf-app-amt,
+  .gallery-mobile .mf-app-unit,
+  .gallery-mobile .mf-app-cost {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .gallery-mobile .mf-app-amt input {
+    display: block;
+    width: 100%;
+    border: 2px solid #ced4da;
+    padding: 0 4px;
+    text-align: center;
+  }
+
+  .gallery-mobile .mf-app-unit {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    padding: 0 1.4rem 0 8px;
+    background-image: linear-gradient(45deg, transparent 50%, #6c757d 50%), linear-gradient(135deg, #6c757d 50%, transparent 50%);
+    background-position: calc(100% - 12px) 16px, calc(100% - 7px) 16px;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+  }
+
+  .gallery-mobile .mf-app-cost {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+    line-height: 38px;
+  }
+
+  .gallery-mobile .mf-app-minus {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    margin-left: 0.35rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.22);
+    color: #b42318;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 0;
+  }
+
+  .gallery-mobile .mf-app-foot {
+    background: #f4f6f9;
+    border-top: 1px solid rgba(15, 23, 42, 0.1);
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .gallery-mobile .mf-app-foot-row {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .gallery-mobile .mf-app-btn {
+    flex: 1 1 0;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .gallery-mobile .mf-app-btn.is-archive {
+    background: rgba(241, 198, 113, 0.1);
+    border: 2px solid rgba(241, 198, 113, 0.55);
+    color: #0f0f23;
+  }
+
+  .gallery-mobile .mf-app-btn.is-delete {
+    background: transparent;
+    border: 2px solid rgba(180, 35, 24, 0.55);
+    color: #b42318;
+  }
+
+  .gallery-mobile .mf-app-btn.is-cancel {
+    background: #fff;
+    border: 2px solid #0f0f23;
+    color: #0f0f23;
+  }
+
+  .gallery-mobile .mf-app-btn.is-save {
+    background: #0f0f23;
+    border: 0;
+    color: #fff;
+  }
 }

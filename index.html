@@ -91,7 +91,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/main.css?v=20261030j">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
-  <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261030j">
+  <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261030l">
   <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261030j">
   <link rel="stylesheet" href="assets/css/reviews.css?v=20260902k">
   
@@ -668,68 +668,121 @@
 
         <article class="gallery-item">
           <figure class="gallery-shot sheet-shot">
-            <div class="recipe-modal" aria-label="Pepperoni Pizza ingredients. Pizza Sauce 7 fluid ounces $0.58. Mozzarella 8 fluid ounces $0.55. Pepperoni 18 each $0.39. Italian Seasoning 1 fluid ounce $0.45. Pizza Dough 300 grams $1.24. Plate cost $3.23.">
-              <div class="mf-live-head">
-                <div class="mf-live-title">
-                  <strong>Pepperoni Pizza</strong>
-                  <span>Pizzas</span>
+            <div class="recipe-modal mf-app-recipe" aria-label="Pepperoni Pizza recipe modal, Ingredients tab. Cost $3.23, minimum sell price $12.90, actual sell price $14.00. Pizza Sauce 7 fluid ounces $0.58. Shredded Cheese (Mozzarella) 8 fluid ounces $0.55. Pepperoni 18 each $0.39. Italian Seasoning 1 fluid ounce $0.45. Pizza Dough 300 grams $1.24.">
+              <header class="mf-app-head">
+                <input class="mf-app-name" value="Pepperoni Pizza" readonly tabindex="-1" aria-label="Recipe name">
+                <span class="mf-app-close" aria-hidden="true"><span>&times;</span></span>
+              </header>
+              <div class="mf-app-body">
+                <div class="mf-app-tabrow">
+                  <div class="mf-app-tabs" aria-hidden="true">
+                    <span>Overview</span>
+                    <span class="is-active">Ingredients</span>
+                    <span>Prep</span>
+                  </div>
+                  <div class="mf-app-prices">
+                    <div class="mf-app-pill is-cost"><span>Cost</span><b>$3.23</b></div>
+                    <div class="mf-app-pill is-msp"><span>MSP</span><b>$12.90</b></div>
+                    <div class="mf-app-pill is-actual">
+                      <span>Actual</span>
+                      <span class="mf-app-actual"><b>$</b><input value="14.00" readonly tabindex="-1" aria-label="Actual selling price"></span>
+                    </div>
+                  </div>
                 </div>
-                <span class="mf-live-x" aria-hidden="true">&times;</span>
-              </div>
-              <div class="mf-live-body">
-                <div class="mf-live-tabs" aria-hidden="true">
-                  <span>Overview</span>
-                  <span class="is-active">Ingredients</span>
-                  <span>Prep</span>
-                </div>
-                <div class="mf-live-prices">
-                  <div class="mf-live-pill is-cost"><span>Cost</span><b>$3.23</b></div>
-                  <div class="mf-live-pill is-msp"><span>MSP</span><b>$12.90</b></div>
-                  <div class="mf-live-pill is-sell is-ok"><span>Sell</span><b>$14.00</b></div>
-                </div>
-                <ul class="mf-live-lines is-stacked">
+                <div class="mf-app-add"><span>+ Add Ingredient</span></div>
+                <ul class="mf-app-ings">
                   <li>
                     <span class="grip" aria-hidden="true">⋮⋮</span>
-                    <span class="line-main">
-                      <span class="name">Pizza Sauce</span>
-                      <span class="mf-live-flags"><span class="flag flag-v">V</span></span>
-                      <span class="line-metrics"><span class="amt">7</span><span class="unit">fl oz</span><span class="cost">$0.58</span></span>
+                    <span class="mf-app-cells">
+                      <span class="mf-app-ing">
+                        <span class="mf-app-field">
+                          <input value="Pizza Sauce" readonly tabindex="-1" aria-label="Ingredient">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span class="mf-app-flags"><span class="flag flag-v"><i class="fas fa-leaf" aria-hidden="true"></i>V</span></span>
+                      </span>
+                      <span class="mf-app-amt"><input value="7" readonly tabindex="-1" aria-label="Amount"></span>
+                      <span class="mf-app-unit">fl oz</span>
+                      <span class="mf-app-cost">$0.58</span>
                     </span>
+                    <span class="mf-app-minus" aria-hidden="true">&minus;</span>
                   </li>
                   <li>
                     <span class="grip" aria-hidden="true">⋮⋮</span>
-                    <span class="line-main">
-                      <span class="name">Shredded Cheese (Mozzarella)</span>
-                      <span class="mf-live-flags"><span class="flag flag-v">V</span><span class="flag flag-vg is-sub">Vg</span><span class="flag flag-gf">GF</span></span>
-                      <span class="line-metrics"><span class="amt">8</span><span class="unit">fl oz</span><span class="cost">$0.55</span></span>
+                    <span class="mf-app-cells">
+                      <span class="mf-app-ing">
+                        <span class="mf-app-field">
+                          <input value="Shredded Cheese (Mozzarella)" readonly tabindex="-1" aria-label="Ingredient">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span class="mf-app-flags"><span class="flag flag-v"><i class="fas fa-leaf" aria-hidden="true"></i>V</span><span class="flag flag-vg is-sub"><i class="fas fa-seedling" aria-hidden="true"></i>Vg</span><span class="flag flag-gf"><i class="fas fa-bread-slice" aria-hidden="true"></i>GF</span></span>
+                      </span>
+                      <span class="mf-app-amt"><input value="8" readonly tabindex="-1" aria-label="Amount"></span>
+                      <span class="mf-app-unit">fl oz</span>
+                      <span class="mf-app-cost">$0.55</span>
                     </span>
+                    <span class="mf-app-minus" aria-hidden="true">&minus;</span>
                   </li>
                   <li>
                     <span class="grip" aria-hidden="true">⋮⋮</span>
-                    <span class="line-main">
-                      <span class="name">Pepperoni</span>
-                      <span class="mf-live-flags"><span class="flag flag-gf">GF</span></span>
-                      <span class="line-metrics"><span class="amt">18</span><span class="unit">Each</span><span class="cost">$0.39</span></span>
+                    <span class="mf-app-cells">
+                      <span class="mf-app-ing">
+                        <span class="mf-app-field">
+                          <input value="Pepperoni" readonly tabindex="-1" aria-label="Ingredient">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span class="mf-app-flags"><span class="flag flag-gf"><i class="fas fa-bread-slice" aria-hidden="true"></i>GF</span></span>
+                      </span>
+                      <span class="mf-app-amt"><input value="18" readonly tabindex="-1" aria-label="Amount"></span>
+                      <span class="mf-app-unit">Each</span>
+                      <span class="mf-app-cost">$0.39</span>
                     </span>
+                    <span class="mf-app-minus" aria-hidden="true">&minus;</span>
                   </li>
                   <li>
                     <span class="grip" aria-hidden="true">⋮⋮</span>
-                    <span class="line-main">
-                      <span class="name">Italian Seasoning</span>
-                      <span class="mf-live-flags"><span class="flag flag-v">V</span><span class="flag flag-vg">Vg</span><span class="flag flag-gf">GF</span></span>
-                      <span class="line-metrics"><span class="amt">1</span><span class="unit">fl oz</span><span class="cost">$0.45</span></span>
+                    <span class="mf-app-cells">
+                      <span class="mf-app-ing">
+                        <span class="mf-app-field">
+                          <input value="Italian Seasoning" readonly tabindex="-1" aria-label="Ingredient">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span class="mf-app-flags"><span class="flag flag-v"><i class="fas fa-leaf" aria-hidden="true"></i>V</span><span class="flag flag-vg"><i class="fas fa-seedling" aria-hidden="true"></i>Vg</span><span class="flag flag-gf"><i class="fas fa-bread-slice" aria-hidden="true"></i>GF</span></span>
+                      </span>
+                      <span class="mf-app-amt"><input value="1" readonly tabindex="-1" aria-label="Amount"></span>
+                      <span class="mf-app-unit">fl oz</span>
+                      <span class="mf-app-cost">$0.45</span>
                     </span>
+                    <span class="mf-app-minus" aria-hidden="true">&minus;</span>
                   </li>
                   <li>
                     <span class="grip" aria-hidden="true">⋮⋮</span>
-                    <span class="line-main">
-                      <span class="name">Pizza Dough</span>
-                      <span class="mf-live-flags"><span class="flag flag-v">V</span><span class="flag flag-vg">Vg</span></span>
-                      <span class="line-metrics"><span class="amt">300</span><span class="unit">Gram</span><span class="cost">$1.24</span></span>
+                    <span class="mf-app-cells">
+                      <span class="mf-app-ing">
+                        <span class="mf-app-field">
+                          <input value="Pizza Dough" readonly tabindex="-1" aria-label="Ingredient">
+                          <i class="fas fa-eye" aria-hidden="true"></i>
+                        </span>
+                        <span class="mf-app-flags"><span class="flag flag-v"><i class="fas fa-leaf" aria-hidden="true"></i>V</span><span class="flag flag-vg"><i class="fas fa-seedling" aria-hidden="true"></i>Vg</span></span>
+                      </span>
+                      <span class="mf-app-amt"><input value="300" readonly tabindex="-1" aria-label="Amount"></span>
+                      <span class="mf-app-unit">Gram</span>
+                      <span class="mf-app-cost">$1.24</span>
                     </span>
+                    <span class="mf-app-minus" aria-hidden="true">&minus;</span>
                   </li>
                 </ul>
               </div>
+              <footer class="mf-app-foot">
+                <div class="mf-app-foot-row">
+                  <span class="mf-app-btn is-archive">Archive</span>
+                  <span class="mf-app-btn is-delete">Delete</span>
+                </div>
+                <div class="mf-app-foot-row">
+                  <span class="mf-app-btn is-cancel">Cancel</span>
+                  <span class="mf-app-btn is-save">Save</span>
+                </div>
+              </footer>
             </div>
           </figure>
           <div class="gallery-copy">
