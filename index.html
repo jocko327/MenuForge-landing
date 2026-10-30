@@ -92,7 +92,7 @@
   <link rel="stylesheet" href="assets/css/main.css?v=20261030g">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
   <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261030h">
-  <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261029h">
+  <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261030i">
   <link rel="stylesheet" href="assets/css/reviews.css?v=20260902k">
   
   <!-- Schema.org Structured Data -->
@@ -1443,14 +1443,18 @@
           panel.style.setProperty('--p', '1');
           panel.classList.add('is-full');
           if (window.innerWidth <= 768) {
+            var pinAt = siteHeader ? siteHeader.getBoundingClientRect().bottom : 56;
             var mobileTop = head.getBoundingClientRect().top;
-            head.classList.toggle('is-bleed', mobileTop <= window.innerHeight * 0.3);
+            var range = 140;
+            var bleed = reduce ? (mobileTop <= pinAt + 8 ? 1 : 0) : (pinAt + range - mobileTop) / range;
+            bleed = Math.min(1, Math.max(0, bleed));
+            head.style.setProperty('--bleed', bleed.toFixed(4));
           } else {
-            head.classList.remove('is-bleed');
+            head.style.setProperty('--bleed', '0');
           }
           return;
         }
-        head.classList.remove('is-bleed');
+        head.style.setProperty('--bleed', '0');
         var vh = window.innerHeight;
         var pinAt = siteHeader ? siteHeader.getBoundingClientRect().bottom : 56;
         var headTop = head.getBoundingClientRect().top;
