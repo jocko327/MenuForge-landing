@@ -16,9 +16,9 @@
     { at: 8400, who: 'owner', text: 'Oh wow, how did we miss that? Can you work on re-costing all of our recipes that use mozzarella?' },
     { at: 9000, who: 'typing' },
     { at: 10200, who: 'chef', text: "I'll try. We use mozzarella cheese in a lot of our recipes, and this spreadsheet is impossible to navigate." },
-    { at: 12200, who: 'typing' },
-    { at: 13400, who: 'chef', text: 'Can you give me a call to walk me through your formulas here?' },
-    { at: 15400, who: 'owner', text: 'Please do your best.' }
+    { at: 12200, who: 'owner', text: 'Please do your best.' },
+    { at: 13800, who: 'typing' },
+    { at: 15000, who: 'chef', text: 'Can you give me a call to walk me through your formulas here?' }
   ];
 
   function pin() {

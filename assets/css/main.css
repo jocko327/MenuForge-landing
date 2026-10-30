@@ -1699,26 +1699,41 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   .hero-home .hero-fold h1 {
     width: 100%;
     margin: 0;
-    font-size: 9.4vw;
+    font-size: 8.7vw;
     line-height: 1.05;
+    font-weight: 700;
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    text-shadow: none;
+  }
+
+  .hero-home .hero-fold .hero-title-lead {
+    display: block;
   }
 
   .hero-home h1 .hero-gold-pill {
     display: block;
-    width: auto;
+    width: 100%;
     max-width: none;
-    margin: 0;
+    margin: 1.4vh 0 0;
     padding: 0;
     border-radius: 0;
-    background: linear-gradient(100deg, #a8843a 0%, #f1c671 38%, #fff6d4 50%, #f1c671 62%, #a8843a 100%);
+    background: linear-gradient(100deg, #c4a15a 0%, #f1c671 32%, #fff8dc 50%, #f1c671 68%, #c4a15a 100%);
     background-size: 220% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
     animation: hero-band-shimmer 2.8s linear infinite;
-    font-size: inherit;
-    line-height: inherit;
+    font-size: 5.55vw;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
   }
 
   .hero-home h1 .hero-gold-pill::before {
@@ -1726,7 +1741,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   }
 
   .hero-home .hero-fold .hero-h1-sub {
-    margin: 1.2vh auto 0;
+    margin: 2.2vh auto 0;
     font-size: 5.1vw;
     line-height: 1.25;
     color: #fff;
@@ -2218,6 +2233,24 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     box-shadow: 0 0.4vh 1.2vh rgba(0, 0, 0, 0.18);
   }
 
+  .hero-lie-title {
+    width: 92vw;
+    margin: 2.4vh auto 1.2vh;
+    font-size: 7.2vw;
+    line-height: 1.15;
+    color: #fff;
+    text-align: center;
+  }
+
+  .hero-lie-copy {
+    width: 90vw;
+    margin: 0 auto 2vh;
+    font-size: 4.15vw;
+    line-height: 1.45;
+    color: var(--text-white-80);
+    text-align: center;
+  }
+
   .hero-bridge-title {
     width: 88vw;
     margin: 3.2vh auto 0.6vh;
@@ -2387,6 +2420,11 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     background: #0b84fe;
     color: #fff;
     border-bottom-right-radius: 1vw;
+    text-align: right;
+  }
+
+  .sms-bubble.is-chef {
+    text-align: left;
   }
 
   .sms-row {
