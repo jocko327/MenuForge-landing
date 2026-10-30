@@ -89,7 +89,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261029j">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261030b">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
   <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261029c">
   <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261029h">
@@ -308,7 +308,8 @@
       <div class="hero-fold">
       <h1>Know your plate cost <span class="hero-gold-pill"><span class="hero-band-label">the day the invoice arrives.</span></span></h1>
       <p class="hero-h1-sub">No more Saturdays fixing the costing spreadsheet.</p>
-      <p class="hero-tagline">Every vendor invoice updates your ingredient prices and recosts every dish and sub-recipe. No spreadsheet.</p>
+      <p class="hero-tagline hero-tagline-desktop">Every vendor invoice updates your ingredient prices and recosts every dish and sub-recipe. No spreadsheet.</p>
+      <p class="hero-tagline hero-tagline-mobile">Updating your plate costs should be easy. MenuForge automates this by reading every invoice, re-costing your ingredients, then updating every dish on your menu to reflect the new cost.</p>
       <div class="hero-proof">
         <img src="assets/images/jake-lohse.jpg" alt="Jake Lohse, owner of Presidential Brewing Co." width="72" height="72">
         <p>Built by Jake Lohse, owner of Presidential Brewing Co. $8,800 a year in projected savings from 10 renegotiated invoice lines.</p>
@@ -322,63 +323,45 @@
       <div class="hero-visual">
         <div class="recipe-stage">
           <div class="recipe-modal" role="img" aria-label="Brat Haus Burger recipe on a phone. Cost $3.76, minimum sell price $15.05, selling price $14.00, which is below the minimum. Each ingredient has its own line cost.">
-            <div class="recipe-modal-head">
-              <div>
+            <div class="mf-live-head">
+              <div class="mf-live-title">
                 <strong>Brat Haus Burger</strong>
                 <span>Burgers</span>
               </div>
-              <span class="recipe-modal-x" aria-hidden="true">&times;</span>
+              <span class="mf-live-x" aria-hidden="true">&times;</span>
             </div>
-            <div class="recipe-tabs" aria-hidden="true">
-              <span>Overview</span>
-              <span class="is-active">Ingredients</span>
-              <span>Prep</span>
-            </div>
-            <div class="recipe-flag-row">
-              <span class="recipe-callout">Plate cost</span>
-            </div>
-            <div class="recipe-prices">
-              <div class="recipe-price recipe-price-cost">
-                <span>Cost</span>
-                <b>$3.76</b>
+            <div class="mf-live-body">
+              <div class="mf-live-tabs" aria-hidden="true">
+                <span>Overview</span>
+                <span class="is-active">Ingredients</span>
+                <span>Prep</span>
               </div>
-              <div class="recipe-price recipe-price-msp">
-                <span>MSP</span>
-                <b>$15.05</b>
+              <div class="mf-live-prices">
+                <div class="mf-live-pill is-cost"><span>Cost</span><b>$3.76</b></div>
+                <div class="mf-live-pill is-msp"><span>MSP</span><b>$15.05</b></div>
+                <div class="mf-live-pill is-sell"><span>Sell</span><b>$14.00</b></div>
               </div>
-              <div class="recipe-price recipe-price-sell">
-                <span>Sell</span>
-                <b>$14.00</b>
+              <div class="mf-live-alert">
+                <strong>Costing issues</strong>
+                <ul>
+                  <li>Selling price below MSP: <b>$14.00</b> vs MSP <b>$15.05</b></li>
+                </ul>
               </div>
+              <ul class="mf-live-lines">
+                <li><span class="grip" aria-hidden="true">⋮⋮</span><span class="name">Brioche Bun</span><span class="amt">1 Each</span><span class="cost">$0.47</span></li>
+                <li><span class="grip" aria-hidden="true">⋮⋮</span><span class="name">Bratwurst Patty</span><span class="amt">1 Each</span><span class="cost">$1.20</span></li>
+                <li><span class="grip" aria-hidden="true">⋮⋮</span><span class="name">Gouda Cheese Slices</span><span class="amt">1 Each</span><span class="cost">$0.34</span></li>
+                <li><span class="grip" aria-hidden="true">⋮⋮</span><span class="name">Bacon Jam Batch</span><span class="amt">1 fl oz</span><span class="cost">$0.41</span></li>
+                <li><span class="grip" aria-hidden="true">⋮⋮</span><span class="name">Crispy Onions</span><span class="amt">1 fl oz</span><span class="cost">$0.35</span></li>
+                <li><span class="grip" aria-hidden="true">⋮⋮</span><span class="name">Dijon Aioli</span><span class="amt">2 fl oz</span><span class="cost">$0.37</span></li>
+                <li><span class="grip" aria-hidden="true">⋮⋮</span><span class="name">House Fried Potato Chips</span><span class="amt">18 fl oz</span><span class="cost">$0.63</span></li>
+              </ul>
             </div>
-            <div class="recipe-flag-row is-end">
-              <span class="recipe-callout recipe-callout-jump">Price jump caught</span>
-            </div>
-            <div class="recipe-alert">
-              <strong>Costing issues</strong>
-              <p>Selling price below MSP: <b>$14.00</b> vs MSP <b>$15.05</b></p>
-            </div>
-            <ul class="recipe-lines">
-              <li><span class="recipe-line-name">Brioche Bun</span><span class="recipe-line-amt">1 Each</span><span class="recipe-line-cost">$0.47</span></li>
-              <li><span class="recipe-line-name">Bratwurst Patty</span><span class="recipe-line-amt">1 Each</span><span class="recipe-line-cost">$1.20</span></li>
-              <li><span class="recipe-line-name">Gouda Cheese Slices</span><span class="recipe-line-amt">1 Each</span><span class="recipe-line-cost">$0.34</span></li>
-              <li><span class="recipe-line-name">Bacon Jam Batch</span><span class="recipe-line-amt">1 fl oz · Batch</span><span class="recipe-line-cost">$0.41</span></li>
-              <li><span class="recipe-line-name">Crispy Onions</span><span class="recipe-line-amt">1 fl oz</span><span class="recipe-line-cost">$0.35</span></li>
-              <li><span class="recipe-line-name">Dijon Aioli</span><span class="recipe-line-amt">2 fl oz · Batch</span><span class="recipe-line-cost">$0.37</span></li>
-              <li><span class="recipe-line-name">House Fried Potato Chips</span><span class="recipe-line-amt">18 fl oz · Batch</span><span class="recipe-line-cost">$0.63</span></li>
-            </ul>
           </div>
         </div>
       </div>
       <div class="hero-thread">
-        <div class="hero-handoff">
-          <div class="hero-handoff-wire" aria-hidden="true"></div>
-          <div class="hero-handoff-note">
-            <span class="hero-handoff-app">MenuForge</span>
-            <p><strong>Brat Haus Burger</strong> is on the pass at $14.00. The minimum is $15.05.</p>
-          </div>
-          <p class="hero-handoff-copy">That warning used to leave the building as a text.</p>
-        </div>
+        <h2 class="hero-bridge-title">No more Saturdays scrambling to fix your pricing and save your food costs.</h2>
         <div class="sms-phone" id="sms-phone">
           <div class="sms-bezel">
             <div class="sms-screen">
