@@ -1219,26 +1219,34 @@
   }
 
   .gallery-mobile .mf-live-lines.is-stacked li {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
-    grid-template-areas:
-      "grip name name flags"
-      ". . amt cost";
+    display: flex;
     align-items: center;
-    row-gap: 0.35vh;
+    gap: 1.8vw;
   }
 
-  .gallery-mobile .mf-live-lines.is-stacked .grip { grid-area: grip; }
+  .gallery-mobile .mf-live-lines.is-stacked .line-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35vh;
+  }
+
   .gallery-mobile .mf-live-lines.is-stacked .name {
-    grid-area: name;
     white-space: normal;
   }
-  .gallery-mobile .mf-live-lines.is-stacked .mf-live-flags {
-    grid-area: flags;
-    justify-self: end;
+
+  .gallery-mobile .mf-live-lines.is-stacked .line-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1vw;
+    align-items: center;
   }
-  .gallery-mobile .mf-live-lines.is-stacked .amt { grid-area: amt; }
-  .gallery-mobile .mf-live-lines.is-stacked .cost { grid-area: cost; }
+
+  .gallery-mobile .mf-live-lines.is-stacked .unit {
+    font-size: 3vw;
+    color: #6c757d;
+  }
 
   .gallery-mobile .mf-live-flags {
     display: inline-flex;
@@ -1303,14 +1311,21 @@
   }
 
   .gallery-mobile .mf-trend-cards li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.45vh 1.6vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45vh;
     background: #fff;
     border: 1px solid #e5e7eb;
     border-radius: 10px;
     padding: 1vh 2.2vw;
     margin-bottom: 0.8vh;
+  }
+
+  .gallery-mobile .mf-trend-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 2vw;
   }
 
   .gallery-mobile .mf-trend-ing { grid-column: 1 / -1; }
@@ -1326,28 +1341,24 @@
     color: #6c757d;
   }
 
-  .gallery-mobile .mf-trend-cards em {
-    display: block;
-    font-style: normal;
-    font-size: 2.5vw;
+  .gallery-mobile .mf-trend-row span {
+    font-size: 2.6vw;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #6b7280;
   }
 
-  .gallery-mobile .mf-trend-cards b {
-    display: block;
-    margin-top: 0.1vh;
-    font-size: 3.3vw;
+  .gallery-mobile .mf-trend-row b {
+    font-size: 3.4vw;
     font-weight: 700;
     color: #212529;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
   }
 
-  .gallery-mobile .mf-trend-cards .is-up,
-  .gallery-mobile .mf-trend-cards .is-down { text-align: right; }
-  .gallery-mobile .mf-trend-cards .is-up b { color: #dc3545; }
-  .gallery-mobile .mf-trend-cards .is-down b { color: #198754; }
+  .gallery-mobile .mf-trend-row.is-up b { color: #dc3545; }
+  .gallery-mobile .mf-trend-row.is-down b { color: #198754; }
 
   .gallery-mobile .mf-prep-table {
     width: 100%;

@@ -480,6 +480,11 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   line-height: 1.45;
 }
 
+.proof-title-mobile,
+.proof-body-mobile {
+  display: none;
+}
+
 .hero-visual {
   display: none;
   align-items: center;
@@ -1773,6 +1778,11 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     gap: 3vw;
     margin: 3.4vh auto 0;
     max-width: 92vw;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(241, 198, 113, 0.4);
+    border-radius: 16px;
+    padding: 1.5vh 3.4vw;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
   }
 
   .hero-home .hero-fold .hero-proof img {
@@ -2693,6 +2703,20 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   }
 
   .how-it-works .workflow-step:first-child .plan-pill {
+    display: none;
+  }
+
+  .proof-title-desktop,
+  .proof-body-desktop {
+    display: none;
+  }
+
+  .proof-title-mobile,
+  .proof-body-mobile {
+    display: block;
+  }
+
+  .brewery-teaser-section {
     display: none;
   }
 
