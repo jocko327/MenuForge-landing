@@ -1681,14 +1681,13 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    height: 100vh;
-    height: 100svh;
+    height: 80vh;
     box-sizing: border-box;
-    padding-top: max(calc(var(--site-header-height) + 0.6vh), calc(8rem - 8vh));
-    padding-top: max(calc(var(--site-header-height) + 0.6svh), calc(8rem - 8svh));
+    padding-top: calc(var(--site-header-height) + 1vh);
     padding-right: 4vw;
-    padding-bottom: 1.4svh;
+    padding-bottom: 1vh;
     padding-left: 4vw;
     overflow: hidden;
   }
@@ -1696,7 +1695,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   .hero-home .hero-fold h1 {
     width: 100%;
     margin: 0;
-    font-size: 7.6vw;
+    font-size: 9.4vw;
     line-height: 1.05;
   }
 
@@ -1704,12 +1703,12 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     display: block;
     width: 100vw;
     max-width: 100vw;
-    margin: 2.4vh 0 1.2vh calc(50% - 50vw);
-    padding: 1.15vh 5vw 1.35vh;
+    margin: 1.8vh 0 0.4vh calc(50% - 50vw);
+    padding: 1.1vh 5vw 1.25vh;
     border-radius: 0;
     box-sizing: border-box;
     text-align: center;
-    font-size: 7.2vw;
+    font-size: 8.8vw;
     line-height: 1.12;
     position: relative;
     overflow: hidden;
@@ -1731,31 +1730,31 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   }
 
   .hero-home .hero-fold .hero-h1-sub {
-    margin: 0.2vh auto 0.8vh;
-    font-size: 4.1vw;
-    line-height: 1.25;
+    margin: 0.2vh auto 0.3vh;
+    font-size: 5.1vw;
+    line-height: 1.2;
   }
 
   .hero-home .hero-fold .hero-tagline {
-    margin: 0 auto 1vh;
-    font-size: 3.6vw;
-    line-height: 1.3;
+    margin: 0 auto 0.4vh;
+    font-size: 4.5vw;
+    line-height: 1.25;
   }
 
   .hero-home .hero-fold .hero-proof {
-    gap: 2.5vw;
-    margin: 0 auto 1vh;
+    gap: 3vw;
+    margin: 0 auto 0.35vh;
     max-width: 92vw;
   }
 
   .hero-home .hero-fold .hero-proof img {
-    width: 11vw;
-    height: 11vw;
+    width: 14vw;
+    height: 14vw;
   }
 
   .hero-home .hero-fold .hero-proof p {
-    font-size: 3.25vw;
-    line-height: 1.3;
+    font-size: 4.1vw;
+    line-height: 1.28;
   }
 
   .hero-home .hero-fold .hero-cta {
@@ -1763,22 +1762,22 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: stretch;
-    gap: 1vh;
-    margin: 0.4vh 0 0;
+    gap: 0.55vh;
+    margin: 0.15vh 0 0;
   }
 
   .hero-home .hero-fold .btn-large {
     width: 100%;
-    padding: 1.15vh 4vw;
-    font-size: 3.9vw;
+    padding: 1.05vh 4vw;
+    font-size: 4.8vw;
   }
 
   .hero-home .hero-fold .trial-microcopy {
     flex: 0 0 auto;
     width: 100%;
-    font-size: 3vw;
+    font-size: 3.6vw;
     line-height: 1.3;
-    margin-top: 0.3vh;
+    margin-top: 0.2vh;
   }
 
   .hero-home .hero-visual {
@@ -1801,52 +1800,95 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     position: relative;
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    padding: 2vh 5vw 1vh;
+    padding: 1.2vh 0 0;
     box-sizing: border-box;
   }
 
-  .recipe-modal {
-    background: #f4f6f9;
+  .recipe-modal,
+  .sheet {
+    background: #fff;
     color: #1f2937;
-    border-radius: 4vw;
+    border-radius: 0;
     box-shadow: 0 1.6vh 4vh rgba(0, 0, 0, 0.38);
     overflow: hidden;
   }
 
-  .recipe-modal-bar {
+  .recipe-modal-head,
+  .sheet-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3vw;
     background: #fff;
-    text-align: center;
-    padding: 1.3vh 3vw 1.5vh;
+    padding: 1.6vh 4vw 1.2vh;
     border-bottom: 1px solid #e5e7eb;
   }
 
-  .recipe-modal-grab {
+  .recipe-modal-head strong,
+  .sheet-head strong {
     display: block;
-    width: 10vw;
-    height: 0.6vh;
-    margin: 0 auto 1vh;
-    border-radius: 999px;
-    background: #d1d5db;
-  }
-
-  .recipe-modal-bar strong {
-    display: block;
-    font-size: 4.8vw;
+    font-size: 5.2vw;
     line-height: 1.15;
+    color: #111827;
   }
 
-  .recipe-modal-bar span {
+  .recipe-modal-head div > span,
+  .sheet-head div > span {
     display: block;
-    margin-top: 0.3vh;
-    font-size: 3vw;
+    margin-top: 0.25vh;
+    font-size: 3.3vw;
     color: #6b7280;
+  }
+
+  .recipe-modal-x,
+  .sheet-x {
+    flex: 0 0 auto;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    background: #b42318;
+    color: #fff;
+    font-size: 5vw;
+    line-height: 8vw;
+    text-align: center;
+  }
+
+  .recipe-tabs {
+    display: flex;
+    gap: 4vw;
+    padding: 1.1vh 4vw 0;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+  }
+
+  .recipe-tabs span {
+    padding-bottom: 0.9vh;
+    font-size: 3.5vw;
+    font-weight: 650;
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+  }
+
+  .recipe-tabs span.is-active {
+    color: #111827;
+    border-bottom-color: #c9a227;
+  }
+
+  .recipe-flag-row {
+    display: flex;
+    padding: 1vh 4vw 0;
+  }
+
+  .recipe-flag-row.is-end {
+    justify-content: flex-end;
+    padding-top: 0.8vh;
   }
 
   .recipe-prices {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.6vw;
-    padding: 1.3vh 2.4vw 0;
+    padding: 0.6vh 4vw 0;
   }
 
   .recipe-price {
@@ -1857,7 +1899,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 
   .recipe-price span {
     display: block;
-    font-size: 2.7vw;
+    font-size: 2.9vw;
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1866,7 +1908,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   .recipe-price b {
     display: block;
     margin-top: 0.2vh;
-    font-size: 5vw;
+    font-size: 5.4vw;
     line-height: 1.1;
   }
 
@@ -1889,8 +1931,8 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   }
 
   .recipe-alert {
-    margin: 1.2vh 2.4vw 0;
-    padding: 1vh 2.6vw 1.2vh;
+    margin: 0.8vh 4vw 0;
+    padding: 1.1vh 3vw 1.3vh;
     background: #b42318;
     color: #fff;
     border: 2px solid #911a12;
@@ -1913,45 +1955,102 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   .recipe-lines {
     list-style: none;
     margin: 1vh 0 0;
-    padding: 0 2.6vw 1.5vh;
+    padding: 0 4vw 1.6vh;
   }
 
   .recipe-lines li {
     display: flex;
-    justify-content: space-between;
-    gap: 2vw;
-    padding: 0.75vh 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15vh;
+    padding: 0.9vh 0;
     border-top: 1px solid #e5e7eb;
-    font-size: 3.2vw;
-    color: #1f2937;
   }
 
-  .recipe-lines li span:last-child {
-    color: #4b5563;
-    white-space: nowrap;
+  .recipe-line-name {
+    font-size: 3.7vw;
+    font-weight: 650;
+    color: #111827;
+  }
+
+  .recipe-line-amt {
+    font-size: 3.1vw;
+    color: #6b7280;
+  }
+
+  .recipe-line-cost {
+    font-size: 3.8vw;
+    font-weight: 700;
+    color: #111827;
   }
 
   .recipe-callout {
-    position: absolute;
-    z-index: 2;
+    display: inline-flex;
     background: var(--primary-accent);
     color: #1a1408;
-    font-size: 3.1vw;
+    font-size: 3.2vw;
     font-weight: 800;
     line-height: 1;
-    padding: 0.7vh 2.4vw;
+    padding: 0.7vh 2.6vw;
     border-radius: 999px;
-    box-shadow: 0 0.5vh 1.4vh rgba(0, 0, 0, 0.28);
+    box-shadow: 0 0.4vh 1.2vh rgba(0, 0, 0, 0.18);
   }
 
-  .recipe-callout-cost {
-    top: 7%;
-    left: 3vw;
+  .hero-handoff {
+    position: relative;
+    width: 88vw;
+    margin: 0 auto;
+    padding: 2.4vh 0 0.4vh;
+    text-align: center;
   }
 
-  .recipe-callout-jump {
-    bottom: 4%;
-    right: 4vw;
+  .hero-handoff-wire {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: -2vh;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, rgba(241, 198, 113, 0) 0%, #f1c671 18%, #f1c671 100%);
+    box-shadow: 0 0 12px rgba(241, 198, 113, 0.75);
+  }
+
+  .hero-handoff-note {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 1.3vh 4vw 1.5vh;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.96);
+    color: #1f2937;
+    border-radius: 3.4vw;
+    border-left: 1vw solid #b42318;
+    box-shadow: 0 1.2vh 3vh rgba(0, 0, 0, 0.35), 0 0 18px rgba(241, 198, 113, 0.28);
+  }
+
+  .hero-handoff-app {
+    display: block;
+    margin-bottom: 0.3vh;
+    font-size: 2.8vw;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a6508;
+  }
+
+  .hero-handoff-note p {
+    margin: 0;
+    font-size: 3.8vw;
+    line-height: 1.35;
+  }
+
+  .hero-handoff-copy {
+    position: relative;
+    z-index: 1;
+    margin: 1.4vh 0 0;
+    font-size: 4.2vw;
+    line-height: 1.35;
+    color: var(--text-white);
   }
 
   .sms-phone {
@@ -1966,7 +2065,12 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     padding: 1.1vw;
     border-radius: 8vw;
     background: #1c1c1e;
-    box-shadow: 0 2vh 5vh rgba(0, 0, 0, 0.4);
+    border: 1.5px solid rgba(241, 198, 113, 0.95);
+    box-shadow:
+      0 0 0 1px rgba(241, 198, 113, 0.4),
+      0 0 22px 3px rgba(241, 198, 113, 0.55),
+      0 0 48px 10px rgba(241, 198, 113, 0.28),
+      0 2vh 5vh rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
   }
 
@@ -2054,6 +2158,34 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     border-bottom-right-radius: 1vw;
   }
 
+  .sms-row {
+    display: flex;
+    align-items: flex-end;
+    align-self: flex-start;
+    gap: 1.6vw;
+    max-width: 94%;
+  }
+
+  .sms-cj {
+    flex: 0 0 7.4vw;
+    width: 7.4vw;
+    height: 7.4vw;
+    border-radius: 50%;
+    background: #d1d1d6;
+    color: #3a3a3c;
+    font-size: 2.6vw;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sms-row .sms-bubble.is-chef {
+    align-self: auto;
+    max-width: none;
+  }
+
   .sms-bubble.is-chef {
     align-self: flex-start;
     background: #e9e9eb;
@@ -2122,9 +2254,112 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     width: 90vw;
     margin: 2.2vh auto 0;
     text-align: center;
-    font-size: 4vw;
-    line-height: 1.4;
+    font-size: 4.4vw;
+    line-height: 1.45;
     color: var(--text-white-80);
+  }
+
+  .sheet-shot {
+    background: #f4f6f9;
+  }
+
+  .sheet-shot .sheet {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .batch-lines,
+  .trend-lines,
+  .prep-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0.4vh 4vw 1.4vh;
+  }
+
+  .batch-lines li,
+  .trend-lines li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2vh;
+    padding: 1.1vh 0;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .batch-name,
+  .trend-name {
+    font-size: 4vw;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .batch-meta,
+  .trend-meta {
+    font-size: 3.2vw;
+    color: #6b7280;
+  }
+
+  .batch-lines b,
+  .trend-up {
+    font-size: 3.8vw;
+    font-weight: 800;
+  }
+
+  .batch-lines b {
+    color: #111827;
+  }
+
+  .trend-up {
+    color: #dc3545;
+  }
+
+  .sheet-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 4vw 1.4vh;
+    padding: 1.1vh 0 0.2vh;
+    border-top: 2px solid #111827;
+    font-size: 3.6vw;
+    font-weight: 700;
+  }
+
+  .sheet-total b {
+    font-size: 5vw;
+    color: #b42318;
+  }
+
+  .prep-steps {
+    counter-reset: prep;
+    padding-bottom: 1.6vh;
+  }
+
+  .prep-steps li {
+    display: flex;
+    gap: 2.4vw;
+    align-items: flex-start;
+    padding: 0.9vh 0;
+    border-top: 1px solid #e5e7eb;
+    font-size: 3.5vw;
+    line-height: 1.35;
+    color: #1f2937;
+  }
+
+  .prep-steps li::before {
+    counter-increment: prep;
+    content: counter(prep);
+    flex: 0 0 6.4vw;
+    width: 6.4vw;
+    height: 6.4vw;
+    border-radius: 50%;
+    background: #f4f6f9;
+    border: 1px solid #d1d5db;
+    color: #111827;
+    font-size: 3vw;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-home + .proof-band {
@@ -2141,11 +2376,11 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 
   .how-it-works .section-title h2 {
     margin-bottom: 0.5vh;
-    font-size: 6.2vw;
+    font-size: 7.44vw;
   }
 
   .how-it-works .section-title p {
-    font-size: 3.7vw;
+    font-size: 4.44vw;
   }
 
   .how-it-works .workflow-steps {
@@ -2154,19 +2389,19 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   }
 
   .how-it-works .step-number {
-    width: 12vw;
-    height: 12vw;
+    width: 14.4vw;
+    height: 14.4vw;
     margin-bottom: 0.7vh;
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
   .how-it-works .workflow-step h3 {
     margin-bottom: 0.3vh;
-    font-size: 4.4vw;
+    font-size: 5.28vw;
   }
 
   .how-it-works .workflow-step p {
-    font-size: 3.5vw;
+    font-size: 4.2vw;
     line-height: 1.35;
   }
 
@@ -2176,12 +2411,12 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   }
 
   .how-it-works .start-callout h3 {
-    font-size: 4.4vw;
+    font-size: 5.28vw;
     margin-bottom: 0.4vh;
   }
 
   .how-it-works .start-callout p {
-    font-size: 3.5vw;
+    font-size: 4.2vw;
     line-height: 1.4;
   }
 

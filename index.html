@@ -89,10 +89,10 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261029g">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261029j">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
   <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261029c">
-  <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20260918b">
+  <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261029h">
   <link rel="stylesheet" href="assets/css/reviews.css?v=20260902k">
   
   <!-- Schema.org Structured Data -->
@@ -321,11 +321,21 @@
       </div>
       <div class="hero-visual">
         <div class="recipe-stage">
-          <div class="recipe-modal" role="img" aria-label="Brat Haus Burger recipe. Cost $3.76, minimum sell price $15.05, selling price $14.00, which is below the minimum.">
-            <div class="recipe-modal-bar">
-              <span class="recipe-modal-grab" aria-hidden="true"></span>
-              <strong>Brat Haus Burger</strong>
-              <span>Burgers</span>
+          <div class="recipe-modal" role="img" aria-label="Brat Haus Burger recipe on a phone. Cost $3.76, minimum sell price $15.05, selling price $14.00, which is below the minimum. Each ingredient has its own line cost.">
+            <div class="recipe-modal-head">
+              <div>
+                <strong>Brat Haus Burger</strong>
+                <span>Burgers</span>
+              </div>
+              <span class="recipe-modal-x" aria-hidden="true">&times;</span>
+            </div>
+            <div class="recipe-tabs" aria-hidden="true">
+              <span>Overview</span>
+              <span class="is-active">Ingredients</span>
+              <span>Prep</span>
+            </div>
+            <div class="recipe-flag-row">
+              <span class="recipe-callout">Plate cost</span>
             </div>
             <div class="recipe-prices">
               <div class="recipe-price recipe-price-cost">
@@ -341,25 +351,34 @@
                 <b>$14.00</b>
               </div>
             </div>
+            <div class="recipe-flag-row is-end">
+              <span class="recipe-callout recipe-callout-jump">Price jump caught</span>
+            </div>
             <div class="recipe-alert">
               <strong>Costing issues</strong>
               <p>Selling price below MSP: <b>$14.00</b> vs MSP <b>$15.05</b></p>
             </div>
             <ul class="recipe-lines">
-              <li><span>Brioche Bun</span><span>1 Each</span></li>
-              <li><span>Bratwurst Patty</span><span>1 Each</span></li>
-              <li><span>Gouda Cheese Slices</span><span>1 Each</span></li>
-              <li><span>Bacon Jam Batch</span><span>1 fl oz</span></li>
-              <li><span>Crispy Onions</span><span>1 fl oz</span></li>
-              <li><span>Dijon Aioli</span><span>2 fl oz</span></li>
-              <li><span>House Fried Potato Chips</span><span>18 fl oz</span></li>
+              <li><span class="recipe-line-name">Brioche Bun</span><span class="recipe-line-amt">1 Each</span><span class="recipe-line-cost">$0.47</span></li>
+              <li><span class="recipe-line-name">Bratwurst Patty</span><span class="recipe-line-amt">1 Each</span><span class="recipe-line-cost">$1.20</span></li>
+              <li><span class="recipe-line-name">Gouda Cheese Slices</span><span class="recipe-line-amt">1 Each</span><span class="recipe-line-cost">$0.34</span></li>
+              <li><span class="recipe-line-name">Bacon Jam Batch</span><span class="recipe-line-amt">1 fl oz · Batch</span><span class="recipe-line-cost">$0.41</span></li>
+              <li><span class="recipe-line-name">Crispy Onions</span><span class="recipe-line-amt">1 fl oz</span><span class="recipe-line-cost">$0.35</span></li>
+              <li><span class="recipe-line-name">Dijon Aioli</span><span class="recipe-line-amt">2 fl oz · Batch</span><span class="recipe-line-cost">$0.37</span></li>
+              <li><span class="recipe-line-name">House Fried Potato Chips</span><span class="recipe-line-amt">18 fl oz · Batch</span><span class="recipe-line-cost">$0.63</span></li>
             </ul>
           </div>
-          <span class="recipe-callout recipe-callout-cost">Plate cost</span>
-          <span class="recipe-callout recipe-callout-jump">Price jump caught</span>
         </div>
       </div>
       <div class="hero-thread">
+        <div class="hero-handoff">
+          <div class="hero-handoff-wire" aria-hidden="true"></div>
+          <div class="hero-handoff-note">
+            <span class="hero-handoff-app">MenuForge</span>
+            <p><strong>Brat Haus Burger</strong> is on the pass at $14.00. The minimum is $15.05.</p>
+          </div>
+          <p class="hero-handoff-copy">That warning used to leave the building as a text.</p>
+        </div>
         <div class="sms-phone" id="sms-phone">
           <div class="sms-bezel">
             <div class="sms-screen">
@@ -393,7 +412,7 @@
             </div>
           </div>
         </div>
-        <p class="hero-thread-follow">That spreadsheet hunt is the Saturday MenuForge takes off the schedule. The invoice comes in, mozzarella’s case price updates, and every dish that uses it recosts before the next shift.</p>
+        <p class="hero-thread-follow">Imagine a world where you do not have to talk about spreadsheets anymore or wonder what you pay for a plate because MenuForge automatically reads and processes every invoice for you. No more trying to figure out complicated formulas. The invoice comes in, mozzarella’s case price updates, and every dish that uses it recosts before the next ticket fires.</p>
       </div>
       <ul class="hero-pains">
         <li>Nested batch math that takes a Saturday and still lies about the vinaigrette.</li>
@@ -462,7 +481,7 @@
       <header class="section-sticky-head">
         <h2>What MenuForge does</h2>
         <p class="gallery-desktop-only">Real screenshots from the live app. No mockups.</p>
-        <p class="gallery-mobile-only">Three outcomes, cropped from the live app.</p>
+        <p class="gallery-mobile-only">Sub-recipes, price jumps, and prep from Presidential Brewing.</p>
       </header>
       <div class="app-gallery gallery-desktop">
 
@@ -583,35 +602,112 @@
       <div class="app-gallery outcome-gallery gallery-mobile">
 
         <article class="gallery-item">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-outcome-plate-cost.png" alt="App Bar at Presidential Brewing: cost per serving $0.95, $23.76 for the batch, minimum sell price $3.80." width="836" height="310" loading="lazy">
+          <figure class="gallery-shot sheet-shot">
+            <div class="sheet" role="img" aria-label="Brat Haus Burger uses three batch recipes. Bacon Jam Batch, 1 fluid ounce, $0.41. Dijon Aioli, 2 fluid ounces, $0.37. House Fried Potato Chips, 18 fluid ounces, $0.63. Plate cost $3.76.">
+              <div class="sheet-head">
+                <div>
+                  <strong>Brat Haus Burger</strong>
+                  <span>3 batch recipes inside</span>
+                </div>
+                <span class="sheet-x" aria-hidden="true">&times;</span>
+              </div>
+              <ul class="batch-lines">
+                <li>
+                  <span class="batch-name">Bacon Jam Batch</span>
+                  <span class="batch-meta">1 fl oz of a 4 cup batch</span>
+                  <span class="batch-meta">Whole batch $11.90</span>
+                  <b>This plate $0.41</b>
+                </li>
+                <li>
+                  <span class="batch-name">Dijon Aioli</span>
+                  <span class="batch-meta">2 fl oz of a 1 quart batch</span>
+                  <span class="batch-meta">Whole batch $6.44</span>
+                  <b>This plate $0.37</b>
+                </li>
+                <li>
+                  <span class="batch-name">House Fried Potato Chips</span>
+                  <span class="batch-meta">18 fl oz of a 302 fl oz batch</span>
+                  <span class="batch-meta">Whole batch $10.50</span>
+                  <b>This plate $0.63</b>
+                </li>
+              </ul>
+              <div class="sheet-total"><span>Plate cost</span><b>$3.76</b></div>
+            </div>
           </figure>
           <div class="gallery-copy">
-            <span class="gallery-tag">Plate cost</span>
+            <span class="gallery-tag">Sub-recipes</span>
             <h3>Know every plate cost</h3>
-            <p>Cost per serving stays on the dish. App Bar is $0.95 a serving, $23.76 for the batch, with the minimum sell price beside it.</p>
+            <p>Three other recipes sit inside Brat Haus Burger. The fluid ounces actually used are priced from each batch, then rolled into the $3.76 plate.</p>
           </div>
         </article>
 
         <article class="gallery-item">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-outcome-price-jump.png" alt="Price jumps from invoice history: cilantro up 23.7%, tots up 13.6%, iceberg lettuce up 10.9%." width="580" height="526" loading="lazy">
+          <figure class="gallery-shot sheet-shot">
+            <div class="sheet" role="img" aria-label="1 Month Trend Details. Onion Powder up 42.4 percent, Iceberg Lettuce up 23.7 percent, Cole Slaw Blend up 23.6 percent.">
+              <div class="sheet-head">
+                <div>
+                  <strong>1 Month Trend Details</strong>
+                  <span>Top 3 movers · Gordon Food Services</span>
+                </div>
+                <span class="sheet-x" aria-hidden="true">&times;</span>
+              </div>
+              <ul class="trend-lines">
+                <li>
+                  <span class="trend-name">Onion Powder</span>
+                  <span class="trend-meta">1 case · then $19.99 · now $42.70</span>
+                  <b class="trend-up">+$12.72 · +42.4%</b>
+                </li>
+                <li>
+                  <span class="trend-name">Iceberg Lettuce</span>
+                  <span class="trend-meta">5 cases · then $256.15 · now $316.85</span>
+                  <b class="trend-up">+$60.70 · +23.7%</b>
+                </li>
+                <li>
+                  <span class="trend-name">Cole Slaw Blend</span>
+                  <span class="trend-meta">2 cases · then $16.98 · now $20.98</span>
+                  <b class="trend-up">+$4.00 · +23.6%</b>
+                </li>
+              </ul>
+            </div>
           </figure>
           <div class="gallery-copy">
             <span class="gallery-tag">Price jumps</span>
             <h3>Catch price jumps</h3>
-            <p>Cilantro, tots, and iceberg lettuce from a real price history. The percent change is called out before the P&amp;L is.</p>
+            <p>The 1-month trend from Presidential Brewing. Onion powder, iceberg lettuce, and cole slaw all cost more than they did a month ago.</p>
           </div>
         </article>
 
         <article class="gallery-item">
-          <figure class="gallery-shot">
-            <img src="assets/images/menuforge-outcome-shared-recipes.png" alt="Presidential Brewing recipe cards, including 20oz French Onion, Add Cheese, and Balsamic Vinaigrette flagged with a costing problem." width="452" height="1264" loading="lazy">
+          <figure class="gallery-shot sheet-shot">
+            <div class="sheet" role="img" aria-label="Prep tab for Brat Haus Burger, eight steps from toasting the bun to topping with a toothpick.">
+              <div class="sheet-head">
+                <div>
+                  <strong>Brat Haus Burger</strong>
+                  <span>Burgers</span>
+                </div>
+                <span class="sheet-x" aria-hidden="true">&times;</span>
+              </div>
+              <div class="recipe-tabs" aria-hidden="true">
+                <span>Overview</span>
+                <span>Ingredients</span>
+                <span class="is-active">Prep</span>
+              </div>
+              <ol class="prep-steps">
+                <li>Toast a Brioche bun on the grill</li>
+                <li>add a bratwurst patty to the grill and cook both sides until all the pink is gone</li>
+                <li>add a scoop of bacon jam to the top of the brat patty</li>
+                <li>smash the bacon jam down with a slice of Gouda cheese and melt under steam pan</li>
+                <li>add Dijon Aioli to both toasted buns</li>
+                <li>place patty on bottom bun</li>
+                <li>Add crispy onion to the top of the patty</li>
+                <li>Top with bun and toothpick before serving</li>
+              </ol>
+            </div>
           </figure>
           <div class="gallery-copy">
-            <span class="gallery-tag">Recipes</span>
-            <h3>Keep recipes in the building</h3>
-            <p>AM and PM edit the same cards. Pink means the cost cannot be trusted yet, the way Balsamic Vinaigrette is flagged here.</p>
+            <span class="gallery-tag">Prep</span>
+            <h3>Anyone on the line can cook it</h3>
+            <p>Prep lives on the recipe. Brat Haus Burger’s eight steps are on the card, so the whole staff cooks it the same way.</p>
           </div>
         </article>
 
@@ -674,18 +770,52 @@
 
         <div class="ai-feature-grid">
           <article class="ai-feature-card">
-            <figure class="ai-feature-shot">
+            <figure class="ai-feature-shot ai-desktop-shot">
               <img src="assets/images/menuforge-receipt-ingredient-matching.png" srcset="assets/images/menuforge-receipt-ingredient-matching-400w.png 400w, assets/images/menuforge-receipt-ingredient-matching-800w.png 800w, assets/images/menuforge-receipt-ingredient-matching.png 1600w" sizes="(max-width: 768px) 92vw, 480px" alt="Receipt to ingredient matching, showing ingredient variants." width="1600" height="836" loading="lazy">
             </figure>
+            <div class="ai-phone-layout">
+              <div class="ai-match">
+                <div class="ai-match-head">
+                  <strong>Match invoice lines</strong>
+                  <span>Recent invoices</span>
+                </div>
+                <div class="ai-match-row">
+                  <p>CHEESE MOZZ 3% SHRD FTHR</p>
+                  <span>Shredded Cheese (Mozzarella)</span>
+                  <b>$53.37</b>
+                </div>
+                <div class="ai-match-row">
+                  <p>SHORTENING LIQ SOY CLR FRY</p>
+                  <span>Fryer Oil</span>
+                  <b>$43.94</b>
+                </div>
+                <div class="ai-match-row">
+                  <p>POTATO TATER TOTS</p>
+                  <span>Tots</span>
+                  <b>$57.19</b>
+                </div>
+              </div>
+            </div>
             <h3>Receipt processing</h3>
             <span class="plan-pill">AI+ and Unlimited plans</span>
             <p>Email in a vendor invoice. AI reads the page, pulls every line item, and matches it to the right pantry ingredient. Confirm anything it could not place, and pack costs update across every recipe that uses them.</p>
           </article>
 
           <article class="ai-feature-card">
-            <figure class="ai-feature-shot">
+            <figure class="ai-feature-shot ai-desktop-shot">
               <img src="assets/images/menuforge-recipe-photo-ai-description.png" srcset="assets/images/menuforge-recipe-photo-ai-description-400w.png 400w, assets/images/menuforge-recipe-photo-ai-description-800w.png 800w, assets/images/menuforge-recipe-photo-ai-description.png 1600w" sizes="(max-width: 768px) 92vw, 480px" alt="Store pictures of your menu items to post to social media, or pictures for staff to reference." width="1600" height="834" loading="lazy">
             </figure>
+            <div class="ai-phone-layout">
+              <div class="ai-desc">
+                <div class="ai-desc-tabs" aria-hidden="true">
+                  <span class="is-active">Overview</span>
+                  <span>Ingredients</span>
+                  <span>Prep</span>
+                </div>
+                <strong>Brat Haus Burger</strong>
+                <p>Experience the Brat Haus Burger, where a perfectly grilled bratwurst patty commands the plate beneath a molten layer of gouda melted over our house bacon jam, infused with Oatbama for a sweet-smoky depth that echoes presidential legacies from the Midwest to the White House. Crispy onions deliver a satisfying crunch against the bright tang of dijon aioli, all cradled in a toasted brioche bun that balances richness with every bite. This elevated pub classic unites bold flavors in true executive style.</p>
+              </div>
+            </div>
             <h3>Menu descriptions and dish photos</h3>
             <p>Store pictures of the plate for staff and social. AI reads the recipe and its sub-recipes to write a branded description on the Overview tab — ready for the menu and the post.</p>
           </article>
@@ -1223,7 +1353,7 @@
   <!-- JavaScript -->
   <script defer src="assets/js/exit-intent-popup.js?v=20261029a"></script>
   <script src="assets/js/main.js?v=20261029a"></script>
-  <script src="assets/js/hero-imessage.js?v=20261029d"></script>
+  <script src="assets/js/hero-imessage.js?v=20261029e"></script>
   <script src="assets/js/plan-prices.js?v=20261009d"></script>
   <script>
     // AI panel: scale from 0.6 to 1, finishing when the gold header pins
@@ -1248,8 +1378,15 @@
         if (window.innerWidth <= 1024 || reduce) {
           panel.style.setProperty('--p', '1');
           panel.classList.add('is-full');
+          if (window.innerWidth <= 768) {
+            var mobileTop = head.getBoundingClientRect().top;
+            head.classList.toggle('is-bleed', mobileTop <= window.innerHeight * 0.3);
+          } else {
+            head.classList.remove('is-bleed');
+          }
           return;
         }
+        head.classList.remove('is-bleed');
         var vh = window.innerHeight;
         var pinAt = siteHeader ? siteHeader.getBoundingClientRect().bottom : 56;
         var headTop = head.getBoundingClientRect().top;

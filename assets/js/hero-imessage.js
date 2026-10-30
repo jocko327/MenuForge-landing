@@ -14,20 +14,33 @@
     { at: 5000, who: 'typing' },
     { at: 6400, who: 'chef', text: 'Looks like it costs 31% more than it did back in ' + month + '.' },
     { at: 8400, who: 'owner', text: 'Oh wow, how did we miss that? Can you work on re-costing all of our recipes that use mozzarella?' },
-    { at: 10400, who: 'typing' },
-    { at: 11800, who: 'chef', text: "I'll try. We use that a lot, and this spreadsheet is impossible to navigate." },
-    { at: 13800, who: 'owner', text: 'Please do your best.' }
+    { at: 9000, who: 'typing' },
+    { at: 10200, who: 'chef', text: "I'll try. We use mozzarella cheese in a lot of our recipes, and this spreadsheet is impossible to navigate." },
+    { at: 12200, who: 'typing' },
+    { at: 13400, who: 'chef', text: 'Can you give me a call to walk me through your formulas here?' },
+    { at: 15400, who: 'owner', text: 'Please do your best.' }
   ];
 
   function pin() {
     thread.scrollTop = thread.scrollHeight;
   }
 
+  function chefRow(bubble) {
+    var row = document.createElement('div');
+    row.className = 'sms-row';
+    var av = document.createElement('span');
+    av.className = 'sms-cj';
+    av.textContent = 'CJ';
+    row.appendChild(av);
+    row.appendChild(bubble);
+    return row;
+  }
+
   function addBubble(who, text) {
     var p = document.createElement('p');
     p.className = 'sms-bubble ' + (who === 'owner' ? 'is-owner' : 'is-chef');
     p.textContent = text;
-    thread.appendChild(p);
+    thread.appendChild(who === 'chef' ? chefRow(p) : p);
     pin();
   }
 
@@ -36,12 +49,16 @@
     p.className = 'sms-bubble is-chef is-typing';
     p.setAttribute('aria-label', 'Chef John is typing');
     p.innerHTML = '<span></span><span></span><span></span>';
-    thread.appendChild(p);
+    thread.appendChild(chefRow(p));
     pin();
   }
 
   function hideTyping() {
     var dots = thread.querySelector('.is-typing');
+    if (dots && dots.parentNode && dots.parentNode.classList.contains('sms-row')) {
+      dots.parentNode.remove();
+      return;
+    }
     if (dots) dots.remove();
   }
 
