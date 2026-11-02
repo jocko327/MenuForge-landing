@@ -1706,7 +1706,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     width: 100%;
     height: auto;
     box-sizing: border-box;
-    padding-top: calc(var(--site-header-height) + 6vh);
+    padding-top: calc(var(--site-header-height) + 3vh);
     padding-right: 4vw;
     padding-bottom: 2vh;
     padding-left: 4vw;
