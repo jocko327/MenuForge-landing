@@ -1785,22 +1785,30 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
   .hero-home .hero-fold .hero-invoice-sheet {
     position: relative;
     z-index: 1;
-    background: #f4f1ea;
+    background: #f7f4ee;
     color: #1c1c1c;
-    border-radius: 16px;
-    padding: 12px 14px 18px;
+    border-radius: 12px;
+    padding: 12px 14px 16px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
     text-align: left;
+    transform: rotate(-4deg);
+    transform-origin: 50% 40%;
   }
 
   .hero-home .hero-fold .hero-invoice-head {
-    margin: 0 0 8px;
+    margin: 0 0 7px;
     font-family: var(--font-body);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.11em;
     text-transform: uppercase;
-    color: #9a9186;
+    color: #8d867c;
+  }
+
+  .hero-home .hero-fold .hero-invoice-dash {
+    height: 0;
+    margin: 0 2px 8px;
+    border-top: 1.5px dashed #c4beb4;
   }
 
   .hero-home .hero-fold .hero-invoice-sheet ul {
@@ -1842,8 +1850,8 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
-    width: 74%;
-    margin: -16px 0 16px auto;
+    width: 78%;
+    margin: -8px 0 16px auto;
   }
 
   .hero-home .hero-fold .hero-alert {
@@ -1852,29 +1860,27 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     gap: 10px;
     margin: 0;
     padding: 10px 12px 11px;
-    background: #16161f;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 18px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
     text-align: left;
   }
 
   .hero-home .hero-fold .hero-alert-icon {
     flex: 0 0 auto;
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-    display: grid;
-    place-items: center;
-    background: #2a2a38;
-    color: #f4f4f5;
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    overflow: hidden;
+    display: block;
+    background: #141414;
   }
 
-  .hero-home .hero-fold .hero-alert-icon.is-x {
-    color: #f4f4f5;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1;
+  .hero-home .hero-fold .hero-alert-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .hero-home .hero-fold .hero-alert > div {
@@ -1892,25 +1898,29 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     font-size: 13px;
     font-weight: 700;
     line-height: 1.2;
-    color: #fff;
+    color: #1a1a1a;
+  }
+
+  .hero-home .hero-fold .hero-alert-low .hero-alert-title {
+    color: #e14b4b;
   }
 
   .hero-home .hero-fold .hero-alert-title span {
     flex: 0 0 auto;
-    background: #f1c671;
-    color: #1a1408;
-    border-radius: 999px;
-    padding: 1px 7px 2px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
+    background: none;
+    color: #9a9a9a;
+    border-radius: 0;
+    padding: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0;
   }
 
   .hero-home .hero-fold .hero-alert p {
     margin: 0;
     font-size: 12px;
     line-height: 1.35;
-    color: rgba(255, 255, 255, 0.68);
+    color: #3a3a3a;
   }
 
   .hero-home .hero-fold .hero-cta {

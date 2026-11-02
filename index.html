@@ -89,7 +89,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261102c">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261102e">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
   <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261030l">
   <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261030j">
@@ -357,6 +357,7 @@
       <div class="hero-invoice" aria-label="Gordon Food Service invoice. Onion powder is highlighted at $42.78. Alerts say the price jumped and a burger is priced too low.">
         <div class="hero-invoice-sheet">
           <p class="hero-invoice-head">Gordon Food Service · Invoice</p>
+          <div class="hero-invoice-dash" aria-hidden="true"></div>
           <ul>
             <li><span>Cheese Mozz Shrd</span><b>53.37</b></li>
             <li><span>Shortening Liq Fry</span><b>43.94</b></li>
@@ -367,15 +368,17 @@
         <div class="hero-invoice-alerts">
           <article class="hero-alert">
             <span class="hero-alert-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 8.5h11.2l4.8 3.5-4.8 3.5H4z"/><circle cx="8.2" cy="12" r="1.1" fill="currentColor" stroke="none"/></svg>
+              <img src="assets/images/menuforge-icon-192.png" alt="" width="26" height="26">
             </span>
             <div>
               <p class="hero-alert-title">Price jump caught <span>now</span></p>
               <p>Onion powder is up to $42.70 a case. Every recipe using it is recosted.</p>
             </div>
           </article>
-          <article class="hero-alert">
-            <span class="hero-alert-icon is-x" aria-hidden="true">×</span>
+          <article class="hero-alert hero-alert-low">
+            <span class="hero-alert-icon" aria-hidden="true">
+              <img src="assets/images/menuforge-icon-192.png" alt="" width="26" height="26">
+            </span>
             <div>
               <p class="hero-alert-title">Priced too low <span>now</span></p>
               <p>A burger now costs more to make than its price allows. Review it.</p>
