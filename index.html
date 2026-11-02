@@ -89,7 +89,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261030m">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261102b">
   <link rel="stylesheet" href="assets/css/exit-intent-popup.css?v=20261029a">
   <link rel="stylesheet" href="assets/css/app-mockups.css?v=20261030l">
   <link rel="stylesheet" href="assets/css/ai-showcase.css?v=20261030j">
@@ -306,7 +306,10 @@
     <div class="hero-content">
       <img class="hero-product" src="assets/images/menuforge-recipe-grid-pricing-issues.png" srcset="assets/images/menuforge-recipe-grid-pricing-issues-400w.png 400w, assets/images/menuforge-recipe-grid-pricing-issues-800w.png 800w, assets/images/menuforge-recipe-grid-pricing-issues.png 1600w" sizes="(min-width: 769px) 720px, 0px" alt="MenuForge recipe grid. Pink cards are recipes with costing problems." width="1600" height="837">
       <div class="hero-fold">
-      <h1><span class="hero-title-lead">Know your plate cost</span> <span class="hero-gold-pill"><span class="hero-band-label">the day the invoice arrives.</span></span></h1>
+      <h1>
+        <span class="hero-desktop-title"><span class="hero-title-lead">Know your plate cost</span> <span class="hero-gold-pill"><span class="hero-band-label">the day the invoice arrives.</span></span></span>
+        <span class="hero-mobile-title"><span class="hero-title-lead">Find the dishes you're<br>underpricing.</span><span class="hero-gold-pill"><span class="hero-band-label">Every time an invoice lands.</span></span></span>
+      </h1>
       <p class="hero-h1-sub hero-h1-sub-desktop">No more Saturdays fixing the costing spreadsheet.</p>
       <p class="hero-h1-sub hero-h1-sub-mobile">No more fixing the costing spreadsheet.</p>
       <div class="hero-burger-slot">
@@ -350,7 +353,36 @@
         </div>
       </div>
       <p class="hero-tagline hero-tagline-desktop">Every vendor invoice updates your ingredient prices and recosts every dish and sub-recipe. No spreadsheet.</p>
-      <p class="hero-tagline hero-tagline-mobile">Every invoice reprices every dish and sub-recipe. No more spreadsheets.</p>
+      <p class="hero-tagline hero-tagline-mobile">Snap a vendor invoice. MenuForge reprices every ingredient and every dish that uses it.</p>
+      <div class="hero-invoice" aria-label="Gordon Food Service invoice. Onion powder is highlighted at $42.78. Alerts say the price jumped and a burger is priced too low.">
+        <div class="hero-invoice-sheet">
+          <p class="hero-invoice-head">Gordon Food Service · Invoice</p>
+          <ul>
+            <li><span>Cheese Mozz Shrd</span><b>53.37</b></li>
+            <li><span>Shortening Liq Fry</span><b>43.94</b></li>
+            <li class="is-hot"><span>Onion Powder 18oz</span><b>42.78</b></li>
+            <li><span>Potato Tater Tots</span><b>57.19</b></li>
+          </ul>
+        </div>
+        <div class="hero-invoice-alerts">
+          <article class="hero-alert">
+            <span class="hero-alert-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 8.5h11.2l4.8 3.5-4.8 3.5H4z"/><circle cx="8.2" cy="12" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <div>
+              <p class="hero-alert-title">Price jump caught <span>now</span></p>
+              <p>Onion powder is up to $42.70 a case. Every recipe using it is recosted.</p>
+            </div>
+          </article>
+          <article class="hero-alert">
+            <span class="hero-alert-icon is-x" aria-hidden="true">×</span>
+            <div>
+              <p class="hero-alert-title">Priced too low <span>now</span></p>
+              <p>A burger now costs more to make than its price allows. Review it.</p>
+            </div>
+          </article>
+        </div>
+      </div>
       <div class="hero-proof">
         <img src="assets/images/jake-lohse.jpg" alt="Jake Lohse, owner of Presidential Brewing Co." width="72" height="72">
         <p>Built by Jake Lohse, owner of Presidential Brewing Co. $8,800 a year in projected savings from 10 renegotiated invoice lines.</p>
@@ -358,7 +390,7 @@
       <div class="hero-cta">
         <a href="get-started.html" class="btn btn-primary btn-large" data-trial-cta>Start 7-day free trial</a>
         <a href="pricing.html" class="btn btn-secondary btn-large">View Pricing</a>
-        <p class="trial-microcopy">No card. Plans from $79.95/mo. 30-day money-back guarantee.</p>
+        <p class="trial-microcopy"><span class="trial-microcopy-desktop">No card. Plans from $79.95/mo. 30-day money-back guarantee.</span><span class="trial-microcopy-mobile">Full AI+ trial · No card · 30-day money-back guarantee</span></p>
       </div>
       </div>
       <div class="hero-visual">

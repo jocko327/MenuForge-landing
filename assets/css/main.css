@@ -572,8 +572,15 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
 }
 
 .hero-tagline-mobile,
-.hero-h1-sub-mobile {
+.hero-h1-sub-mobile,
+.hero-mobile-title,
+.hero-invoice,
+.trial-microcopy-mobile {
   display: none;
+}
+
+.hero-desktop-title {
+  display: contents;
 }
 
 .hero-pains {
@@ -1754,21 +1761,169 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     display: none;
   }
 
-  .hero-home .hero-fold .hero-h1-sub-mobile {
-    display: block;
-    margin: 2.2vh auto 0;
-    font-size: 4.34vw;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #fff;
-    -webkit-text-fill-color: #fff;
+  .hero-home .hero-fold .hero-desktop-title {
+    display: none;
   }
 
-  .hero-home .hero-fold .hero-burger-slot {
+  .hero-home .hero-fold .hero-mobile-title {
     display: block;
     width: 100%;
-    margin-top: 2.2vh;
+  }
+
+  .hero-home .hero-fold .hero-h1-sub-mobile,
+  .hero-home .hero-fold .hero-burger-slot {
+    display: none;
+  }
+
+  .hero-home .hero-fold .hero-invoice {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 2.2vh 0 0;
+  }
+
+  .hero-home .hero-fold .hero-invoice-sheet {
+    background: #f7f4ee;
+    color: #1c1c1c;
+    border-radius: 14px;
+    padding: 1.3vh 3.2vw 1.5vh;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    text-align: left;
+  }
+
+  .hero-home .hero-fold .hero-invoice-head {
+    margin: 0 0 0.8vh;
+    font-family: var(--font-body);
+    font-size: 2.5vw;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a8172;
+  }
+
+  .hero-home .hero-fold .hero-invoice-sheet ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-home .hero-fold .hero-invoice-sheet li {
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+    margin: 0;
+    padding: 0.45vh 1.4vw;
+    font-family: var(--font-body);
+    font-size: 3.15vw;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #3a3a3a;
+  }
+
+  .hero-home .hero-fold .hero-invoice-sheet li b {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hero-home .hero-fold .hero-invoice-sheet li.is-hot {
+    background: #f3ddb0;
+    border-radius: 6px;
+    color: #1a1408;
+  }
+
+  .hero-home .hero-fold .hero-invoice-alerts {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1vh;
+    width: 92%;
+    margin: -14vh 0 1.6vh auto;
+  }
+
+  .hero-home .hero-fold .hero-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4vw;
+    margin: 0;
+    padding: 1.15vh 2.8vw;
+    background: #1a1a28;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    text-align: left;
+  }
+
+  .hero-home .hero-fold .hero-alert-icon {
+    flex: 0 0 auto;
+    width: 7.2vw;
+    height: 7.2vw;
+    min-width: 28px;
+    min-height: 28px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: #2a2a3a;
+    color: #f4f4f5;
+  }
+
+  .hero-home .hero-fold .hero-alert-icon.is-x {
+    color: #f4f4f5;
+    font-size: 4.4vw;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .hero-home .hero-fold .hero-alert-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vw;
+    margin: 0 0 0.2vh;
+    font-family: var(--font-body);
+    font-size: 3.5vw;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .hero-home .hero-fold .hero-alert-title span {
+    flex: 0 0 auto;
+    background: #f1c671;
+    color: #1a1408;
+    border-radius: 999px;
+    padding: 0.15vh 1.6vw;
+    font-size: 2.4vw;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-home .hero-fold .hero-alert p {
+    margin: 0;
+    font-size: 3.05vw;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .hero-home .hero-fold .hero-cta {
+    order: 4;
+  }
+
+  .hero-home .hero-fold .hero-proof {
+    order: 5;
+  }
+
+  .hero-home .hero-fold .hero-cta .btn-secondary {
+    display: none;
+  }
+
+  .hero-home .hero-fold .trial-microcopy-desktop {
+    display: none;
+  }
+
+  .hero-home .hero-fold .trial-microcopy-mobile {
+    display: inline;
   }
 
   .hero-home .hero-fold .hero-burger-slot .recipe-stage {
@@ -1816,7 +1971,7 @@ html.scrollbar-visible ::-webkit-scrollbar-thumb:hover {
     flex-wrap: nowrap;
     align-items: stretch;
     gap: 0.8vh;
-    margin: 3.4vh 0 0;
+    margin: 1.2vh 0 0;
   }
 
   .hero-home .hero-fold .btn-large {
