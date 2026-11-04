@@ -3,6 +3,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   var trialMicrocopy = 'No card. Plans from $79.95/mo. 30-day money-back guarantee.';
   document.querySelectorAll('[data-trial-cta]').forEach(function(btn) {
+    if (btn.tagName === 'A') {
+      var extra = btn.search || '';
+      btn.href = 'https://app.menuforge.ai/try' + extra;
+    }
     if (btn.closest('header, .header, .nav-links, .nav-actions')) return;
     var group = btn.parentElement;
     if (!group || group.querySelector('.trial-microcopy')) return;
